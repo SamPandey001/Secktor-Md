@@ -1,96 +1,98 @@
-<h1 align="center">Secktor-Botto<br></h1>
+p align="center">
+  <a href="https://docs.secktor.live/">
+    <img alt="secktor docs" height="128" src="https://i.imgur.com/7qzTVOh.png">
+    <h1 align="center">Expo</h1>
+  </a>
+</p>
 
 <p align="center">
 
-  <img src="https://raw.githubusercontent.com/CitelVoid/Secktor-Md/main/assets/SocialLogo%201.png" />
-
+  <a aria-label="Join our chats" href="https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbCl" target="_blank">
+    <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  </a>
+ 
+  <a aria-label="Secktor is free to use" href="https://github.com/expo/expo/blob/main/LICENSE" target="_blank">
+    <img alt="License: GPL-3" src="https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/" target="_blank" />
+  </a>
+</p>
+<p align="center">
+  <a aria-label="Deploy on heroku" href="https://www.heroku.com/deploy/?template=https://github.com/citelvoid/Secktor-Md"><b>Deploy on heroku</b></a>
+ |
+  <a aria-label="secktor documentation" href="https://docs.secktor.live">Read the Documentation 📚</a>
 </p>
 
+---
 
-<p align="center"> 
+- [📚 Documentation](#-documentation)
+- [🗺 Project RoadMap](#-project-layout)
+- [⬇️ Installation ](#⬇️-installation)
+- [⚠️ Warning!](#⚠️-warning)
+- [👏 Contributing](#-contributing)
+- [❓ FAQ](#-faq)
+- [💙 The Team](#-the-team)
+- [License](#license)
 
-  A Moduler WhatsApp Bot designed for both PM and Groups - To take your boring WhatsApp usage into a whole different level.
+Introducing Secktor
+Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use.
 
-   
-  ## 
-`To Be Clear,This Bot is Secktor bot. Zero-Two is a theme in it.`
-##
-  
-### How to enable Secktor On your number
--   First Open `Github Link Of Secktor Bot`
--   Click on Fork Button upwards right corner
--  Tap Deploy Image down blew and Fill config vars
--   Tap on Deploy button and wait 1 min
--   Tap manage and go on `Resources` and turn on web dynos,tap on open app and Scan Qr code from WhatsApp.
--   No Need of Kaffeine bot will ping itself.
--   Bot is Working Now,Enjoy ♥️
+## 📚 Documentation
 
-- `Thank me later.`
-# Main Features of Bot
-- PM Permit
-- Can Delete Messages Of Anyone in Group
-- Double Themes (Secktor • Zero-Two)
-- First Whatsapp Bot with `Auto Nsfw detection with percentage`
-- First whatsapp bot with `NLP AI`
-- text to Sticker(like Quotely Telegram Bot)
-- Scribd link unlocker
-- Torrent Search
-- Translator for any language
-- Nsfw Commands
-- Group Features
-- Chat Features
-- Switches for Turning NSFW on and off
-- Random Anime
-- Anime, Character Search
-- Reaction Commands like Poke,punch,bonk
-- Mongodb Support
-- iplookup,imdb,sticker,emojimix, ebinary,dbinary,ytdl
-- And list goes on + adding commands daily + we add requested features too
-- Check usage of Commands by prefix+command help eg- -scribd help
+<p>Learn about Deploying Secktor <a aria-label="secktor documentation" href="https://docs.secktor.live">in our official docs!</a></p>
 
+- [Getting Started](https://docs.secktor.live/)
+- [Features](https://docs.secktor.live/features/introduction/)
+- [Themes](https://docs.secktor.live/themes/introduction/)
+- [Custom Theme](https://docs.secktor.live/themes/custom-theme/)
 
+## 🗺 Project Roadmap
 
-## Whatsapp Group
-<a href="https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbCl"><img src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+- [`Roadmap`](https://roadmap.secktor.live) All the Upcoming features, if you want to see or request a feature this is where you'll find it.
+- [`Roadmap Notion`](https://secktor.notion.site) This is where you can find Expo projects which are linked to the development modules. You'll do most of your testing in here.
+- [`docs`](https://docs.secktor.live) Documentation 
 
+## ⬇️ Installation 
 
-### The Hard Method (Not Recommend)
-```js
-apt update
-apt upgrade
-pkg update && pkg upgrade
-pkg install bash
-pkg install libwebp
-pkg install git -y
-pkg install nodejs -y 
-pkg install ffmpeg -y 
-pkg install wget
-pkg install imagemagick -y
-git clone https://github.com/CitelVoid/Secktor-Md
-cd Secktor-Md
-npm start
-node .
+<p>Learn How to Deploy Secktor Userbot <a aria-label="secktor documentation" href="https://docs.secktor.live">in our official docs!</a></p>
+
+- [Heroku](https://docs.secktor.live/tutorial/heroku/)
+- [Macos](https://docs.secktor.live/tutorial/macos/)
+- [Windows](https://docs.secktor.live/tutorial/windows/)
+- [Linux](https://docs.secktor.live/tutorial/linux/)
+- [Termux](https://docs.secktor.live/tutorial/termux/)
+
+## ⚠️ Warning! 
 ```
-
-### ⚠️ Warning! 
+ There is no affiliation between this bot and Whatsapp INC, so feel free to use it.
+Since it is not an official WhatsApp number, it can be banned by Whatsapp
+It is only one percent likely that you will be banned if you use WORKTYPE as private.
+There may still be a few bugs in Secktor bot, since it is still being developed. If you find any, please let us know.
 ```
- This bot is not by Whatsapp INC So if you want to use it then feel free to do so.
- Your WhatsApp Number can be banned by Whatsapp as it is not official
-  If you use WORKTYPE as private then There's only one percent chance of geeting Ban.
- Secktor bot is still in the development stage, so there can be few bugs.Feel free to report that to us.
-```
+- [Use at your own risk](https://docs.secktor.live/introduction/why-not-secktor/)
+## 👏 Contributing
 
-## Developers
+If you like Expo and want to help make it better then check out our [contributing guide](/CONTRIBUTING.md)! 
+
+## ❓ FAQ
+
+If you have questions about Secktor and want answers, then check out our [Frequently Asked Questions](https://docs.secktor.live/introduction/faq/)!
+
+
+## 💙 The Team
+
 [![Sam Pandey](https://github.com/sampandey001.png?size=110)](https://github.com/sampandey001) | [![SleepyAsh](https://github.com/backendbeast.png?size=110)](https://github.com/backendbeast)
 ----|----
 [Sam Pandey](https://wa.me/919628516236) | [SleepyAsh](https://t.me/CTRLIntelligence)
 Developer, Bug Fixes, Modules,UI,Base |  Ideas,Other IMP Things
 
 ## License
-This project is protected by `GNU General Public Licence v3.0` license.
 
-## Contributing
-Feel free to contribute.
+The Secktor Userbot is made available under the [GPL-3 license](LICENSE). 
+<p align="center"> 
 
-## Support
-Give a ⭐ to this repo if it helped you.
+
+   
+
+  
+
+
+

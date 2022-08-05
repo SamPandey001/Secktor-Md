@@ -3,7 +3,7 @@
     "description": "A Whatsapp md bot built in NodeJs to make experience better",
     "repository": "https://github.com/secktorbot/Secktor-Md",
     "logo": "https://avatars.githubusercontent.com/u/110405111?s=200&v=4",
-    "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "SecktorBot", "theme bot","multi device"],
+    "keywords": ["nodejs", "bot", "whatsapp bot", "Userbot", "Whatsapp Userbot", "SecktorBot", "theme bot","multi device"],
     "success_url": "/",
 
  "env": {
@@ -37,7 +37,7 @@
       "description": "A secret String for Mongodb Connection.(Required)"
     },
       "THEME": {
-      "description": "Put the theme name you want to use. Avilable themes are SECKTOR and ZZEROTWO..",
+      "description": "Put the theme name you want to use.Visit docs.secktor.live/themes/introduction",
        "value": "SECKTOR"
     },
        "HEROKU_API_KEY": {
@@ -48,12 +48,12 @@
       "description": "Enter your HEROKU APP name same as above."
     },
       "WORKTYPE": {
-    "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
-           "value": "public"
+    "description": "Worktype of your bot. Use public or private, It is only one percent likely that you will be banned if you use WORKTYPE as private. If public then everyone can use it.",
+           "value": "private"
     },
     "SPACK_NAME": {
       "description": "Put Your Sticker Pack Name",
-       "value": "Zero-Two",
+       "value": "Secktor",
        "required": false
          
       
