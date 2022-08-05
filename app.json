@@ -1,0 +1,80 @@
+{
+    "name": "Secktor-Md",
+    "description": "A Whatsapp md bot built in NodeJs to make experience better",
+    "repository": "https://github.com/secktorbot/Secktor-Md",
+    "logo": "https://avatars.githubusercontent.com/u/110405111?s=200&v=4",
+    "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "SecktorBot", "theme bot","multi device"],
+    "success_url": "/",
+
+ "env": {
+    "OWNER_NAME": {
+    "description": "Name of Bot Owner",
+        "value": "Your Name."
+    },
+        "PREFIX": {
+    "description": "Enter your desired prefix for bot.",
+        "value": "."
+    },
+    "BOT_NUMBER": {
+      "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
+         "value": "919628*****"
+    },
+      "OPENAI_API_KEY": {
+      "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
+         "value": "Replace Me"
+    },
+    "MONGODB_URI": {
+      "description": "A secret String for Mongodb Connection.(Required)"
+    },
+      "THEME": {
+      "description": "Put the theme name you want to use. Avilable themes are SECKTOR and ZZEROTWO..",
+       "value": "SECKTOR"
+    },
+       "HEROKU_API_KEY": {
+      "description": "Enter your Heroku api key.",
+       "value": "Paste Here"
+    },
+           "HEROKU_APP_NAME": {
+      "description": "Enter your HEROKU APP name same as above."
+    },
+      "WORKTYPE": {
+    "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
+           "value": "public"
+    },
+    "SPACK_NAME": {
+      "description": "Put Your Sticker Pack Name",
+       "value": "Zero-Two",
+       "required": false
+         
+      
+    }
+  },
+   
+
+    "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+     "url": "https://github.com/ItsJimi/heroku-buildpack-pm2"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+    "addons": [
+        {
+            "plan": "heroku-postgresql"
+        }
+    ],
+   
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}

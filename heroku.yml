@@ -1,0 +1,5 @@
+build:
+  docker:
+      worker: /lib/Dockerfile
+run:
+   worker: npm i --location=global forever && forever core.js
