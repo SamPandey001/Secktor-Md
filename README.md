@@ -1,7 +1,7 @@
-p align="center">
+<p align="center">
   <a href="https://docs.secktor.live/">
     <img alt="secktor docs" height="128" src="https://i.imgur.com/7qzTVOh.png">
-    <p align="center">Secktor</p>
+    <h1 align="center">Secktor</h1>
   </a>
 </p>
 
