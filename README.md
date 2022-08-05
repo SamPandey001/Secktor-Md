@@ -2,7 +2,7 @@
 
 <p align="center">
 
-  <img src="pic" />
+  <img src="https://raw.githubusercontent.com/CitelVoid/Secktor-Md/main/assets/SocialLogo%201.png" />
 
 </p>
 
