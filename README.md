@@ -82,7 +82,7 @@ If you have questions about Secktor and want answers, then check out our [Freque
 [![Sam Pandey](https://github.com/sampandey001.png?size=110)](https://github.com/sampandey001) | [![SleepyAsh](https://github.com/backendbeast.png?size=110)](https://github.com/backendbeast)
 ----|----
 [Sam Pandey](https://wa.me/919628516236) | [Sasank Reddy](https://t.me/CTRLIntelligence)
-Developer, Bug Fixes, Modules,UI,Base |  Designer,Web,Ideas,Other
+Developer, Bug Fixes, Modules,UI,Base |  Designer,Web,UI,Ideas,Other
 
 ## License
 
