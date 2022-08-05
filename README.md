@@ -60,6 +60,10 @@ Secktor is designed to bring a whole new level of excitement to your boring What
 - [Linux](https://docs.secktor.live/tutorial/linux/)
 - [Termux](https://docs.secktor.live/tutorial/termux/)
 
+ <a href="https://www.heroku.com/deploy/?template=https://github.com/citelvoid/Secktor-Md.git">
+    <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
+  </a>
+  
 ## ⚠️ Warning! 
 ```
  There is no affiliation between this bot and Whatsapp INC, so feel free to use it.
