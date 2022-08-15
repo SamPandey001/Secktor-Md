@@ -76,7 +76,7 @@ There may still be a few bugs in Secktor bot, since it is still being developed.
 
 If you like Expo and want to help make it better then check out our [contributing guide](/CONTRIBUTING.md)! 
 
-## ❓ FAQ
+## ❓ FAQ 
 
 If you have questions about Secktor and want answers, then check out our [Frequently Asked Questions](https://citel.vercel.app/introduction/faq/)!
 
