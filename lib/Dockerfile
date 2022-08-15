@@ -1,6 +1,4 @@
 FROM node:lts-buster
-RUN git clone https://sampandey001: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@github.com/SamPandey001/MD2.git /root/SamPandey001/
-WORKDIR /root/SamPandey001/
 RUN apt-get update && \
   apt-get install -y \
   ffmpeg \
@@ -14,6 +12,7 @@ RUN npm --omit=dev install
 RUN npm install --location=global chalk
 RUN npm i cfonts
 RUN npm install --location=global pm2
+RUN npm i -g heroku
 RUN npm config set loglevel silent
 
 CMD ["pm2-runtime", "start", "franxx.js"]
