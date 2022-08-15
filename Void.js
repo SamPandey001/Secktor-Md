@@ -7478,7 +7478,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hh == "false") return m.reply("*NSFW* is not active");
+            if (mongoschema == "false") return m.reply("*NSFW* is not active");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7534,7 +7534,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hht == "false") return m.reply("*NSFW* is not active");
+            if (mongoschemat == "false") return m.reply("*NSFW* is not active");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7586,7 +7586,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hhtt == "false") return m.reply("*NSFW* is not active");
+            if (mongoschematt == "false") return m.reply("*NSFW* is not active");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7688,7 +7688,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hhtj == "false") return m.reply("*NSFW* is not active.");
+            if (mongoschematj == "false") return m.reply("*NSFW* is not active.");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7749,7 +7749,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hhtv == "false") return m.reply("*NSFW* is not active.");
+            if (mongoschematv == "false") return m.reply("*NSFW* is not active.");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7800,7 +7800,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hhs == "false") return m.reply("*NSFW* is not active.");
+            if (mongoschemas== "false") return m.reply("*NSFW* is not active.");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7851,7 +7851,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hhg == "false") return m.reply("*NSFW* is not active.");
+            if (mongoschemag == "false") return m.reply("*NSFW* is not active.");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
@@ -7902,7 +7902,7 @@ for (let i = 0; i < nn; i++) {
                 },
               },
             };
-            if (hhx == "false") return m.reply("*NSFW* is not active.");
+            if (mongoschemax == "false") return m.reply("*NSFW* is not active.");
             Void.sendMessage(m.chat, buttonMessage, {
               quoted: m,
             });
