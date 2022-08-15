@@ -29,11 +29,12 @@ module.exports = {
   pmpermit_mutetime: process.env.PMPERMIT_MUTETIME || "1800",
   mongodb_url: process.env.MONGODB_URI || "Enter-MongoURI-HERE",
   HEROKU: {
-        HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
+        HEROKU: process.env.HEROKU || `true`,
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '1abfce1e-1bee-4334-9f6c-f4c1cb1cafab' : process.env.HEROKU_API_KEY,
         APP_NAME: process.env.HEROKU_APP_NAME === undefined ? 'zeropgg' : process.env.HEROKU_APP_NAME
     },
-  BRANCH: 'secktor',
+  BRANCH: 'franxx',
+  SUDO: process.env.SUDO === undefined ? false : process.env.SUDO,
   VERSION: process.env.VERSION === undefined ? 'v.2.0' : process.env.VERSION,
  LANG: process.env.THEME|| 'SECTOR',
  SUPPORT: "120363040838753957@g.us",
