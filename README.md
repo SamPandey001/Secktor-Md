@@ -51,35 +51,36 @@ Secktor is designed to bring a whole new level of excitement to your boring What
 <details>
   <summary>List of Features (Touch Here)</summary>
 <p>
-First Bot which provides multiple themes  in one bot (like multiple characters in    one bot)
-PM Permit (with Mongodb Support)
-First Whatsapp Bot with `Auto Nsfw detection with percentage`
-- First whatsapp bot with `NLP AI`
-- text to Sticker(like Quotely Telegram Bot)
-- Torrent Search
-- Translator for any language
-- Nsfw
-- All handy commands like setprefix,theme  [name],shutdown,restart,mode public/private
-- Voting in groups
-- Seprate help menu for each theme(under  work)
-- Lots of Textpro commands
-- Some Stickers
-- Pg for auth restoration.
-- Group Features
-- Scrap Stickers from all groups
-- Ranking system like discord
-- Anime News
-- Switch for events,nsfw,antilink
-- Chat Features
-- Random Anime
-- Anime, Character Search
-- Reaction Commands like Poke,punch,bonk
-- Mongodb Support
-- YouTube,Fb,Twitter,tiktok downloader
-- iplookup,imdb,sticker,emojimix, ebinary,dbinary
-- And list goes on + adding commands daily + we add requested features too
-- Check usage of Commands by prefix+command help eg- -ping help
-- So Advanced Whatsapp Bot made by CitelVoid.
+ First Bot which provides multiple themes  in one bot (like multiple characters in    one bot)
+ PM Permit (with Mongodb Support)
+ First Whatsapp Bot with `Auto Nsfw detection with percentage`
+ First whatsapp bot with `NLP AI`
+ Text to Sticker(like Quotely Telegram Bot)
+ Torrent Search
+ Translator for any language
+ Nsfw
+ All handy commands like setprefix,theme  [name],shutdown,restart,mode public/private
+ Voting in groups
+ Seprate help menu for each theme(under  work)
+ Lots of Textpro commands
+ Some Stickers
+ Pg for auth restoration.
+ Group Features
+ Scrap Stickers from all groups
+ Ranking system like discord
+ Anime News
+Switch for events,nsfw,antilink
+ Chat Features
+ Random Anime
+ Anime, Character Search
+ Reaction Commands like Poke,punch,bonk
+ Mongodb Support
+ YouTube,Fb,Twitter,tiktok downloader
+ iplookup,imdb,sticker,emojimix, ebinary,dbinary
+ And list goes on + adding commands daily + we add requested features too
+ Check usage of Commands by prefix+command help eg -ping help
+ So Advanced Whatsapp Bot made by CitelVoid.
+ 
 </details>
 </p>
 
