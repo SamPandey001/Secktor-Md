@@ -49,10 +49,11 @@ Secktor is designed to bring a whole new level of excitement to your boring What
 
 # List of Commands Available in Secktor-Bot
   <details>
-  <summary>List (Touch Here)</summary>
+  <summary>List goes here(Touch Here)</summary>
 <p>
       
-     🍁 Group Menu 🍁 
+     Volla,Just have a look on blew lines.
+     You'll get why Secktor 🖤 is said to be an Advanced Bot
   -   First Bot which provides multiple themes  in one bot (like multiple characters in one bot)
   -  First Whatsapp Bot with `Auto Nsfw detection with percentage`
   -  First whatsapp bot with `NLP AI`
