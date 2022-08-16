@@ -51,6 +51,7 @@ Secktor is designed to bring a whole new level of excitement to your boring What
 <details>
   <summary>List of Features (Touch Here)</summary>
 <p>
+    🍁 Features 🍁 
  First Bot which provides multiple themes  in one bot (like multiple characters in    one bot)
  PM Permit (with Mongodb Support)
  First Whatsapp Bot with `Auto Nsfw detection with percentage`
