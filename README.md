@@ -127,7 +127,7 @@ There may still be a few bugs in Secktor bot, since it is still being developed.
 - [Use at your own risk](https://citel.vercel.app/introduction/why-not-secktor/)
 ## 👏 Contributing
 
-If you like Expo and want to help make it better then check out our [contributing guide](/CONTRIBUTING.md)! 
+If you like Secktor and want to help make it better then check out our [contributing guide](/CONTRIBUTING.md)! 
 
 ## ❓ FAQ 
 
