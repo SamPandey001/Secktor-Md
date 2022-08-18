@@ -106,18 +106,16 @@ Secktor is designed to bring a whole new level of excitement to your boring What
     <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
   
-## Why choose Secktor? 
+## Why Secktor? 
 ```
-1- The best and most original commands in all bots are publicly available on Github.
-2- Supports MongoDB, so no mess.Zero data loss.
-3- Modify the preferred prefix.
-4- PG for restoring authentication
-5- Continuous Support
-6- Full Permission for Recoding.
-7- When Version 1.0.0 is released, the script will be completely-open source.
-Every code will be made available online. 
-8- The greatest is still to come.
-
+1. All greatest and most inventive commands are available in Secktor.
+2- Supports MongoDB, preventing confusion of data loss
+3- Change the desired prefix.
+4- PG for reestablishing authenticity
+5- Ongoing Assistance
+6- Complete authorization for recoding
+7- The script will be totally open source once Version 1.0.0 is made available.access will be provided for each code
+8 – The best is yet to come.........
 ```
   
 ## ⚠️ Warning! 
