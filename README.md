@@ -26,17 +26,7 @@
 
 <p align="center"><img src="https://profile-counter.glitch.me/{SamPandey001}/count.svg" alt="SamPandey001 :: Visitor's Count" /></p>
 
-- [📚 Documentation](#-documentation)
-- [🗺 Project RoadMap](#-project-layout)
-- [⬇️ Installation ](#⬇️-installation)
-- [⚠️ Warning!](#⚠️-warning)
-- [👏 Contributing](#-contributing)
-- [❓ FAQ](#-faq)
-- [💙 The Team](#-the-team)
-- [License](#license)
-
-Introducing Secktor
-Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use.
+  Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use.
 
 ## 📚 Documentation
 
@@ -86,12 +76,6 @@ Secktor is designed to bring a whole new level of excitement to your boring What
 </p>
 
 
-## 🗺 Project Roadmap
-
-- [`Roadmap`](https://roadmap.secktor.live) All the Upcoming features, if you want to see or request a feature this is where you'll find it.
-- [`Roadmap Notion`](https://secktor.notion.site) This is where you can find Expo projects which are linked to the development modules. You'll do most of your testing in here.
-- [`docs`](https://citel.vercel.app) Documentation 
-
 ## ⬇️ Installation 
 
 <p>Learn How to Deploy Secktor Userbot <a aria-label="secktor documentation" href="https://citel.vercel.app">in our official docs!</a></p>
@@ -101,7 +85,22 @@ Secktor is designed to bring a whole new level of excitement to your boring What
 - [Windows](https://citel.vercel.app/tutorial/windows/)
 - [Linux](https://citel.vercel.app/tutorial/linux/)
 - [Termux](https://citel.vercel.app/tutorial/termux/)
+## ⬇️ Heroku Installation 
+```
+1- Fork and Star Repo.
+2- Requirements-
+                - MongoDB URL
+                - Heroku API KEY
+                - OPENAI API KEY (OPTIONAL)
+                - A Coffe
+3- Click on Deploy Purple button down below from Forked Repo.
+4- Fill Config Vars & Click on Deploy Button
+5- Wait 2-3 min and Tap on Open Application.
+6- Scan Qr Code.
 
+Volla Bot is Working.
+
+```
  <a href="https://www.heroku.com/deploy/?template=https://github.com/SamPandey001/Secktor-Md.git">
     <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
