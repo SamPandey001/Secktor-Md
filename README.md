@@ -106,6 +106,19 @@ Secktor is designed to bring a whole new level of excitement to your boring What
     <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
   
+## Why choose Secktor? 
+```
+1- The best and most original commands for all bots are publicly available on Github.
+2- Support for MongoDB, so no mess.Zero data loss
+3 Modify the preferred prefix
+4- PG for restoring authentication
+5-Continuous Support
+6. Full Permission for Recoding.
+7- When Version 1.0.0 is released, the script will be completely-open source.
+Every code will be made available online. 
+
+```
+  
 ## ⚠️ Warning! 
 ```
  There is no affiliation between this bot and Whatsapp INC, so feel free to use it.
