@@ -596,13 +596,12 @@ use pmpermit help for more info
     let ascii = LangG.ascii || ` `
     let checkon = process.env.CHATBOT
   try {
-    if(budy && !icmd && !isGroup && checkon ==='on') {
-      /*
+    if(m.mtype==="Message" && !icmd && !isGroup && checkon ==='on') {
     let zx = q.length;
           if (zx < 14) {
             var diffuser = m.sender.split("@")[0];
             let fetchk = require("node-fetch");
-            var textuser = budy.slice(1)
+            var textuser = body
             console.log(textuser)
               let fetchtext = await fetchk(
               `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=${diffuser}&msg=${textuser}`
@@ -613,7 +612,6 @@ use pmpermit help for more info
             m.reply(cnt);
             return;
           }
-          */
 
           if (!q && !quoted)
             return m.reply(
