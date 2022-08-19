@@ -9,11 +9,13 @@
 ╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
       𝗯𝘆 𝗦𝗮𝗺𝗣𝗮𝗻𝗱𝗲𝘆𝟬𝟬𝟭
       Made with ❤️ and JavaScript.
+
+      ✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕
       This is our Support Group- https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC or gg.gg/Secktor
       Feel free to ask any problem,error or anything
-      in our SUPPORT GROUP. 
+      in our SUPPORT GROUP.
       Our Moderators and Devs will respond you as quick as they can.
-      
+
       Bot will not be working in our Support Group if you enable it you'll be kicked.
       Join Offtopoic to use bots and ask anything not related to Secktor.
       ✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕
@@ -22,7 +24,7 @@
 require("./config");
 require("./core");
 const {
-  BufferJSON, 
+  BufferJSON,
   WA_DEFAULT_EPHEMERAL,
   generateWAMessageFromContent,
   proto,
@@ -89,10 +91,12 @@ const {
   GIFBufferToVideoBuffer,
   getRandom,
 } = require("./lib/myfuncn");
+const secktorofftopic = '120363043857093839@g.us'
 const { smsg, tanggal } = require("./lib/myfunc");
 const speedofbot = require("performance-now");
 let { msgFilter } = require("./lib/antispam");
 global.db = JSON.parse(fs.readFileSync("./lib/database.json"));
+let vote = db.others.vote = []
 /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ██╗░░░░░░█████╗░███╗░░██╗░██████╗░██╗░░░██╗░█████╗░░██████╗░███████╗
@@ -208,7 +212,6 @@ module.exports = Void = async (Void, m, chatUpdate, store) => {
       m.message.extendedTextMessage.contextInfo != null
         ? m.message.extendedTextMessage.contextInfo.mentionedJid
         : [];
-    
 
  //     ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
  //         Blocking commmands in Pm.
@@ -230,8 +233,8 @@ module.exports = Void = async (Void, m, chatUpdate, store) => {
 /*
 
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-░█▀▀█ ▀█▀ ░█▀▀█ 　 ▀█▀ ░█▄─░█ 　 ─█▀▀█ ░█▀▀█ ░█▀▀█ ─█▀▀█ ░█──░█ 
-░█▄▄█ ░█─ ░█─── 　 ░█─ ░█░█░█ 　 ░█▄▄█ ░█▄▄▀ ░█▄▄▀ ░█▄▄█ ░█▄▄▄█ 
+░█▀▀█ ▀█▀ ░█▀▀█ 　 ▀█▀ ░█▄─░█ 　 ─█▀▀█ ░█▀▀█ ░█▀▀█ ─█▀▀█ ░█──░█
+░█▄▄█ ░█─ ░█─── 　 ░█─ ░█░█░█ 　 ░█▄▄█ ░█▄▄▀ ░█▄▄▀ ░█▄▄█ ░█▄▄▄█
 ░█─── ▄█▄ ░█▄▄█ 　 ▄█▄ ░█──▀█ 　 ░█─░█ ░█─░█ ░█─░█ ░█─░█ ──░█──
 At this part we are storing our urls, fetched from ./Themes/FileName
 to use as image,you can increase this limit to infinity just be careful to put urls in every theme avilable.............
@@ -273,9 +276,9 @@ Here we are setting Levelling,With help of Module discord-Xp  https://www.npmjs.
 Works with MongoDb so no data loss.
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 */
-    
-    if (budy) {
-      const randomXp = 8; 
+
+    if (icmd) {
+      const randomXp = 8;
       const hasLeveledUp = await Levels.appendXp(m.sender, "RandomXP", randomXp);
       if (hasLeveledUp) {
         const sck1 = await Levels.fetch(m.sender, "RandomXP");
@@ -347,7 +350,7 @@ Works with MongoDb so no data loss.
        ║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
        ║ *📍Role*: *${role}*
        ║ *Enjoy🥳*
-       ╚════════════╝ 
+       ╚════════════╝
         `,
           },
           {
@@ -368,7 +371,7 @@ Just Put this true and Set Role Model. It will change profle pic at every 4th mi
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 */
 
-    if (process.env.AUTO_PP === "true") 
+    if (process.env.AUTO_PP === "true")
     {
 console.log("changing Profile Pic is enabled.")
         setInterval(() => {
@@ -383,7 +386,7 @@ console.log("changing Profile Pic is enabled.")
 	   console.log(sampic)
 	   let images =  sampic[Math.floor(Math.random() * sampic.length)];
          console.log(images)
-             let changebuff = await getBuffer(images)    
+             let changebuff = await getBuffer(images)
                    const ChangePic = "./ProfilePic.jpg"
                    await writeFile(ChangePic, changebuff);
     let dd =  await fs.readFileSync("./ProfilePic.jpg");
@@ -407,7 +410,7 @@ console.log("changing Profile Pic is enabled.")
     ];
     let dice = darray[Math.floor(Math.random() * darray.length)];
     /*
-    
+
  ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ██████╗░███╗░░░███╗██████╗░███████╗██████╗░███╗░░░███╗██╗████████╗
 ██╔══██╗████╗░████║██╔══██╗██╔════╝██╔══██╗████╗░████║██║╚══██╔══╝
@@ -449,7 +452,7 @@ use pmpermit help for more info
                 {
                   urlButton: {
                     displayText: "⭐Repo",
-                    url: `https://github.com/SamPandey001/Secktor-Md`,
+                    url: `https://github.com/SecktorBot/Secktor-Md`,
                   },
                 },
                 {
@@ -487,7 +490,7 @@ use pmpermit help for more info
                 {
                   urlButton: {
                     displayText: "⭐Repo",
-                    url: `https://github.com/SamPandey001/Secktor-Md`,
+                    url: `https://github.com/SecktorBot/Secktor-Md`,
                   },
                 },
                 {
@@ -511,7 +514,7 @@ use pmpermit help for more info
         }
       }
     }
-   
+
      const welcm = m.isGroup ? wlcm.includes(from) : false;
 
     //════════[runtime]═════════//
@@ -591,6 +594,59 @@ use pmpermit help for more info
     //----------------------[target]----------------------\\
     let sender = isGroup ? m.key.participant : from;
     let ascii = LangG.ascii || ` `
+    let checkon = process.env.CHATBOT
+  try {
+    if(budy && !icmd && !isGroup && checkon ==='on') {
+      /*
+    let zx = q.length;
+          if (zx < 14) {
+            var diffuser = m.sender.split("@")[0];
+            let fetchk = require("node-fetch");
+            var textuser = budy.slice(1)
+            console.log(textuser)
+              let fetchtext = await fetchk(
+              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=${diffuser}&msg=${textuser}`
+            );
+            let json = await fetchtext.json();
+            console.log(json)
+            let { cnt } = json;
+            m.reply(cnt);
+            return;
+          }
+          */
+
+          if (!q && !quoted)
+            return m.reply(
+              `Hey there! ${pushname}. How are you doing these days?`
+            );
+          const { Configuration, OpenAIApi } = require("openai");
+
+          const configuration = new Configuration({
+            apiKey:
+              process.env.OPENAI_API_KEY ||
+              "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",
+          });
+          const openai = new OpenAIApi(configuration);
+          let teks = text
+            ? text
+            : m.quoted && m.quoted.text
+            ? m.quoted.text
+            : m.text;
+          const completion = await openai.createCompletion({
+            model: "text-davinci-002",
+            prompt: teks,
+            temperature: 0.5,
+            max_tokens: 80,
+            top_p: 1.0,
+            frequency_penalty: 0.5,
+            presence_penalty: 0.0,
+            stop: ['"""'],
+          });
+          m.reply(completion.data.choices[0].text);
+}  } catch (err) {
+			console.log(err)
+		}
+
     /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ░█████╗░███╗░░██╗████████╗██╗░░░░░██╗███╗░░██╗██╗░░██╗
@@ -604,7 +660,7 @@ users who sends Whatsapp Group Link
 Activate it by ${prefix}act antilink
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 */
-   
+
     try {
 		let GroupS = await sck.findOne({ id: m.chat})
 		if (GroupS) {
@@ -613,8 +669,8 @@ Activate it by ${prefix}act antilink
     if (isGroup && mongoschema == 'true') {
       if (jackpot.includes("://chat.whatsapp.com/")) {
         console.log('Whatsapp link')
-      //  if (isBotAdmins) return console.log('Sender is bot admin.') 
-        
+      //  if (isBotAdmins) return console.log('Sender is bot admin.')
+
 let response = await Void.groupInviteCode(m.chat)
 if (jackpot.includes(`//chat.whatsapp.com/${response}`)) return m.reply(`I won't remove you for sending this group link.`)
         m.reply("Group Link Detected!!");
@@ -625,6 +681,7 @@ if (jackpot.includes(`//chat.whatsapp.com/${response}`)) return m.reply(`I won't
 		} catch (err) {
 			console.log(err)
 		}
+		if(m.chat==="919557666582-1467533860@g.us");
     try {
       let isNumber = (x) => typeof x === "number" && !isNaN(x);
       let user = global.db.users[m.sender];
@@ -670,6 +727,7 @@ You can specify it to specifc group too using JID of that Group.
 ask errors in support Group.
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 */
+/*
 let stickgroup = "919628516236-1618200620@g.us"
 if ( m.mtype == "stickerMessage" && current !== stickgroup){
   const fs = require("fs");
@@ -701,9 +759,9 @@ await Void.sendMessage(
 );
 //console.log('Sticker Sent')
   }
-
+*/
       /*
-    
+
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ██████╗░███████╗████████╗███████╗░█████╗░████████╗██╗░█████╗░███╗░░██╗  ░█████╗░██╗
 ██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║  ██╔══██╗██║
@@ -773,7 +831,7 @@ We will add another api key.
                     Void.readMessages(m.chat, m.sender, [m.key.id]);
                   }
   if (m.message) {
-	//		Void.sendReadReceipt(m.chat, m.sender, [m.key.id])
+		Void.sendReadReceipt(m.chat, m.sender, [m.key.id])
 			console.log(chalk.black(chalk.bgWhite('[New Message]')), chalk.black(chalk.bgGreen(timesam)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender)) + "\n\n"
 		}
 
@@ -782,23 +840,23 @@ We will add another api key.
       if (icmd) {
         await Void.sendPresenceUpdate("composing", m.chat);
         Void.readMessages(from, m.sender, [m.key.id]);
-       
+
       }
     }
     //autoread gc only
     if (global.autoReadGc === 'true') {
       if (m.isGroup) {
         Void.readMessages(m.chat, m.sender, [m.key.id]);
-      } 
+      }
     }
     //autoread all
 let AutoRead = `true`
  if (AutoRead==="true") {
-  //  if (m.type === body) {
+   if (m.type === body) {
         Void.readMessages(m.chat, m.sender, [m.key.id]);
       }
- //   }
-    
+   }
+
     //auto recording all
     if (global.autoRecord) {
       if (m.chat) {
@@ -819,8 +877,8 @@ let AutoRead = `true`
 ██╔══██╗░╚═══██╗░╚═══██╗
 ██║░░██║██████╔╝██████╔╝
 ╚═╝░░╚═╝╚═════╝░╚═════╝░
-If you are familiar with RSS 
-It parses data from feed you can do anyting with that data.
+I hope you are familiar with RSS
+It parses data from feed and you can do anyting with that data.
 */
     //----------------------[mute chat]----------------------\\
  //   if (db.chats[m.chat].mute && !isAdmins && !isCreator) {     return;    }
@@ -845,15 +903,15 @@ let parser = new Parser();
 	  });
 				Void.sendMessage("919628516236@s.whatsapp.net", {
 					text: `*ZERO-TWO NEWS*\n\n` + `${teks}`
-				})   
-	
- 
+				})
+
+
 })();
 		}, {
 			scheduled: true,
 			timezone: "Asia/Kolkata"
 		})
-		
+
 		*/
     //----------------------[write database every 1min]----------------------\\
     setInterval(() => {
@@ -862,6 +920,39 @@ let parser = new Parser();
         JSON.stringify(global.db, null, 2)
       );
     }, 60 * 1000);
+    
+    let msender = m.sender
+    let mquoted= m.quoted
+    let mchat = from
+    let mbotNumber = botNumber
+   let mcreator = isCreator
+let mItsMe = itsMe
+let mBotName = botName
+let misBaileys = isBaileys
+let mcontent = content
+let misGroup = isGroup
+let mgroupMetadata = groupMetadata
+let mgroupName = groupMetadata
+let misBotAdmins = isBotAdmins
+let mmentionByTag = mentionByTag
+let mpushname = pushname
+let core = {msender,
+            mquoted,
+            mItsMe,
+            mcontent,
+            mBotName,
+            misBaileys,
+            mmentionByTag,
+            prefix,
+            budy,
+            body,
+            mchat,
+            mbotNumber,
+            mcreator,
+            mgroupMetadata,
+            mgroupName,
+            mpushname 
+}
     //----------------------[respond cmd with media]----------------------\\
     if (
       isMedia &&
@@ -937,7 +1028,7 @@ let parser = new Parser();
     };
 if (m.sender === Config.SUDO)
 {
-	
+
 }
     let mentionUser = [
       ...new Set([
@@ -956,7 +1047,7 @@ if (m.sender === Config.SUDO)
 Hello ${pushname} \n\n, this is *${LangG.title} 𝐌𝐝* a bot.
 My owner is busy now. But Don't worry I assure you,I'll inform him As soon as possible😉.
 ${reason ? "with reason " + reason : "no reason"}
-Its been ${clockString(new Date() - afkTime)}\n\nThanks\n*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${
+Its been ${clockString(new Date() - afkTime)}\n\nThanks\n*Powered by ${
           LangG.title
         }
 `.trim()
@@ -976,9 +1067,9 @@ In ${clockString(new Date() - user.afkTime)}
       user.afkTime = -1;
       user.afkReason = "";
     }
-    
+const { fetchauth } = require('./core')
     /*
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺    
+╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ░█████╗░░█████╗░███╗░░░███╗███╗░░░███╗░█████╗░███╗░░██╗██████╗░░██████╗
 ██╔══██╗██╔══██╗████╗░████║████╗░████║██╔══██╗████╗░██║██╔══██╗██╔════╝
 ██║░░╚═╝██║░░██║██╔████╔██║██╔████╔██║███████║██╔██╗██║██║░░██║╚█████╗░
@@ -1003,10 +1094,40 @@ Check them and Edit if you want.
         }
          break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+         
+      case 'change':
+      {
+        let pgdb = process.env.DATABASE_URL || "none";
+        const proConfig = {
+    connectionString: pgdb,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+}; //Connection with PG
+const pool = new Pool(proConfig)
+        await pool.query(
+            "DROP TABLE auth);"
+        );
+        m.reply('Session Data Deleted from pg')
+                await sleep(5000)
+                exec('rm -rf session.sam.json')
+                await fetchauth
+                await sleep(10000)
+            let buttonsMessage = {
+          image: await getBuffer(`https://${Config.HEROKU.APP_NAME}.herokuapp.com`),
+          caption: `Scan Qr code with your another number within 8 seconds`,
+          footer: LangG.footer,
+          headerType: 4,
+        };
+        await Void.sendMessage(m.chat, buttonsMessage, {
+          quoted: m,
+        })
+      }
+      break
 case "repo": {
     let buttonMessaged = {
      image:{ url : 'https://camo.githubusercontent.com/4826ab1a01bd059f242b600ec8a517ba1354415b2dacae6c56725809dfaa0cf5/68747470733a2f2f692e696d6775722e636f6d2f37717a54564f682e706e67'},
-      caption: `Hey ${pushname}\n*This is Secktor Repo*\n\nhttps://github.com/SamPandey001/Secktor-Md `,
+      caption: `Hey ${pushname}\n*This is Secktor Repo*\n\nhttps://github.com/SecktorBot/Secktor-Md `,
       footer: ` ` + LangG.footer,
       headerType: 4,
       contextInfo: {
@@ -1071,89 +1192,20 @@ case "repo": {
         }
         break
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-        case 'ask': {
-            let rsj = [
-                `easy`,
-                `medium`,
-                `hard`
-              ];
-          
-              let todrd = rsj[Math.floor(Math.random() * rsj.length)];
-
-            let askd = await axios.get(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=boolean`)
-            let textwd = "";
-            console.log(askd)
-            textwd += `*🌟Question for  ${pushname}*\n\n`;
-            textwd += `*Category:-*  ${askd.data.category}\n`;
-            textwd += `*Difficulty-* ${askd.data.difficulty}\n`;
-            textwd += `*Question:-* ${askd.data.question}n`;
-            textwd += `*Options:-*  true\nfalse\n`;
-            Void.sendMessage(
-                m.chat,
-                {
-                  text: textwd,
-                },
-                {
-                  quoted: m,
-                }
-              );
-              await sleep(10000)
-              let answer = `${askd.data.correct_answer}`
-              m.relpy(`Correct Answer is:- ${answer}`)
-        }
-         break;
-//╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'update' :{
 		     if (!isCreator) return m.reply(LangG.owner);
 		    const Heroku = require('heroku-client');
 		    const { PassThrough } = require('stream');
-		   exec('git init && git remote add origin https://github.com/SamPandey001/Secktor-Md -m --main');
+		   exec('git init && git remote add origin https://github.com/SecktorBot/Secktor-Md -m --main');
        exec('git fetch --all');
-       exec('git branch backup-franxx');
-       exec('git pull origin franxx');
-       exec('git reset --hard origin/franxx');
+       exec('git branch backup-main');
+       exec('git pull origin main');
+       exec('git reset --hard origin/main');
         m.reply('Updated.')
 
       }
-	  
-	   break;
-      case "booru" :
-        {
-          if (q === "help") {
-            await m.reply(
-              `*❗Command:*   Booru Pic Search\n*🍀Aliases* ${command}\n*🧩Category:* Search\n*🛠️Usage:* ${
-                prefix + command
-              } name|3\n\n*📚Description:* Send Image of asked booru in Chat.`
-            );
-            return;
-          }
-if (!q) return m.reply (`Please ${LangG.greet} give me name and number\nEg- name|3`)
-let name1 = q.split("|")[0]
- let name2 = q.split("|")[1]
- if (!name2) return m.reply (`Please ${LangG.greet} give me name and number\nEg- name|3`)
-let spamno = name2 > 10
-if (spamno) return m.reply(`*Hey ${pushname}*\n_Do you want me to spam here?_`)
-          const Booru = require('booru')
-console.log(`${name1} ${name2}`)
-          Booru.search(`safebooru`, [`${name1}`], { limit: `${name2}`, random: true }).then(
-            posts => {
-              for (let post of posts)
-              Void.sendMessage(
-                m.chat,
-                {
-                  image: {url: post.fileUrl},
-                  caption: `*Here we go*`,
-                },
-                {
-                  quoted: m,
-                }
-          
-              )
-            },
-          )
 
-        }
-        break;
+	   break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 case 'anime': {
   if (args[0] === "help") {
@@ -1225,7 +1277,7 @@ if (args[0]==='char')
                     `\n**🔖Appears:* ${anime
                       .map((val) => `\n*🔮Role:* ${val.role}\n*🎬Title:* ${val.anime.title}`)
                       .join("\n")}`;
-            Void.sendMessage(m.chat,{image:{url:char[0].images.jpg.image_url},caption:data2},{quoted:m})  
+            Void.sendMessage(m.chat,{image:{url:char[0].images.jpg.image_url},caption:data2},{quoted:m})
             }
   if (args[0]==='r')
 {
@@ -1233,7 +1285,7 @@ if (args[0]==='char')
       let a = await animeCharacter.getRandomChar(async (anime) => {
         const client = new Character();
         const chara = await client.character(anime.tags[0]).catch((err) => {
-          return 
+          return
         });
         let texty = "";
         texty += `*🏮Name:* ${chara.data.characters.results[0].name.full}*\n`;
@@ -1288,7 +1340,7 @@ if(args[0==='news']) {
 
     );
   });
-  await sleep(3000); 
+  await sleep(3000);
 }
 if (args[0]==='search') {
 
@@ -1352,7 +1404,6 @@ if (args[0]==='search') {
 }
 
 break
-            
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 case 'poke': {
 if (args[0]==='pic'){
@@ -1415,6 +1466,14 @@ console.log(err)
 
 }
 break
+//╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+      case 'pokemon-search':
+          case 'poke-search': {
+
+
+            }
+            break
+
 /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ██╗░░██╗███████╗██████╗░░█████╗░██╗░░██╗██╗░░░██╗
@@ -1467,6 +1526,48 @@ break
           }
         }
          break;
+         case "chatbot":
+        {
+          if (q === "help") {
+            return m.reply(
+              "*❗Command:* Enables Chatbot\n*🧩Category:* Owner Menu\n*🛠️Usage:* chatbot on/off\n\n*📚Description:* Switches between two avilable options"
+            );
+          }
+		if (!isCreator) return m.reply(LangG.owner);
+          if (q === "on") {
+            const Heroku = require("heroku-client");
+            const heroku = new Heroku({
+              token: Config.HEROKU.API_KEY,
+            });
+            let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
+            await heroku.patch(baseURI + "/config-vars", {
+              body: {
+                ["CHATBOT"]: "on",
+              },
+            });
+            await m.reply(
+              `🟦Chat bot has been integrated Successfully by ${LangG.title}`
+            );
+            return;
+          }
+
+          if (q === "off") {
+            const Heroku = require("heroku-client");
+            const heroku = new Heroku({
+              token: Config.HEROKU.API_KEY,
+            });
+            let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
+            await heroku.patch(baseURI + "/config-vars", {
+              body: {
+                ["CHATBOT"]: "off",
+              },
+            });
+            await m.reply(
+              `🟩Chatbot has been turned of successfully`
+            );
+          }
+        }
+         break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "setprefix":
         {
@@ -1508,7 +1609,7 @@ break
         m.reply('got an error')
     });
 
-			    
+
 		    }
 		    break
 
@@ -1533,7 +1634,7 @@ break
     });
 }
 		    break
-		    
+
 /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ████████╗██╗░░██╗███████╗███╗░░░███╗███████╗
@@ -1577,7 +1678,7 @@ break
             );
             return;
           }
-		
+
 
           if (q === "zerotwo") {
       //      await Void.updateProfileName(`LangG.title`)
@@ -1727,27 +1828,7 @@ break
         }
         break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-	
-      /*
-				 case 'afk':
-        if(!isGroupMsg) return devn.reply('group only!')
-      User.findOne({nowa: sender.replace('@s.whatsapp.net', '')}).then(async(ak) => {
-        if(ak === undefined || ak === null) return devn.reply(`Sepertinya nomor kakak belum terdaftar di database...\n\nSilahkan daftar di https://asuna-login.herokuapp.com/ \n\n*Catatan : untuk pengisian Nomor Whatsapp menggunakan awalan 62,bukan 08,seperti 62821xxx*\n_Dan untuk password bebas,yang penting ingat!_`)
-        else {
-            const timenow = moment(moment()).format('HH:mm:ss')
-            moment.tz.setDefault('Asia/Jakarta').locale('id')
-            const ygafk = ({
-            ygafk: sender,
-            alasan: body,
-            gc: from,
-            waktu : timenow
-        })
-            db.push('afk', ygafk)
-            devn.reply("```" + `${pushname} [@${sender.split('@')[0]}] sedang AFK\n\nAlasan: ${body}\nTime: ${timenow}` + "```")
-                  }})  
-        break
-        */
-        
+
 /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ░█████╗░██████╗░███╗░░░███╗██╗███╗░░██╗
@@ -1913,7 +1994,7 @@ Void.sendMessage(anu.id, buttonMessage)
 		  await sleep(3000)
             await Void.groupParticipantsUpdate(m.chat, [users], "remove");
           } catch {
-            return 
+            return
           }
         }
         break;
@@ -1937,11 +2018,11 @@ request({
 },
 function (error, response, body) {
     //console.log('error:', error);
-   reply('statusCode:', response && response.statusCode);
-    reply('body:', body);
+   m.reply('statusCode:', response && response.statusCode);
+    m.reply('body:', body);
 });
-  
-  
+
+
 }
 break
 
@@ -1989,7 +2070,7 @@ break
                   {
                     urlButton: {
                       displayText: "⭐Repo",
-                      url: "https://github.com/SamPandey001/Secktor-Md",
+                      url: "https://github.com/SecktorBot/Secktor-Md",
                     },
                   },
                 ],
@@ -2006,7 +2087,7 @@ break
 	    case 'ascii' :
 		    {
 			    m.reply(ascii)
-		    
+
     }
 	  break
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
@@ -2043,7 +2124,7 @@ break
                   {
                     urlButton: {
                       displayText: "⭐Repo",
-                      url: "https://github.com/SamPandey001/Secktor-Md",
+                      url: "https://github.com/SecktorBot/Secktor-Md",
                     },
                   },
                 ],
@@ -2056,18 +2137,18 @@ break
         }
         break
 		    /*
-		    
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺		
+
+╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ████████╗███████╗██╗░░██╗████████╗██████╗░██████╗░░█████╗░
 ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
 ░░░██║░░░█████╗░░░╚███╔╝░░░░██║░░░██████╔╝██████╔╝██║░░██║
 ░░░██║░░░██╔══╝░░░██╔██╗░░░░██║░░░██╔═══╝░██╔══██╗██║░░██║
 ░░░██║░░░███████╗██╔╝╚██╗░░░██║░░░██║░░░░░██║░░██║╚█████╔╝
 ░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░░░░╚═╝░░╚═╝░╚════╝░
-╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺	
-		
-		
-		
+╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+
+
+
 		    */
 		    case'glitch3':
 if(!q) return reply(`Use ${prefix + command} text|text`)
@@ -2100,7 +2181,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'lion2':
  if(!q) return reply(`Use ${prefix + command} text`)
-  
+
   maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
       `${q}`,])
      .then((data) => Void.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${LangG.title}` }, { quoted: m }))
@@ -2109,7 +2190,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'papercut':
     if(!q) return reply(`Use ${prefix + command} text`)
-      
+
       maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
 `${q}`,])
          .then((data) => Void.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${LangG.title}` }, { quoted: m }))
@@ -2118,7 +2199,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'transformer':
     if(!q) return reply(`Use ${prefix + command} text`)
-      
+
       maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
 `${q}`,])
 .then((data) => Void.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${LangG.title}` }, { quoted: m }))
@@ -2127,7 +2208,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'harryp':
  if(!q) return reply(`Use ${prefix + command} text|text`)
-       
+
        teks1 = q.split("|")[0]
        teks2 = q.split("|")[1]
        maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
@@ -2138,7 +2219,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'neondevil':
    if(!q) return reply(`Use ${prefix + command} text`)
-      
+
       maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
 `${q}`,])
          .then((data) => Void.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${LangG.title}` }, { quoted: m }))
@@ -2292,7 +2373,7 @@ maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
   .then((data) => Void.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${LangG.title}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
-   
+
    case 'bokeh':
 if(!q) return reply(`Use ${prefix + command} text`)
 
@@ -2398,20 +2479,20 @@ maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html",
   .then((data) => Void.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${LangG.title}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
-  
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
-case 'deepsea': case 'scifi': case 'rainbow': case 'waterpipe': case 'spooky': 
-case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': 
-case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dstone': 
-case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut': 
+case 'deepsea': case 'scifi': case 'rainbow': case 'waterpipe': case 'spooky':
+case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon':
+case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dstone':
+case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut':
 case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 'graffitibike':
- case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': 
-case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
+ case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood':
+case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic':
 case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': case 'joker': case 'wicker':
  case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': {
-              if (!q) return reply(`Example : ${prefix + command} ${global.ownername}`) 
-          
+              if (!q) return reply(`Example : ${prefix + command} ${global.ownername}`)
+
              let link
              if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
              if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
@@ -2717,7 +2798,7 @@ case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': ca
           m.reply(LangG.success);
         }
         break;
-        
+
 /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ░██████╗░███████╗███╗░░██╗███████╗██████╗░░█████╗░██╗░░░░░
@@ -2871,7 +2952,7 @@ case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': ca
 ║ *👥Group Members:* ${participants.length}
 ║ *💠Description:*\n ${groupMetadata.desc}
 ║
-║*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}* 🍭
+║*Powered by ${LangG.title}* 🍭
 ╚════════════╝ `;
         ds = await getBuffer(pic);
         Void.sendMessage(
@@ -2977,8 +3058,8 @@ case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': ca
             }
           );
         }
-        break; 
-		    /*		case 'vote': {
+        break;
+		    	case 'vote': {
 				if (q === 'help') {
 					return m.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${prefix + command} Voting title \n\n*📚Description:* Starts Voting in Group`)
 				}
@@ -2997,17 +3078,17 @@ case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': ca
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 UPVOTE 〕
- 
+
 ├ Total: ${vote[m.chat][1].length}
 
- 
+
 └────
 
 ┌〔 DEVOTE 〕
- 
+
 ├ Total: ${vote[m.chat][2].length}
 
- 
+
 └────
 
 *${prefix}deletevote* - to delete votes`
@@ -3052,17 +3133,17 @@ case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': ca
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 UPVOTE 〕
- 
+
 ├ Total: ${vote[m.chat][1].length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
- 
+
 └────
 
 ┌〔 DEVOTE 〕
- 
+
 ├ Total: ${vote[m.chat][2].length}
 ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
- 
+
 └────
 
 *${prefix}unvote* - to delete votes`
@@ -3108,17 +3189,17 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 YES ✅〕
- 
+
 ├ Total: ${vote[m.chat][1].length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
- 
+
 └────
 
 ┌〔 NO ❎ 〕
- 
+
 ├ Total: ${vote[m.chat][2].length}
 ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
- 
+
 └────
 
 *${prefix}unvote* - to delete votes`
@@ -3148,7 +3229,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 				Void.sendMessage(m.chat, buttonMessageDevote)
 			}
 				break
-				
+				/*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ░██████╗░██╗░░░░░░░██╗██╗████████╗░█████╗░██╗░░██╗███████╗░██████╗
 ██╔════╝░██║░░██╗░░██║██║╚══██╔══╝██╔══██╗██║░░██║██╔════╝██╔════╝
@@ -3161,64 +3242,64 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
       case 'enable':
    case 'act':
    if (!q) return m.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw`)
-                                    
+
                                         if (!isGroup) return m.reply("This command is only for group")
   if (!isAdmins) return m.reply("❌ This command is only for admmin")
   if (!isBotAdmins) return m.reply("❌ Provide Admin Role");
                                         if (args[0] == "antilink") {
                                         sck.findOne({ id : m.chat }).then(async(gc) => {
            if (!gc) {
-               await new sck({ id: m.chat, antilink: "true" }).save()	
+               await new sck({ id: m.chat, antilink: "true" }).save()
   return m.reply(' Antilink Enabled Successfully')
            } else {
            if(gc.antilink == "true") return m.reply("Antilink was alredy enabled is already enabled")
                                       await sck.updateOne({ id: m.chat }, {antilink: "true"})
-                              return m.reply('Enabled antilink in current chat.')						
-                          }							
+                              return m.reply('Enabled antilink in current chat.')
+                          }
                   })
                                         } else if(args[0] == "events"){
                                           sck.findOne({ id : m.chat }).then(async(gc) => {
            if (!gc) {
-               await new sck({ id: m.chat, events: "true" }).save()	
+               await new sck({ id: m.chat, events: "true" }).save()
   return m.reply("Successfully Enabled *Events*")
            } else {
            if(gc.events == "true") return m.reply("*Events* is already enabled")
                                       await sck.updateOne({ id: m.chat }, {events: "true"})
-                              return m.reply("Successfully Enabled *Events*")						
-                          }							
+                              return m.reply("Successfully Enabled *Events*")
+                          }
                   })
                                     } else if(args[0] == "invitdgdfgfdgdfgdfgdfg"){
                                           sck.findOne({ id : m.chat }).then(async(gc) => {
            if (!gc) {
-               await new sck({ id: m.chat, invite: "true" }).save()	
+               await new sck({ id: m.chat, invite: "true" }).save()
   return m.reply(" Successfully Enabled *Indfsfdvite*")
            } else {
            if(gc.invite == "true") return m.reply("*Idsgdgnvite* is already enabled")
                                       await sck.updateOne({ id: m.chat }, {invite: "true"})
                                   console.log(gc.invite)
                               return m.reply("Successfully Enabled *Invite*")
-                              							
-                          }							
+
+                          }
                   })
                                      } else if(args[0] == "nsfw"){
                                           sck.findOne({ id : m.chat }).then(async(gc) => {
            if (!gc) {
-               await new sck({ id: m.chat, nsfw: "true" }).save()	
+               await new sck({ id: m.chat, nsfw: "true" }).save()
   return m.reply("Successfully Enabled *NSFW*")
            } else {
            if(gc.nsfw == "true") return m.reply("*NSFW* is already enabled")
                                       await sck.updateOne({ id: m.chat }, {nsfw: "true"})
                                   console.log(gc.invite)
                               return m.reply("Successfully Enabled *NSFW*")
-                              						
-                          }							
+
+                          }
                   })
                                     }
                                     else {
                                           m.reply("Please provide me term like like\n1-events\n2-antilink\n3-nsfw")
-                                        } 
-  
-                                  
+                                        }
+
+
     break
 
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
@@ -3236,38 +3317,38 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
            if(usr.antilink !== "true") return m.reply(" Antlinki was already disabled")
                                       await sck.updateOne({ id: m.chat }, {antilink: "false"})
   return m.reply("Disabled antilink Successfully.");
-                          }							
+                          }
                   })
-   }else if (args[0] == "events") { 
+   }else if (args[0] == "events") {
   sck.findOne({ id : m.chat }).then(async(usr) => {
            if (!usr) {
    return m.reply("Events was already disabled")
            } else {
            if(usr.events !== "true") return m.reply("Events was already disabled")
                                       await sck.updateOne({ id: m.chat }, {events: "false"})
-  return m.reply("Successfully Disabled *Events*"); 
-                          }							
+  return m.reply("Successfully Disabled *Events*");
+                          }
                   })
-   } else if (args[0] == "invitefgjdngjdfjsgdj") { 
+   } else if (args[0] == "invitefgjdngjdfjsgdj") {
   sck.findOne({ id : m.chat }).then(async(usr) => {
            if (!usr) {
    return m.reply("*Invite* is already disabled")
            } else {
            if(usr.invite !== "true") return m.reply("🎏 *Invite* is already disabled")
                                       await sck.updateOne({ id: m.chat }, {invite: "false"})
-  return m.reply("🧩 Successfully Disabled *Invite*"); 
-                          }							
+  return m.reply("🧩 Successfully Disabled *Invite*");
+                          }
                   })
-   } else if (args[0] == "nsfw") { 
-    
+   } else if (args[0] == "nsfw") {
+
   sck.findOne({ id : m.chat }).then(async(usr) => {
            if (!usr) {
    return m.reply("*NSFW* is already disabled")
            } else {
            if(usr.nsfw !== "true") return m.reply("*NSFW* is already disabled")
                                       await sck.updateOne({ id: m.chat }, {nsfw: "false"})
-  return m.reply("Successfully Disabled *NSFW*"); 
-                          }							
+  return m.reply("Successfully Disabled *NSFW*");
+                          }
                   })
    }
    else {
@@ -3297,7 +3378,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 ║*📲Following:* ${fids.data.following}
 ║*📪Posts:* ${fids.data.posts}
 ║*🚀Bio:* ${fids.data.biography}
-║   *𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}
+║   *Powered by ${LangG.title}
 ╚════════════╝ `;
           Void.sendMessage(
             m.chat,
@@ -3316,7 +3397,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
           return m.reply(`${LangG.greet} That is a wrong username.`);
         }
         break;
-      
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "mediafire":
         {
@@ -3339,7 +3420,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
           const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
 
-				
+
 
 *Nᴀᴍᴇ* : ${baby1[0].nama}
 
@@ -3367,7 +3448,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
         }
 
         break;
-      /*			
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'checkvote':
 				if (q === 'help') {
@@ -3382,17 +3463,17 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 YES 〕
- 
+
 ├ Total: ${upvote.length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
- 
+
 └────
 
 ┌〔 NO 〕
- 
+
 ├ Total: ${devote.length}
 ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
- 
+
 └────
 
 *${prefix}unvote* - to delete votes
@@ -3401,8 +3482,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 ©${Void.user.id}
 `
 				Void.sendTextWithMentions(m.chat, teks_vote, m)
-				break */
-      
+				break
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "p":
       case "profile":
@@ -3429,7 +3510,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 👪 𝑮𝑹𝑶𝑼𝑷 :  ${groupName}
 🎊 𝑨𝑫𝑴𝑰𝑵: ${adn}
 
-*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}*
+*Powered by ${LangG.title}*
 `;
         const buttonsd = [
           {
@@ -3460,8 +3541,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
           quoted: m,
         });
         break;
-			
-      
+
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "hi":
         if (q === "help") {
@@ -3486,7 +3567,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
 */
 
-      
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "chat":
         {
@@ -3507,7 +3588,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             let fetchk = require("node-fetch");
             var textuser = args.join(" ");
             let fetchtext = await fetchk(
-              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=${diffuser}&msg=${textuser}`
+              `http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=[${diffuser}]&msg=[${ttextuser}]`
+
             );
             let json = await fetchtext.json();
             let { cnt } = json;
@@ -3545,8 +3627,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
           m.reply(completion.data.choices[0].text);
         }
         break;
-        
-        
+
+
 /*
 
 ██╗░░░██╗████████╗██████╗░██╗░░░░░
@@ -3617,7 +3699,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 			}
 
 				break
-			
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'yta':
 			case 'song': {
@@ -3682,7 +3764,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
 				break
 
-        
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'ytmp3': {
           const getRandom = (ext) => {
@@ -3705,7 +3787,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
               }
               let titleYt = infoYt.videoDetails.title;
               let randomName = getRandom(".mp3");
-            
+
               const stream = ytdl(urlYt, {
                 filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
               }).pipe(fs.createWriteStream(`./${randomName}`));
@@ -3715,7 +3797,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 stream.on("error", reject);
                 stream.on("finish", resolve);
               });
-            
+
               let stats = fs.statSync(`./${randomName}`);
               let fileSizeInBytes = stats.size;
               // Convert the file size to megabytes (optional)
@@ -3736,9 +3818,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
               }
              fs.unlinkSync(`./${randomName}`);
           }
-      break 
-      
-      
+      break
+
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'ytmp4': case 'ytvideo': case 'ytv' :
           const getRandom = (ext) => {
@@ -3761,7 +3843,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
               }
               let titleYt = infoYt.videoDetails.title;
               let randomName = getRandom(".mp4");
-            
+
               const stream = ytdl(urlYt, {
                 filter: (info) => info.itag == 22 || info.itag == 18,
               }).pipe(fs.createWriteStream(`./${randomName}`));
@@ -3772,7 +3854,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 stream.on("error", reject);
                 stream.on("finish", resolve);
               });
-            
+
               let stats = fs.statSync(`./${randomName}`);
               let fileSizeInBytes = stats.size;
               // Convert the file size to megabytes (optional)
@@ -3790,7 +3872,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
               } else {
                 m.reply(`❌ File size bigger than 100mb.`);
               }
-            
+
               fs.unlinkSync(`./${randomName}`);
       break
 
@@ -3860,7 +3942,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 ║ *📪Latitude:* ${fids.result.latitude}
 ║ *📪Latitude:* ${fids.result.longitude}
 ║ *🚀ISP:* ${fids.result.isp}
-║   *𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}* 
+║   *Powered by ${LangG.title}*
 ╚════════════╝`;
           Void.sendMessage(
             m.chat,
@@ -3954,7 +4036,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
           imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n\n";
           imdbt += "❎imdbVotes  : " + fids.data.imdbVotes + "";
           /*
-║    *𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}*
+║    *Powered by ${LangG.title}*
 ╚════════════╝`
 */
           Void.sendMessage(
@@ -4005,7 +4087,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
         }
         break;
 
-      /*
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'deletevote':
 			case 'delvote':
@@ -4019,8 +4101,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 				delete vote[m.chat]
 				reply('Successfully Deleted Vote Session In This Group')
 			}
-				break */
-      
+				break
+
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "group":
       case "activate":
@@ -4125,22 +4207,22 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
         case 'tele' : {
           if (!q) m.reply('Please provide me url')
           let packName = args[0].replace("https://t.me/addstickers/", "")
-      
+
           let gas = await fetch(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=${encodeURIComponent(packName)}`, { method: "GET", headers: { "User-Agent": "GoogleBot" } })
-  
-      
+
+
           let json = await gas.json()
           m.reply(`*Total stiker:* ${json.result.stickers.length}
       *Estimated:* ${json.result.stickers.length * 1.5} detik`.trim())
-      
+
           for (let i = 0; i < json.result.stickers.length; i++) {
               let fileId = json.result.stickers[i].thumb.file_id
-      
+
               let gasIn = await fetch(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
-      
+
               let jisin = await gasIn.json()
-      
-      
+
+
               // conn.sendMessage(m.chat, { url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + jisin.result.file_path }, MessageType.sticker)
               let stiker = await sticker(false, "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + jisin.result.file_path, global.packname, global.author)
               await Void.sendMessage(m.chat, {sticker: stiker })
@@ -4165,7 +4247,7 @@ Some Reaction Commands.
 */
 
 
-case 'bully': case 'bonk': case 'poke': 
+case 'bully': case 'bonk': case 'poke':
 case 'pat': case 'lick':  case 'bite':
 case 'happy': case 'kill': case 'kiss':
 case 'slap': case 'cuddle':
@@ -4203,9 +4285,9 @@ console.log(taggeduser)
 break
 
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-case 'wink': case 'glomp':case 'highfive': 
+case 'wink': case 'glomp':case 'highfive':
 case 'wave': case 'smug': case 'yeet':
-case 'cringe': case 'smile': case 'blush': 
+case 'cringe': case 'smile': case 'blush':
 {
 
 	var pat = await fetchJson(`https://api.waifu.pics/sfw/${command}`)
@@ -4310,7 +4392,7 @@ case "punch":
         );
         break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-        
+
       case "quotes":
         if (q === "help") {
           await m.reply(
@@ -4326,8 +4408,8 @@ case "punch":
 ╔════◇
 ║ *🎗️Content:* ${quoo.data.quote.body}
 ║ *👤Author:* ${quoo.data.quote.author}
-║   
-║ *𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}* 
+║
+║ *Powered by ${LangG.title}*
 ╚════════════╝ `;
           await Void.sendMessage(
             from,
@@ -4340,7 +4422,7 @@ case "punch":
               templateButtons: [
                 {
                   urlButton: {
-                    displayText: "⭐𝐖𝐞𝐛",
+                    displayText: "⭐Web",
                     url: "https://citel.vercel.app",
                   },
                 },
@@ -4366,130 +4448,194 @@ case "punch":
             );
             return;
           }
+          		let meh = m.sender;
+const userq = await Levels.fetch(m.sender, "RandomXP");
+          const lvpoints = userq.level;
+          var role = "GOD✨";
+          if (lvpoints <= 2) {
+            var role = "🏳Citizen";
+          } else if (lvpoints <= 4) {
+            var role = "👼Baby Wizard";
+          } else if (lvpoints <= 6) {
+            var role = "🧙‍♀️Wizard";
+          } else if (lvpoints <= 8) {
+            var role = "🧙‍♂️Wizard Lord";
+          } else if (lvpoints <= 10) {
+            var role = "🧚🏻Baby Mage";
+          } else if (lvpoints <= 12) {
+            var role = "🧜Mage";
+          } else if (lvpoints <= 14) {
+            var role = "🧜‍♂️Master of Mage";
+          } else if (lvpoints <= 16) {
+            var role = "🌬Child of Nobel";
+          } else if (lvpoints <= 18) {
+            var role = "❄Nobel";
+          } else if (lvpoints <= 20) {
+            var role = "⚡Speed of Elite";
 
-          let hlps = `*${LangG.greet2} my ${pushname} ${LangG.greet}.*
-${Menu_Text}
-*𝚂𝚊𝚖𝙿𝚊𝚗𝚍𝚎𝚢𝟶𝟶𝟷*
+
+          } else if (lvpoints <= 22) {
+            var role = "🎭Elite";
+          } else if (lvpoints <= 24) {
+            var role = "🥇Ace I";
+          } else if (lvpoints <= 26) {
+            var role = "🥈Ace II";
+          } else if (lvpoints <= 28) {
+            var role = "🥉Ace Master";
+          } else if (lvpoints <= 30) {
+            var role = "🎖Ace Dominator";
+          } else if (lvpoints <= 32) {
+            var role = "🏅Ace Elite";
+          } else if (lvpoints <= 34) {
+            var role = "🏆Ace Supreme";
+          } else if (lvpoints <= 36) {
+            var role = "💍Supreme I";
+          } else if (lvpoints <= 38) {
+            var role = "💎Supreme Ii";
+          } else if (lvpoints <= 40) {
+            var role = "🔮Supreme Master";
+          } else if (lvpoints <= 42) {
+            var role = "🛡Legend III";
+          } else if (lvpoints <= 44) {
+            var role = "🏹Legend II";
+          } else if (lvpoints <= 46) {
+            var role = "⚔Legend";
+          } else if (lvpoints <= 55) {
+            var role = "🐉Immortal";
+          }
+          let ttms = `${userq.xp}` / 8;
+          const timenow = moment(moment()).format('HH:mm:ss')
+            moment.tz.setDefault('Asia/Jakarta').locale('id')
+          let hlps = `
+╔════⧫ 𝑩𝑶𝑻 𝑰𝑵𝑭𝑶
+║ *⦿Name* ${LangG.title}
+║ *⦿User:* @${meh.split("@")[0]}
+║ *⦿Prefix:* "${prefix}"
+║ *⦿Role*: ${role}
+║ *⦿Level*: ${userq.level}
+║ *⦿Time:* ${timenow}
+║ *⦿Total Messages:*- ${ttms}
+╚═══════════════╝
+𝐌𝐲 𝐮𝐬𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐫𝐞 𝐥𝐢𝐬𝐭𝐞𝐝 𝐛𝐞𝐥𝐨𝐰
+
 ╔════⧫𝑴𝒐𝒅𝒆𝒓𝒂𝒕𝒊𝒐𝒏
-║ gclink
-║ setgroupp
-║ group
-║ editinfo
-║ ginfo
-║ add
-║ kick
-║ info
-║ promote
-║ demote
-║ Vote
-║ Profile
-║ listonline
-║ act nsfw
-║ deact nsfw
-╚════════════╝ 
+║ 𝚐𝚌𝚕𝚒𝚗𝚔
+║ 𝚜𝚎𝚝𝚐𝚛𝚘𝚞𝚙𝚙
+║ 𝚐𝚛𝚘𝚞𝚙
+║ 𝚎𝚍𝚒𝚝𝚒𝚗𝚏𝚘
+║ 𝚐𝚒𝚗𝚏𝚘
+║ 𝚊𝚍𝚍
+║ 𝚔𝚒𝚌𝚔
+║ 𝚒𝚗𝚏𝚘
+║ 𝚙𝚛𝚘𝚖𝚘𝚝𝚎
+║ 𝚍𝚎𝚖𝚘𝚝𝚎
+║ 𝚅𝚘𝚝𝚎
+║ 𝙿𝚛𝚘𝚏𝚒𝚕𝚎
+║ 𝚕𝚒𝚜𝚝𝚘𝚗𝚕𝚒𝚗𝚎
+║ 𝚊𝚌𝚝 𝚗𝚜𝚏𝚠
+║ 𝚍𝚎𝚊𝚌𝚝 𝚗𝚜𝚏𝚠
+╚══════════════╝
 ╔════⧫𝑼𝒕𝒊𝒍𝒔
-║ play
-║ ytvd
-║ ytad
-║ fb(beta)
-║ instagram
-║ twitter
-║ pinterest
-║ wallpaper
-║ iplookup 
-║ imdb
-║ trt
-╚════════════╝
+║ 𝚙𝚕𝚊𝚢
+║ 𝚚𝚞𝚘𝚝𝚎𝚕𝚢
+║ 𝚟𝚘𝚝𝚎 [𝚘𝚙𝚝𝚒𝚘𝚗𝚜]
+║ 𝚝𝚒𝚗𝚢𝚞𝚛𝚕
+║ 𝚒𝚙𝚕𝚘𝚘𝚔𝚞𝚙
+║ 𝚒𝚖𝚍𝚋
+║ 𝚝𝚛𝚝 [𝚕𝚊𝚗𝚐𝚞𝚊𝚐𝚎]
+╚═══════════════╝
 
 ╔════⧫𝑪𝒐𝒏𝒗𝒆𝒓𝒕
-║ sticker
-║ steal
-║ mp3
-║ mp4audio
-║ url
-║ emojimix
-║ tovideo
-║ togif
-║ ebinary
-║ dbinary
-╚════════════╝
+║ 𝚜𝚝𝚒𝚌𝚔𝚎𝚛
+║ 𝚜𝚝𝚎𝚊𝚕
+║ 𝚖𝚙𝟹
+║ 𝚖𝚙𝟺𝚊𝚞𝚍𝚒𝚘
+║ 𝚞𝚛𝚕
+║ 𝚎𝚖𝚘𝚓𝚒𝚖𝚒𝚡
+║ 𝚝𝚘𝚟𝚒𝚍𝚎𝚘
+║ 𝚝𝚘𝚐𝚒𝚏
+║ 𝚎𝚋𝚒𝚗𝚊𝚛𝚢
+║ 𝚍𝚋𝚒𝚗𝚊𝚛𝚢
+╚══════════════╝
 
 ╔════⧫𝑾𝒆𝒆𝒃
-║ anime search [text]
-║ manga search [text]
-║ anime-news
-║ anime r
-║ anime pic [text]
-║ poke-pic [text]
-║ poke-info [text]
-║ anime char [text] 
-║ waifu
-║ loli
-║ neko
-╚════════════╝
+║ 𝚊𝚗𝚒𝚖𝚎 𝚜𝚎𝚊𝚛𝚌𝚑 [𝚝𝚎𝚡𝚝]
+║ 𝚖𝚊𝚗𝚐𝚊 𝚜𝚎𝚊𝚛𝚌𝚑 [𝚝𝚎𝚡𝚝]
+║ 𝚊𝚗𝚒𝚖𝚎-𝚗𝚎𝚠𝚜
+║ 𝚊𝚗𝚒𝚖𝚎 𝚛
+║ 𝚊𝚗𝚒𝚖𝚎 𝚙𝚒𝚌 [𝚝𝚎𝚡𝚝]
+║ 𝚙𝚘𝚔𝚎-𝚙𝚒𝚌 [𝚝𝚎𝚡𝚝]
+║ 𝚙𝚘𝚔𝚎-𝚒𝚗𝚏𝚘 [𝚝𝚎𝚡𝚝]
+║ 𝚊𝚗𝚒𝚖𝚎 𝚌𝚑𝚊𝚛 [𝚝𝚎𝚡𝚝]
+║ 𝚠𝚊𝚒𝚏𝚞
+║ 𝚕𝚘𝚕𝚒
+║ 𝚗𝚎𝚔𝚘
+╚═══════════════╝
 
 ╔════⧫𝑹𝒂𝒏𝒅𝒐𝒎
-║ couplepp
-║ waifu
-║ neko
-║ quotes
-║ fact
+║ 𝚌𝚘𝚞𝚙𝚕𝚎𝚙𝚙
+║ 𝚠𝚊𝚒𝚏𝚞
+║ 𝚗𝚎𝚔𝚘
+║ 𝚚𝚞𝚘𝚝𝚎𝚜
+║ 𝚏𝚊𝚌𝚝
 ╚════════════╝
-╔════⧫ OWNER
-║ shutdown
-║ theme [text]
-║ mode [text]
-║ restart
-║ bcgrouop [text]
-║ approve or a [reply]
-║ dissapprove or da
-╚════════════╝
-╔════⧫ STICKER
-║ s-cry
-║ s-lick
-║ s-hug
-║ s-pat
-║ s-bite
-║ s-yeet
-║ s-bully
-║ s-bonk
-║ s-wink
-║ s-poke
-║ s-slap
-║ s-smille
-║ s-happy
-║ s-cringe
-║ s-cuddle
-║ s-highfive
-║ s-shinobu
-║ s-megumin
-║ s-handhold
-╚════════════╝
+╔════⧫ 𝙾𝚆𝙽𝙴𝚁
+║ 𝚜𝚑𝚞𝚝𝚍𝚘𝚠𝚗
+║ 𝚝𝚑𝚎𝚖𝚎 [𝚝𝚎𝚡𝚝]
+║ 𝚌𝚑𝚊𝚝𝚋𝚘𝚝 𝚘𝚗
+║ 𝚌𝚑𝚊𝚝𝚋𝚘𝚝 𝚘𝚏𝚏
+║ 𝚖𝚘𝚍𝚎 [𝚝𝚎𝚡𝚝]
+║ 𝚛𝚎𝚜𝚝𝚊𝚛𝚝
+║ 𝚋𝚌𝚐𝚛𝚘𝚞𝚘𝚙 [𝚝𝚎𝚡𝚝]
+║ 𝚊𝚙𝚙𝚛𝚘𝚟𝚎 𝚘𝚛 𝚊 [𝚛𝚎𝚙𝚕𝚢]
+║ 𝚍𝚒𝚜𝚜𝚊𝚙𝚙𝚛𝚘𝚟𝚎 𝚘𝚛 𝚍𝚊
+╚══════════════════╝
+╔════⧫ 𝚂𝚃𝙸𝙲𝙺𝙴𝚁
+║ 𝚜-𝚌𝚛𝚢
+║ 𝚜-𝚕𝚒𝚌𝚔
+║ 𝚜-𝚑𝚞𝚐
+║ 𝚜-𝚙𝚊𝚝
+║ 𝚜-𝚋𝚒𝚝𝚎
+║ 𝚜-𝚢𝚎𝚎𝚝
+║ 𝚜-𝚋𝚞𝚕𝚕𝚢
+║ 𝚜-𝚋𝚘𝚗𝚔
+║ 𝚜-𝚠𝚒𝚗𝚔
+║ 𝚜-𝚙𝚘𝚔𝚎
+║ 𝚜-𝚜𝚕𝚊𝚙
+║ 𝚜-𝚜𝚖𝚒𝚕𝚕𝚎
+║ 𝚜-𝚑𝚊𝚙𝚙𝚢
+║ 𝚜-𝚌𝚛𝚒𝚗𝚐𝚎
+║ 𝚜-𝚌𝚞𝚍𝚍𝚕𝚎
+║ 𝚜-𝚑𝚒𝚐𝚑𝚏𝚒𝚟𝚎
+║ 𝚜-𝚜𝚑𝚒𝚗𝚘𝚋𝚞
+║ 𝚜-𝚖𝚎𝚐𝚞𝚖𝚒𝚗
+║ 𝚜-𝚑𝚊𝚗𝚍𝚑𝚘𝚕𝚍
+╚══════════════════╝
 
  ╔════⧫𝑵𝑺𝑭𝑾
- ║ fisting
- ║ fingering
- ║ pussy
- ║ panties
- ║ anal
- ║ hentai
- ║ milf
- ║ tits
- ║ school
- ║ maid
- ║ nurse
- ║ tushy
- ║ sis
- ║ foot
- ║ boobs
- ║ *Real Nsfw*
- ║ rpussy
- ║ ranal
- ║ Vixenn
- ║ SOLO
- ║ ecchi
- ║ rboobs
- ║ cosplay
+ ║ 𝚏𝚒𝚜𝚝𝚒𝚗𝚐
+ ║ 𝚏𝚒𝚗𝚐𝚎𝚛𝚒𝚗𝚐
+ ║ 𝚙𝚞𝚜𝚜𝚢
+ ║ 𝚙𝚊𝚗𝚝𝚒𝚎𝚜
+ ║ 𝚊𝚗𝚊𝚕
+ ║ 𝚑𝚎𝚗𝚝𝚊𝚒
+ ║ 𝚖𝚒𝚕𝚏
+ ║ 𝚝𝚒𝚝𝚜
+ ║ 𝚜𝚌𝚑𝚘𝚘𝚕
+ ║ 𝚖𝚊𝚒𝚍
+ ║ 𝚗𝚞𝚛𝚜𝚎
+ ║ 𝚝𝚞𝚜𝚑𝚢
+ ║ 𝚜𝚒𝚜
+ ║ 𝚏𝚘𝚘𝚝
+ ║ 𝚋𝚘𝚘𝚋𝚜
+ ║ *𝚁𝚎𝚊𝚕 𝙽𝚜𝚏𝚠*
+ ║ 𝚛𝚙𝚞𝚜𝚜𝚢
+ ║ 𝚛𝚊𝚗𝚊𝚕
+ ║ 𝚅𝚒𝚡𝚎𝚗𝚗
+ ║ 𝚂𝙾𝙻𝙾
+ ║ 𝚎𝚌𝚌𝚑𝚒
+ ║ 𝚛𝚋𝚘𝚘𝚋𝚜
+ ║ 𝚌𝚘𝚜𝚙𝚕𝚊𝚢
  ╚════════════════╝
 *📌𝙽𝚘𝚝𝚎* You can use
 <<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
@@ -4499,10 +4645,11 @@ _🌟Eg: -anime help_`;
 					image:{url:picsecktor}, caption: hlp,
 					footer: LangG.footer,
 					templateButtons: [
-						{ urlButton: { displayText: "⭐𝐖𝐞𝐛", url: "https://citel.vercel.app" } }
-					    
+						{ urlButton: { displayText: "⭐Web", url: "https://citel.vercel.app" } }
+
 					]
 				}, { quoted: m }) */
+
           await Void.sendMessage(
             m.chat,
             {
@@ -4510,6 +4657,7 @@ _🌟Eg: -anime help_`;
               gifPlayback: true,
               caption: hlps,
               footer: LangG.footer,
+              mentions: [meh],
             },
             {
               quoted: m,
@@ -4524,7 +4672,7 @@ _🌟Eg: -anime help_`;
           await axios
             .get(`https://nekos.life/api/v2/fact`)
             .then((response) => {
-              const tet = `*Fact:* ${response.data.fact}\n\n*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title} 𝐌𝐝*`;
+              const tet = `*Fact:* ${response.data.fact}\n\n*Powered by ${LangG.title} 𝐌𝐝*`;
               Void.sendMessage(
                 from,
                 {
@@ -4536,7 +4684,7 @@ _🌟Eg: -anime help_`;
                   templateButtons: [
                     {
                       urlButton: {
-                        displayText: "⭐𝐖𝐞𝐛",
+                        displayText: "⭐Web",
                         url: "https://citel.vercel.app",
                       },
                     },
@@ -4575,6 +4723,16 @@ _🌟Eg: -anime help_`;
           }
         });
          break;
+         case 'logs':
+           {
+          exec(`heroku logs -a ${Config.HEROKU.APP_NAME}`, (err, stdout) => {
+          if (err) return reply(`${err}`);
+          if (stdout) {
+            reply(`•-----${LangG.title}-Logs-----•\n\n${stdout}`);
+          }
+        });
+           }
+           break
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'igdl': case 'instagram': {
           if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
@@ -4756,13 +4914,8 @@ _🌟Eg: -anime help_`;
 █░█ █▀▀ █░░ █▀█   █▀▄▀█ █▀▀ █▄░█ █░█
 █▀█ ██▄ █▄▄ █▀▀   █░▀░█ ██▄ █░▀█ █▄█
 
-
-Separatd Help Menu work is in Progress.
-It takes time to Design Different Different HELP UI for Each theme
-If you can create any Cool just do and make pull req 
-We'll review if it is perfect we'll merge it.
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-*/        case "help":
+*/        case 'help':
           case "helpt":
         if (q === "help") {
           await m.reply(
@@ -4772,31 +4925,111 @@ We'll review if it is perfect we'll merge it.
           );
           return;
         }
+        		let mhe = m.sender;
+        const userq = await Levels.fetch(m.sender, "RandomXP");
+          const lvpoints = userq.level;
+          var role = "GOD✨";
+          if (lvpoints <= 2) {
+            var role = "🏳Citizen";
+          } else if (lvpoints <= 4) {
+            var role = "👼Baby Wizard";
+          } else if (lvpoints <= 6) {
+            var role = "🧙‍♀️Wizard";
+          } else if (lvpoints <= 8) {
+            var role = "🧙‍♂️Wizard Lord";
+          } else if (lvpoints <= 10) {
+            var role = "🧚🏻Baby Mage";
+          } else if (lvpoints <= 12) {
+            var role = "🧜Mage";
+          } else if (lvpoints <= 14) {
+            var role = "🧜‍♂️Master of Mage";
+          } else if (lvpoints <= 16) {
+            var role = "🌬Child of Nobel";
+          } else if (lvpoints <= 18) {
+            var role = "❄Nobel";
+          } else if (lvpoints <= 20) {
+            var role = "⚡Speed of Elite";
+
+
+          } else if (lvpoints <= 22) {
+            var role = "🎭Elite";
+          } else if (lvpoints <= 24) {
+            var role = "🥇Ace I";
+          } else if (lvpoints <= 26) {
+            var role = "🥈Ace II";
+          } else if (lvpoints <= 28) {
+            var role = "🥉Ace Master";
+          } else if (lvpoints <= 30) {
+            var role = "🎖Ace Dominator";
+          } else if (lvpoints <= 32) {
+            var role = "🏅Ace Elite";
+          } else if (lvpoints <= 34) {
+            var role = "🏆Ace Supreme";
+          } else if (lvpoints <= 36) {
+            var role = "💍Supreme I";
+          } else if (lvpoints <= 38) {
+            var role = "💎Supreme Ii";
+          } else if (lvpoints <= 40) {
+            var role = "🔮Supreme Master";
+          } else if (lvpoints <= 42) {
+            var role = "🛡Legend III";
+          } else if (lvpoints <= 44) {
+            var role = "🏹Legend II";
+          } else if (lvpoints <= 46) {
+            var role = "⚔Legend";
+          } else if (lvpoints <= 55) {
+            var role = "🐉Immortal";
+          }
+          let ttms = `${userq.xp}` / 8;
+          const timenow = moment(moment()).format('HH:mm:ss')
+            moment.tz.setDefault('Asia/Jakarta').locale('id')
         if (!args.length > 0) {
-          quoto = await axios.get(`https://favqs.com/api/qotd`);
-          const hlp = `*Hey ${LangG.greet} ${pushname}.*
-${Menu_Text}
+      //    quoto = await axios.get(`https://favqs.com/api/qotd`);
+          const hlp = `
+
+╔════⧫
+║ *⦿Name* ${LangG.title}
+║ *⦿User:* ${pushname}
+║ *⦿Prefix:* "${prefix}"
+║ *⦿Role*: ${role}
+║ *⦿Level*: ${userq.level}
+║ *⦿Time:* ${timenow}
+║ *⦿Total Messages:*- ${ttms}
+╚════════════╝
+𝐌𝐲 𝐮𝐬𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐫𝐞 𝐥𝐢𝐬𝐭𝐞𝐝 𝐛𝐞𝐥𝐨𝐰
+
+${readmore}
 *━━━『𝑮𝒆𝒏𝒆𝒓𝒂𝒍 』━━━*
-\`\`\`play, alive, help,bcgroup, profile, blackpink, anime pic [text], anime char [text], waifu, loli, sticker, wallpaper, couplepp\`\`\`
+\`\`\`𝚙𝚕𝚊𝚢, 𝚊𝚕𝚒𝚟𝚎, 𝚑𝚎𝚕𝚙,𝚋𝚌𝚐𝚛𝚘𝚞𝚙, 𝚙𝚛𝚘𝚏𝚒𝚕𝚎, 𝚋𝚕𝚊𝚌𝚔𝚙𝚒𝚗𝚔, 𝚊𝚗𝚒𝚖𝚎 𝚙𝚒𝚌 [𝚝𝚎𝚡𝚝], 𝚊𝚗𝚒𝚖𝚎 𝚌𝚑𝚊𝚛 [𝚝𝚎𝚡𝚝], 𝚠𝚊𝚒𝚏𝚞, 𝚕𝚘𝚕𝚒, 𝚜𝚝𝚒𝚌𝚔𝚎𝚛, 𝚠𝚊𝚕𝚕𝚙𝚊𝚙𝚎𝚛, 𝚌𝚘𝚞𝚙𝚕𝚎𝚙𝚙\`\`\`
+
 *━━━『𝑴𝒐𝒅𝒆𝒓𝒂𝒕𝒊𝒐𝒏 』━━━*
-\`\`\`gclink, ppgroup, tagall, htag, group, editinfo, ginfo, add, kick, info, promote, demote, Profile, listonline\`\`\`
+\`\`\`𝚐𝚌𝚕𝚒𝚗𝚔, 𝚙𝚙𝚐𝚛𝚘𝚞𝚙, 𝚝𝚊𝚐𝚊𝚕𝚕, 𝚑𝚝𝚊𝚐, 𝚐𝚛𝚘𝚞𝚙, 𝚎𝚍𝚒𝚝𝚒𝚗𝚏𝚘, 𝚐𝚒𝚗𝚏𝚘, 𝚊𝚍𝚍, 𝚔𝚒𝚌𝚔, 𝚒𝚗𝚏𝚘, 𝚙𝚛𝚘𝚖𝚘𝚝𝚎, 𝚍𝚎𝚖𝚘𝚝𝚎, 𝙿𝚛𝚘𝚏𝚒𝚕𝚎, 𝚕𝚒𝚜𝚝𝚘𝚗𝚕𝚒𝚗𝚎\`\`\`
+
 *━━━『𝑼𝒕𝒊𝒍𝒔 』━━━*
-\`\`\`play, ytvd, ytad, fb(beta), instagram, twitter, pinterest, wallpaper\`\`\`
+\`\`\`𝚙𝚕𝚊𝚢, 𝚢𝚝𝚟𝚍, 𝚢𝚝𝚊𝚍, 𝚏𝚋(𝚋𝚎𝚝𝚊), 𝚒𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖, 𝚝𝚠𝚒𝚝𝚝𝚎𝚛, 𝚙𝚒𝚗𝚝𝚎𝚛𝚎𝚜𝚝, 𝚠𝚊𝚕𝚕𝚙𝚊𝚙𝚎𝚛\`\`\`
+
 *━━━『𝑪𝒐𝒏𝒗𝒆𝒓𝒕 』━━━*
-\`\`\`sticker, mp3, mp4audio, link, tovideo, togif, tovn, ebinary, dbinary\`\`\`
+\`\`\`𝚜𝚝𝚒𝚌𝚔𝚎𝚛, 𝚖𝚙𝟹, 𝚖𝚙𝟺𝚊𝚞𝚍𝚒𝚘, 𝚕𝚒𝚗𝚔, 𝚝𝚘𝚟𝚒𝚍𝚎𝚘, 𝚝𝚘𝚐𝚒𝚏, 𝚝𝚘𝚟𝚗, 𝚎𝚋𝚒𝚗𝚊𝚛𝚢, 𝚍𝚋𝚒𝚗𝚊𝚛𝚢\`\`\`
+
 *━━━『𝑾𝒆𝒆𝒃 』━━━*
-\`\`\`anime-pic, anime search text, anime news, anime r, poke-pic, poke-search, manga-search, waifu, loli, neko\`\`\`
+\`\`\`𝚊𝚗𝚒𝚖𝚎-𝚙𝚒𝚌, 𝚊𝚗𝚒𝚖𝚎 𝚜𝚎𝚊𝚛𝚌𝚑 𝚝𝚎𝚡𝚝, 𝚊𝚗𝚒𝚖𝚎 𝚗𝚎𝚠𝚜, 𝚊𝚗𝚒𝚖𝚎 𝚛, 𝚙𝚘𝚔𝚎-𝚙𝚒𝚌, 𝚙𝚘𝚔𝚎-𝚜𝚎𝚊𝚛𝚌𝚑, 𝚖𝚊𝚗𝚐𝚊-𝚜𝚎𝚊𝚛𝚌𝚑, 𝚠𝚊𝚒𝚏𝚞, 𝚕𝚘𝚕𝚒, 𝚗𝚎𝚔𝚘\`\`\`
+
 *━━━『𝑹𝒂𝒏𝒅𝒐𝒎 』━━━*
-\`\`\`couplepp, waifu, neko, quotes, fact\`\`\`
+\`\`\`𝚌𝚘𝚞𝚙𝚕𝚎𝚙𝚙, 𝚠𝚊𝚒𝚏𝚞, 𝚗𝚎𝚔𝚘, 𝚚𝚞𝚘𝚝𝚎𝚜, 𝚏𝚊𝚌𝚝\`\`\`
+
 *━━━『𝑶𝒘𝒏𝒆𝒓』━━━*
-\`\`\`shutdown, theme-list,mode-private, mode-public, restart, eval, -approve, -disapprove, join, update\`\`\`
+\`\`\`𝚜𝚑𝚞𝚝𝚍𝚘𝚠𝚗, 𝚝𝚑𝚎𝚖𝚎-𝚕𝚒𝚜𝚝,𝚖𝚘𝚍𝚎-𝚙𝚛𝚒𝚟𝚊𝚝𝚎, 𝚖𝚘𝚍𝚎-𝚙𝚞𝚋𝚕𝚒𝚌, 𝚛𝚎𝚜𝚝𝚊𝚛𝚝, 𝚎𝚟𝚊𝚕, -𝚊𝚙𝚙𝚛𝚘𝚟𝚎, -𝚍𝚒𝚜𝚊𝚙𝚙𝚛𝚘𝚟𝚎, 𝚓𝚘𝚒𝚗, 𝚞𝚙𝚍𝚊𝚝𝚎,𝚌𝚑𝚊𝚝𝚋𝚘𝚝 𝚘𝚗,𝚌𝚑𝚊𝚝𝚋𝚘𝚝 𝚘𝚏𝚏\`\`\`
+
 *━━━『𝑺𝒕𝒊𝒄𝒌𝒆𝒓』━━━*
-\`\`\`\s-slap, s-dance, s-dance, s-bonk, s-lick s-pat, s-cuddle, s-bonk, s-highfive, \`\`\`
+\`\`\`\𝚜-𝚜𝚕𝚊𝚙, 𝚜-𝚍𝚊𝚗𝚌𝚎, 𝚜-𝚍𝚊𝚗𝚌𝚎, 𝚜-𝚋𝚘𝚗𝚔, 𝚜-𝚕𝚒𝚌𝚔 𝚜-𝚙𝚊𝚝, 𝚜-𝚌𝚞𝚍𝚍𝚕𝚎, 𝚜-𝚋𝚘𝚗𝚔, 𝚜-𝚑𝚒𝚐𝚑𝚏𝚒𝚟𝚎, \`\`\`
+
 *━━━『𝑹𝒆𝒂𝒄𝒕 』━━━*
-\`\`\`pat, hug, kiss, slap, cuddle, poke, dance, bite, yeet, lick, highfive, smile, punch\`\`\`
+\`\`\`𝚙𝚊𝚝, 𝚑𝚞𝚐, 𝚔𝚒𝚜𝚜, 𝚜𝚕𝚊𝚙, 𝚌𝚞𝚍𝚍𝚕𝚎, 𝚙𝚘𝚔𝚎, 𝚍𝚊𝚗𝚌𝚎, 𝚋𝚒𝚝𝚎, 𝚢𝚎𝚎𝚝, 𝚕𝚒𝚌𝚔, 𝚑𝚒𝚐𝚑𝚏𝚒𝚟𝚎, 𝚜𝚖𝚒𝚕𝚎, 𝚙𝚞𝚗𝚌𝚑\`\`\`
+
 *━━━『 𝑵𝑺𝑭𝑾 』━━━*
-\`\`\`Not visible publicly Please check -menu \`\`\`
-*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
+\`\`\`𝙽𝚘𝚝 𝚟𝚒𝚜𝚒𝚋𝚕𝚎 𝚙𝚞𝚋𝚕𝚒𝚌𝚕𝚢 𝙿𝚕𝚎𝚊𝚜𝚎 𝚌𝚑𝚎𝚌𝚔 -𝚖𝚎𝚗𝚞 \`\`\`
+
+*📌𝙽𝚘𝚝𝚎*
  <<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 _🌟Eg: -anime help_`;
 
@@ -4821,7 +5054,7 @@ _🌟Eg: -anime help_`;
               templateButtons: [
                 {
                   urlButton: {
-                    displayText: "⭐𝐖𝐞𝐛",
+                    displayText: "⭐Web",
                     url: "https://citel.vercel.app",
                   },
                 },
@@ -4848,7 +5081,7 @@ _🌟Eg: -anime help_`;
         //Void.sendMessage(m.chat,{video:fs.readFileSync('./src/help.mp4'),gifPlayback:true,caption:hlp},{quoted:m})
         if (args[0] == "1") {
           let hlp2 = `
-╔════⧫ *💠Group Menu💠* 
+╔════⧫ *💠Group Menu💠*
 ║ ${prefix}gclink
 ║ ${prefix}setgroupp
 ║ ${prefix}setname [text]
@@ -4909,7 +5142,7 @@ _🌟Eg: -anime help_`;
         }
         if (args[0] == "2") {
           let hlp2 = `
-╔═══⧫ *💠Downloader 💠* 
+╔═══⧫ *💠Downloader 💠*
 ║${prefix}play [name]
 ║${prefix}song [url/name]
 ║${prefix}video [url/name]
@@ -4967,7 +5200,7 @@ _Press the button blew for detailed menu_
         }
         if (args[0] == "3") {
           let hlp2 = `
-╔════⧫ *💠 Search💠* 
+╔════⧫ *💠 Search💠*
 ║${prefix}play [query]
 ║${prefix}yts [query]
 ║${prefix}google [query]
@@ -4977,7 +5210,7 @@ _Press the button blew for detailed menu_
 ║${prefix}ytsearch [query]
 ║${prefix}imdb name
 ║${prefix}movie name
-╚════════════╝  
+╚════════════╝
 _Press the button blew for detailed menu_`;
           const hhbut = [
             {
@@ -5125,7 +5358,7 @@ _Press the button blew for detailed menu_`;
         }
         if (args[0] == "6") {
           let hlp2 = `
-╔════⧫ *💠 Convert 💠* 
+╔════⧫ *💠 Convert 💠*
 ║${prefix}photo
 ║${prefix}imagesticker
 ║${prefix}toimg
@@ -5163,7 +5396,7 @@ _Press the button blew for detailed menu_`;
             image: {
               url: picsecktor,
             },
-            caption: hlp2,
+            text: hlp2,
             footer: LangG.footer,
             buttons: hhbut,
             headerType: 4,
@@ -5185,11 +5418,11 @@ _Press the button blew for detailed menu_`;
         }
         if (args[0] == "7") {
           let hlp2 = `
-  ╔════⧫ *💠 Random 💠* 
+  ╔════⧫ *💠 Random 💠*
   ║${prefix}couplepp
-  ║${prefix}waifu 
-  ║${prefix}haighusha/ haig 
-  ║${prefix}quotes 
+  ║${prefix}waifu
+  ║${prefix}haighusha/ haig
+  ║${prefix}quotes
   ║${prefix}fact
   ║${prefix}Neko
   ║${prefix}HNeko (NSFW)
@@ -5216,7 +5449,7 @@ _Press the button blew for detailed menu_`;
             image: {
               url: picsecktor,
             },
-            caption: hlp2,
+            text: hlp2,
             footer: LangG.footer,
             buttons: hhbut,
             headerType: 4,
@@ -5237,7 +5470,7 @@ _Press the button blew for detailed menu_`;
         }
         if (args[0] == "8") {
           let hlp2 = `
-╔════⧫ *💠 Voice Changer💠* 
+╔════⧫ *💠 Voice Changer💠*
 ║${prefix}bass
 ║${prefix}blown
 ║${prefix}deep
@@ -5271,7 +5504,7 @@ _Press the button blew for detailed menu_`;
             image: {
               url: picsecktor,
             },
-            caption: hlp2,
+             text: hlp2,
             footer: LangG.footer,
             buttons: hhbut,
             headerType: 4,
@@ -5292,11 +5525,11 @@ _Press the button blew for detailed menu_`;
         }
         if (args[0] == "9") {
           let hlp2 = `
- ╔════⧫ *💠 Misc Menu 💠* 
+ ╔════⧫ *💠 Misc Menu 💠*
  ║${prefix}ping
  ║${prefix}owner
  ║${prefix}donate
- ║${prefix}menu / 
+ ║${prefix}menu /
  ║${prefix}helpt
  ║${prefix}?
  ║${prefix}delete
@@ -5329,7 +5562,7 @@ _Press the button blew for detailed menu_`;
             image: {
               url: picsecktor,
             },
-            caption: hlp2,
+            text: hlp2,
             footer: LangG.footer,
             buttons: hhbut,
             headerType: 4,
@@ -5351,7 +5584,7 @@ _Press the button blew for detailed menu_`;
         }
         if (args[0] == "10") {
           let hlp2 = `
- ╔════⧫ *💠 Anime 💠* 
+ ╔════⧫ *💠 Anime 💠*
  ║${prefix}Naruto
  ║${prefix}Boruto
  ║${prefix}Minato
@@ -5386,7 +5619,7 @@ _Press the button blew for detailed menu_`;
             image: {
               url: picsecktor,
             },
-            caption: hlp2,
+            text: hlp2,
             footer: LangG.footer,
             buttons: hhbut,
             headerType: 4,
@@ -5408,7 +5641,7 @@ _Press the button blew for detailed menu_`;
         }
         if (args[0] == "11") {
           let hlp2 = `
- ╔════⧫ *💠 NSFW 💠* 
+ ╔════⧫ *💠 NSFW 💠*
  ║${prefix}fisting
  ║${prefix}fingering
  ║${prefix}pussy
@@ -5453,7 +5686,7 @@ _Press the button blew for detailed menu_`;
             image: {
               url: picsecktor,
             },
-            caption: hlp2,
+            text: hlp2,
             footer: LangG.footer,
             buttons: hhbut,
             headerType: 4,
@@ -5476,8 +5709,8 @@ _Press the button blew for detailed menu_`;
 
         break;
         /*
-        
-        
+
+
 ░██████╗███████╗██████╗░░█████╗░██████╗░░█████╗░████████╗███████╗
 ██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝
 ╚█████╗░█████╗░░██████╔╝███████║██████╔╝███████║░░░██║░░░█████╗░░
@@ -5486,10 +5719,10 @@ _Press the button blew for detailed menu_`;
 ╚═════╝░╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝
 
 
-        
-  
+
+
 		     case 'help' :
-		    {    
+		    {
 			     if (Config.LANG === "SECKTOR") {
 				     let todlinkh = [
       `Great responsibility comes with Greath Powers. `,
@@ -5515,7 +5748,7 @@ _Press the button blew for detailed menu_`;
 			\n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 			\n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 			\n_🌟Eg: ${prefix}anime help_`;
-				   
+
 							 await Void.sendMessage(
 							   from,
 							   {
@@ -5537,7 +5770,7 @@ _Press the button blew for detailed menu_`;
 								 templateButtons: [
 								   {
 									 urlButton: {
-									   displayText: "⭐𝐖𝐞𝐛",
+									   displayText: "⭐Web",
 									   url: "https://citel.vercel.app",
 									 },
 								   },
@@ -5546,8 +5779,8 @@ _Press the button blew for detailed menu_`;
 							   {
 								 quoted: m,
 							   }
-							 );          
-				     
+							 );
+
 							  }
 			    if (Config.LANG === "NARUTO") {
 				      let todlinyk = [
@@ -5573,7 +5806,7 @@ _Press the button blew for detailed menu_`;
 			\n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 			\n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 			\n_🌟Eg: -anime help_`;
-				   
+
 							 await Void.sendMessage(
 							   from,
 							   {
@@ -5595,7 +5828,7 @@ _Press the button blew for detailed menu_`;
 								 templateButtons: [
 								   {
 									 urlButton: {
-									   displayText: "⭐𝐖𝐞𝐛",
+									   displayText: "⭐Web",
 									   url: "https://citel.vercel.app",
 									 },
 								   },
@@ -5604,9 +5837,9 @@ _Press the button blew for detailed menu_`;
 							   {
 								 quoted: m,
 							   }
-							 ); 
+							 );
 				     }
-			     if (Config.LANG === "ZEROTWO") { 
+			     if (Config.LANG === "ZEROTWO") {
 				       let todlinmk = [
       `*My wings exist for you. I’m your partner atlast.* I'm not going to leave you alone darling.`,
       `“The weak ones die. Big deal”`,
@@ -5631,7 +5864,7 @@ _Press the button blew for detailed menu_`;
 			\n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 			\n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 			\n_🌟Eg: -anime help_`;
-				   
+
 							 await Void.sendMessage(
 							   from,
 							   {
@@ -5653,7 +5886,7 @@ _Press the button blew for detailed menu_`;
 								 templateButtons: [
 								   {
 									 urlButton: {
-									   displayText: "⭐𝐖𝐞𝐛",
+									   displayText: "⭐Web",
 									   url: "https://citel.vercel.app",
 									 },
 								   },
@@ -5662,12 +5895,12 @@ _Press the button blew for detailed menu_`;
 							   {
 								 quoted: m,
 							   }
-							 );          
-				
-							  
+							 );
+
+
 				}
-		    
-			      if (Config.LANG === "NEZUKO") { 
+
+			      if (Config.LANG === "NEZUKO") {
     let todlintk = [
       `Rokuda is just lonely because dad died.\nIt's like everyone is stuck to you, brother.`,
       `"No Matter How Many People You May Lose, You Have No Choice But To Go On Living - No Matter How Devastating The Blows May Be."`,
@@ -5678,12 +5911,12 @@ _Press the button blew for detailed menu_`;
     ];
 
     let totd = todlintk[Math.floor(Math.random() * todlintk.length)];
-				     
-					let hlps = 
+
+					let hlps =
         `*Hey Onii-Chan ${pushname}.*
 					This is Nezuko.\n${totd}
 					${readmore}
-                    
+
 					*𝚂𝚊𝚖𝙿𝚊𝚗𝚍𝚎𝚢𝟶𝟶𝟷*
 					╔════⧫𝑴𝒐𝒅𝒆𝒓𝒂𝒕𝒊𝒐𝒏
 					║✭1-${prefix}gclink
@@ -5701,11 +5934,11 @@ _Press the button blew for detailed menu_`;
 					║✭13-${prefix}listonline
 					║✭14-${prefix}act nsfw
 					║✭15-${prefix}deact nsfw
-					╚════════════╝ 
+					╚════════════╝
 					╔════⧫𝑼𝒕𝒊𝒍𝒔
 					║✭16-${prefix}play
 					║✭23-${prefix}wallpaper
-					║✭24-${prefix}iplookup 
+					║✭24-${prefix}iplookup
 					║✭25-${prefix}imdb
 					║✭26-${prefix}trt
 					║✭27-${prefix}movie
@@ -5815,7 +6048,7 @@ _Press the button blew for detailed menu_`;
 								  quoted: m,
 								}
 							  );
-				     
+
 							      }
 			      if (Config.LANG === "GENOS") {     let todlinkyu = [
       `Even the most powerful weapon would be meaningless if its wielder is weak.`,
@@ -5827,7 +6060,7 @@ _Press the button blew for detailed menu_`;
     ];
 
     let todtg = todlinkyu[Math.floor(Math.random() * todlinkyu.length)];
-					
+
 					let template = await generateWAMessageFromContent(
 						m.chat,
 						proto.Message.fromObject({
@@ -5931,10 +6164,10 @@ _Press the button blew for detailed menu_`;
 					  Void.relayMessage(m.chat, template.message, {
 						messageId: template.key.id,
 					  });
-				     
-				     
+
+
 							      }
-			      if (Config.LANG === "AYANOKOJI") { 
+			      if (Config.LANG === "AYANOKOJI") {
 				         let todlinkyi = [
       `“You may come to regret trying to manipulate me.”`,
       `Coincidence can be freaky.`,
@@ -5959,7 +6192,7 @@ _Press the button blew for detailed menu_`;
 			\n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 			\n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 			\n_🌟Eg: -anime help_`;
-				   
+
 							 await Void.sendMessage(
 							   from,
 							   {
@@ -5981,7 +6214,7 @@ _Press the button blew for detailed menu_`;
 								 templateButtons: [
 								   {
 									 urlButton: {
-									   displayText: "⭐𝐖𝐞𝐛",
+									   displayText: "⭐Web",
 									   url: "https://citel.vercel.app",
 									 },
 								   },
@@ -5990,11 +6223,11 @@ _Press the button blew for detailed menu_`;
 							   {
 								 quoted: m,
 							   }
-							 ); 
-				     
-				     
+							 );
+
+
 							      }
-			      if (Config.LANG === "FRIDAY") { 
+			      if (Config.LANG === "FRIDAY") {
 				         let todlinkyit = [
       `${LangG.pic1}`,
       `${LangG.pic2}`,
@@ -6019,7 +6252,7 @@ _Press the button blew for detailed menu_`;
 \n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 \n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 \n_🌟Eg: -anime help_`;
-   
+
        await Void.sendMessage(
          from,
          {
@@ -6041,7 +6274,7 @@ _Press the button blew for detailed menu_`;
          templateButtons: [
            {
            urlButton: {
-             displayText: "⭐𝐖𝐞𝐛",
+             displayText: "⭐Web",
              url: "https://citel.vercel.app",
            },
            },
@@ -6050,10 +6283,10 @@ _Press the button blew for detailed menu_`;
          {
          quoted: m,
          }
-       ); 
-				     
+       );
+
 							     }
-			      if (Config.LANG === "GIDEON") { 
+			      if (Config.LANG === "GIDEON") {
 			            let todlinkt = [
       `$You never bothered to ask?`,
       `You know who I am ${pushname}? right!!`,
@@ -6076,7 +6309,7 @@ _Press the button blew for detailed menu_`;
 \n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 \n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 \n_🌟Eg: -anime help_`;
-   
+
        await Void.sendMessage(
          from,
          {
@@ -6098,7 +6331,7 @@ _Press the button blew for detailed menu_`;
          templateButtons: [
            {
            urlButton: {
-             displayText: "⭐𝐖𝐞𝐛",
+             displayText: "⭐Web",
              url: "https://citel.vercel.app",
            },
            },
@@ -6107,12 +6340,12 @@ _Press the button blew for detailed menu_`;
          {
          quoted: m,
          }
-       ); 
-				     
-				     
-				     
+       );
+
+
+
 				      }
-			      if (Config.LANG === "GOKU") { 
+			      if (Config.LANG === "GOKU") {
 				         let todlinktgh = [
       `Power comes in response to a need, not a desire.`,
       `I’m the second strongest Saiyan from the Planet Vegeta!`,
@@ -6136,7 +6369,7 @@ _Press the button blew for detailed menu_`;
 \n*📌𝙽𝚘𝚝𝚎* 𝚞𝚜𝚎
 \n<<𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙>> 𝚏𝚘𝚛 𝚖𝚘𝚛𝚎 𝚒𝚗𝚏𝚘 𝚘𝚏 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝙲𝚘𝚖𝚖𝚊𝚗𝚍
 \n_🌟Eg: -anime help_`;
-   
+
        await Void.sendMessage(
          from,
          {
@@ -6158,7 +6391,7 @@ _Press the button blew for detailed menu_`;
          templateButtons: [
            {
            urlButton: {
-             displayText: "⭐𝐖𝐞𝐛",
+             displayText: "⭐Web",
              url: "https://citel.vercel.app",
            },
            },
@@ -6167,7 +6400,7 @@ _Press the button blew for detailed menu_`;
          {
          quoted: m,
          }
-       ); 
+       );
        }
 			      if (Config.LANG === "LUFFY") {     let todlinkjj = [
       `I'm pretty sure I can't live without being helped!`,
@@ -6179,38 +6412,38 @@ _Press the button blew for detailed menu_`;
     ];
 
     let todgg = todlinkjj[Math.floor(Math.random() * todlinkjj.length)];
-				     
+
 				      }
-			      if (Config.LANG === "PARKER") { 
+			      if (Config.LANG === "PARKER") {
 				     let todlinkf = ["I'm Spider-Man. Weird Things Happen To Me All The Time.", "I Guess It's Easy To Laugh In The Face Of Danger When You Don't Take Anything Too Seriously.",
 				     "I don't want to know, Cap. I need to know.",
 				     "My name is Peter Parker and I've been Spider-Man since I was 15 years old.",
 				    "Once my Uncle said,'Great responsibility comes with Greath Powers.'",
 				     "No Matter How Hard I Try...People...Die!",
 				  "Except the dignity of knowing I never carried a man-purse."
-				     
+
 				     ];
           let todf = todlinkf[Math.floor(Math.random() * todlinkf.length)];
-				     
+
 				     }
-			    
-			    
-			    
-			    
+
+
+
+
 		    }
-        if (Config.LANG === "ADAM") { 
+        if (Config.LANG === "ADAM") {
           let todlinkf = ["I kneel before No one Pal",
            "The World Need a Hero instead they Got me",
        "Except the dignity of knowing I never carried a man-purse."
-          
+
           ];
        let todf = todlinkf[Math.floor(Math.random() * todlinkf.length)];
 
-          
+
           }
-       
+
 		    break
-     */ 
+     */
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "grouplink":
       case "glink":
@@ -6229,7 +6462,7 @@ _Press the button blew for detailed menu_`;
           Void.sendMessage(
             m.chat,
             {
-              text: `🎀Group Link ${groupMetadata.subject} : \n✨https://chat.whatsapp.com/${response}       *𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}*`,
+              text: `🎀Group Link ${groupMetadata.subject} : \n✨https://chat.whatsapp.com/${response}       *Powered by ${LangG.title}*`,
               contextInfo: {
                 mimetype: "image/jpeg",
                 text: `${global.ownername}`,
@@ -6253,7 +6486,7 @@ _Press the button blew for detailed menu_`;
           );
         }
 
-        break;  
+        break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "delete":
       case "del":
@@ -6426,7 +6659,7 @@ await Void.sendMessage(m.chat, { delete: key })
           });
         }
         break;
-      
+
 case 's-cry':case 's-kill':case 's-hug':case 's-pat':case 's-lick':case 's-kiss':case 's-bite':case 's-yeet':case 's-bully':case 's-bonk':case 's-wink':case 's-poke':case 's-nom':case 's-slap':case 's-smile':case 's-wave':case 's-awoo':case 's-blush':case 's-smug':case 's-glomp':case 's-happy':case 's-dance':case 's-cringe':case 's-cuddle':case 's-highfive':case 's-shinobu':case 's-megumin':case 's-handhold':
 	  let sticpic = command.slice(2)
     console.log(sticpic);
@@ -6489,7 +6722,7 @@ axios.get(`https://api.waifu.pics/sfw/${sticpic}`)
             pfp = await Void.profilePictureUrl(m.quoted.sender, "image");
           } catch (e) {
             pfp =
-              "https://raw.githubusercontent.com/Void/Media/main/Images/hero-bg.png";
+              "https://raw.githubusercontent.com/SamPandey001/Secktor-Md/main/assets/SocialLogo%201.png";
           }
 
           // var randomColor= Math.floor(Math.random()*16777215).toString(16);
@@ -6564,13 +6797,13 @@ axios.get(`https://api.waifu.pics/sfw/${sticpic}`)
             let btn = [
               {
                 quickReplyButton: {
-                  displayText: "⚡Menu",
+                  displayText: "Menu",
                   id: `${prefix}help`,
                 },
               },
               {
                 quickReplyButton: {
-                  displayText: "🙋Alive",
+                  displayText: "Alive",
                   id: `${prefix}alive`,
                 },
               },
@@ -6746,7 +6979,7 @@ axios.get(`https://api.waifu.pics/sfw/${sticpic}`)
             return;
           }
           if (!quoted) return m.reply(`*Mention any Image or video Sir.*`);
-          if (q) {
+          if (args[2]) {
             anu = args.join(" ").split("|");
             pack = anu[0] !== "" ? anu[0] : global.packname;
             author = anu[1] !== "" ? anu[1] : global.author;
@@ -6754,13 +6987,14 @@ axios.get(`https://api.waifu.pics/sfw/${sticpic}`)
             pack = global.packname;
             author = global.author;
           }
+          if (arg[1]==='crop') var uff = 'StickerTypes.CROPPED' || 'StickerTypes.FULL'
           if (/image/.test(mime)) {
             let media = await quoted.download();
             m.reply("*Processing Your request*");
             let sticker = new Sticker(media, {
               pack: pack, // The pack name
               author: author, // The author name
-              type: StickerTypes.FULL, // The sticker type
+              type: uff, // The sticker type
               categories: ["🤩", "🎉"], // The sticker category
               id: "12345", // The sticker id
               quality: 75, // The quality of the output file
@@ -6912,7 +7146,7 @@ axios.get(`https://api.waifu.pics/sfw/${sticpic}`)
                 await fs.unlinkSync(media)
 	  }
 
-            }    
+            }
 break
 */
       case "support":
@@ -6924,10 +7158,10 @@ break
           );
           return;
         }
-        m.reply(`*Check your Pm sweetheart*`);
+        m.reply(`*Check your Pm ${LangG.greet}*`);
         await Void.sendMessage(`${m.sender}`, {
-          image: fs.readFileSync("./assets/IMG-20220605-WA0024.jpg"),
-          caption: `*Group Name: Zero Two Moderation*\n*Group Link:* https://chat.whatsapp.com/JcBzjRIxM5UHfuJbt0KrWt`,
+          image: fs.readFileSync("./assets/SocialLogo 1.png"),
+          caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
         });
          break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
@@ -7264,7 +7498,7 @@ break
           if (q === "5") var gfd = "turtle cute animation";
           if (q === "6") var gfd = "slap anime animation";
           //console.log(gfd);
-          
+
           let { data: samig } = await axios.get(
             `https://g.tenor.com/v1/search?q=${q}&key=LIVDSRZULELA&limit=50`
           );
@@ -7278,7 +7512,7 @@ break
           });
         }
         break;
-	*/ 
+	*/
       case "google":
         {
           if (q === "help") {
@@ -7394,7 +7628,7 @@ for (let i = 0; i < nn; i++) {
               image: {
                 url: images,
               },
-              caption: ` 
+              caption: `
 *📙GOOGLE IMAGE*`,
               footer: LangG.footer,
               headerType: 4,
@@ -7418,7 +7652,7 @@ for (let i = 0; i < nn; i++) {
         }
          break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "sister":
+        case "sister":
       case "tits":
       case "mouth":
       case "lick":
@@ -7701,8 +7935,8 @@ for (let i = 0; i < nn; i++) {
 			  Void.sendMessage(nnnnn+'@s.whatsapp.net', {
       text:
         q.slice(1,8),
-    });    
-			    
+    });
+
 		    }
 		    break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
@@ -8574,9 +8808,6 @@ case 'waifu': {
         });
         break;
       /*
-    //  just add genius-lyrics package in package.json to use this.
-    //  We don't want to give more load on Bot.
-
 			case 'lyrics':
 				if (q === 'help') {
 					await m.reply(`*❗Command:*  Lyrics\n*🍀Aliases* -lyrics\n*🧩Category:* Search\n*🛠️Usage:* ${prefix + command} Song Name\n\n*📚Description:* Searches given song and sends lyrics in chat.`)
@@ -8637,7 +8868,7 @@ case 'waifu': {
         });
         break;
 
-      /*    
+      /*
 			   case 'pokemon' : {
 					q7 = Math.floor(Math.random() * 890) + 1;
 					const buffer = await getBuffer(`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${q7}.png`)
@@ -8790,9 +9021,9 @@ Report Message: ${text}`,
         quoog = await axios.get(`https://favqs.com/api/qotd`);
         const alivtxt = `
  Hello, my ${pushname}, I am ${LangG.title} 🍭. A bot developed by Team ${global.ownername} 💓.
-Type -𝐌𝐞𝐧𝐮 for my command list. 
+Type -𝐌𝐞𝐧𝐮 for my command list.
  *${quoog.data.quote.body}*
-*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${global.ownername}*
+*Powered by ${global.ownername}*
 `;
         const alivebutton = [
           {
@@ -8857,6 +9088,16 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
             );
             return;
           }
+          let tr = await sck1.countDocuments();
+          const formater = (seconds) => {
+            const pad = (s) => {
+              return (s < 10 ? "0" : "") + s;
+            };
+            const hrs = Math.floor(seconds / (60 * 60));
+            const mins = Math.floor((seconds % (60 * 60)) / 60);
+            const secs = Math.floor(seconds % 60);
+            return " " + pad(hrs) + ":" + pad(mins) + ":" + pad(secs);
+          };
           const dbut = [
             {
               buttonId: `${prefix}help`,
@@ -8877,25 +9118,25 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
           const uptime = process.uptime();
           timestampe = speed();
           latensie = speed() - timestampe;
-          let statustext = `
+          let ter = `
  🔰 *${LangG.title}* 🔰
 
 *🌟Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
 
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
-*🕸Version:* 0.0.2 
+*🕸Version:* 1.0.0
 *🎯Total Hits* : ${totalhit}
 *👤Owner:*  ${global.ownername}
 *📡Hosting Platform:* ${os.hostname()}
 
-*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 ${LangG.title}*
+*Powered by ${LangG.title}*
 `;
           let buttonMessaged = {
             image: {
               url: picsecktor,
             },
-            caption: statustext,
+            caption: ter,
             footer: LangG.footer,
             buttons: dbut,
             headerType: 4,
@@ -8915,9 +9156,7 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
           });
         }
          break;
-//╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺//
-//╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺  Don't change Credit Part. It for our work. ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺//
-//╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺//
+//╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "tqtt":
       case "tq":
       case "repo":
@@ -8935,9 +9174,9 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
           }
 
           anu = `Hello, my ${pushname} ${LangG.greet}.
-		
+
 *━━━ 『 𝑺𝒆𝒄𝒌𝒕𝒐𝒓 𝑫𝒆𝒗𝒔 』 ━━━*
-*⭐Ikshwaku Pandey:* For Development and Base and Modules. 
+*⭐Ikshwaku Pandey:* For Development and Base and Modules.
 *⭐Sasank Reddy:* For Theme Design, Development,Website.
 
  *Give a ⭐ to our work on Github if you like our team project*`;
@@ -8962,14 +9201,14 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
                   hydratedButtons: [
                     {
                       urlButton: {
-                        displayText: "𝐖𝐞𝐛",
+                        displayText: "Web",
                         url: "https://citel.vercel.app",
                       },
                     },
                     {
                       urlButton: {
                         displayText: "⭐Repo",
-                        url: "https://github.com/SamPandey001/Secktor-Md",
+                        url: "https://github.com/SecktorBot/Secktor-Md",
                       },
                     },
                     {
@@ -8997,7 +9236,7 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
           });
         }
         break;
-        
+
       default:
 				Void.sendMessage(m.chat, {
 					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
