@@ -108,7 +108,7 @@ Volla Bot is Working.
 # Youtube Tutorial For Hosting bot on Heroku
   
  <a href="https://youtu.be/4u0uv3IiAAc">
-    <img alt="YouTube Tutorial" height="128" src="https://raw.githubusercontent.com/SecktorBot/Brandimages/main/Secktor-Images/Screenshot_28.png">
+    <img alt="YouTube Tutorial" height="128" src="https://raw.githubusercontent.com/SecktorBot/Brandimages/main/Secktor-Images/image.png">
   </a>
   
 ## 🤔 Why Secktor? 
