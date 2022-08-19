@@ -4219,14 +4219,11 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
               let gasIn = await fetch(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
 
               let jisin = await gasIn.json()
-
-
-              // conn.sendMessage(m.chat, { url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + jisin.result.file_path }, MessageType.sticker)
               let stiker = await sticker(false, "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + jisin.result.file_path, global.packname, global.author)
               await Void.sendMessage(m.chat, {sticker: stiker })
               await delay(1500)
           }
-          m.reply('_*Task Completed.*_')
+          m.reply('_Task Completed._')
       }
         break
 
@@ -4549,7 +4546,7 @@ const userq = await Levels.fetch(m.sender, "RandomXP");
 ║ 𝚖𝚙𝟹
 ║ 𝚖𝚙𝟺𝚊𝚞𝚍𝚒𝚘
 ║ 𝚞𝚛𝚕
-║ 𝚎𝚖𝚘𝚓𝚒𝚖𝚒𝚡
+║ 𝚎𝚖𝚒𝚡
 ║ 𝚝𝚘𝚟𝚒𝚍𝚎𝚘
 ║ 𝚝𝚘𝚐𝚒𝚏
 ║ 𝚎𝚋𝚒𝚗𝚊𝚛𝚢
@@ -4568,12 +4565,11 @@ const userq = await Levels.fetch(m.sender, "RandomXP");
 ║ 𝚠𝚊𝚒𝚏𝚞
 ║ 𝚕𝚘𝚕𝚒
 ║ 𝚗𝚎𝚔𝚘
+║ 𝚏𝚘𝚡𝚐𝚒𝚛𝚕
+║ 𝚌𝚘𝚞𝚙𝚕𝚎𝚙𝚙
 ╚═══════════════╝
 
 ╔════⧫𝑹𝒂𝒏𝒅𝒐𝒎
-║ 𝚌𝚘𝚞𝚙𝚕𝚎𝚙𝚙
-║ 𝚠𝚊𝚒𝚏𝚞
-║ 𝚗𝚎𝚔𝚘
 ║ 𝚚𝚞𝚘𝚝𝚎𝚜
 ║ 𝚏𝚊𝚌𝚝
 ╚════════════╝
@@ -6985,14 +6981,13 @@ axios.get(`https://api.waifu.pics/sfw/${sticpic}`)
             pack = global.packname;
             author = global.author;
           }
-          if (arg[1]==='crop') var uff = 'StickerTypes.CROPPED' || 'StickerTypes.FULL'
           if (/image/.test(mime)) {
             let media = await quoted.download();
             m.reply("*Processing Your request*");
             let sticker = new Sticker(media, {
               pack: pack, // The pack name
               author: author, // The author name
-              type: uff, // The sticker type
+              type: StickerTypes.FULL, // The sticker type
               categories: ["🤩", "🎉"], // The sticker category
               id: "12345", // The sticker id
               quality: 75, // The quality of the output file
