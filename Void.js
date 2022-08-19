@@ -561,7 +561,7 @@ use pmpermit help for more info
               previewType: "PHOTO",
               thumbnailUrl: ``,
               thumbnail: fs.readFileSync(`./assets/SocialLogo 1.png`),
-              sourceUrl: `https://citel.vercel.app`,
+              sourceUrl: ``,
             },
           },
         },
@@ -582,7 +582,7 @@ use pmpermit help for more info
               previewType: "PHOTO",
               thumbnailUrl: ``,
               thumbnail: fs.readFileSync(`./assets/SocialLogo 1.png`),
-              sourceUrl: `https://citel.vercel.app`,
+              sourceUrl: ``,
             },
           },
         },
@@ -918,7 +918,7 @@ let parser = new Parser();
         JSON.stringify(global.db, null, 2)
       );
     }, 60 * 1000);
-    
+
     let msender = m.sender
     let mquoted= m.quoted
     let mchat = from
@@ -949,7 +949,7 @@ let core = {msender,
             mcreator,
             mgroupMetadata,
             mgroupName,
-            mpushname 
+            mpushname
 }
     //----------------------[respond cmd with media]----------------------\\
     if (
@@ -1092,7 +1092,7 @@ Check them and Edit if you want.
         }
          break;
 //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-         
+
       case 'change':
       {
         let pgdb = process.env.DATABASE_URL || "none";
@@ -1134,8 +1134,8 @@ case "repo": {
           body: "Easy to Use",
           thumbnail: log0,
           mediaType: 2,
-          mediaUrl: `https://citel.vercel.app`,
-          sourceUrl: `https://citel.vercel.app`,
+          mediaUrl: ``,
+          sourceUrl: ``,
         },
       },
     };
@@ -1178,8 +1178,8 @@ case "repo": {
                 body: LangG.dotbody,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -1235,8 +1235,8 @@ gis(gg + pictured, async (error, result) => {
         body: `Anime Pics`,
         thumbnail: log0,
         mediaType: 2,
-        mediaUrl: `https://citel.vercel.app`,
-        sourceUrl: `https://citel.vercel.app`,
+        mediaUrl: ``,
+        sourceUrl: ``,
       },
     },
   };
@@ -1431,8 +1431,8 @@ if (args[0]==='pic'){
           body: q,
           thumbnail: log0,
           mediaType: 2,
-          mediaUrl: `https://citel.vercel.app`,
-          sourceUrl: `https://citel.vercel.app`,
+          mediaUrl: ``,
+          sourceUrl: ``,
         },
       },
     };
@@ -1929,8 +1929,8 @@ case "lockfile":
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -4418,7 +4418,7 @@ case "punch":
                 {
                   urlButton: {
                     displayText: "⭐Web",
-                    url: "https://citel.vercel.app",
+                    url: "",
                   },
                 },
               ],
@@ -4639,7 +4639,7 @@ _🌟Eg: -anime help_`;
 					image:{url:picsecktor}, caption: hlp,
 					footer: LangG.footer,
 					templateButtons: [
-						{ urlButton: { displayText: "⭐Web", url: "https://citel.vercel.app" } }
+						{ urlButton: { displayText: "⭐Web", url: "" } }
 
 					]
 				}, { quoted: m }) */
@@ -4679,7 +4679,7 @@ _🌟Eg: -anime help_`;
                     {
                       urlButton: {
                         displayText: "⭐Web",
-                        url: "https://citel.vercel.app",
+                        url: "",
                       },
                     },
                   ],
@@ -5041,15 +5041,15 @@ _🌟Eg: -anime help_`;
                   body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
               templateButtons: [
                 {
                   urlButton: {
                     displayText: "⭐Web",
-                    url: "https://citel.vercel.app",
+                    url: "",
                   },
                 },
                 {
@@ -5124,8 +5124,8 @@ _🌟Eg: -anime help_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5183,8 +5183,8 @@ _Press the button blew for detailed menu_
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5236,8 +5236,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5282,8 +5282,8 @@ _Press the button blew for detailed menu_
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5340,8 +5340,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5400,8 +5400,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5453,8 +5453,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5508,8 +5508,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5566,8 +5566,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5623,8 +5623,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5690,8 +5690,8 @@ _Press the button blew for detailed menu_`;
                 body: LangG.body,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -5757,15 +5757,15 @@ _Press the button blew for detailed menu_`;
 									 body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
 									 thumbnail: log0,
 									 mediaType: 2,
-									 mediaUrl: `https://citel.vercel.app`,
-									 sourceUrl: `https://citel.vercel.app`,
+									 mediaUrl: ``,
+									 sourceUrl: ``,
 								   },
 								 },
 								 templateButtons: [
 								   {
 									 urlButton: {
 									   displayText: "⭐Web",
-									   url: "https://citel.vercel.app",
+									   url: "",
 									 },
 								   },
 								 ],
@@ -5815,15 +5815,15 @@ _Press the button blew for detailed menu_`;
 									 body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
 									 thumbnail: log0,
 									 mediaType: 2,
-									 mediaUrl: `https://citel.vercel.app`,
-									 sourceUrl: `https://citel.vercel.app`,
+									 mediaUrl: ``,
+									 sourceUrl: ``,
 								   },
 								 },
 								 templateButtons: [
 								   {
 									 urlButton: {
 									   displayText: "⭐Web",
-									   url: "https://citel.vercel.app",
+									   url: "",
 									 },
 								   },
 								 ],
@@ -5873,15 +5873,15 @@ _Press the button blew for detailed menu_`;
 									 body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
 									 thumbnail: log0,
 									 mediaType: 2,
-									 mediaUrl: `https://citel.vercel.app`,
-									 sourceUrl: `https://citel.vercel.app`,
+									 mediaUrl: ``,
+									 sourceUrl: ``,
 								   },
 								 },
 								 templateButtons: [
 								   {
 									 urlButton: {
 									   displayText: "⭐Web",
-									   url: "https://citel.vercel.app",
+									   url: "",
 									 },
 								   },
 								 ],
@@ -6201,15 +6201,15 @@ _Press the button blew for detailed menu_`;
 									 body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
 									 thumbnail: log0,
 									 mediaType: 2,
-									 mediaUrl: `https://citel.vercel.app`,
-									 sourceUrl: `https://citel.vercel.app`,
+									 mediaUrl: ``,
+									 sourceUrl: ``,
 								   },
 								 },
 								 templateButtons: [
 								   {
 									 urlButton: {
 									   displayText: "⭐Web",
-									   url: "https://citel.vercel.app",
+									   url: "",
 									 },
 								   },
 								 ],
@@ -6261,15 +6261,15 @@ _Press the button blew for detailed menu_`;
            body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
            thumbnail: log0,
            mediaType: 2,
-           mediaUrl: `https://citel.vercel.app`,
-           sourceUrl: `https://citel.vercel.app`,
+           mediaUrl: ``,
+           sourceUrl: ``,
            },
          },
          templateButtons: [
            {
            urlButton: {
              displayText: "⭐Web",
-             url: "https://citel.vercel.app",
+             url: "",
            },
            },
          ],
@@ -6318,15 +6318,15 @@ _Press the button blew for detailed menu_`;
            body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
            thumbnail: log0,
            mediaType: 2,
-           mediaUrl: `https://citel.vercel.app`,
-           sourceUrl: `https://citel.vercel.app`,
+           mediaUrl: ``,
+           sourceUrl: ``,
            },
          },
          templateButtons: [
            {
            urlButton: {
              displayText: "⭐Web",
-             url: "https://citel.vercel.app",
+             url: "",
            },
            },
          ],
@@ -6378,15 +6378,15 @@ _Press the button blew for detailed menu_`;
            body: `𝑯𝒆𝒍𝒑-𝑳𝒊𝒔𝒕`,
            thumbnail: log0,
            mediaType: 2,
-           mediaUrl: `https://citel.vercel.app`,
-           sourceUrl: `https://citel.vercel.app`,
+           mediaUrl: ``,
+           sourceUrl: ``,
            },
          },
          templateButtons: [
            {
            urlButton: {
              displayText: "⭐Web",
-             url: "https://citel.vercel.app",
+             url: "",
            },
            },
          ],
@@ -6469,7 +6469,7 @@ _Press the button blew for detailed menu_`;
                   previewType: "PHOTO",
                   thumbnailUrl: thum,
                   thumbnail: log0,
-                  sourceUrl: `https://citel.vercel.app`,
+                  sourceUrl: ``,
                 },
               },
             },
@@ -7247,9 +7247,9 @@ break
 
 									mediaType: 2,
 
-									mediaUrl: `https://citel.vercel.app`,
+									mediaUrl: ``,
 
-									sourceUrl: `https://citel.vercel.app`
+									sourceUrl: ``
 
 								}
 							}
@@ -7631,8 +7631,8 @@ for (let i = 0; i < nn; i++) {
                   body: `Have Fun ${LangG.greet}`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -7700,8 +7700,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -7756,8 +7756,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -7808,8 +7808,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -7859,8 +7859,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -7910,8 +7910,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -7971,8 +7971,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -8022,8 +8022,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -8073,8 +8073,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -8124,8 +8124,8 @@ for (let i = 0; i < nn; i++) {
                   body: `𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             };
@@ -8161,8 +8161,8 @@ for (let i = 0; i < nn; i++) {
                   body: `Youtube DL`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             },
@@ -8196,8 +8196,8 @@ for (let i = 0; i < nn; i++) {
                   body: `FEEL THE SONG💕`,
                   thumbnail: log0,
                   mediaType: 2,
-                  mediaUrl: `https://citel.vercel.app`,
-                  sourceUrl: `https://citel.vercel.app`,
+                  mediaUrl: ``,
+                  sourceUrl: ``,
                 },
               },
             },
@@ -8281,8 +8281,8 @@ for (let i = 0; i < nn; i++) {
                     body: `${global.ownername}`,
                     thumbnail: log0,
                     mediaType: 2,
-                    mediaUrl: `https://citel.vercel.app`,
-                    sourceUrl: `https://citel.vercel.app`,
+                    mediaUrl: ``,
+                    sourceUrl: ``,
                   },
                 },
               },
@@ -8532,8 +8532,8 @@ for (let i = 0; i < nn; i++) {
                     body: `${global.ownername}`,
                     thumbnail: log0,
                     mediaType: 2,
-                    mediaUrl: `https://citel.vercel.app`,
-                    sourceUrl: `https://citel.vercel.app`,
+                    mediaUrl: ``,
+                    sourceUrl: ``,
                   },
                 },
               },
@@ -8574,8 +8574,8 @@ for (let i = 0; i < nn; i++) {
                     body: `${global.ownername}`,
                     thumbnail: log0,
                     mediaType: 2,
-                    mediaUrl: `https://citel.vercel.app`,
-                    sourceUrl: `https://citel.vercel.app`,
+                    mediaUrl: ``,
+                    sourceUrl: ``,
                   },
                 },
               },
@@ -9010,37 +9010,14 @@ Report Message: ${text}`,
           return;
         }
         const aliveadm = isAdmins ? "True" : "False";
-        waifudl = await axios.get("https://waifu.pics/api/sfw/waifu");
-        quoog = await axios.get(`https://favqs.com/api/qotd`);
         const alivtxt = `
  Hello, my ${pushname}, I am ${LangG.title} 🍭. A bot developed by Team ${global.ownername} 💓.
-Type -𝐌𝐞𝐧𝐮 for my command list.
- *${quoog.data.quote.body}*
+Type ${prefix}menu for my command list.\n
 *Powered by ${global.ownername}*
 `;
-        const alivebutton = [
-          {
-            buttonId: `${prefix}help`,
-            buttonText: {
-              displayText: "HELP",
-            },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}repo`,
-            buttonText: {
-              displayText: "REPO",
-            },
-            type: 1,
-          },
-        ];
         let aliveMessage = {
-          image: {
-            url: waifudl.data.url,
-          },
-          caption: alivtxt,
+          text: alivtxt,
           footer: LangG.footer,
-          buttons: alivebutton,
           headerType: 4,
         };
         Void.sendMessage(m.chat, aliveMessage, {
@@ -9139,8 +9116,8 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
                 body: `Bot-Status`,
                 thumbnail: log0,
                 mediaType: 2,
-                mediaUrl: `https://citel.vercel.app`,
-                sourceUrl: `https://citel.vercel.app`,
+                mediaUrl: ``,
+                sourceUrl: ``,
               },
             },
           };
@@ -9159,7 +9136,7 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
             await m.reply(
               `*❗Command:*   Developers List\n*🍀Aliases* ${
                 prefix + command
-              },-tq,-repo\n*🧩Category:* General\n*🛠️Usage:* ${
+              },${prefix}tq,${prefix}repo\n*🧩Category:* General\n*🛠️Usage:* ${
                 prefix + command
               }\n\n*📚Description:* Shows list of Developers of Secktor.`
             );
@@ -9195,7 +9172,7 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
                     {
                       urlButton: {
                         displayText: "Web",
-                        url: "https://citel.vercel.app",
+                        url: "",
                       },
                     },
                     {
@@ -9232,7 +9209,7 @@ Type -𝐌𝐞𝐧𝐮 for my command list.
 
       default:
 				Void.sendMessage(m.chat, {
-					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
+					text: `*𝑵𝒐 𝑺𝒖𝒄𝒉 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔*.\n𝑼𝒔𝒆 *${prefix}𝒉𝒆𝒍𝒑* 𝒕𝒐 𝒔𝒆𝒆 𝑯𝒆𝒍𝒑 𝑳𝒊𝒔𝒕.`
 				}, {
 					quoted: m
 				})
