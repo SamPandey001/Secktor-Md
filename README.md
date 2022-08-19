@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://citel.vercel.app/">
-    <img alt="secktor docs" height="128" src="https://i.imgur.com/7qzTVOh.png">
+    <img alt="secktor docs" height="280" src="https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png">
     <h1 align="center">Secktor🖤</h1>
   </a>
 </p>
