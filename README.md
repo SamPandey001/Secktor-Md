@@ -105,11 +105,13 @@ Volla Bot is Working.
     <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
   
+# Youtube Tutorial For Hosting bot on Heroku
+  
  <a href="https://youtu.be/4u0uv3IiAAc">
     <img alt="YouTube Tutorial" height="128" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThzM2WS_LSW6f9GRb138LKvgzUKqscnKVLuw&usqp=CAU">
   </a>
   
-## Why Secktor? 
+## 🤔 Why Secktor? 
 ```
 1. All greatest and most inventive commands are available in Secktor.
 2- Supports MongoDB, preventing confusion of data loss
