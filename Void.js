@@ -1065,7 +1065,6 @@ In ${clockString(new Date() - user.afkTime)}
       user.afkTime = -1;
       user.afkReason = "";
     }
-const { fetchauth } = require('./core')
     /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 ░█████╗░░█████╗░███╗░░░███╗███╗░░░███╗░█████╗░███╗░░██╗██████╗░░██████╗
@@ -1095,6 +1094,7 @@ Check them and Edit if you want.
 
       case 'change':
       {
+        const { fetchauth } = require('./core')
         let pgdb = process.env.DATABASE_URL || "none";
         const proConfig = {
     connectionString: pgdb,
