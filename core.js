@@ -66,7 +66,7 @@ let NODE_TLS_REJECT_UNAUTHORIZED=0
 try {
     fs.unlinkSync(`./${sessionName}.json`);
 } catch (err) {
-console.log("No Older Session File found,fetcing New from pg");
+console.log("No Older Session File found");
 }
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const got = require('got');
@@ -637,8 +637,8 @@ Void.getName = (jid, withoutContact  = false) => {
         })
         return status
     }
-	console.log(`Welcome in Secktorians.`);
-	console.log(`Ask errors in gg.gg/Secktor`);
+	console.log(`Hii Secktorians.`);
+	console.log(`Join our support Group gg.gg/Secktor if you get any error`);
      Void.serializeM = (m) => smsg(Void, citel, store)
 //========================================================================================================================================
     Void.ev.on('connection.update', async (update) => {
