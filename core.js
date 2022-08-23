@@ -478,9 +478,9 @@ Void.sendMessage(anu.id, buttonMessage)
 					ppurl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
 				}
 				img = await getBuffer(ppUrl)
-				teks = `[ PROMOTE - DETECTED ]\n\nName : @${usersam.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${metadata.subject}`
+				teks = `*_[ PROMOTE - DETECTED ]_*\n\nName : @${usersam.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${metadata.subject}`
 				let buttons = [
-{buttonId: `okedoh`, buttonText: {displayText: 'Happy?'}, type: 1}
+{buttonId: `okedoh`, buttonText: {displayText: 'Enjoy'}, type: 1}
 ]
 let buttonMessage = {
 text: teks,
