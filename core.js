@@ -27,6 +27,7 @@ const pino = require('pino')
 const prefix = global.prefa;
 const { Boom } = require("@hapi/boom");
 const fs = require('fs-extra');
+const qrcode = require("qrcode");
 const express = require("express");
 const chalk = require('chalk')
 const FileType = require('file-type')
@@ -44,7 +45,6 @@ const { Spinner } = clui
 const prompt = require('prompt-sync')({sigint:true});
 const figlet = require('figlet')
 const mongoose = require('mongoose');
-const qrcode = require("qr-image");
 const PORT = port
 var emitter = require('events'); 
 emitter.setMaxListeners()
@@ -655,15 +655,10 @@ Void.getName = (jid, withoutContact  = false) => {
             else { /*console.log(`Unknown DisconnectReason: ${reason}|${connection}`)*/ }
         }
      //   console.log('Connection...', update)
-   if (qr !== undefined) {
-      qrcode
-        .image(qr, { type: "png", size: 4 })
-        .pipe(
-          fs.createWriteStream(path.join(__dirname, "/public", "secktor.png"))
-        );
+     if (qr) {
+        QR_GENERATE = qr;
     }
-     //   console.log('Connection...', update)
-    })
+})
 	//=============================[Implementing pg to update to Session file by the time.]===================================================
      Void.ev.on('creds.update', () => {
         saveState();
@@ -1085,33 +1080,16 @@ Void.getName = (jid, withoutContact  = false) => {
 }
 
 __START()
-async function logout() {
-pool.query("DROP TABLE auth;");
-console.log("[SECKTOR]   Session Table deleted from pg.");
-cred.logout();
-process.exit(0);
-console.log("[SECKTOR]   Logged out");
-}
 //=============================[Implementing express to Get Qr PNG in application.]===================================================
 //=============================[Bot should be Running on Web resources to Get QR.]===================================================
-// for more info----https://www.npmjs.com/package/express
-app.use(express.static(path.join(__dirname, "./public")));
-app.listen(port, () => {
-  console.log("\nServer running on http://localhost:" + port+"\nPublic folder will be available publicly.");
+app.use(async (req, res) => {
+    let picqr = await qrcode.toBuffer(QR_GENERATE)
+	res.setHeader("content-type", "image/png");
+	res.end(picqr);
 });
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
-app.get("/", (req, res) => {
-  res.sendFile("secktor.png");
+app.listen(PORT, () => {
+	console.log(`Qr Code Server running on PORT ${PORT} Tap on Open app and Scan Qr code. If you have already scanned,Ignore this message.`);
 });
-app.get("/logout", async (req, res) => {
-    logout();
-    res.send("Logging you out and deleting session data from pg");
-  });
-process.on("uncaughtException", (err) => console.log(err));
 //=============================[to get message of New Update of this file.]===================================================
 //========================================================================================================================================
 let file = require.resolve(__filename)
