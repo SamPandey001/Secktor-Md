@@ -50,7 +50,7 @@
 
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
-*🕸Version:* 1.0.0
+*🕸Version:* 0.0.3
 *🎯Total Hits* : ${totalhit}
 *👤Owner:*  ${global.ownername}
 *📡Hosting Platform:* ${os.hostname()}

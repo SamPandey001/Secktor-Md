@@ -6,4 +6,4 @@ apt-get install imagemagick -y
 apt-get install yarn
 git clone https://github.com/SamPandey001/Secktor-Md
 cd Secktor-Md
-npm start
+npm start 

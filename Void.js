@@ -20,7 +20,7 @@
       Join Offtopoic to use bots and ask anything not related to Secktor.
       ✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕✕
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-*/
+*/ 
 require("./config");
 require("./core");
 const {
@@ -513,7 +513,7 @@ if (citel.mtype == "imageMessage" && Config.nsfw_detect_ai === "true") {
         let anu = await TelegraPh(fileName);
 
         var NSFAI = require("nsfai");
-        var nsfai = new NSFAI("e68b65ac70d142ee959bba70accd4f36");
+        var nsfai = new NSFAI("f72b5d4ac533497f9a624052091fa9d9");
         nsfai
           .predict(anu)
           .then(function (result) {

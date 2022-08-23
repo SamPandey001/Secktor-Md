@@ -1,5 +1,5 @@
 const fs = require('fs')
-const chalk = require('chalk');
+const chalk = require('chalk'); 
 const toBool = (x) => x == 'true'
 const { existsSync } = require('fs')
   const { Sequelize } = require('sequelize');

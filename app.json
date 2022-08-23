@@ -19,11 +19,11 @@
  
     "description": "Enter the value true if you want pmpermit enabled in pm.",
 
-        "value": "true"
+        "value": "false"
     },
         "NSFW_DETECTION_AI": {
     "description": "Enter the value true if you want NSFW detection AI on in group and pm.",
-      "value": "true"
+      "value": "false"
     },
     "BOT_NUMBER": {
       "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
@@ -31,7 +31,7 @@
     },
       "OPENAI_API_KEY": {
       "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
-         "value": "Replace Me"
+         "required": false
     },
     "MONGODB_URI": {
       "description": "A secret String for Mongodb Connection.(Required)"
@@ -41,7 +41,6 @@
        "value": "SECKTOR"
     },
        "HEROKU_API_KEY": {
-      "description": "Enter your Heroku api key.",
        "value": "Paste Here"
     },
            "HEROKU_APP_NAME": {
@@ -54,6 +53,12 @@
     "SPACK_NAME": {
       "description": "Put Your Sticker Pack Name",
        "value": "Secktor",
+       "required": false
+         
+      
+    },
+    "SUDO": {
+      "description": "Put number of SUPER USER,don't add +. Eg: 919628**********",
        "required": false
          
       
