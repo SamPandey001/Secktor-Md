@@ -7,21 +7,27 @@
 ░╚═══██╗██╔══╝░░██║░░██╗██╔═██╗░░░░██║░░░██║░░██║██╔══██╗
 ██████╔╝███████╗╚█████╔╝██║░╚██╗░░░██║░░░╚█████╔╝██║░░██║
 ╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
-     𝒃𝒚 𝑺𝒂𝒎𝑷𝒂𝒏𝒅𝒆𝒚001 
-     𝑴𝒂𝒅𝒆 𝒘𝒊𝒕𝒉 𝑳𝒐𝒗𝒆 𝒂𝒏𝒅 𝑱𝒂𝒗𝒂𝒔𝒄𝒓𝒊𝒑𝒕.
-     𝑨𝒕𝒍𝒆𝒂𝒔𝒕 𝑫𝒐𝒏❜𝒕 𝒆𝒅𝒊𝒕 𝒕𝒉𝒊𝒔 𝑷𝒂𝒓𝒕.
-     𝑻𝒉𝒊𝒔 𝒊𝒔 𝑭𝒐𝒓 𝒎𝒚 𝒘𝒐𝒓𝒌 𝒘𝒉𝒊𝒄𝒉 𝒊 𝒉𝒂𝒗𝒆 𝒅𝒐𝒏𝒆.
+      by CitelVoid
+
+     Code is freely accessible to the public under the provisions of the GNU Public License V3 as published by.
+     You are free to alter and/or redistribute this programme since it is free software.
+     This programme is provided WITHOUT ANY Guarantee,
+     not even the implicit warranty of merchantability or fitness for a particular purpose.
+     It is supplied in the hope that it may be useful. For further information,
+     Refer to the GNU Public Licence V3.
+     Copyright (C) 2022 Authors.
 ================================================================================
 */
 
 require("./config.js")
 require('./Void.js')
+require('./lib/sql')
 const { default: VoidConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const pino = require('pino')
 const prefix = global.prefa;
 const { Boom } = require("@hapi/boom");
 const fs = require('fs-extra');
-let pgdb = process.env.DATABASE_URL || "none";  //For Storing Session data in pg if you want to delete you data,reset/destroy pg db from heroku
+const qrcode = require("qrcode");
 const express = require("express");
 const chalk = require('chalk')
 const FileType = require('file-type')
@@ -38,36 +44,37 @@ const clui = require('clui')
 const { Spinner } = clui
 const prompt = require('prompt-sync')({sigint:true});
 const figlet = require('figlet')
-const { Pool } = require("pg");
 const mongoose = require('mongoose');
-const qrcode = require("qrcode");
 const PORT = port
+var emitter = require('events'); 
+emitter.setMaxListeners()
 const app = express();
-const { color, bgcolor } = require("./lib/color")
-const moment = require('moment-timezone')
-let NODE_TLS_REJECT_UNAUTHORIZED=0
-const proConfig = {
+let pgdb = process.env.DATABASE_URL || "none";
+ //For Storing Session data in pg if you want to delete you data,reset/destroy pg db from heroku
+const { Pool } = require("pg");
+exec('heroku config:set PGSSLMODE=no-verify')
+ const proConfig = {
     connectionString: pgdb,
     ssl: {
         rejectUnauthorized: false,
     },
 }; //Connection with PG
-const pool = new Pool(proConfig);
+const pool = new Pool(proConfig)
+const { color, bgcolor } = require("./lib/color")
+const moment = require('moment-timezone')
+let NODE_TLS_REJECT_UNAUTHORIZED=0
 try {
     fs.unlinkSync(`./${sessionName}.json`);
 } catch (err) {
-console.log("No Session File found.");
-} //It will automaticly be deleted on Heroku at every restart,But this part is for Local Hosting.
-
-main().catch(err => console.log(err));
-async function main() {
-  await mongoose.connect(mongodb);
+console.log("No Older Session File found");
 }
-const {sck1,RandomXP,sck} = require("./lib/core")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
-//=======================================================[Commiting session data on pg]===================================================================
+const got = require('got');
+//=========[Commiting session data on pg]===================================================================
+
 let cred, auth_row_count;
-async function fetchauth() {
+module.exports = fetchauth = async function fetchauth() 
+{
     try {
         auth_result = await pool.query("select * from auth;"); //checking auth table
       //  console.log("Fetching login data...");
@@ -119,15 +126,23 @@ async function fetchauth() {
             );
         }
     } catch (err) {
-        console.log(err);
+      //  console.log(err);
         console.log("Creating database on PG to store your Session for future logins..."); //if login fail create a db
         await pool.query(
             "CREATE TABLE auth(noiseKey text, signedIdentityKey text, signedPreKey text, registrationId text, advSecretKey text, nextPreKeyId text, firstUnuploadedPreKeyId text, serverHasPreKeys text, account text, me text, signalIdentities text, lastAccountSyncTimestamp text, myAppStateKeyId text);"
         );
+        
 
         await fetchauth();
     }
 }
+///It will automaticly be deleted on Heroku at every restart,But this part is for Local Hosting.
+
+main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect(mongodb);
+}
+const {sck1,RandomXP,sck} = require("./lib/core")
 //========================================================================================================================================
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 const getVersionWaweb = () => {
@@ -146,31 +161,20 @@ const getVersionWaweb = () => {
 let QR_GENERATE = "invalid"; //If there is no Qr
 async function __START() {
   await fetchauth();
+  await pool.query(
+      "CREATE TABLE IF NOT EXISTS Module (name BOOL, url BOOL);"
+    );
     if (auth_row_count != 0) {
         state.creds = cred.creds;
     }
     const Void = VoidConnect({
         logger: pino({ level: 'fatal' }),
         printQRInTerminal: true,
-        browser: ['Secktor','Safari','1.0.0'],
+        browser: ['Secktor','fatal','1.0.0'],
         auth: state,
           version: getVersionWaweb() || [2, 2204, 13]
     })
 store.bind(Void.ev)
-
-console.log(color(figlet.textSync('Secktor', {
-
-		font: 'Pagga',
-
-		horizontalLayout: 'default',
-
-		vertivalLayout: 'default',
-
-		width: 80,
-
-		whitespaceBreak: true
-
-	}), 'yellow')) //Printing Bot Name As ASCII in console.
 Void.ev.on('messages.upsert', async chatUpdate => {
 try {
 mek = chatUpdate.messages[0]
@@ -179,8 +183,8 @@ mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast') return
 if (!Void.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
 if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-m = smsg(Void, mek, store)
-require("./Void")(Void, m, chatUpdate, store)
+citel = smsg(Void, mek, store)
+require("./Void")(Void, citel, chatUpdate, store)
 } catch (err) {
 console.log(err)
 }
@@ -211,8 +215,6 @@ setInterval(() => {
 		let jack =  axios.get(baset);
 	//console.log(jack);
 		}, 60 * 15 *1000)
-
-
 //=============================[For Announcement from Team CitelVoid.]===================================================
 // Dont Edit gist url if you want to be updated with Secktor and All upcoming Projects
 // You'll get announcement every Sunday.
@@ -243,7 +245,7 @@ setInterval(() => {
                 ],
               }
             )
-	
+
   })();
   }, {
             scheduled: true,
@@ -298,9 +300,9 @@ Void.ev.on('group-participants.update', async (anu) => {
                 if (GroupS) {
                     let events = GroupS.events || "false"
 if (anu.action == 'add' && events == "true" ) {
-	
+
 	 if (anu.id === secsupport) {
-                 
+
                 hesa = `${participants}`
 		  mestes = (teks) => {
 					return teks.replace(/['@s whatsapp.net']/g, " ");
@@ -321,7 +323,7 @@ if (anu.action == 'add' && events == "true" ) {
 	const xmembers = metadata.participants.length
                 usersam = num
                 mbc = `
-*Hi,* @${usersam.split("@")[0]} 
+*Hi,* @${usersam.split("@")[0]}
 *Welcome in*  ${metadata.subject}
 *Member count* : ${xmembers}th
 *Please don't use bots here.* Sector Bot will not work here by default.
@@ -329,10 +331,11 @@ if (anu.action == 'add' && events == "true" ) {
 *Don't spam in Support Group*\n\n
 *⭐Repo:* gg.gg/Secktor-repo
 *⭐Docs:* gg.gg/Secktor-Docs
-*⭐Off-Topic:* gg.gg/Secktor-Offtopic
+*⭐Tutorial* gg.gg/Secktor-Tutorial
+*⭐Off-Topic(Use Bots):* gg.gg/Secktor-Offtopic
    `
 let buttonMessage = {
-image: await getBuffer(ppuser), 
+image: await getBuffer(ppuser),
 caption: mbc,
 footer: `${global.botname}`,
 mentions:[usersam],
@@ -349,13 +352,13 @@ Void.sendMessage(anu.id, buttonMessage)
                     { urlButton: { displayText: "⭐Repo", url: "https://github.com/CitelVoid/Secktor-Md" } },
 		{ urlButton: { displayText: "⭐Docs", url: "https://docs.secktor.live" } },
 		{ urlButton: { displayText: "Off-Topic", url: "https://chat.whatsapp.com/KWWFhiP1yNn2Sc9TDZpHXJ" } }
-                    
+
                 ]
             })
 	    */
 
     else if (anu.id === offtopic && events == "true" ) {
-                 
+
         hesa = `${participants}`
   mestes = (teks) => {
             return teks.replace(/['@s whatsapp.net']/g, " ");
@@ -376,18 +379,21 @@ Void.sendMessage(anu.id, buttonMessage)
 const xmembers = metadata.participants.length
         usersam = num
         mbc = `
-*Hi,* @${usersam.split("@")[0]} 
+*Hi,* @${usersam.split("@")[0]}
 *Welcome in*  ${metadata.subject}
 *Member count* : ${xmembers}th
 *Welcome in Offtopic.*
 *Feel Free to ask Queries at anytime.*
-*You are free as a bird to be on anytopic.*\n\n
+*Secktor bot will be working here.*
+*You are free as a bird to be on anytopic.*
+*_Prefix_* = "${prefix}"\n\n
 *⭐Repo:* gg.gg/Secktor-repo
 *⭐Docs:* gg.gg/Secktor-Docs
+*⭐Tutorial* gg.gg/Secktor-Tutorial
 *⭐Support:* gg.gg/Secktor
 `
 let buttonMessage = {
-image: await getBuffer(ppuser), 
+image: await getBuffer(ppuser),
 caption: mbc,
 footer: `${global.botname}`,
 mentions:[usersam],
@@ -417,15 +423,17 @@ await Void.sendMessage(anu.id, buttonMessage)
   let welcome_message = process.env.WELCOME_MESSAGE || ``
           usersam = num
           mbc = `
-  *Hi,* @${usersam.split("@")[0]} 
+  *Hi,* @${usersam.split("@")[0]}
   *Welcome in*  ${metadata.subject}
   *Member count* : ${xmembers}th
   ${welcome_message}\n
+  *⭐Tutorial* gg.gg/Secktor-Tutorial
+  *⭐Bot Group:* gg.gg/Secktor-Offtopic
   *Powered by Secktor-Bot*
 
   `
   let buttonMessage = {
-  image: await getBuffer(ppuser), 
+  image: await getBuffer(ppuser),
   caption: mbc,
   footer: `${global.botname}`,
   mentions:[usersam],
@@ -445,8 +453,8 @@ await Void.sendMessage(anu.id, buttonMessage)
 	const xeonmembers = metadata.participants.length
                     usersam = num
                 mbc = `
-   *ANOTHER ONE BITES DUST* 👋 
-   @${usersam.split("@")[0]} left 
+   *ANOTHER ONE BITES DUST* 👋
+   @${usersam.split("@")[0]} left
    ${metadata.subject}
    𝗠𝗲𝗺𝗯𝗲𝗿 : ${xeonmembers}th
    `
@@ -465,14 +473,14 @@ Void.sendMessage(anu.id, buttonMessage)
 }else if (anu.action == 'promote') {
 			usersam = num
 			try {
-				ppUrl = await Void.profilePictureUrl(m.sender, 'image')
+				ppUrl = await Void.profilePictureUrl(citel.sender, 'image')
 				} catch {
 					ppurl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
 				}
 				img = await getBuffer(ppUrl)
-				teks = `[ PROMOTE - DETECTED ]\n\nName : @${usersam.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${metadata.subject}`
+				teks = `*_[ PROMOTE - DETECTED ]_*\n\nName : @${usersam.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${metadata.subject}`
 				let buttons = [
-{buttonId: `okedoh`, buttonText: {displayText: 'Happy?'}, type: 1}
+{buttonId: `okedoh`, buttonText: {displayText: 'Enjoy'}, type: 1}
 ]
 let buttonMessage = {
 text: teks,
@@ -486,7 +494,7 @@ Void.sendMessage(anu.id, buttonMessage)
 			} else if (anu.action == 'demote') {
 			usersam = num
 			try {
-				ppUrl = await Void.profilePictureUrl(m.sender, 'image')
+				ppUrl = await Void.profilePictureUrl(citel.sender, 'image')
 				} catch {
 					ppUrl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
 				}
@@ -496,7 +504,7 @@ Void.sendMessage(anu.id, buttonMessage)
 {buttonId: `okedoh`, buttonText: {displayText: 'ANOTHER ONE BITES DUST!'}, type: 1}
 ]
 let buttonMessage = {
-image: img, 
+image: img,
 caption: teks,
 footer: `Secktor`,
 mentions:[usersam],
@@ -509,10 +517,10 @@ Void.sendMessage(anu.id, buttonMessage)
         }} catch (err) {
             console.log(err)
         }
-}) 
-//          
+})
+//
 	    /*
-	     let botNumberJid = Void.user.id; 
+	     let botNumberJid = Void.user.id;
         botNumberJid =
           botNumberJid.slice(0, botNumberJid.search(":")) +
           botNumberJid.slice(botNumberJid.search("@"));
@@ -532,8 +540,9 @@ Void.sendMessage(anu.id, buttonMessage)
             return decode.user && decode.server && decode.user + '@' + decode.server || jid
         } else return jid
     }
+
     /*\
-    
+
    Void.ev.on('contacts.update', update => {
         for (let contact of update) {
             let id = Void.decodeJid(contact.id)
@@ -541,6 +550,7 @@ Void.sendMessage(anu.id, buttonMessage)
         }
     })
 	*/
+    
 //========================================================================================================================================
 	 Void.ev.on('contacts.upsert', (contacts) => {
             const contactsUpsert = (newContacts) => {
@@ -561,7 +571,7 @@ Void.sendMessage(anu.id, buttonMessage)
 		 let id = Void.decodeJid(contact.id)
             if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
            // let id = Void.decodeJid(contact.id)
-            
+
                 }
             })
 //========================================================================================================================================
@@ -569,7 +579,7 @@ Void.getName = (jid, withoutContact  = false) => {
 
         id = Void.decodeJid(jid)
 
-        withoutContact = Void.withoutContact || withoutContact 
+        withoutContact = Void.withoutContact || withoutContact
 
         let v
 
@@ -627,19 +637,12 @@ Void.getName = (jid, withoutContact  = false) => {
         })
         return status
     }
-	//=============================[Implementing WorkType for bot to work Public or in Private Mode.]===================================================
-    if (Config.WORKTYPE === 'private'){
-    Void.public = false
-	} else if (Config.WORKTYPE === 'public'){
-    Void.public = true
-	}
-    let xero = Void.public == true ? ' Public' : ' Private'
-    log(pint('Secktor Mode' + xero, '.'));
-	console.log(`Secktor is Running Perfecly.`);
-     Void.serializeM = (m) => smsg(Void, m, store)
+	console.log(`Hii Secktorians.`);
+	console.log(`Join our support Group gg.gg/Secktor if you get any error`);
+     Void.serializeM = (m) => smsg(Void, citel, store)
 //========================================================================================================================================
     Void.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect, qr} = update	    
+        const { connection, lastDisconnect, qr} = update
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
@@ -652,11 +655,10 @@ Void.getName = (jid, withoutContact  = false) => {
             else { /*console.log(`Unknown DisconnectReason: ${reason}|${connection}`)*/ }
         }
      //   console.log('Connection...', update)
-   if (qr) {
-			QR_GENERATE = qr;
-		}
-     //   console.log('Connection...', update)
-    })
+     if (qr) {
+        QR_GENERATE = qr;
+    }
+})
 	//=============================[Implementing pg to update to Session file by the time.]===================================================
      Void.ev.on('creds.update', () => {
         saveState();
@@ -740,7 +742,7 @@ Void.getName = (jid, withoutContact  = false) => {
 //========================================================================================================================================
     Void.send5ButImg = async (jid , text = '' , footer = '', img, but = [], thumb, options = {}) =>{
         let message = await prepareWAMessageMedia({ image: img, jpegThumbnail:thumb }, { upload: Void.waUploadToServer })
-        var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+        var template = generateWAMessageFromContent(citel.chat, proto.Message.fromObject({
         templateMessage: {
         hydratedTemplate: {
         imageMessage: message.imageMessage,
@@ -754,13 +756,13 @@ Void.getName = (jid, withoutContact  = false) => {
     }
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} buttons 
-     * @param {*} caption 
-     * @param {*} footer 
-     * @param {*} quoted 
-     * @param {*} options 
+     *
+     * @param {*} jid
+     * @param {*} buttons
+     * @param {*} caption
+     * @param {*} footer
+     * @param {*} quoted
+     * @param {*} options
      */
 //========================================================================================================================================
     Void.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
@@ -774,26 +776,26 @@ Void.getName = (jid, withoutContact  = false) => {
 //========================================================================================================================================
         Void.sendMessage(jid, buttonMessage, { quoted, ...options })
     }
-    
+
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} text 
-     * @param {*} quoted 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} quoted
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendText = (jid, text, quoted = '', options) => Void.sendMessage(jid, { text: text, ...options }, { quoted })
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} path 
-     * @param {*} caption 
-     * @param {*} quoted 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} path
+     * @param {*} caption
+     * @param {*} quoted
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendImage = async (jid, path, caption = '', quoted = '', options) => {
@@ -802,13 +804,13 @@ Void.getName = (jid, withoutContact  = false) => {
     }
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} path 
-     * @param {*} caption 
-     * @param {*} quoted 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} path
+     * @param {*} caption
+     * @param {*} quoted
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
@@ -817,13 +819,13 @@ Void.getName = (jid, withoutContact  = false) => {
     }
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} path 
-     * @param {*} quoted 
-     * @param {*} mime 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} path
+     * @param {*} quoted
+     * @param {*} mime
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
@@ -832,23 +834,23 @@ Void.getName = (jid, withoutContact  = false) => {
     }
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} text 
-     * @param {*} quoted 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} quoted
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendTextWithMentions = async (jid, text, quoted, options = {}) => Void.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} path 
-     * @param {*} quoted 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} path
+     * @param {*} quoted
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
@@ -865,12 +867,12 @@ Void.getName = (jid, withoutContact  = false) => {
     }
 
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} path 
-     * @param {*} quoted 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} path
+     * @param {*} quoted
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
@@ -911,11 +913,11 @@ Void.getName = (jid, withoutContact  = false) => {
        return fs.promises.unlink(pathFile)
        }
     /**
-     * 
-     * @param {*} message 
-     * @param {*} filename 
-     * @param {*} attachExtension 
-     * @returns 
+     *
+     * @param {*} message
+     * @param {*} filename
+     * @param {*} attachExtension
+     * @returns
      */
 //========================================================================================================================================
     Void.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
@@ -942,17 +944,17 @@ Void.getName = (jid, withoutContact  = false) => {
         for await(const chunk of stream) {
             buffer = Buffer.concat([buffer, chunk])
 	}
-        
+
 	return buffer
-     } 
-    
+     }
+
     /**
-     * 
-     * @param {*} jid 
-     * @param {*} message 
-     * @param {*} forceForward 
-     * @param {*} options 
-     * @returns 
+     *
+     * @param {*} jid
+     * @param {*} message
+     * @param {*} forceForward
+     * @param {*} options
+     * @returns
      */
 //========================================================================================================================================
     Void.copyNForward = async (jid, message, forceForward = false, options = {}) => {
@@ -1018,9 +1020,9 @@ Void.getName = (jid, withoutContact  = false) => {
 
 
     /**
-     * 
-     * @param {*} path 
-     * @returns 
+     *
+     * @param {*} path
+     * @returns
      */
 //========================================================================================================================================
     Void.getFile = async (PATH, save) => {
@@ -1042,6 +1044,12 @@ Void.getName = (jid, withoutContact  = false) => {
         }
 
     }
+    if (Config.WORKTYPE === 'private'){
+        Void.public = true 
+        }
+        if (Config.WORKTYPE === 'public'){
+        Void.public = true
+        }
 //========================================================================================================================================
     Void.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => {
         let types = await Void.getFile(PATH, true)
@@ -1072,10 +1080,8 @@ Void.getName = (jid, withoutContact  = false) => {
 }
 
 __START()
-
 //=============================[Implementing express to Get Qr PNG in application.]===================================================
 //=============================[Bot should be Running on Web resources to Get QR.]===================================================
-// for more info----https://www.npmjs.com/package/express
 app.use(async (req, res) => {
     let picqr = await qrcode.toBuffer(QR_GENERATE)
 	res.setHeader("content-type", "image/png");

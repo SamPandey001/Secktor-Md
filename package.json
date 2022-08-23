@@ -1,6 +1,6 @@
 {
-  "name": "Secktor-Md",
-  "version": "0.0.2",
+  "name": "secktor",
+  "version": "1.0.0",
   "description": "Multi device wa bot created by Team CitelVoid.",
   "main": "core.js",
   "type": "commonjs",
@@ -12,20 +12,26 @@
     "termux",
     "whatsapp",
     "SamPandey001",
-    "Zero-Two",
+    "Secktor",
     "wabase-md",
-    "whatsappbot-md",
     "base",
-    "advanced-bot",
     "baileys-md",
     "bot",
     "bot-md",
     "multi-device"
   ],
+  "base-author": "SamPandey001",
   "author": "SamPandey001",
   "license": "GNU",
  "dependencies": {
-  "secktor-api": "1.1.0"
+   "pg": "latest",
+  "secktor-api": "1.1.0",
+   "anime-wallpaper": "latest",
+   "heroku":"latest",
+   "qr-image": "latest",
+   "got": "^11.8.0",
+   "sequelize": "latest",
+    "dotenv": "^8.2.0"
   },
   "directories": {
     "lib": "lib",
