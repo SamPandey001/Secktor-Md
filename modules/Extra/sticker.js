@@ -14,7 +14,7 @@
             return;
           }
           if (!quoted) return citel.reply(`*Mention any Image or video Sir.*`);
-          if (args[2]) {
+          if (q) {
             anu = args.join(" ").split("|");
             pack = anu[0] !== "" ? anu[0] : global.packname;
             author = anu[1] !== "" ? anu[1] : global.author;

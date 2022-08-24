@@ -254,7 +254,7 @@ Click on the button blew to see the list.
                 listType: "SINGLE_SELECT",
                 sections: [
                   {
-                    title: "•Zero-Two•",
+                    title: "•Secktor•",
                     rows: [
                       {
                         title: "All Commands",
@@ -264,7 +264,7 @@ Click on the button blew to see the list.
                     ],
                   },
                   {
-                    title: "•Zero-Two•",
+                    title: "•Secktor•",
                     rows: [
                       {
                         title: "Group Menu",
@@ -299,7 +299,7 @@ Click on the button blew to see the list.
                         rowId: `${prefix}helpt 10`,
                       },
                       {
-                        title: "𝑍𝑒𝑟𝑜-𝑇𝑤𝑜 𝑁𝑆𝐹𝑊",
+                        title: "NSFW MENU",
                         description: "Displays The List Of Fun Features",
                         rowId: `${prefix}helpt 11`,
                       },
