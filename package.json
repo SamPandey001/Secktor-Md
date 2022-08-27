@@ -28,6 +28,7 @@
   "secktor-api": "1.1.0",
    "anime-wallpaper": "latest",
    "heroku":"latest",
+   "@shineiichijo/marika": "2.0.4",
    "got": "^11.8.0",
    "sequelize": "latest",
     "dotenv": "^8.2.0"
