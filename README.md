@@ -91,7 +91,7 @@
                 - A Coffe
                 
                 
-3- `Go on` [Session ID ](https://secktorbot.herokuapp.com/session/) or simply join Support offtopic group and use command `qr`.
+3- `Go on` [Session ID ](https://secktorbot.herokuapp.com/session) or simply join Support offtopic group and use command `qr`.
 
 3- `Click on Deploy Purple button down below from Forked Repo.`
 
