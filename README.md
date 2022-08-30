@@ -76,31 +76,34 @@
 </p>
 
 
-## ⬇️ Installation 
-
-<p>Learn How to Deploy Secktor Userbot <a aria-label="secktor documentation" href="https://citel.vercel.app">in our official docs!</a></p>
-
-- [Heroku](https://citel.vercel.app/tutorial/heroku/)
-- [Macos](https://citel.vercel.app/tutorial/macos/)
-- [Windows](https://citel.vercel.app/tutorial/windows/)
-- [Linux](https://citel.vercel.app/tutorial/linux/)
-- [Termux](https://citel.vercel.app/tutorial/termux/)
 ## ⬇️ Heroku Installation 
-```
-1- Fork and Star Repo.
+
+1- `Fork and Star Repo.`
+
 2- Requirements-
+
                 - MongoDB URL
+                
                 - Heroku API KEY
+                
                 - OPENAI API KEY (OPTIONAL)
+                
                 - A Coffe
-3- Click on Deploy Purple button down below from Forked Repo.
-4- Fill Config Vars & Click on Deploy Button
-5- Wait 2-3 min and Tap on Open Application.
-6- Scan Qr Code.
+                
+                
+3- `Go on` [Session ID ](https://secktorbot.herokuapp.com/session/) or simply join Support offtopic group and use command `qr`.
+
+3- `Click on Deploy Purple button down below from Forked Repo.`
+
+4- `Fill that session Id during deployment.`
+
+5- `Fill Config Vars & Click on Deploy Button`
+
+6- `Wait 2-3 min`
 
 Volla Bot is Working.
 
-```
+# Deploy button for Heroku
  <a href="https://www.heroku.com/deploy/?template=https://github.com/SamPandey001/Secktor-Md.git">
     <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
