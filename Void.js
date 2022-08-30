@@ -714,9 +714,9 @@ feed.items.forEach(item => {
     let sender = isGroup ? citel.key.participant : from;
     let ascii = LangG.ascii || ` `
     let checkon = process.env.CHATBOT
-    /*try {
+    try {
     let checkquoted =  !isGroup || citel.quoted.key.fromMe
-      if (budy && !icmd && checkquoted && checkon === 'on') {
+      if (budy && !icmd && !isGroup && checkon === 'on') {
         let zx = querie.length;
         if (zx < 25 ) {
           var diffuser = citel.sender.split("@")[0];
@@ -752,7 +752,7 @@ feed.items.forEach(item => {
     catch (err) {
       console.log(err)
     }
-*/
+
     if (!icmd) return
     //responce
     if (isMedia && citel.msg.fileSha256 && citel.msg.fileSha256.toString("base64") in global.db.sticker) {
