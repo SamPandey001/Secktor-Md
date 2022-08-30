@@ -15,19 +15,18 @@
      not even the implicit warranty of merchantability or fitness for a particular purpose.
      It is supplied in the hope that it may be useful. For further information,
      Refer to the GNU Public Licence V3.
-     Copyright (C) 2022 Authors.
+     Copyright (C) 2022 Authors.s
 ================================================================================
 */
- 
+
 require("./config.js")
 require('./Void.js')
-require('./lib/sql')
 const { default: VoidConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const pino = require('pino')
-const prefix = global.prefa;
+const Config = require('./config');
+const prefix = Config.prefix;
 const { Boom } = require("@hapi/boom");
 const fs = require('fs-extra');
-const qrcode = require("qrcode");
 const express = require("express");
 const chalk = require('chalk')
 const FileType = require('file-type')
@@ -37,7 +36,6 @@ const {log, pint, bgPint} = require('./lib/langcolor')
 const axios = require('axios')
 const { exec, spawn, execSync } = require("child_process");
 const PhoneNumber = require('awesome-phonenumber')
-const Config = require('./config');
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, formatp,  formatDate, getTime, isUrl, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention,GIFBufferToVideoBuffer, getRandom, await, sleep, getSizeMedia, generateMessageTag } = require('./lib/myfuncn')
 const clui = require('clui')
@@ -46,93 +44,18 @@ const prompt = require('prompt-sync')({sigint:true});
 const figlet = require('figlet')
 const mongoose = require('mongoose');
 const PORT = port
-var emitter = require('events'); 
+var emitter = require('events');
 emitter.setMaxListeners()
 const app = express();
-let pgdb = process.env.DATABASE_URL || "none";
- //For Storing Session data in pg if you want to delete you data,reset/destroy pg db from heroku
-const { Pool } = require("pg");
-exec('heroku config:set PGSSLMODE=no-verify')
- const proConfig = {
-    connectionString: pgdb,
-    ssl: {
-        rejectUnauthorized: false,
-    },
-}; //Connection with PG
-const pool = new Pool(proConfig)
+const { MakeSession } =require ('./lib/colab')
+//This obfuscated part is for making session.sam.json
+function _0x33ca(){const _0x3540d1=['1099112thBsHI','105LbuzuG','1114pMhJDb','./session.sam.json','1842KlBsJA','64104JgQxEV','1274472yBDrGO','1164132FrktLE','2509641Goebrg','authFile','270288kkETVg','existsSync'];_0x33ca=function(){return _0x3540d1;};return _0x33ca();}function _0x3b0a(_0x2d104e,_0x142820){const _0x33ca9a=_0x33ca();return _0x3b0a=function(_0x3b0ae0,_0x821c49){_0x3b0ae0=_0x3b0ae0-0x1ce;let _0x5186d2=_0x33ca9a[_0x3b0ae0];return _0x5186d2;},_0x3b0a(_0x2d104e,_0x142820);}const _0x34754f=_0x3b0a;(function(_0x14301d,_0x280211){const _0x552cef=_0x3b0a,_0x3ad808=_0x14301d();while(!![]){try{const _0xcecbf3=-parseInt(_0x552cef(0x1d7))/0x1+parseInt(_0x552cef(0x1cf))/0x2*(-parseInt(_0x552cef(0x1d1))/0x3)+parseInt(_0x552cef(0x1d4))/0x4+parseInt(_0x552cef(0x1ce))/0x5*(parseInt(_0x552cef(0x1d2))/0x6)+parseInt(_0x552cef(0x1d9))/0x7+-parseInt(_0x552cef(0x1d3))/0x8+parseInt(_0x552cef(0x1d5))/0x9;if(_0xcecbf3===_0x280211)break;else _0x3ad808['push'](_0x3ad808['shift']());}catch(_0x2d3f76){_0x3ad808['push'](_0x3ad808['shift']());}}}(_0x33ca,0x2bdd3));let citelsession=Config['sessionName'],remsession=citelsession['slice'](0xa);global[_0x34754f(0x1d6)]=_0x34754f(0x1d0);!fs[_0x34754f(0x1d8)](_0x34754f(0x1d0))&&MakeSession(''+remsession,authFile);
+  sleep(3000)
+setTimeout(() => {
 const { color, bgcolor } = require("./lib/color")
 const moment = require('moment-timezone')
 let NODE_TLS_REJECT_UNAUTHORIZED=0
-const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
-const got = require('got');
-//=========[Commiting session data on pg]===================================================================
-
-let cred, auth_row_count;
-module.exports = fetchauth = async function fetchauth() 
-{
-    try {
-        auth_result = await pool.query("select * from auth;"); //checking auth table
-      //  console.log("Fetching login data...");
-        auth_row_count = await auth_result.rowCount;
-        let data = auth_result.rows[0];
-        // console.log("data ",data);
-        if (auth_row_count == 0) {
-       //     console.log("No login data found!");
-        } else {
-         //   console.log("Login data found!");
-            cred = {
-                creds: {
-                    noiseKey: JSON.parse(data.noisekey),
-                    signedIdentityKey: JSON.parse(data.signedidentitykey),
-                    signedPreKey: JSON.parse(data.signedprekey),
-                    registrationId: Number(data.registrationid),
-                    advSecretKey: data.advsecretkey,
-                    nextPreKeyId: Number(data.nextprekeyid),
-                    firstUnuploadedPreKeyId: Number(data.firstunuploadedprekeyid),
-                    serverHasPreKeys: Boolean(data.serverhasprekeys),
-                    account: JSON.parse(data.account),
-                    me: JSON.parse(data.me),
-                    signalIdentities: JSON.parse(data.signalidentities),
-                    lastAccountSyncTimestamp: 0, // To allow bot to read the messages
-                    // lastAccountSyncTimestamp: Number(data.lastaccountsynctimestampb),
-                    myAppStateKeyId: data.myappstatekeyid,
-                },
-                keys: state.keys,
-            };
-            cred.creds.noiseKey.private = Buffer.from(cred.creds.noiseKey.private);
-            cred.creds.noiseKey.public = Buffer.from(cred.creds.noiseKey.public);
-            cred.creds.signedIdentityKey.private = Buffer.from(
-                cred.creds.signedIdentityKey.private
-            );
-            cred.creds.signedIdentityKey.public = Buffer.from(
-                cred.creds.signedIdentityKey.public
-            );
-            cred.creds.signedPreKey.keyPair.private = Buffer.from(
-                cred.creds.signedPreKey.keyPair.private
-            );
-            cred.creds.signedPreKey.keyPair.public = Buffer.from(
-                cred.creds.signedPreKey.keyPair.public
-            );
-            cred.creds.signedPreKey.signature = Buffer.from(
-                cred.creds.signedPreKey.signature
-            );
-            cred.creds.signalIdentities[0].identifierKey = Buffer.from(
-                cred.creds.signalIdentities[0].identifierKey
-            );
-        }
-    } catch (err) {
-      //  console.log(err);
-        console.log("Creating database on PG to store your Session for future logins..."); //if login fail create a db
-        await pool.query(
-            "CREATE TABLE auth(noiseKey text, signedIdentityKey text, signedPreKey text, registrationId text, advSecretKey text, nextPreKeyId text, firstUnuploadedPreKeyId text, serverHasPreKeys text, account text, me text, signalIdentities text, lastAccountSyncTimestamp text, myAppStateKeyId text);"
-        );
-        
-
-        await fetchauth();
-    }
-}
-///It will automaticly be deleted on Heroku at every restart,But this part is for Local Hosting.
-
+const { state, saveState } = useSingleFileAuthState(`./session.sam.json`)
 main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongodb);
@@ -155,13 +78,6 @@ const getVersionWaweb = () => {
         }
 let QR_GENERATE = "invalid"; //If there is no Qr
 async function __START() {
-  await fetchauth();
-  await pool.query(
-      "CREATE TABLE IF NOT EXISTS Module (name BOOL, url BOOL);"
-    );
-    if (auth_row_count != 0) {
-        state.creds = cred.creds;
-    }
     const Void = VoidConnect({
         logger: pino({ level: 'fatal' }),
         printQRInTerminal: true,
@@ -210,6 +126,7 @@ setInterval(() => {
 		let jack =  axios.get(baset);
 	//console.log(jack);
 		}, 60 * 15 *1000)
+
 //=============================[For Announcement from Team CitelVoid.]===================================================
 // Dont Edit gist url if you want to be updated with Secktor and All upcoming Projects
 // You'll get announcement every Sunday.
@@ -257,15 +174,15 @@ setInterval(() => {
        }
        let wm_fatih = { url : ppgc }
        if (pea[0].announce == true) {
-       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${global.botname}`, wm_fatih, [])
+       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${Config.botname}`, wm_fatih, [])
        } else if(pea[0].announce == false) {
-       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${global.botname}`, wm_fatih, [])
+       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${Config.botname}`, wm_fatih, [])
        } else if (pea[0].restrict == true) {
-       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${global.botname}`, wm_fatih, [])
+       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${Config.botname}`, wm_fatih, [])
        } else if (pea[0].restrict == false) {
-       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${global.botname}`, wm_fatih, [])
-       } else {
-       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${global.botname}`, wm_fatih, [])
+       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${Config.botname}`, wm_fatih, [])
+       } else { 
+       Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${Config.botname}`, wm_fatih, [])
      }
     })
 
@@ -321,7 +238,8 @@ if (anu.action == 'add' && events == "true" ) {
 *Hi,* @${usersam.split("@")[0]}
 *Welcome in*  ${metadata.subject}
 *Member count* : ${xmembers}th
-*Please don't use bots here.* Sector Bot will not work here by default.
+*Please don't use bots here.*
+*_Sector Bot will not work here by default._*
 *Feel Free to ask Queries at anytime.*
 *Don't spam in Support Group*\n\n
 *⭐Repo:* gg.gg/Secktor-repo
@@ -332,7 +250,7 @@ if (anu.action == 'add' && events == "true" ) {
 let buttonMessage = {
 image: await getBuffer(ppuser),
 caption: mbc,
-footer: `${global.botname}`,
+footer: `${Config.botname}`,
 mentions:[usersam],
 headerType: 4,
 }
@@ -342,7 +260,7 @@ Void.sendMessage(anu.id, buttonMessage)
   //=============================[Adding Buttons.]===================================================
 	 await Void.sendMessage(anu.id, {
                text: ` `,
-                footer: `${global.botname}`,
+                footer: `${Config.botname}`,
                 templateButtons: [
                     { urlButton: { displayText: "⭐Repo", url: "https://github.com/CitelVoid/Secktor-Md" } },
 		{ urlButton: { displayText: "⭐Docs", url: "https://docs.secktor.live" } },
@@ -377,20 +295,17 @@ const xmembers = metadata.participants.length
 *Hi,* @${usersam.split("@")[0]}
 *Welcome in*  ${metadata.subject}
 *Member count* : ${xmembers}th
-*Welcome in Offtopic.*
+*Welcome in Secktor Offtopic.*
 *Feel Free to ask Queries at anytime.*
 *Secktor bot will be working here.*
-*You are free as a bird to be on anytopic.*
-*_Prefix_* = "${prefix}"\n\n
-*⭐Repo:* gg.gg/Secktor-repo
-*⭐Docs:* gg.gg/Secktor-Docs
-*⭐Tutorial* gg.gg/Secktor-Tutorial
-*⭐Support:* gg.gg/Secktor
+
+*_Prefix_* = " ${prefix} "
+*_Read Description for more info._*
 `
 let buttonMessage = {
 image: await getBuffer(ppuser),
 caption: mbc,
-footer: `${global.botname}`,
+footer: `${Config.botname}`,
 mentions:[usersam],
 headerType: 4,
 }
@@ -415,29 +330,28 @@ await Void.sendMessage(anu.id, buttonMessage)
           const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
     const timenow = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
   const xmembers = metadata.participants.length
-  let welcome_message = process.env.WELCOME_MESSAGE || ``
+  let welcome_message = process.env.WELCOME_MESSAGE || `  *⭐Tutorial* gg.gg/Secktor-Tutorial\n*⭐Bot Group:* gg.gg/Secktor-Offtopic`
           usersam = num
           mbc = `
   *Hi,* @${usersam.split("@")[0]}
   *Welcome in*  ${metadata.subject}
-  *Member count* : ${xmembers}th
-  ${welcome_message}\n
-  *⭐Tutorial* gg.gg/Secktor-Tutorial
-  *⭐Bot Group:* gg.gg/Secktor-Offtopic
+  *Member count* : ${xmembers}th\n
+  ${welcome_message}
+
   *Powered by Secktor-Bot*
 
   `
   let buttonMessage = {
   image: await getBuffer(ppuser),
   caption: mbc,
-  footer: `${global.botname}`,
+  footer: `${Config.botname}`,
   mentions:[usersam],
   headerType: 4,
   }
   await Void.sendMessage(anu.id, buttonMessage)
 }
 //=============================[change action to "remove" if you want to set it.]===================================================
-  } else if (anu.action == 'removffe') {
+  } else if (anu.action == 'remove') {
       hesa = `${participants}`
 		  mestes = (teks) => {
 					return teks.replace(/['@s whatsapp.net']/g, " ");
@@ -448,7 +362,6 @@ await Void.sendMessage(anu.id, buttonMessage)
 	const xeonmembers = metadata.participants.length
                     usersam = num
                 mbc = `
-   *ANOTHER ONE BITES DUST* 👋
    @${usersam.split("@")[0]} left
    ${metadata.subject}
    𝗠𝗲𝗺𝗯𝗲𝗿 : ${xeonmembers}th
@@ -456,7 +369,7 @@ await Void.sendMessage(anu.id, buttonMessage)
 let buttonMessage = {
 image: await getBuffer(ppuser),
 caption: mbc,
-footer: `${global.botname}`,
+footer: `${Config.botname}`,
 mentions:[usersam],
 headerType: 4,
 }
@@ -473,9 +386,9 @@ Void.sendMessage(anu.id, buttonMessage)
 					ppurl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
 				}
 				img = await getBuffer(ppUrl)
-				teks = `*_[ PROMOTE - DETECTED ]_*\n\nName : @${usersam.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${metadata.subject}`
+				teks = `[ PROMOTE - DETECTED ]\n\nName : @${usersam.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${metadata.subject}`
 				let buttons = [
-{buttonId: `okedoh`, buttonText: {displayText: 'Enjoy'}, type: 1}
+{buttonId: `okedoh`, buttonText: {displayText: 'Enjoy💙'}, type: 1}
 ]
 let buttonMessage = {
 text: teks,
@@ -496,7 +409,7 @@ Void.sendMessage(anu.id, buttonMessage)
 				img = await getBuffer(ppUrl)
 				teks = `[ DEMOTE - DETECTED ]\n\nName : @${usersam.split("@")[0]}\nStatus : Admin -> Member\nGroup : ${mdata.subject}`
 				let buttons = [
-{buttonId: `okedoh`, buttonText: {displayText: 'ANOTHER ONE BITES DUST!'}, type: 1}
+{buttonId: `okedoh`, buttonText: {displayText: '🎀'}, type: 1}
 ]
 let buttonMessage = {
 image: img,
@@ -513,20 +426,7 @@ Void.sendMessage(anu.id, buttonMessage)
             console.log(err)
         }
 })
-//
-	    /*
-	     let botNumberJid = Void.user.id;
-        botNumberJid =
-          botNumberJid.slice(0, botNumberJid.search(":")) +
-          botNumberJid.slice(botNumberJid.search("@"));
-        if (num === botNumberJid) {
-          console.log("Bot is added to new group!");
-          await Void.sendMessage("919628516236@s.whatsapp.net", {
-            text: `*---SeckTor---* \n    *Added To New Group*\n\nSEND ${prefix}help to Explore SeckTor`,
-          });
-        }
-      //  console.log(`[GROUP] ${groupSubject} [JOINED] ${numJid}`);
-*/
+
 //========================================================================================================================================
     Void.decodeJid = (jid) => {
         if (!jid) return jid
@@ -536,16 +436,6 @@ Void.sendMessage(anu.id, buttonMessage)
         } else return jid
     }
 
-    /*\
-
-   Void.ev.on('contacts.update', update => {
-        for (let contact of update) {
-            let id = Void.decodeJid(contact.id)
-            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
-        }
-    })
-	*/
-    
 //========================================================================================================================================
 	 Void.ev.on('contacts.upsert', (contacts) => {
             const contactsUpsert = (newContacts) => {
@@ -632,12 +522,10 @@ Void.getName = (jid, withoutContact  = false) => {
         })
         return status
     }
-	console.log(`Hii Secktorians.`);
-	console.log(`Join our support Group gg.gg/Secktor if you get any error`);
      Void.serializeM = (m) => smsg(Void, citel, store)
 //========================================================================================================================================
     Void.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect, qr} = update
+        const { connection, lastDisconnect} = update
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
@@ -649,79 +537,10 @@ Void.getName = (jid, withoutContact  = false) => {
             else if (reason === DisconnectReason.timedOut) { /*console.log("Connection TimedOut, Reconnecting...");*/ __START(); }
             else { /*console.log(`Unknown DisconnectReason: ${reason}|${connection}`)*/ }
         }
+	    })
      //   console.log('Connection...', update)
-     if (qr) {
-        QR_GENERATE = qr;
-    }
-})
 	//=============================[Implementing pg to update to Session file by the time.]===================================================
-     Void.ev.on('creds.update', () => {
-        saveState();
-        try {
-            let noiseKey = JSON.stringify(state.creds.noiseKey);
-            let signedIdentityKey = JSON.stringify(state.creds.signedIdentityKey);
-            let signedPreKey = JSON.stringify(state.creds.signedPreKey);
-            let registrationId = state.creds.registrationId;
-            let advSecretKey = state.creds.advSecretKey;
-            let nextPreKeyId = state.creds.nextPreKeyId;
-            let firstUnuploadedPreKeyId = state.creds.firstUnuploadedPreKeyId;
-            let serverHasPreKeys = state.creds.serverHasPreKeys;
-            let account = JSON.stringify(state.creds.account);
-            let me = JSON.stringify(state.creds.me);
-            let signalIdentities = JSON.stringify(state.creds.signalIdentities);
-            let lastAccountSyncTimestamp = state.creds.lastAccountSyncTimestamp;
-            // let lastAccountSyncTimestamp = 0;
-            let myAppStateKeyId = state.creds.myAppStateKeyId; //?
-//========================================================================================================================================
-            // INSERT / UPDATE LOGIN DATA
-            if (auth_row_count == 0) {
-                console.log("Commiting Session data on PG...");
-                pool.query(
-                    "INSERT INTO auth VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13);",
-                    [
-                        noiseKey,
-                        signedIdentityKey,
-                        signedPreKey,
-                        registrationId,
-                        advSecretKey,
-                        nextPreKeyId,
-                        firstUnuploadedPreKeyId,
-                        serverHasPreKeys,
-                        account,
-                        me,
-                        signalIdentities,
-                        lastAccountSyncTimestamp,
-                        myAppStateKeyId,
-                    ]
-                );
-                pool.query("commit;");
-           //     console.log("New login data inserted!");
-            } else {
-                // console.log("Updating login data....");
-                pool.query(
-                    "UPDATE auth SET noiseKey = $1, signedIdentityKey = $2, signedPreKey = $3, registrationId = $4, advSecretKey = $5, nextPreKeyId = $6, firstUnuploadedPreKeyId = $7, serverHasPreKeys = $8, account = $9, me = $10, signalIdentities = $11, lastAccountSyncTimestamp = $12, myAppStateKeyId = $13;",
-                    [
-                        noiseKey,
-                        signedIdentityKey,
-                        signedPreKey,
-                        registrationId,
-                        advSecretKey,
-                        nextPreKeyId,
-                        firstUnuploadedPreKeyId,
-                        serverHasPreKeys,
-                        account,
-                        me,
-                        signalIdentities,
-                        lastAccountSyncTimestamp,
-                        myAppStateKeyId,
-                    ]
-                );
-                pool.query("commit;");
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    })
+     Void.ev.on('creds.update', saveState)
     // Add Other
 //================================================[Some Params]===============================================================================
     /** Send Button 5 Image
@@ -808,35 +627,6 @@ Void.getName = (jid, withoutContact  = false) => {
      * @returns
      */
 //========================================================================================================================================
-    Void.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await Void.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
-    }
-
-    /**
-     *
-     * @param {*} jid
-     * @param {*} path
-     * @param {*} quoted
-     * @param {*} mime
-     * @param {*} options
-     * @returns
-     */
-//========================================================================================================================================
-    Void.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await Void.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
-    }
-
-    /**
-     *
-     * @param {*} jid
-     * @param {*} text
-     * @param {*} quoted
-     * @param {*} options
-     * @returns
-     */
-//========================================================================================================================================
     Void.sendTextWithMentions = async (jid, text, quoted, options = {}) => Void.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
 
     /**
@@ -848,40 +638,39 @@ Void.getName = (jid, withoutContact  = false) => {
      * @returns
      */
 //========================================================================================================================================
-    Void.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        let buffer
-        if (options && (options.packname || options.author)) {
-            buffer = await writeExifImg(buff, options)
-        } else {
-            buffer = await imageToWebp(buff)
-        }
-
-        await Void.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
-        return buffer
+Void.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+    let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+    let buffer
+    if (options && (options.packname || options.author)) {
+        buffer = await writeExifImg(buff, options)
+    } else {
+        buffer = await imageToWebp(buff)
     }
 
-    /**
-     *
-     * @param {*} jid
-     * @param {*} path
-     * @param {*} quoted
-     * @param {*} options
-     * @returns
-     */
-//========================================================================================================================================
-    Void.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        let buffer
-        if (options && (options.packname || options.author)) {
-            buffer = await writeExifVid(buff, options)
-        } else {
-            buffer = await videoToWebp(buff)
-        }
+    await Miku.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+    return buffer
+}
 
-        await Void.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
-        return buffer
+/**
+ * 
+ * @param {*} jid 
+ * @param {*} path 
+ * @param {*} quoted 
+ * @param {*} options 
+ * @returns 
+ */
+Void.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+    let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+    let buffer
+    if (options && (options.packname || options.author)) {
+        buffer = await writeExifVid(buff, options)
+    } else {
+        buffer = await videoToWebp(buff)
     }
+
+    await Miku.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+    return buffer
+}
 //========================================================================================================================================
 	Void.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
         let types = await Void.getFile(path, true)
@@ -895,7 +684,7 @@ Void.getName = (jid, withoutContact  = false) => {
        if (options.asSticker || /webp/.test(mime)) {
         let { writeExif } = require('./lib/exif')
         let media = { mimetype: mime, data }
-        pathFile = await writeExif(media, { packname: options.packname ? options.packname : global.packname, author: options.author ? options.author : global.author, categories: options.categories ? options.categories : [] })
+        pathFile = await writeExif(media, { packname: options.packname ? options.packname : Config.packname, author: options.author ? options.author : Config.author, categories: options.categories ? options.categories : [] })
         await fs.promises.unlink(filename)
         type = 'sticker'
         mimetype = 'image/webp'
@@ -1040,7 +829,7 @@ Void.getName = (jid, withoutContact  = false) => {
 
     }
     if (Config.WORKTYPE === 'private'){
-        Void.public = true 
+        Void.public = true
         }
         if (Config.WORKTYPE === 'public'){
         Void.public = true
@@ -1054,7 +843,7 @@ Void.getName = (jid, withoutContact  = false) => {
         if (options.asSticker || /webp/.test(mime)) {
             let { writeExif } = require('./lib/sticker.js')
             let media = { mimetype: mime, data }
-            pathFile = await writeExif(media, { packname: global.packname, author: global.packname2, categories: options.categories ? options.categories : [] })
+            pathFile = await writeExif(media, { packname: Config.packname, author: Config.packname, categories: options.categories ? options.categories : [] })
             await fs.promises.unlink(filename)
             type = 'sticker'
             mimetype = 'image/webp'
@@ -1077,16 +866,19 @@ Void.getName = (jid, withoutContact  = false) => {
 __START()
 //=============================[Implementing express to Get Qr PNG in application.]===================================================
 //=============================[Bot should be Running on Web resources to Get QR.]===================================================
-app.use(async (req, res) => {
-    let picqr = await qrcode.toBuffer(QR_GENERATE)
-	res.setHeader("content-type", "image/png");
-	res.end(picqr);
+app.use(express.static(path.join(__dirname, "./public")));
+app.listen(port, () => {
+  console.log("\nRunnning on http://localhost:" + port);
 });
-app.listen(PORT, () => {
-	console.log(`Qr Code Server running on PORT ${PORT} Tap on Open app and Scan Qr code. If you have already scanned,Ignore this message.`);
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.get("/", (req, res) => {
+  res.send("Bot is working fine.");
 });
 //=============================[to get message of New Update of this file.]===================================================
-//========================================================================================================================================
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
 	fs.unwatchFile(file)
@@ -1094,3 +886,4 @@ fs.watchFile(file, () => {
 	delete require.cache[file]
 	require(file)
 })
+	}, 5000)
