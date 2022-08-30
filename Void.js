@@ -715,7 +715,7 @@ feed.items.forEach(item => {
     let ascii = LangG.ascii || ` `
     let checkon = process.env.CHATBOT
     try {
-    let checkquoted =  !isGroup || citel.quoted.key.fromMe
+ //   let checkquoted =  !isGroup || citel.quoted.key.fromMe
       if (budy && !icmd && !isGroup && checkon === 'on') {
         let zx = querie.length;
         if (zx < 25 ) {
@@ -1216,71 +1216,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         m.reply(jacku)
       }
       break
-case'deck':
-    case'leaderboard': {
-      if(!isCreator) return
-  const mems_id = new Array()
-      const lb = await Levels.fetchLeaderboard("RandomXP", 10);
-					 let lbtext = "*━━━━『LeaderBoard』━━━━*\n\n"
-	  for (let i = 0; i < lb.length; i++) {
-		          const levelRole = lb[i].level
-        var role = 'Warrior'
-        if (levelRole <= 2) {
-            var role = 'Elite III'
-        } else if (levelRole <= 4) {
-            var role = 'Elite II'
-        } else if (levelRole <= 6) {
-            var role = 'Elite I'
-        } else if (levelRole <= 8) {
-            var role = 'Master IV'
-        } else if (levelRole <= 10) {
-            var role = 'Master III'
-        } else if (levelRole <= 12) {
-            var role = 'Master II'
-        } else if (levelRole <= 14) {
-            var role = 'Master I'
-        } else if (levelRole <= 16) {
-            var role = 'Grandmaster V'
-        } else if (levelRole <= 18) {
-            var role = 'Grandmaster IV'
-        } else if (levelRole <= 20) {
-            var role = 'Grandmaster III'
-        } else if (levelRole <= 22) {
-            var role = 'Grandmaster II'
-        } else if (levelRole <= 24) {
-            var role = 'Grandmaster I'
-        } else if (levelRole <= 26) {
-            var role = 'Epic V'
-        } else if (levelRole <= 28) {
-            var role = 'Epic IV'
-        } else if (levelRole <= 30) {
-            var role = 'Epic III'
-        } else if (levelRole <= 32) {
-            var role = 'Epic II'
-        } else if (levelRole <= 34) {
-            var role = 'Epic I'
-        } else if (levelRole <= 36) {
-            var role = 'Legend V'
-        } else if (levelRole <= 38) {
-            var role = 'Legend IV'
-        } else if (levelRole <= 40) {
-            var role = 'Legend III'
-        } else if (levelRole <= 42) {
-            var role = 'Legend II'
-        } else if (levelRole <= 44) {
-            var role = 'Legend I'
-        } else if (levelRole <= 46) {
-            var role = 'Mythic'
-        } else if (levelRole <= 50) {
-            var role = 'Mythic Glory'
-        }
-		let name = await sck1.findOne({ id: lb[i].userID })
-    lbtext += `${i + 1}#\n*•Name*: ${name.name }\n*•Role*: ${role}\n*•Level*: ${lb[i].level}\n*•Exp*: ${lb[i].xp}\n\n`;
-	mems_id.push(lb[i].userID)
-}
-    citel.reply(lbtext)
-    }
-    break
+
 
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
