@@ -238,7 +238,7 @@ try {
     let Menu_Text = process.env.Menu_Text || `I am *${LangG.title}* ♥️.\n My prefix is "${prefix}"\n`;
     //////////Block-in-moderation-Group//////////
     let supportdev = citel.sender === '919628516236@s.whatsapp.net' || citel.sender === '918639650925@s.whatsapp.net'
-    if (icmd && !supportdev && citel.chat === "120363025246125888@g.us") return citel.reply(`Hey ${pushname}\nBots are not allowed in Secktor Support Group.\n\nThis Group is Mainly intended for queries and Related to Secktor Support.\nJoin http://gg.gg/Secktor-Offtopic to use bots.\n\n*_Regard: CitelVoid_*`)
+    if (icmd && !supportdev && citel.chat === "120363025246125888@g.us") return
     try {
       let GroupS = await sck.findOne({ id: citel.chat })
       if (GroupS) {
