@@ -66,7 +66,6 @@ const canvacord = require("canvacord");
 const path = require("path");
 const { Support } = require('./lib/myfunc')
 const { Character } = require('mailist')
-const { Anime, Manga } = require("@shineiichijo/marika");
 let alert = console.log
 const os = require("os");
 const moment = require("moment-timezone");
