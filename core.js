@@ -63,11 +63,6 @@ const pool = new Pool(proConfig)
 const { color, bgcolor } = require("./lib/color")
 const moment = require('moment-timezone')
 let NODE_TLS_REJECT_UNAUTHORIZED=0
-try {
-    fs.unlinkSync(`./${sessionName}.json`);
-} catch (err) {
-console.log("No Older Session File found");
-}
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const got = require('got');
 //=========[Commiting session data on pg]===================================================================
