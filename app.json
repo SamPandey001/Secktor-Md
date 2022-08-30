@@ -25,6 +25,9 @@
     "description": "Enter the value true if you want NSFW detection AI on in group and pm.",
       "value": "false"
     },
+     "SESSION_ID": {
+    "description": "Please enter you SESSION_ID here.if you don't have,Simply visit secktorbot.herokuapp.com/session"
+    },
     "BOT_NUMBER": {
       "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
          "value": "919628*****"
