@@ -14,7 +14,7 @@
     }
 if (args[0]==='pic')
 {
-  
+
 var pictured = "Anime Pics HD ";
 let gg = body.slice(9)
 let gis = require("g-i-s");
@@ -139,68 +139,10 @@ if(args[0==='news']) {
   });
   await sleep(3000);
 }
-if (args[0]==='search') {
-
-  const { Anime } = require("@shineiichijo/marika");
-  const client = new Anime();
-  if (!querie) return reply("Which Anime do you want to search sweetheart");
-  let gg = body.slice(12)
-  let anime = await client.searchAnime(gg);
-  let result = anime.data[0];
-  //console.log(result);
-  let details = `*🎀Title: ${result.title}*\n`;
-  details += `*🎋Format: ${result.type}*\n`;
-  details += `*📈Status: ${result.status
-    .toUpperCase()
-    .replace(/\_/g, " ")}*\n`;
-  details += `*🍥Total episodes: ${result.episodes}*\n`;
-  details += `*🎈Duration: ${result.duration}*\n`;
-  details += `*🧧Genres:*\n`;
-  for (let i = 0; i < result.genres.length; i++) {
-    details += `\t\t\t\t\t\t\t\t*${result.genres[i].name}*\n`;
-  }
-  details += `*✨Based on: ${result.source.toUpperCase()}*\n`;
-  details += `*📍Studio:*\n`;
-  for (let i = 0; i < result.studios.length; i++) {
-    details += `\t\t\t\t\t\t\t\t*${result.studios[i].name}*\n`;
-  }
-  details += `*🎴Producers:*\n`;
-  for (let i = 0; i < result.producers.length; i++) {
-    details += `\t\t\t\t\t\t\t\t\t\t*${result.producers[i].name}*\n`;
-  }
-  details += `*💫Premiered on: ${result.aired.from}*\n`;
-  details += `*🎗Ended on: ${result.aired.to}*\n`;
-  details += `*🎐Popularity: ${result.popularity}*\n`;
-  details += `*🎏Favorites: ${result.favorites}*\n`;
-  details += `*🎇Rating: ${result.rating}*\n`;
-  details += `*🏅Rank: ${result.rank}*\n\n`;
-  if (result.trailer.url !== null)
-    details += `*♦Trailer: ${result.trailer.url}*\n\n`;
-  details += `*🌐URL: ${result.url}*\n\n`;
-  if (result.background !== null)
-    details += `*🎆Background:* ${result.background}*\n\n`;
-  details += `*❄Description:* ${result.synopsis.replace(
-    /\[Written by Sam]/g,
-    ""
-  )}`;
-  Void.sendMessage(
-    citel.chat,
-    {
-      image: {
-        url: result.images.jpg.large_image_url,
-      },
-      caption: details,
-    },
-    {
-      quoted: citel,
-    }
-  );
-
-}
 
 }
 
 break
-	
+
 	}
 })()
