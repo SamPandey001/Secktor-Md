@@ -60,7 +60,7 @@
   "moment-timezone": "^0.5.34",
   "openai": "3.0.0",
    "heroku-client" : "3.1.0",
-   "simple-git": "^2.37.0",
+   "simple-git": "^3.5.0",
   "translatte": "^3.0.1",
   "torrent-search-api": "2.1.4",
   "nsfai": "2.0.0",
