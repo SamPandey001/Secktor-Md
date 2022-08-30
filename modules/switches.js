@@ -1,6 +1,6 @@
 (async () => {
 	switch (command) {
-		case 'enable':
+              case 'enable':
 		case 'act':
 			if (!querie) return citel.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw`)
 			if (!isGroup) return citel.reply("This command is only for group")
@@ -135,5 +135,163 @@
 				citel.reply("Please provide me term like like\n1-events\n2-antilink\n3-nsfw")
 			}
 			break
+        		case "chatbot": {
+			if (querie === "help") {
+				return citel.reply("*❗Command:* toggle chatbot\n*🧩Category:* Owner Menu\n*🛠️Usage:* ${prefix}chatbot on/off\n\n*📚Description:* Turns chatbot off and on.");
+			}
+			if (!args[0]) {
+				let chatbotbutton = [{
+            buttonId: `${prefix}chatbot on`,
+            buttonText: {
+              displayText: 'Turn On'
+            },
+            type: 1
+      },
+          {
+            buttonId: `${prefix}chatbot off`,
+            buttonText: {
+              displayText: 'Turn off'
+            },
+            type: 1
+      }
+      ]
+
+				let buttonMessaged = {
+					text: `*_Choose from the button below._*`,
+					footer: `ChatBot`,
+					headerType: 4,
+				        buttons: chatbotbutton,
+				};
+				await Void.sendMessage(citel.chat, buttonMessaged, {
+					quoted: citel,
+				});
+			}
+			if (!isCreator) return citel.reply(LangG.owner);
+			const Heroku = require("heroku-client");
+			const heroku = new Heroku({
+				token: Config.HEROKU.API_KEY,
+			});
+			let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
+			if (querie === "on") {
+				// await Void.updateProfileName(`LangG.title`)
+				await heroku.patch(baseURI + "/config-vars", {
+					body: {
+                ["CHATBOT"]: "on",
+					},
+				});
+				await citel.reply(` 🟩Turning chatbot on`);
+				return;
+			}
+			if (querie === "off") {
+				//      await Void.updateProfileName(`LangG.title`)
+				await heroku.patch(baseURI + "/config-vars", {
+					body: {
+                ["CHATBOT"]: "off",
+					},
+				});
+				await citel.reply(`🟨Turning chatbot off.`);
+				return
+			}
+		}
+		break;
+		case "antilink": {
+			if (querie === "help") {
+				return citel.reply("*❗Command:* toggle antilink\n*🧩Category:* Owner Menu\n*🛠️Usage:* ${prefix}antilink\n\n*📚Description:* Turns antilink off and on in specific group.");
+			}
+			if (!args[0]) {
+				let chatbotbutton = [{
+            buttonId: `${prefix}act antilink`,
+            buttonText: {
+              displayText: 'Turn On'
+            },
+            type: 1
+      },
+          {
+            buttonId: `${prefix}deact antilink`,
+            buttonText: {
+              displayText: 'Turn off'
+            },
+            type: 1
+      }
+      ]
+
+				let buttonMessaged = {
+					text: `*_Choose from the button below._*`,
+					footer: `Antilink`,
+					headerType: 4,
+				        buttons: chatbotbutton,
+				};
+				await Void.sendMessage(citel.chat, buttonMessaged, {
+					quoted: citel,
+				});
+			}
+		}
+		break;
+        case "events": {
+			if (querie === "help") {
+				return citel.reply("*❗Command:* toggle events\n*🧩Category:* Owner Menu\n*🛠️Usage:* ${prefix}events\n\n*📚Description:* Turns events off and on in specific group.");
+			}
+			if (!args[0]) {
+				let chatbotbutton = [{
+            buttonId: `${prefix}act events`,
+            buttonText: {
+              displayText: 'Turn On'
+            },
+            type: 1
+      },
+          {
+            buttonId: `${prefix}deact events`,
+            buttonText: {
+              displayText: 'Turn off'
+            },
+            type: 1
+      }
+      ]
+
+				let buttonMessaged = {
+					text: `*_Choose from the button below._*`,
+					footer: `Events`,
+					headerType: 4,
+				        buttons: chatbotbutton,
+				};
+				await Void.sendMessage(citel.chat, buttonMessaged, {
+					quoted: citel,
+				});
+			}
+		}
+		break;
+        case "nsfw": {
+			if (querie === "help") {
+				return citel.reply("*❗Command:* toggle nsfw\n*🧩Category:* Owner Menu\n*🛠️Usage:* ${prefix}nsfw\n\n*📚Description:* Turns nsfw off and on in specific group.");
+			}
+			if (!args[0]) {
+				let chatbotbutton = [{
+            buttonId: `${prefix}act nsfw`,
+            buttonText: {
+              displayText: 'Turn On'
+            },
+            type: 1
+      },
+          {
+            buttonId: `${prefix}deact nsfw`,
+            buttonText: {
+              displayText: 'Turn off'
+            },
+            type: 1
+      }
+      ]
+
+				let buttonMessaged = {
+					text: `*_Choose from the button below._*`,
+					footer: `NSFW-Switch`,
+					headerType: 4,
+				        buttons: chatbotbutton,
+				};
+				await Void.sendMessage(citel.chat, buttonMessaged, {
+					quoted: citel,
+				});
+			}
+		}
+		break;
 	}
 })()
