@@ -28,6 +28,38 @@
 			return
 		}
 		break;
+		case "qr":
+ {
+	                       let generatebutton = [{
+					buttonId: `${prefix}qr`,
+					buttonText: {
+						displayText: 'Generate New'
+					},
+					type: 1
+				}
+				]
+				let buttonMessaged = {
+					image: { url: 'https://secktorbot.herokuapp.com/qr' },
+					caption: `*_Scan Qr within 8 seconds_*\nYou'll get session id + json file respectively`,
+					footer: ` Session`,
+					headerType: 4,
+				        buttons: generatebutton,
+					contextInfo: {
+						externalAdReply: {
+							title: 'Secktor Session',
+							body: 'Get you Session ID',
+							thumbnail: log0,
+							mediaType: 2,
+							mediaUrl: ``,
+							sourceUrl: ``,
+						},
+					},
+				};
+				await Void.sendMessage(citel.chat, buttonMessaged, {
+					quoted: citel,
+				});
+			}
+			break
 		case "gif": {
 			if (querie === "help") {
 				await citel.reply(`*❗Command:*   Gif\n*🍀Aliases* -gif reply to any sticker\n*🧩Category:* Converter\n*🛠️Usage:* ${prefix + command} query\n\n*📚Description:* Converts sticker into Gif.`);
