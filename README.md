@@ -88,7 +88,7 @@
                 
                 - OPENAI API KEY (OPTIONAL)
                 
-                - A Coffe
+                - A Coffee
                 
                 
 3- `Go on` [Session ID ](https://secktorbot.herokuapp.com/session) or simply join Support offtopic group and use command `qr`.
