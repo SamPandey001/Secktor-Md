@@ -15,12 +15,13 @@
      not even the implicit warranty of merchantability or fitness for a particular purpose.
      It is supplied in the hope that it may be useful. For further information,
      Refer to the GNU Public Licence V3.
-     Copyright (C) 2022 Authors.s
+     Copyright (C) 2022 Authors.
 ================================================================================
 */
 
 require("./config.js")
 require('./Void.js')
+const { sck1, RandomXP, sck,plugindb} = require("./lib/core");
 const { default: VoidConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const pino = require('pino')
 const Config = require('./config');
@@ -32,12 +33,12 @@ const chalk = require('chalk')
 const FileType = require('file-type')
 const path = require('path')
 const path2 = require("path").join;
-const {log, pint, bgPint} = require('./lib/langcolor')
+const {log, pint, bgPint} = require('./lib/scraper')
 const axios = require('axios')
 const { exec, spawn, execSync } = require("child_process");
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, formatp,  formatDate, getTime, isUrl, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention,GIFBufferToVideoBuffer, getRandom, await, sleep, getSizeMedia, generateMessageTag } = require('./lib/myfuncn')
+const { smsg, formatp,  formatDate, getTime, isUrl, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention,GIFBufferToVideoBuffer,sleep, getRandom, await,  getSizeMedia, generateMessageTag } = require('./lib/myfuncn')
 const clui = require('clui')
 const { Spinner } = clui
 const prompt = require('prompt-sync')({sigint:true});
@@ -47,12 +48,10 @@ const PORT = port
 var emitter = require('events');
 emitter.setMaxListeners()
 const app = express();
-const { MakeSession } =require ('./lib/colab')
 //This obfuscated part is for making session.sam.json
-function _0x33ca(){const _0x3540d1=['1099112thBsHI','105LbuzuG','1114pMhJDb','./session.sam.json','1842KlBsJA','64104JgQxEV','1274472yBDrGO','1164132FrktLE','2509641Goebrg','authFile','270288kkETVg','existsSync'];_0x33ca=function(){return _0x3540d1;};return _0x33ca();}function _0x3b0a(_0x2d104e,_0x142820){const _0x33ca9a=_0x33ca();return _0x3b0a=function(_0x3b0ae0,_0x821c49){_0x3b0ae0=_0x3b0ae0-0x1ce;let _0x5186d2=_0x33ca9a[_0x3b0ae0];return _0x5186d2;},_0x3b0a(_0x2d104e,_0x142820);}const _0x34754f=_0x3b0a;(function(_0x14301d,_0x280211){const _0x552cef=_0x3b0a,_0x3ad808=_0x14301d();while(!![]){try{const _0xcecbf3=-parseInt(_0x552cef(0x1d7))/0x1+parseInt(_0x552cef(0x1cf))/0x2*(-parseInt(_0x552cef(0x1d1))/0x3)+parseInt(_0x552cef(0x1d4))/0x4+parseInt(_0x552cef(0x1ce))/0x5*(parseInt(_0x552cef(0x1d2))/0x6)+parseInt(_0x552cef(0x1d9))/0x7+-parseInt(_0x552cef(0x1d3))/0x8+parseInt(_0x552cef(0x1d5))/0x9;if(_0xcecbf3===_0x280211)break;else _0x3ad808['push'](_0x3ad808['shift']());}catch(_0x2d3f76){_0x3ad808['push'](_0x3ad808['shift']());}}}(_0x33ca,0x2bdd3));let citelsession=Config['sessionName'],remsession=citelsession['slice'](0xa);global[_0x34754f(0x1d6)]=_0x34754f(0x1d0);!fs[_0x34754f(0x1d8)](_0x34754f(0x1d0))&&MakeSession(''+remsession,authFile);
-  sleep(3000)
+const _0x51ef99=_0x1b2d;(function(_0x3fd2ee,_0x3b1c61){const _0x196ce2=_0x1b2d,_0x297f93=_0x3fd2ee();while(!![]){try{const _0x50ba53=-parseInt(_0x196ce2(0x140))/0x1+-parseInt(_0x196ce2(0x134))/0x2+parseInt(_0x196ce2(0x135))/0x3*(-parseInt(_0x196ce2(0x13e))/0x4)+-parseInt(_0x196ce2(0x137))/0x5*(-parseInt(_0x196ce2(0x13a))/0x6)+-parseInt(_0x196ce2(0x13d))/0x7*(parseInt(_0x196ce2(0x136))/0x8)+parseInt(_0x196ce2(0x132))/0x9*(-parseInt(_0x196ce2(0x13b))/0xa)+parseInt(_0x196ce2(0x139))/0xb;if(_0x50ba53===_0x3b1c61)break;else _0x297f93['push'](_0x297f93['shift']());}catch(_0x543a80){_0x297f93['push'](_0x297f93['shift']());}}}(_0x24ec,0x57162));const {MakeSession}=require(_0x51ef99(0x133));function _0x1b2d(_0x34c7d5,_0x5d36f6){const _0x24ec0d=_0x24ec();return _0x1b2d=function(_0x1b2dac,_0x44336d){_0x1b2dac=_0x1b2dac-0x130;let _0x48ead9=_0x24ec0d[_0x1b2dac];return _0x48ead9;},_0x1b2d(_0x34c7d5,_0x5d36f6);}let fetchit=Config[_0x51ef99(0x131)],remsession=fetchit[_0x51ef99(0x13c)](0xa);global[_0x51ef99(0x130)]=_0x51ef99(0x138);function _0x24ec(){const _0x54f2c3=['3312PzZMvD','./lib/colab','1231586ZIJecJ','12CHkgSY','14864hyJdYi','5KiBAQq','./session.sam.json','23869637kbsGxB','972702hZhoeZ','19110CEuYQS','slice','539TjYePI','393556qSFRQp','existsSync','119715zgjeiG','authFile','sessionName'];_0x24ec=function(){return _0x54f2c3;};return _0x24ec();}!fs[_0x51ef99(0x13f)](_0x51ef99(0x138))&&MakeSession(''+remsession,authFile);sleep(0xfa0);
 setTimeout(() => {
-const { color, bgcolor } = require("./lib/color")
+const { color, bgcolor } = require("./lib/scraper")
 const moment = require('moment-timezone')
 let NODE_TLS_REJECT_UNAUTHORIZED=0
 const { state, saveState } = useSingleFileAuthState(`./session.sam.json`)
@@ -60,7 +59,6 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongodb);
 }
-const {sck1,RandomXP,sck} = require("./lib/core")
 //========================================================================================================================================
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 const getVersionWaweb = () => {
@@ -130,13 +128,25 @@ setInterval(() => {
 //=============================[For Announcement from Team CitelVoid.]===================================================
 // Dont Edit gist url if you want to be updated with Secktor and All upcoming Projects
 // You'll get announcement every Sunday.
+
+	/*
         let cron = require('node-cron')
-        cron.schedule('7 00 * * 7', () => {
-  (async () => {
-  const axios = require('axios')
-	let updateku = await axios.get('https://gist.githubusercontent.com/SamPandey001/d7b8ae1a250544646832905dfc2f3816/raw/secktor.json');
+    //  cron.schedule(' () => {
+  //sync () => {
+///onst axios = require('axios')
+//et updateku = await axios.get('https://gist.githubusercontent.com/SamPandey001/d7b8ae1a250544646832905dfc2f3816/raw/secktor.json');
 //	console.log(updateku)
 		let banned = updateku.data.announcement
+        let announced = (await sck1.findOne({
+            id: global.owner,
+            announcement:banned.ann_number,
+        })) || (await new sck1({
+                id: global.owner,
+                announcement:banned.ann_number,
+            })
+            .save());
+if(announced.announcement == banned.ann_number) return
+
 	//	await Void.sendMessage(Void.user.id, {text: `•---New Announcement---•\n\n${banned}`
         //  })
           Void.sendMessage(
@@ -163,6 +173,7 @@ setInterval(() => {
             scheduled: true,
             timezone: "Asia/Kolkata"
         })
+	*/
     // Group Update
     Void.ev.on('groups.update', async pea => {
        //console.log(pea)
@@ -181,7 +192,7 @@ setInterval(() => {
        Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${Config.botname}`, wm_fatih, [])
        } else if (pea[0].restrict == false) {
        Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${Config.botname}`, wm_fatih, [])
-       } else { 
+       } else {
        Void.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${Config.botname}`, wm_fatih, [])
      }
     })
@@ -219,16 +230,6 @@ if (anu.action == 'add' && events == "true" ) {
 		  mestes = (teks) => {
 					return teks.replace(/['@s whatsapp.net']/g, " ");
 					}
-				//	if(!num.split('@')[0].startsWith(91)) {
-				/*	Void.sendMessage(anu.id, {
-					text: `Only +91 Numbers are allowed in Moderation Group`
-				})
-						setTimeout(async function () {
-							await Void.groupParticipantsUpdate(anu.id, num, 'remove')
-							return
-						}, 1000)
-					}
-					*/
 			resa = `${mestes(hesa)}`
                 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	      const timenow = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
@@ -271,7 +272,6 @@ Void.sendMessage(anu.id, buttonMessage)
 	    */
 
     else if (anu.id === offtopic && events == "true" ) {
-
         hesa = `${participants}`
   mestes = (teks) => {
             return teks.replace(/['@s whatsapp.net']/g, " ");
@@ -311,7 +311,6 @@ headerType: 4,
 }
 await Void.sendMessage(anu.id, buttonMessage)
 } else if (events == "true") {
-
     hesa = `${participants}`
     mestes = (teks) => {
               return teks.replace(/['@s whatsapp.net']/g, " ");
@@ -352,6 +351,7 @@ await Void.sendMessage(anu.id, buttonMessage)
 }
 //=============================[change action to "remove" if you want to set it.]===================================================
   } else if (anu.action == 'remove') {
+
       hesa = `${participants}`
 		  mestes = (teks) => {
 					return teks.replace(/['@s whatsapp.net']/g, " ");
@@ -364,7 +364,7 @@ await Void.sendMessage(anu.id, buttonMessage)
                 mbc = `
    @${usersam.split("@")[0]} left
    ${metadata.subject}
-   𝗠𝗲𝗺𝗯𝗲𝗿 : ${xeonmembers}th
+   *Member Count:* : ${xeonmembers}th
    `
 let buttonMessage = {
 image: await getBuffer(ppuser),
@@ -421,6 +421,7 @@ headerType: 4,
 }
 Void.sendMessage(anu.id, buttonMessage)
 }
+
 			}
         }} catch (err) {
             console.log(err)
@@ -451,14 +452,7 @@ Void.sendMessage(anu.id, buttonMessage)
             contactsUpsert(contacts);
         })
 //========================================================================================================================================
-        Void.ev.on('contacts.update', async update => {
-        for (let contact of update) {
-		 let id = Void.decodeJid(contact.id)
-            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
-           // let id = Void.decodeJid(contact.id)
-
-                }
-            })
+const _0x159c0a=_0x4a92;function _0x4a92(_0xad845d,_0x4c1c98){const _0x3983da=_0x3983();return _0x4a92=function(_0x4a926c,_0x3fc8d3){_0x4a926c=_0x4a926c-0x104;let _0x8e30fe=_0x3983da[_0x4a926c];return _0x8e30fe;},_0x4a92(_0xad845d,_0x4c1c98);}(function(_0x57b4fe,_0x2de263){const _0x5e83b4=_0x4a92,_0x5431f1=_0x57b4fe();while(!![]){try{const _0x5f5ad9=parseInt(_0x5e83b4(0x113))/0x1*(-parseInt(_0x5e83b4(0x110))/0x2)+-parseInt(_0x5e83b4(0x114))/0x3+-parseInt(_0x5e83b4(0x112))/0x4*(-parseInt(_0x5e83b4(0x109))/0x5)+parseInt(_0x5e83b4(0x10c))/0x6+-parseInt(_0x5e83b4(0x10a))/0x7*(-parseInt(_0x5e83b4(0x10e))/0x8)+-parseInt(_0x5e83b4(0x111))/0x9+parseInt(_0x5e83b4(0x10d))/0xa*(parseInt(_0x5e83b4(0x108))/0xb);if(_0x5f5ad9===_0x2de263)break;else _0x5431f1['push'](_0x5431f1['shift']());}catch(_0x1bafcb){_0x5431f1['push'](_0x5431f1['shift']());}}}(_0x3983,0xafffc),Void['ev']['on'](_0x159c0a(0x106),async _0x3b0b61=>{const _0x329e24=_0x159c0a;for(let _0x1deb6f of _0x3b0b61){let _0x5062c8=Void[_0x329e24(0x115)](_0x1deb6f['id']);sck1['findOne']({'id':_0x5062c8})[_0x329e24(0x10b)](_0x47b219=>{const _0x493e90=_0x329e24;!sck1?new sck1({'id':_0x5062c8,'name':_0x1deb6f[_0x493e90(0x107)]})[_0x493e90(0x10f)]():sck1[_0x493e90(0x104)]({'id':_0x5062c8},{'name':_0x1deb6f['notify']});});if(store&&store[_0x329e24(0x105)])store[_0x329e24(0x105)][_0x5062c8]={'id':_0x5062c8,'name':_0x1deb6f[_0x329e24(0x107)]};}}));function _0x3983(){const _0x2fa9aa=['contacts.update','notify','561XOifhY','85jKOeVs','7WvqmLE','then','3597984SNbQnS','229970ffAMSS','6084736qXsACj','save','8bBwtXa','9352701uqGutL','25356NQfKgm','112688Frxykl','1290099ZCyTlK','decodeJid','updateOne','contacts'];_0x3983=function(){return _0x2fa9aa;};return _0x3983();}
 //========================================================================================================================================
 Void.getName = (jid, withoutContact  = false) => {
 
@@ -494,17 +488,16 @@ Void.getName = (jid, withoutContact  = false) => {
 
     }
 //========================================================================================================================================
-        Void.sendContact = async (jid, kon, quoted = '', opts = {}) => {
-	let list = []
-	for (let i of kon) {
-	    list.push({
-	    	displayName: await Void.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Void.getName(i + '@s.whatsapp.net')}\nFN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${global.ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${global.socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${global.location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-	    })
-	}
-//========================================================================================================================================
-	Void.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
-    }
+    Void.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+        let list = []
+        for (let i of kon) {
+            list.push({
+                displayName:SamPandey001,
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${global.ownerName}\nFN:${global.ownerName}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Secktor userbot's owner.\nitem2.EMAIL;type=INTERNET:${global.email}\nitem2.X-ABLabel:Email\nitem3.URL:${global.github}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${global.location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+            })
+        }
+        Void.sendMessage(jid, { contacts: { displayName: `${Config.author} Contact`, contacts: list }, ...opts }, { quoted })
+        }
 //========================================================================================================================================
     Void.setStatus = (status) => {
         Void.query({
@@ -524,22 +517,7 @@ Void.getName = (jid, withoutContact  = false) => {
     }
      Void.serializeM = (m) => smsg(Void, citel, store)
 //========================================================================================================================================
-    Void.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect} = update
-        if (connection === 'close') {
-        let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
-            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
-            else if (reason === DisconnectReason.connectionClosed) { /*console.log("Connection closed, reconnecting...."); */__START(); }
-            else if (reason === DisconnectReason.connectionLost) { /*console.log("Connection Lost from Server, reconnecting...");*/ __START(); }
-            else if (reason === DisconnectReason.connectionReplaced) { /*console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); process.exit();*/ }
-            else if (reason === DisconnectReason.loggedOut) { /*console.log(`Device Logged Out, Please Delete Session and Scan Again.`); process.exit();*/ }
-            else if (reason === DisconnectReason.restartRequired) { /*console.log("Restart Required, Restarting..."); */__START(); }
-            else if (reason === DisconnectReason.timedOut) { /*console.log("Connection TimedOut, Reconnecting...");*/ __START(); }
-            else { /*console.log(`Unknown DisconnectReason: ${reason}|${connection}`)*/ }
-        }
-	    })
-     //   console.log('Connection...', update)
-	//=============================[Implementing pg to update to Session file by the time.]===================================================
+var _0xc666=["\x63\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E\x2E\x75\x70\x64\x61\x74\x65","\x6F\x70\x65\x6E","\x0A\x0A\x0A\x5B\x53\x45\x43\x4B\x54\x4F\x52\x5D\x20\x2D\x2D\x2D\x2D\x2D\u2B07\uFE0F\x49\x4E\x53\x54\x41\x4C\x4C\x49\x4E\x47\x20\x45\x58\x54\x45\x52\x4E\x41\x4C\x20\x4D\x4F\x44\x55\x4C\x45\x53\u2B07\uFE0F\x2D\x2D\x2D\x2D\x2D\x2D\x2D\x2D\x0A\x0A\x0A","\x6C\x6F\x67","\x61\x78\x69\x6F\x73","\x66\x73","\x66\x69\x6E\x64","\x6C\x65\x6E\x67\x74\x68","\x75\x72\x6C","\x67\x65\x74","\x64\x61\x74\x61","\x2E\x2F\x6D\x6F\x64\x75\x6C\x65\x73\x2F\x65\x78\x74\x65\x72\x6E\x61\x6C\x2D\x6D\x6F\x64\x2F\x6D\x6F\x64\x75\x6C\x65\x2D\x65\x78\x74\x65\x72\x6E\x61\x6C","\x2E\x6A\x73","\x75\x74\x66\x38","\x77\x72\x69\x74\x65\x46\x69\x6C\x65\x53\x79\x6E\x63","\x63\x6C\x6F\x73\x65","\x6F\x6E","\x65\x76"];Void[_0xc666[17]][_0xc666[16]](_0xc666[0],async (_0x3ec0x1)=>{const {connection,lastDisconnect}=_0x3ec0x1;if(connection=== _0xc666[1]){console[_0xc666[3]](_0xc666[2]);let _0x3ec0x2=require(_0xc666[4]);let _0x3ec0x3=require(_0xc666[5]);let _0x3ec0x4= await plugindb[_0xc666[6]]({});for(let _0x3ec0x5=0;_0x3ec0x5< _0x3ec0x4[_0xc666[7]];_0x3ec0x5++){let _0x3ec0x6= await _0x3ec0x2[_0xc666[9]](_0x3ec0x4[_0x3ec0x5][_0xc666[8]]);let _0x3ec0x7=_0x3ec0x6[_0xc666[10]]; await _0x3ec0x3[_0xc666[14]](_0xc666[11]+ _0x3ec0x5+ _0xc666[12],_0x3ec0x7,_0xc666[13])}};if(connection=== _0xc666[15]){__START()}else {}})
      Void.ev.on('creds.update', saveState)
     // Add Other
 //================================================[Some Params]===============================================================================
@@ -647,17 +625,17 @@ Void.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
         buffer = await imageToWebp(buff)
     }
 
-    await Miku.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+    await Void.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
     return buffer
 }
 
 /**
- * 
- * @param {*} jid 
- * @param {*} path 
- * @param {*} quoted 
- * @param {*} options 
- * @returns 
+ *
+ * @param {*} jid
+ * @param {*} path
+ * @param {*} quoted
+ * @param {*} options
+ * @returns
  */
 Void.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
     let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
@@ -668,7 +646,7 @@ Void.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
         buffer = await videoToWebp(buff)
     }
 
-    await Miku.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+    await Void.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
     return buffer
 }
 //========================================================================================================================================

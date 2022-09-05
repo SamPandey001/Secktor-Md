@@ -10,7 +10,8 @@
 ╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
       by CitelVoid
 
-     Code is freely accessible to the public under the provisions of the GNU Public License V3 as published by.
+     Code is freely accessible to the public under the provisions of the GNU Public License V3 as publ
+     ished by.
      You are free to alter and/or redistribute this programme since it is free software.
      This programme is provided WITHOUT ANY Guarantee,
      not even the implicit warranty of merchantability or fitness for a particular purpose.
@@ -66,6 +67,7 @@ const canvacord = require("canvacord");
 const path = require("path");
 const { Support } = require('./lib/myfunc')
 const { Character } = require('mailist')
+const { Anime, Manga } = require("@shineiichijo/marika");
 let alert = console.log
 const os = require("os");
 const moment = require("moment-timezone");
@@ -119,18 +121,10 @@ let LangU = Language.getString("updater");
 let LangG = Language.getString("global");
 let LangErr = Language.getString("err");
 const greet = LangG.greet;
-let todlink = [
-    `${LangG.pic1}`,
-    `${LangG.pic2}`,
-    `${LangG.pic3}`,
-    `${LangG.pic4}`,
-    `${LangG.pic5}`,
-    `${LangG.pic6}`,
-  ];
-let picsecktor = todlink[Math.floor(Math.random() * todlink.length)];
 //  console.log(picsecktor)
 const mongoose = require("mongoose");
-const { sck1, RandomXP, sck, plugindb } = require("./lib/core");
+const { sck1, RandomXP, sck,plugindb,notes} = require("./lib/core");
+//const plugindb = require('./lib/index')
 const elong = String.fromCharCode(8206);
 const readmore = elong.repeat(4001);
 const turbrek = `break`;
@@ -161,7 +155,8 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     global.sudo = process.env.SUDO || ' '
     const pushname = citel.pushName || "No Name";
     const botNumber = await Void.decodeJid(Void.user.id);
-    const isCreator = [botNumber, ...global.owner, global.sudo].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
+    const botitself = Void.user.id
+    const isCreator = [botNumber, ...botitself, ...global.owner, global.sudo].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
       .includes(citel.sender);
     const itsMe = citel.sender == botNumber ? true : false;
     const botName = LangG.title; // "Secktor"
@@ -186,7 +181,6 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     const isQuotedTag = citel.mtype === "extendedTextMessage" && content.includes("mentionedJid");
     const isQuotedProd = citel.mtype === "extendedTextMessage" && content.includes("productMessage");
     const isQuotedReply = citel.mtype === "extendedTextMessage" && content.includes("Message");
-    const quotedBot = citel.mtype === "extendedTextMessage" && content.includes("Message") && citel.message.extendedTextMessage.contextInfo !== null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [Void.user.id];
     // This is for changing texts in mono style in whatsapp
     function monospace(string) {
       return "```" + string + "```";
@@ -194,7 +188,41 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     const pickRandom = (arr) => {
       return arr[Math.floor(Math.random() * arr.length)];
     };
-    //	if(body && !isCreator && Config.WORKTYPE==='private') return
+    let todlink = [
+    `${LangG.pic1}`,
+    `${LangG.pic2}`,
+    `${LangG.pic3}`,
+    `${LangG.pic4}`,
+    `${LangG.pic5}`,
+    `${LangG.pic6}`,
+    `https://telegra.ph/file/529f73b19f85b7f1b6f6b.jpg`,
+    `https://telegra.ph/file/41be11a63bfe8fa23e534.jpg`
+  ];
+let picsecktor = todlink[Math.floor(Math.random() * todlink.length)];
+    var array = ['warn','checkwarn','resetwarn', 'appeal' , 'kick']
+      array.map( async (bgmtext) => {
+           let pattern = new RegExp(`\\b${bgmtext}\\b`, 'ig');
+          let chab = command.toLowerCase()
+           if (citel.chat === '919628516236-1618200620@g.us' && !pattern.test(chab)) {
+        await new Promise(r => setTimeout(r, 1000));
+
+try {
+   citel.reply(`
+*_hey ${pushname}*\n
+Helix Protection bot commands are.
+- checkwarn [number]
+- warn [number]|[Reason]
+- resetwarn [number]
+- appeal [Your Text] (use this command if you think we made any mistake.)
+`)
+} catch {
+  console.log("error")
+}
+
+                  }
+                  return
+       })
+   	if(body && !isCreator && Config.WORKTYPE==='private') return
     //group vars\\
     const isGroup = citel.chat.endsWith("@g.us");
     const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat)
@@ -211,17 +239,25 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
       .format('HH:mm:ss')
     moment.tz.setDefault('Asia/KOLKATA')
       .locale('id')
-    
+ //-------Disable-Bot-----------//
 try {
   let GroupS = await sck.findOne({ id: citel.chat})
   if (GroupS) {
     let lautaa = GroupS.botenable || "true"
-  if (isGroup && !isCreator && lautaa == 'false') return console.log('Bot in desabled in this chat.')
+  if (isGroup && !isCreator && lautaa == 'false') return //console.log('Bot in desabled in this Group.')
   }
   } catch (err) {
     console.log(err)
   }
-  
+ //--------Banning Users-----------//
+  let checkban = (await sck1.findOne({
+				id: citel.sender,
+			})) || (await new sck1({
+					id: citel.sender,
+				})
+				.save());
+  if(icmd && checkban.ban == 'true') return citel.reply(`*Hii ${pushname},*\n_You are banned ❌ from using commands._\n_Please contact owner for further information._`)
+
     //     ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
     //         Blocking commmands in Pm.
     //      ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
@@ -238,26 +274,17 @@ try {
     let Menu_Text = process.env.Menu_Text || `I am *${LangG.title}* ♥️.\n My prefix is "${prefix}"\n`;
     //////////Block-in-moderation-Group//////////
     let supportdev = citel.sender === '919628516236@s.whatsapp.net' || citel.sender === '918639650925@s.whatsapp.net'
-    if (icmd && !supportdev && citel.chat === "120363025246125888@g.us") return
-    try {
-      let GroupS = await sck.findOne({ id: citel.chat })
-      if (GroupS) {
-        let lautaa = GroupS.botenable || "true"
-        let jackpot = budy.toLowerCase()
-        if (isGroup && !isCreator && q !== 'bot' && lautaa == 'false') return
-      }
-    }
-    catch (err) {
-      console.log(err)
-    }
+    let allowfew = !supportdev || budy!=='.qr'
+    if (icmd && allowfew && citel.chat === "120363025246125888@g.us") return citel.reply(`Hey ${pushname}\nBots are not allowed in Secktor Support Group.\n\nThis Group is Mainly intended for queries and Related to Secktor Support.\nJoin http://gg.gg/Secktor-Offtopic to use bots.\n\n*_Regard: CitelVoid_*`)
     /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 Here we are setting Levelling,With help of Module discord-Xp  https://www.npmjs.com/package/discord-xp
 Works with MongoDb so no data loss.
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 */
-    if (icmd) {
+    if (budy) {
       const randomXp = 8;
+      let usrname = Void.getName(citel.sender)
       const hasLeveledUp = await Levels.appendXp(citel.sender, "RandomXP", randomXp);
       if (hasLeveledUp) {
         const sck1 = await Levels.fetch(citel.sender, "RandomXP");
@@ -358,7 +385,20 @@ Works with MongoDb so no data loss.
         });
       }
     }
- 
+
+if (Config.autoreaction ==='on') {
+
+    const emojis = ['❤','💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌','🙂','🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋']
+    const emokis = emojis[Math.floor(Math.random() * (emojis.length))]
+
+     if (icmd) {
+    Void.sendMessage(citel.chat, {
+          react: {
+            text: emokis,
+            key: citel.key
+          }})
+        }
+}
     if (citel.message) {
       Void.readMessages(citel.chat, citel.sender, [citel.key.id]);
       console.log(chalk.black(chalk.bgWhite('[New Message]')), chalk.black(chalk.bgGreen(timesam)), chalk.black(chalk.bgBlue(budy || citel.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(citel.sender) + "\n" + chalk.blueBright('=> In'), chalk.green(citel.isGroup ? pushname : 'Personal', citel.chat))
@@ -410,19 +450,16 @@ Works with MongoDb so no data loss.
     With MongoDb support.
     use pmpermit help for more info
     */
-    //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+//-------------------------------------------------PMPERMIT-------------------------------------//
     const simpleGit = require('simple-git');
     const git = simpleGit();
     const pmpermit = require("./lib/functions");
     const MongoClient = require("mongodb");
-    fs.writeFileSync(path.join(__dirname, `${botNumber}.json`), JSON.stringify({ "found": true, "number": `${Void.user.id}`, "times": 1, "permit": true }));
-    if (budy && budy.includes(`${prefix}jsr`) && !isGroup && Config.pmpermit === "true") {
+   // fs.writeFileSync(path.join(__dirname, `${botNumber}.json`), JSON.stringify({ "found": true, "number": `${Void.user.id}`, "times": 1, "permit": true }));
+  /*  if (budy && !isGroup && !icmd && Config.pmpermit==='true') {
       let samkk = citel.sender ? citel.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-      var check = await pmpermit.wow(samkk); // get status
-      console.log('Allowed')
+      var check = await pmpermit.wow(samkk);
       if (!check.privilege) {
-        // if not permitted
-        console.log('not allowed');
         if (check.block) {
           let buttonMessaged = {
             image: { url: picsecktor },
@@ -438,7 +475,7 @@ Works with MongoDb so no data loss.
           }, 3000);
         }
         else if (!check.block) {
-          //	citel.reply(check.msg);
+         	console.log(check.msg);
           let buttonMessagedy = {
             image: { url: picsecktor },
             caption: check.msg,
@@ -451,7 +488,8 @@ Works with MongoDb so no data loss.
         }
       }
     }
-    if (citel.mtype == "imageMessage" && Config.nsfw_detect_ai === "true") {
+    */
+    if (citel.mtype == "imageMessage" && Config.nsfw_detect_ai === 'true') {
       const fileName = "./img-" + citel.key.id;
       let stream = await downloadContentFromMessage(citel.message.imageMessage, "image");
       let buffer = Buffer.from([]);
@@ -534,7 +572,7 @@ Works with MongoDb so no data loss.
       });
     };
     //----------------------[target]----------------------\\
-    
+
     /*
 ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
 Here we are setting anti whatsapp Group link if it is enabled It will kick all those
@@ -574,6 +612,28 @@ Activate it by ${prefix}act antilink
           .toLowerCase() == '.js') {
           try {
             eval(fs.readFileSync('./modules/' + file, 'utf8'));
+          }
+          catch (e) {
+            var err = e.constructor('Error in file: ./modules/' +file+ '   |' +e.message);
+
+            throw err;
+            // console.log(e+'\n')
+            if (e instanceof SyntaxError) {
+              //  alert(e.message);
+            }
+            else {
+              /// throw e;
+            }
+          }
+        }
+      })
+      //---------External-Modules---------------//
+      fs.readdirSync('./modules/external-mod/')
+      .forEach((file) => {
+        if (path.extname(file)
+          .toLowerCase() == '.js') {
+          try {
+            eval(fs.readFileSync('./modules/external-mod/' + file, 'utf8'));
           }
           catch (e) {
             var err = e.constructor('Error in Evaled Script: ' + e.message);
@@ -714,45 +774,7 @@ feed.items.forEach(item => {
     let sender = isGroup ? citel.key.participant : from;
     let ascii = LangG.ascii || ` `
     let checkon = process.env.CHATBOT
-    try {
- //   let checkquoted =  !isGroup || citel.quoted.key.fromMe
-      if (budy && !icmd && !isGroup && checkon === 'on') {
-        let zx = querie.length;
-        if (zx < 25 ) {
-          var diffuser = citel.sender.split("@")[0];
-          let fetchk = require("node-fetch");
-          var textuser = budy
-          console.log(textuser)
-          let fetchtext = await fetchk(`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=${diffuser}&msg=${textuser}`);
-          let json = await fetchtext.json();
-          console.log(json)
-          let { cnt } = json;
-          citel.reply(cnt);
-          return;
-        }
-        const { Configuration, OpenAIApi } = require("openai");
-        const configuration = new Configuration({
-          apiKey: process.env.OPENAI_API_KEY || "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",
-        });
-        const openai = new OpenAIApi(configuration);
-        let textt = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.text;
-        const completion = await openai.createCompletion({
-          model: "text-davinci-002",
-          prompt: textt,
-          temperature: 0.5,
-          max_tokens: 80,
-          top_p: 1.0,
-          frequency_penalty: 0.5,
-          presence_penalty: 0.0,
-          stop: ['"""'],
-        });
-        citel.reply(completion.data.choices[0].text);
-      }
-          }
-    catch (err) {
-      console.log(err)
-    }
-
+var _0x5364=["\x6F\x6E","\x6C\x65\x6E\x67\x74\x68","\x71\x75\x6F\x74\x65\x64","\x40","\x73\x70\x6C\x69\x74","\x73\x65\x6E\x64\x65\x72","\x6E\x6F\x64\x65\x2D\x66\x65\x74\x63\x68","\x68\x74\x74\x70\x3A\x2F\x2F\x61\x70\x69\x2E\x62\x72\x61\x69\x6E\x73\x68\x6F\x70\x2E\x61\x69\x2F\x67\x65\x74\x3F\x62\x69\x64\x3D\x31\x36\x37\x39\x39\x31\x26\x6B\x65\x79\x3D\x61\x6F\x7A\x70\x4F\x6F\x4E\x4F\x79\x33\x64\x66\x4C\x67\x6D\x42\x26\x75\x69\x64\x3D\x5B","\x5D\x26\x6D\x73\x67\x3D\x5B","\x5D","\x6A\x73\x6F\x6E","\x72\x65\x70\x6C\x79","\x6F\x70\x65\x6E\x61\x69","\x4F\x50\x45\x4E\x41\x49\x5F\x41\x50\x49\x5F\x4B\x45\x59","\x65\x6E\x76","\x73\x6B\x2D\x45\x6E\x43\x59\x31\x77\x78\x75\x50\x30\x6F\x70\x4D\x6D\x72\x78\x69\x50\x67\x4F\x54\x33\x42\x6C\x62\x6B\x46\x4A\x37\x65\x70\x79\x31\x46\x75\x68\x70\x70\x52\x75\x65\x34\x59\x4E\x65\x65\x4F\x6D","\x74\x65\x78\x74\x2D\x64\x61\x76\x69\x6E\x63\x69\x2D\x30\x30\x32","\x22\x22\x22","\x63\x72\x65\x61\x74\x65\x43\x6F\x6D\x70\x6C\x65\x74\x69\x6F\x6E","\x74\x65\x78\x74","\x63\x68\x6F\x69\x63\x65\x73","\x64\x61\x74\x61","\x70\x61\x72\x74\x69\x63\x69\x70\x61\x6E\x74","\x63\x6F\x6E\x74\x65\x78\x74\x49\x6E\x66\x6F","\x6D\x73\x67","\x73\x6C\x69\x63\x65","\x69\x64","\x75\x73\x65\x72","\x6C\x6F\x67"];if(checkon=== _0x5364[0]){let zx=budy[_0x5364[1]];try{if(isGroup&&  !citel[_0x5364[2]]){return};if(budy&&  !icmd&&  !isGroup){if(zx< 25){var diffuser=citel[_0x5364[5]][_0x5364[4]](_0x5364[3])[0];let fetchk=require(_0x5364[6]);var textuser=budy;let fetchtext= await fetchk(`${_0x5364[7]}${diffuser}${_0x5364[8]}${textuser}${_0x5364[9]}`);let json= await fetchtext[_0x5364[10]]();let {cnt}=json;citel[_0x5364[11]](cnt);return};const {Configuration,OpenAIApi}=require(_0x5364[12]);const configuration= new Configuration({apiKey:process[_0x5364[14]][_0x5364[13]]|| _0x5364[15]});const openai= new OpenAIApi(configuration);const completion= await openai[_0x5364[18]]({model:_0x5364[16],prompt:budy,temperature:0.5,max_tokens:80,top_p:1.0,frequency_penalty:0.5,presence_penalty:0.0,stop:[_0x5364[17]]});citel[_0x5364[11]](completion[_0x5364[21]][_0x5364[20]][0][_0x5364[19]])}else {if(budy&&  !icmd&& isGroup){if(!citel[_0x5364[2]]){return};let mention=mentionByTag;let users=await(mention[0])|| citel[_0x5364[24]][_0x5364[23]][_0x5364[22]];let usersliced=users[_0x5364[25]](0,12);let botsliced=Void[_0x5364[27]][_0x5364[26]][_0x5364[25]](0,12);if(usersliced!== botsliced){return};if(zx< 20){var diffuser=citel[_0x5364[5]][_0x5364[4]](_0x5364[3])[0];let fetchk=require(_0x5364[6]);var textuser=budy;let fetchtext= await fetchk(`${_0x5364[7]}${diffuser}${_0x5364[8]}${textuser}${_0x5364[9]}`);let json= await fetchtext[_0x5364[10]]();let {cnt}=json;citel[_0x5364[11]](cnt);return};const {Configuration,OpenAIApi}=require(_0x5364[12]);const configuration= new Configuration({apiKey:process[_0x5364[14]][_0x5364[13]]|| _0x5364[15]});const openai= new OpenAIApi(configuration);const completion= await openai[_0x5364[18]]({model:_0x5364[16],prompt:budy,temperature:0.5,max_tokens:80,top_p:1.0,frequency_penalty:0.5,presence_penalty:0.0,stop:[_0x5364[17]]});citel[_0x5364[11]](completion[_0x5364[21]][_0x5364[20]][0][_0x5364[19]])}};return}catch(err){console[_0x5364[28]](err)}}
     if (!icmd) return
     //responce
     if (isMedia && citel.msg.fileSha256 && citel.msg.fileSha256.toString("base64") in global.db.sticker) {
@@ -826,9 +848,11 @@ Check them and Edit if you want.
 */
     switch (command) {
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "repo": {
+        case "git":
+        case "script":
+        case "repo": {
         let buttonMessaged = {
-          image: { url: 'https://camo.githubusercontent.com/4826ab1a01bd059f242b600ec8a517ba1354415b2dacae6c56725809dfaa0cf5/68747470733a2f2f692e696d6775722e636f6d2f37717a54564f682e706e67' },
+          image: { url: picsecktor },
           caption: `Hey ${pushname}\n*This is Secktor Repo*\n\nhttps://github.com/SecktorBot/Secktor-Md `,
           footer: ` ` + LangG.footer,
           headerType: 4,
@@ -876,13 +900,6 @@ Check them and Edit if you want.
         citel.reply('Updated.')
       }
       break;
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case "jsr": {
-        citel.reply(`Okey, ${pushname},\nI'll inform my master.\n\n*Thanks*`);
-      }
-      break;
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "tagh":
       case "htag":
@@ -959,6 +976,7 @@ Check them and Edit if you want.
         Void.sendMessage(citel.chat, buttonMessageVote)
       }
       break
+
       case 'upvote': {
         if (querie === 'help') {
           return citel.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${prefix + command}\n\n*📚Description:* Upvotes current voting in group`)
@@ -1113,6 +1131,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         msgFilter.addFilter(citel.chat)
         citel.reply(`Hello ${pushname}`);
         break;
+
         //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "gramify":
         if (querie === "help") {
@@ -1211,15 +1230,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
           return citel.reply(`*❌ I couldn't find any quote.*`);
         }
         break;
-      case 'mapp': {
-        let jacku = Void.map.command
-        m.reply(jacku)
-      }
-      break
-
-
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+     //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case 'song': {
         if (!querie) return citel.reply(`Use ${prefix + command} Back in Black`);
         let ytj = require("yt-search")
@@ -1664,6 +1675,65 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
         }
       }
       break
+//This command from github
+case 'checknum': case 'searchnumber':{
+        if (!args[0]) return reply(`Use command like: ${prefix}checknum <digits>****`)
+        var inputnumber = args[0]
+        if (!inputnumber.includes('*')) return reply('Ahhh,Please consider putting * in last.')
+        reply(`Searching for WhatsApp account in given range...`)
+        function countInstances(string, word) {
+        return string.split(word).length - 1;
+        }
+        var number0 = inputnumber.split('*')[0]
+        var number1 = inputnumber.split('*')[countInstances(inputnumber, '*')] ? inputnumber.split('*')[countInstances(inputnumber, '*')] : ''
+        var random_length = countInstances(inputnumber, '*')
+        var randomxx;
+        if (random_length == 1) {
+            randomxx = 10
+        } else if (random_length == 2) {
+            randomxx = 100
+        } else if (random_length == 3) {
+            randomxx = 1000
+        }
+        var nomerny = `*--List of Whatsapp Numbers--**\n\n`
+        var nobio = `\n*Bio:* || \nHey there! I am using WhatsApp.\n`
+        var nowhatsapp = `\n*Numbers with no WhatsApp account within the range you provided*\n`
+        for (let i = 0; i < randomxx; i++) {
+        var nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+        var status1 = nu[Math.floor(Math.random() * nu.length)]
+        var status2 = nu[Math.floor(Math.random() * nu.length)]
+        var status3 = nu[Math.floor(Math.random() * nu.length)]
+        var dom4 = nu[Math.floor(Math.random() * nu.length)]
+        var rndm;
+        if (random_length == 1) {
+        rndm = `${status1}`
+        } else if (random_length == 2) {
+        rndm = `${status1}${status2}`
+        } else if (random_length == 3) {
+        rndm = `${status1}${status2}${status3}`
+        } else if (random_length == 4) {
+        rndm = `${status1}${status2}${status3}${dom4}`
+        }
+        var anu = await Void.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
+        var anuu = anu.length !== 0 ? anu : false
+        try {
+        try {
+        var anu1 = await Void.fetchStatus(anu[0].jid)
+        } catch {
+        var anu1 = '401'
+        }
+        if (anu1 == '401' || anu1.status.length == 0) {
+        nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
+        } else {
+        nomerny += `*•Number:* wa.me/${anu[0].jid.split("@")[0]}\n*•Bio :* ${anu1.status}\n*•Updated On :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+        }
+        } catch {
+        nowhatsapp += `${number0}${i}${number1}\n`
+        }
+        }
+        citel.reply(`${nomerny}${nobio}${nowhatsapp}`)
+        }
+        break
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "grouplink":
       case "glink": {
@@ -1700,16 +1770,7 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
       }
       break;
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case 'ins': {
-        const getRandom = (ext) => {
-          return `${Math.floor(Math.random() * 10000)}${ext}`;
-        };
-        await new sck({ id: getRandom, url: q })
-          .save()
-        citel.reply('added plugin in mongodb\nRestart bot to take effect.')
-      }
-      break
+
       case "listadmin":
       case "admin":
         if (querie === "help") {
@@ -1820,36 +1881,6 @@ ${vote[citel.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n'
       }
       break;
       //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      /*
-  case 'toimg': {
-  if(citel.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated !== true) {
-                    if (!quoted) return citel.reply(`Uhh,Please reply to any image or videot`)
-              if (!/webp/.test(mime)) return citel.reply(`Uhh,Please reply to any image or video`)
-              citel.reply("wait your request is under process")
-              let media = await Void.downloadAndSaveMediaMessage(quoted)
-              let ran = await getRandom('.png')
-              exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-                  fs.unlinkSync(media)
-                  if (err) citel.reply(err)
-                  let buffer = fs.readFileSync(ran)
-                  Void.sendMessage(citel.chat, { image: buffer,caption:'*Powered by Genos-Md*' }, { quoted: citel })
-                  fs.unlinkSync(ran)
-              })
-  } else if (citel.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated == true){
-              if (!quoted) return citel.reply(`Uhh,Please reply to any image or video`)
-              if (!/webp/.test(mime)) return citel.reply(`Uhh,Please reply to any image or video`)
-              citel.reply("wait your request is under process")
-      let { webp2mp4File } = require('./lib/uploader')
-              let media = await Void.downloadAndSaveMediaMessage(quoted)
-              let webpToMp4 = await webp2mp4File(media)
-              await Void.sendMessage(citel.chat, { video: { url: webpToMp4.result, caption: '*Powered by Genos-Md*' }, gifPlayback: true }, { quoted: citel })
-              await fs.unlinkSync(media)
-  }
-
-          }
-break
-*/
       case "support":
         if (querie === "help") {
           await citel.reply(`*❗Command:*  Support\n*🍀Aliases* -support\n*🧩Category:* Moderation\n*🛠️Usage:* ${
@@ -1947,18 +1978,6 @@ break
           });
       }
       break;
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      case 'reply': {
-        let nnnnn = args[0]
-        Void.sendMessage(nnnnn + '@s.whatsapp.net', {
-          text: querie.slice(1, 8),
-        });
-      }
-      break;
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
-      //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
       case "mp4dl": {
         if (!args[0]) return reply(`Where is the link ${LangG.greet}?`);
         try {

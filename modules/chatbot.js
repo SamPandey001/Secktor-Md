@@ -14,7 +14,7 @@
 				var diffuser = citel.sender.split("@")[0];
 				let fetchk = require("node-fetch");
 				var textuser = args.join(" ");
-				let fetchtext = await fetchk(`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=[${diffuser}]&msg=[${ttextuser}]`);
+				let fetchtext = await fetchk(`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=[${diffuser}]&msg=[${textuser}]`);
 				let json = await fetchtext.json();
 				let { cnt } = json;
 				citel.reply(cnt);
