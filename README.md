@@ -36,6 +36,7 @@
 - [Features](https://citel.vercel.app/features/introduction/)
 - [Themes](https://citel.vercel.app/themes/introduction/)
 - [Custom Theme](https://citel.vercel.app/themes/custom-theme/)
+- [Custom Commands](https://github.com/SecktorBot/Secktor-Modules/)
 
 # List of Commands Available in Secktor-Bot
   <details>
@@ -44,10 +45,14 @@
       
      Volla,Just have a look on blew lines.
      You'll get why Secktor 🖤 is said to be an Advanced Bot
-  -   First Bot which provides multiple themes  in one bot (like multiple characters in one bot)
+  -  First Bot which provides multiple themes  in one bot (like multiple characters in one bot)
+  -  Install and unistall any module just by a command
+  -  Add delete note with mongod.
+  -  Leaderboard fot top 5 person
+  -  Integrated Chatbot in group with tag/mention + in pm as well(consider adding openai key).
   -  First Whatsapp Bot with `Auto Nsfw detection with percentage`
   -  First whatsapp bot with `NLP AI`
-   - Text to Sticker(like Quotely Telegram Bot)
+  - Text to Sticker(like Quotely Telegram Bot)
   -  Torrent Search
   -  Translator for any language
   -  Nsfw
