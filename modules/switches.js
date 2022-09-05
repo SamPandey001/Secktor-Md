@@ -227,7 +227,67 @@
 			}
 		}
 		break;
-        case "events": {
+		case "pmpermit": {
+			if (querie === "help") {
+				return citel.reply("*❗Command:* toggle pmpermit\n*🧩Category:* Owner Menu\n*🛠️Usage:* ${prefix}pmpermit on/off\n\n*📚Description:* Turns pmpermit off and on.");
+			}
+			if (!args[0]) {
+				let pmpermitbutton = [{
+            buttonId: `${prefix}pmpermit on`,
+            buttonText: {
+              displayText: 'Turn On'
+            },
+            type: 1
+      },
+          {
+            buttonId: `${prefix}pmpermit off`,
+            buttonText: {
+              displayText: 'Turn off'
+            },
+            type: 1
+      }
+      ]
+
+				let buttonMessaged = {
+					text: `*_Choose from the button below._*`,
+					footer: `pmpermit`,
+					headerType: 4,
+				        buttons: pmpermitbutton,
+				};
+				await Void.sendMessage(citel.chat, buttonMessaged, {
+					quoted: citel,
+				});
+			}
+			if (!isCreator) return citel.reply(LangG.owner);
+			const Heroku = require("heroku-client");
+			const heroku = new Heroku({
+				token: Config.HEROKU.API_KEY,
+			});
+			let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
+			if (querie === "on") {
+				// await Void.updateProfileName(`LangG.title`)
+				await heroku.patch(baseURI + "/config-vars", {
+					body: {
+                ["PMPERMIT"]: "true",
+					},
+				});
+				await citel.reply(` 🟩Turning pmpermit on`);
+				return;
+			}
+			if (querie === "off") {
+				//      await Void.updateProfileName(`LangG.title`)
+				await heroku.patch(baseURI + "/config-vars", {
+					body: {
+                ["PMPERMIT"]: "false",
+					},
+				});
+				await citel.reply(`🟨Turning pmpermit off.`);
+				return
+			}
+		}
+		break;
+	
+               case "events": {
 			if (querie === "help") {
 				return citel.reply("*❗Command:* toggle events\n*🧩Category:* Owner Menu\n*🛠️Usage:* ${prefix}events\n\n*📚Description:* Turns events off and on in specific group.");
 			}

@@ -1,5 +1,25 @@
 (async () => {
 	switch (command) {
+		case 'owner': case 'creator': {
+       //         let ty = await shizu.sendContact(m.chat, global.owner, m)
+                let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
+                    + 'VERSION:3.0\n' 
+                    + 'N:;SamPandey.;;;'
+                    + 'FN:SamPandey.\n' // full name
+                    + 'ORG:SamPandey001;\n' // the organization of the contact
+                    + 'item1.TEL;type=CELL;type=VOICE;waid=919628516236:919628516236\n' // WhatsApp ID + phone number
+                    + 'item1.X-ABLabel:Secktor Bot Owner\n'
+                    + 'item2.EMAIL;type=INTERNET: samp63141@gmail.com\n'
+                    + 'item2.X-ABLabel:Email\n'
+                    + 'item3.URL:https://github.com/SamPandey001/Secktor-Md\n'
+                    + 'item3.X-ABLabel:Github\n'
+                    + 'item4.ADR:;;INDIA;;;;\n'
+                    + 'item4.X-ABLabel:Region\n'
+                    + 'item5.X-ABLabel:Enjoy❤️\n'
+                    + 'END:VCARD'
+                Void.sendMessage(citel.chat, { contacts: { displayName: 'SamPandey001', contacts: [{ vcard }] } }, { quoted: citel })
+            }
+            break
 		case "p":
 		case "profile":
 			if (querie === "help") {
