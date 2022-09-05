@@ -47,7 +47,6 @@
     "google-it": "^1.6.2",
     "file-type": "^16.5.3",
     "form-data": "^4.0.0",
-    "eval": "^0.1.8",
     "figlet": "^1.5.0",
     "fluent-ffmpeg": "^2.1.2",
     "fs": "0.0.1-security",
@@ -60,7 +59,7 @@
     "moment-timezone": "^0.5.34",
     "openai": "3.0.0",
     "heroku-client": "3.1.0",
-    "simple-git": "^2.37.0",
+    "simple-git": ">=3.5.0"
     "translatte": "^3.0.1",
     "torrent-search-api": "2.1.4",
     "nsfai": "2.0.0",
