@@ -146,26 +146,20 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     const prefix = Config.prefix;
     const icmd = body.startsWith(prefix);
     const isCmd = prefix.includes(body != "" && body.slice(0, 1)) && body.slice(1) != "";
-    const command = isCmd ? body.slice(1)
-      .trim()
-      .split(" ")[0].toLowerCase() : "";
-    const args = body.trim()
-      .split(/ +/)
-      .slice(1);
+    const command = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : "";
+    const args = body.trim().split(/ +/).slice(1);
     global.sudo = process.env.SUDO || ' '
     const pushname = citel.pushName || "No Name";
     const botNumber = await Void.decodeJid(Void.user.id);
     const botitself = Void.user.id
-    const isCreator = [botNumber, ...botitself, ...global.owner, global.sudo].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
-      .includes(citel.sender);
+    const isCreator = [botNumber, ...botitself, ...global.owner, global.sudo].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(citel.sender);
     const itsMe = citel.sender == botNumber ? true : false;
     const botName = LangG.title; // "Secktor"
     const isBaileys = citel.id.startsWith("BAE6") && citel.id.length === 29;
     const text = (q = args.join(" "));
     const querie = text
     const quoted = citel.quoted ? citel.quoted : citel;
-    const mime = (quoted.msg || quoted)
-      .mimetype || "";
+    const mime = (quoted.msg || quoted).mimetype || "";
     const isMedia = /image|video|sticker|audio/.test(mime);
     const from = current = citel.chat;
     const content = JSON.stringify(citel.message);
@@ -181,6 +175,7 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     const isQuotedTag = citel.mtype === "extendedTextMessage" && content.includes("mentionedJid");
     const isQuotedProd = citel.mtype === "extendedTextMessage" && content.includes("productMessage");
     const isQuotedReply = citel.mtype === "extendedTextMessage" && content.includes("Message");
+  
     // This is for changing texts in mono style in whatsapp
     function monospace(string) {
       return "```" + string + "```";
@@ -197,10 +192,10 @@ module.exports = Void = async (Void, citel, chatUpdate, store) => {
     `${LangG.pic6}`,
     `https://telegra.ph/file/529f73b19f85b7f1b6f6b.jpg`,
     `https://telegra.ph/file/41be11a63bfe8fa23e534.jpg`
-  ];
-let picsecktor = todlink[Math.floor(Math.random() * todlink.length)];
-    var array = ['warn','checkwarn','resetwarn', 'appeal' , 'kick']
-      array.map( async (bgmtext) => {
+     ];
+   let picsecktor = todlink[Math.floor(Math.random() * todlink.length)];
+   var array = ['warn','checkwarn','resetwarn', 'appeal' , 'kick']
+   array.map( async (bgmtext) => {
            let pattern = new RegExp(`\\b${bgmtext}\\b`, 'ig');
           let chab = command.toLowerCase()
            if (citel.chat === '919628516236-1618200620@g.us' && !pattern.test(chab)) {
@@ -222,55 +217,41 @@ Helix Protection bot commands are.
                   }
                   return
        })
-   	if(body && !isCreator && Config.WORKTYPE==='private') return
+
     //group vars\\
+    if(body && !isCreator && Config.WORKTYPE==='private') return
     const isGroup = citel.chat.endsWith("@g.us");
-    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat)
-      .catch((e) => {}) : "";
+    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
     const groupName = citel.isGroup ? groupMetadata.subject : "";
     const participants = citel.isGroup ? await groupMetadata.participants : "";
-    const groupAdmins = citel.isGroup ? await participants.filter((v) => v.admin !== null)
-      .map((v) => v.id) : "";
+    const groupAdmins = citel.isGroup ? await participants.filter((v) => v.admin !== null).map((v) => v.id) : "";
     const groupOwner = citel.isGroup ? groupMetadata.owner : "";
     const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
     const mentionByTag = citel.mtype == "extendedTextMessage" && citel.message.extendedTextMessage.contextInfo != null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [];
-    const timesam = moment(moment())
-      .format('HH:mm:ss')
-    moment.tz.setDefault('Asia/KOLKATA')
-      .locale('id')
- //-------Disable-Bot-----------//
-try {
-  let GroupS = await sck.findOne({ id: citel.chat})
-  if (GroupS) {
+    const timesam = moment(moment()).format('HH:mm:ss')moment.tz.setDefault('Asia/KOLKATA').locale('id')
+ 
+	  //-------Disable-Bot-----------//
+   try {
+   let GroupS = await sck.findOne({ id: citel.chat})
+   if (GroupS) {
     let lautaa = GroupS.botenable || "true"
-  if (isGroup && !isCreator && lautaa == 'false') return //console.log('Bot in desabled in this Group.')
-  }
-  } catch (err) {
+    if (isGroup && !isCreator && lautaa == 'false') return //console.log('Bot in desabled in this Group.')
+   }
+    } catch (err) {
     console.log(err)
-  }
- //--------Banning Users-----------//
-  let checkban = (await sck1.findOne({
-				id: citel.sender,
-			})) || (await new sck1({
-					id: citel.sender,
-				})
-				.save());
+    }
+  //--------Banning Users-----------//
+  let checkban = (await sck1.findOne({id: citel.sender,})) || (await new sck1({id: citel.sender,}).save());
   if(icmd && checkban.ban == 'true') return citel.reply(`*Hii ${pushname},*\n_You are banned ❌ from using commands._\n_Please contact owner for further information._`)
 
-    //     ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+
     //         Blocking commmands in Pm.
-    //      ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
     if (icmd && !citel.isGroup && !isCreator) return citel.reply(`*_Sorry ${pushname} ${LangG.greet},using commands are not allowed in Dm_*\n\n*_https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC_*`)
-    let totalhit = require("util")
-      .inspect(hit.all);
-    if (icmd) {
-      axios.get("https://api.countapi.xyz/hit/sampandey001/visits")
-        .then(({ data }) => (hit.all = data.value));
-    }
+    let totalhit = require("util").inspect(hit.all);
+    if (icmd) {axios.get("https://api.countapi.xyz/hit/sampandey001/visits").then(({ data }) => (hit.all = data.value));}
     hit_today.push(command);
-    let all = require("util")
-      .inspect(hit.all);
+    let all = require("util").inspect(hit.all);
     let Menu_Text = process.env.Menu_Text || `I am *${LangG.title}* ♥️.\n My prefix is "${prefix}"\n`;
     //////////Block-in-moderation-Group//////////
     let supportdev = citel.sender === '919628516236@s.whatsapp.net' || citel.sender === '918639650925@s.whatsapp.net'
