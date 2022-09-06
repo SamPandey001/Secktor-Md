@@ -1,6 +1,0 @@
-(async () => {
-	switch (command) {
-	
-	
-	}
-})()
