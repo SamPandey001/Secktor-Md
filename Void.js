@@ -235,7 +235,7 @@ Helix Protection bot commands are.
     const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
     const mentionByTag = citel.mtype == "extendedTextMessage" && citel.message.extendedTextMessage.contextInfo != null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [];
-    const timesam = moment(moment())
+      const timesam = moment(moment())
       .format('HH:mm:ss')
     moment.tz.setDefault('Asia/KOLKATA')
       .locale('id')
