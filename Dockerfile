@@ -1,4 +1,4 @@
-FROM node:lts-buster
+FROM quay.io/sampandey001/secktor:latest
 RUN apt-get update && \
   apt-get install -y \
   ffmpeg \
@@ -15,4 +15,4 @@ RUN npm install --location=global pm2
 RUN npm i -g heroku
 RUN npm config set loglevel silent
 
-CMD ["pm2-runtime", "start", "franxx.js"]
+CMD ["pm2-runtime", "start"]
