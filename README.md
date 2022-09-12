@@ -1,7 +1,8 @@
-<p align="center">
+
+<p align="center"> 
   <a href="https://citel.vercel.app/">
     <img alt="secktor docs" height="280" src="https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png">
-    <h1 align="center">Secktor🖤</h1>
+    <h1 align="center">Secktor MD</h1>
   </a>
 </p>
  
@@ -82,31 +83,20 @@
 
 
 ## ⬇️ Heroku Installation 
-
-1- `Fork and Star Repo.`
-
+```
+1- Fork and Star Repo. ⭐
 2- Requirements-
-
-                - MongoDB URL
-                
-                - Heroku API KEY
-                
-                - OPENAI API KEY (OPTIONAL)
-                
-                - A Coffee
-                
-                
-3- `Go on` [Session ID ](https://secktorbot.herokuapp.com/session) or simply join Support offtopic group and use command `qr`.
-
-3- `Click on Deploy Purple button down below from Forked Repo.`
-
-4- `Fill that session Id during deployment.`
-
-5- `Fill Config Vars & Click on Deploy Button`
-
-6- `Wait 2-3 min`
-
-Volla Bot is Working.
+   - MongoDB URL✅        
+   - Heroku API KEY✅       
+   - OPENAI API KEY (OPTIONAL)            
+   - A Coffee ✅           
+3- Go on [Session ID ](https://secktorbot.herokuapp.com/session) or simply join Support offtopic group and use command qr.
+4- Click on Deploy Purple button down below from Forked Repo.🆕
+5- Fill that session Id during deployment.🌐
+6- Fill Config Vars & Click on Deploy Button.
+7- Wait 2-3 min⌛️
+```
+Volla Bot is Working.❤️
 
 # Deploy button for Heroku
  <a href="https://www.heroku.com/deploy/?template=https://github.com/Secktorbot/Secktor-Md.git">
@@ -159,11 +149,3 @@ Developer, Bug Fixes, Modules,UI,Base |  Designer,Web,UI,Ideas,Other
 
 The Secktor Userbot is made available under the [GPL-3 license](LICENSE). 
 <p align="center"> 
-
-
-   
-
-  
-
-
-

@@ -1,1 +1,1 @@
-web: pm2 start core.js --deep-monitoring --attach
+worker: npm start
