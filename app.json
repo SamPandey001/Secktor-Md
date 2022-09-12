@@ -2,7 +2,7 @@
     "name": "Secktor-Md",
     "description": "A Whatsapp md bot built in NodeJs to make experience better",
     "repository": "https://github.com/secktorbot/Secktor-Md",
-    "logo": "https://c4.wallpaperflare.com/wallpaper/885/793/289/anime-darling-in-the-franxx-zero-two-darling-in-the-franxx-wallpaper-preview.jpg",
+    "logo": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png",
     "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "SecktorBot", "theme bot","multi device"],
     "success_url": "/",
     "stack": "container",
@@ -24,7 +24,7 @@
          "value": "919628516236"
     },
      "SESSION_ID": {
-      "description": "Please put your SESSION_ID here,if you don\'t have visit https://secktorbot.herokuapp.com/session "
+      "description": "Please put your SESSION_ID here,if you don't have visit https://secktorbot.herokuapp.com/session "
     },
       "OPENAI_API_KEY": {
       "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
