@@ -1,10 +1,8 @@
 FROM quay.io/sampandey001/secktor:latest
-RUN npm install --location=global nodemon 
-RUN npm --omit=dev install
-RUN npm install --location=global chalk
+RUN git clone https://sampandey001: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@github.com/SamPandey001/sec.git /root/SamPandey001
+WORKDIR /root/SamPandey001/
+RUN npm install -g npm@8.11.0
+RUN npm install -g nodemon 
+RUN npm install -g forever
 RUN npm i cfonts
-RUN npm install --location=global pm2
-RUN npm i -g heroku
-RUN npm config set loglevel silent
-
-CMD ["pm2-runtime", "start"]
+CMD ["npm", "start"]
