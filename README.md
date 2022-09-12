@@ -24,128 +24,22 @@
 
 ---
 
-
 <p align="center"><img src="https://profile-counter.glitch.me/{SamPandey001}/count.svg" alt="SamPandey001 :: Visitor's Count" /></p>
 
   Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use.
 
-## 📚 Documentation
 
-<p>Learn about Deploying Secktor <a aria-label="secktor documentation" href="https://citel.vercel.app">in our official docs!</a></p>
+### Deployment Method
 
-- [Getting Started](https://citel.vercel.app/)
-- [Features](https://citel.vercel.app/features/introduction/)
-- [Themes](https://citel.vercel.app/themes/introduction/)
-- [Custom Theme](https://citel.vercel.app/themes/custom-theme/)
-- [Custom Commands](https://github.com/SecktorBot/Secktor-Modules/)
-
-# List of Commands Available in Secktor-Bot
-  <details>
-  <summary>List goes here(Touch Here)</summary>
-<p>
-      
-     Volla,Just have a look on blew lines.
-     You'll get why Secktor 🖤 is said to be an Advanced Bot
-  -  First Bot which provides multiple themes  in one bot (like multiple characters in one bot)
-  -  Install and unistall any module just by a command
-  -  Add delete note with mongod.
-  -  Leaderboard fot top 5 person
-  -  Integrated Chatbot in group with tag/mention + in pm as well(consider adding openai key).
-  -  First Whatsapp Bot with `Auto Nsfw detection with percentage`
-  -  First whatsapp bot with `NLP AI`
-  - Text to Sticker(like Quotely Telegram Bot)
-  -  Torrent Search
-  -  Translator for any language
-  -  Nsfw
-  -  All handy commands like setprefix,theme  [name],shutdown,restart,mode public/private
-   - Voting in groups
-  -  Seprate help menu for each theme(under  work)
-  -  Lots of Textpro commands
-  -  Some Stickers
-  -  Pg for auth restoration.
-  -  Group Features
-   - Scrap Stickers from all groups
-  -  Ranking system like discord
-  -  Anime News
-  - Switch for events,nsfw,antilink
-  -  Chat Features
-   - Random Anime
-  -  Anime, Character Search
-  -  Reaction Commands like Poke,punch,bonk
-  -  Mongodb Support
-  -  YouTube,Fb,Twitter,tiktok downloader
-  -  iplookup,imdb,sticker,emojimix, ebinary,dbinary
-  -  And list goes on + adding commands daily + we add requested features too
-  -  Check usage of Commands by prefix+command help eg -ping help
-  -  So Advanced Whatsapp Bot made by CitelVoid.
-</details>
-</p>
-
-
-## ⬇️ Heroku Installation 
+1. Click [SCAN](https://secktorbot.herokuapp.com/session) and scan QR code. `Whatapp>Three dots>Linked Devices`
+2. You will get a session id in whatsapp, copy id only.
+3. If You don't have a account in [Heroku](https://signup.heroku.com/), Create a account.
+4. Click [FORK](https://github.com/SecktorBot/Secktor-MD)
+5. Now DEPLOY
+ ```
+ https://www.heroku.com/deploy/?template=https://github.com/[username]/Secktor-Md.git
 ```
-1- Fork and Star Repo. ⭐
-2- Requirements-
-   - MongoDB URL✅        
-   - Heroku API KEY✅       
-   - OPENAI API KEY (OPTIONAL)            
-   - A Coffee ✅           
-3- Go on [Session ID ](https://secktorbot.herokuapp.com/session) or simply join Support offtopic group and use command qr.
-4- Click on Deploy Purple button down below from Forked Repo.🆕
-5- Fill that session Id during deployment.🌐
-6- Fill Config Vars & Click on Deploy Button.
-7- Wait 2-3 min⌛️
-```
-Volla Bot is Working.❤️
+6. More info about [Secktor](https://secktorbot.herokuapp.com/).
+7. Docs [Secktor-Docs](https://citel.vercel.app/).
 
-# Deploy button for Heroku
- <a href="https://www.heroku.com/deploy/?template=https://github.com/Secktorbot/Secktor-Md.git">
-    <img alt="DEPLOY on Heroku" height="128" src="https://www.herokucdn.com/deploy/button.svg">
-  </a>
-  
-# Youtube Tutorial For Hosting bot on Heroku
-  
- <a href="https://youtu.be/4u0uv3IiAAc">
-    <img alt="YouTube Tutorial" height="128" src="https://raw.githubusercontent.com/SecktorBot/Brandimages/main/Secktor-Images/image.png">
-  </a>
-  
-## 🤔 Why Secktor? 
-```
-1. All greatest and most inventive commands are available in Secktor.
-2- Supports MongoDB, preventing confusion of data loss
-3- Change the desired prefix.
-4- PG for reestablishing authenticity
-5- Ongoing Assistance
-6- Complete authorization for recoding
-7- The script will be totally open source once Version 1.0.0 is made available.access will be provided for each code
-8 – The best is yet to come.........
-```
-  
-## ⚠️ Warning! 
-```
- There is no affiliation between this bot and Whatsapp INC, so feel free to use it.
-Since it is not an official WhatsApp number, it can be banned by Whatsapp
-It is only one percent likely that you will be banned if you use WORKTYPE as private.
-There may still be a few bugs in Secktor bot, since it is still being developed. If you find any, please let us know.
-```
-- [Use at your own risk](https://citel.vercel.app/introduction/why-not-secktor/)
-## 👏 Contributing
-
-If you like Secktor and want to help make it better then check out our [contributing guide](/CONTRIBUTING.md)! 
-
-## ❓ FAQ 
-
-If you have questions about Secktor and want answers, then check out our [Frequently Asked Questions](https://citel.vercel.app/introduction/faq/)!
-
-
-## 💙 The Team
-
-[![Sam Pandey](https://github.com/sampandey001.png?size=110)](https://github.com/sampandey001) | [![SleepyAsh](https://github.com/ValiantVirus.png?size=110)](https://github.com/ValiantVirus)
-----|----
-[Sam Pandey](https://wa.me/919628516236) | [Sasank Reddy](https://t.me/CTRLIntelligence)
-Developer, Bug Fixes, Modules,UI,Base |  Designer,Web,UI,Ideas,Other
-
-## License
-
-The Secktor Userbot is made available under the [GPL-3 license](LICENSE). 
-<p align="center"> 
+<a href="https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbCl"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
