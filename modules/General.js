@@ -1,5 +1,27 @@
 (async () => {
 	switch (command) {
+		case "repo": {
+			let buttonMessaged = {
+			  image: { url: picsecktor },
+			  caption: `Hey ${pushname}\n*This is Secktor Repo*\n\nhttps://github.com/SecktorBot/Secktor-Md `,
+			  footer: ` ` + LangG.footer,
+			  headerType: 4,
+			  contextInfo: {
+				externalAdReply: {
+				  title: "Secktor-Repo",
+				  body: "Easy to Use",
+				  thumbnail: log0,
+				  mediaType: 2,
+				  mediaUrl: ``,
+				  sourceUrl: ``,
+				},
+			  },
+			};
+			await Void.sendMessage(citel.chat, buttonMessaged, {
+			  quoted: citel,
+			});
+		  }
+		  break
 		case "alive":
 			if (querie === "help") {
 				await citel.reply(`*❗Command:*   Alive\n*🍀Aliases* ${

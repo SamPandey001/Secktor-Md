@@ -24,6 +24,24 @@
 			});
 		}
 		break;
+		case "tagh":
+			case "htag":
+			case "hidetag": {
+			  if (querie === "help") {
+				return citel.reply(`*❗Command:* ${command}\n*🧩Category:* Group Menu\n*🛠️Usage:* ${
+					prefix + command
+				  } message \n\n*📚Description:* Tags all users by not mentioning their number`);
+			  }
+			  if (!citel.isGroup) citel.reply(LangG.group);
+			  if (!isBotAdmins) citel.reply(LangG.botAdmin);
+			  Void.sendMessage(citel.chat, {
+				text: querie ? querie : "",
+				mentions: participants.map((a) => a.id),
+			  }, {
+				quoted: citel,
+			  });
+			}
+			break;
 	}
 })()
 

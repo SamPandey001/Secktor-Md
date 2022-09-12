@@ -1,5 +1,29 @@
 (async () => {
 	switch (command) {
+		        //╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+				case "tinyurl":
+					if (querie === "help") {
+					  await citel.reply(`*❗Command:*  TinyUrl \n*🍀Aliases* -tinyurl\n*🧩Category:* Utils\n*🛠️Usage:* ${
+						prefix + command
+					  } link\n\n*📚Description:* Make a long url tiny.`);
+					  return;
+					}
+					if(!q) return m.reply('Provide me a link') && Void.sendMessage(citel.chat, {
+					  react: {
+						text: '❌',
+						key: citel.key
+					  }})
+					try {
+					  link = args[0];
+					  anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
+					  reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
+					}
+					catch (e) {
+					  emror = String(e);
+					  reply(`${e}`);
+					}
+					break;
+					
 		case "ebinary": {
 			if (querie === "help") {
 				await citel.reply(`*❗Command:* Ebinary\n*🍀Aliases* -ebinary\n*🧩Category:* Utils\n*🛠️Usage:* ${prefix + command} message or reply\n\n*📚Description:* Encodes given reply into binary.`);

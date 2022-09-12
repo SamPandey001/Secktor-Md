@@ -1,5 +1,37 @@
 (async () => {
 	switch (command) {
+		case "quotes":
+			if (querie === "help") {
+			  await citel.reply(`*❗Command:* ${command}\n*🍀Aliases* -quote\n*🧩Category:* Random\n*🛠️Usage:* ${
+				prefix + command
+			  }\n\n*📚Description:* Provieds Random quote with Author.`);
+			  return;
+			}
+			try {
+			  quoo = await axios.get(`https://favqs.com/api/qotd`);
+			  const replyf = `
+	╔════◇
+	║ *🎗️Content:* ${quoo.data.quote.body}
+	║ *👤Author:* ${quoo.data.quote.author}
+	║
+	║ *Powered by ${LangG.title}*
+	╚════════════╝ `;
+			await SendYes()
+			  await Void.sendMessage(from, {
+				image: {
+				  url: picsecktor,
+				},
+				caption: replyf,
+				footer: LangG.footer,
+			  }, {
+				quoted: citel,
+			  });
+			}
+			catch (err) {
+			  console.log(err)
+			  return citel.reply(`*❌ I couldn't find any quote.*`);
+			}
+			break; 
 		case "q": {
 			if (querie === "help") {
 				await citel.reply(`*❗Command:* Quotely Maker\n*🍀Aliases* -q,-quotely\n*🧩Category:* Utils\n*🛠️Usage:* ${
