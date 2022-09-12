@@ -1,18 +1,12 @@
 {
-  "name": "secktor-api",
-  "version": "1.1.3",
+  "name": "Secktor-Bot",
+  "version": "1.0.0",
   "description": "Multi device wa bot created by Team CitelVoid.",
-  "main": "lib/client.js",
+  "main": "core.js",
   "type": "commonjs",
-    "nodemonConfig": {
-    "ignore": [
-      "/root/SamPandey001/*"
-    ],
-    "delay": 2500
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start . --attach --name [SamPandey001]"
+    "start": "npm i --location=global forever && forever core.js"
   },
   "keywords": [
     "termux",
@@ -29,17 +23,16 @@
   "author": "SamPandey001",
   "license": "GNU",
   "dependencies": {
-    "@adiwajshing/baileys": "git+https://github.com/sampandey001/Secktor-Baileys.git",
+    "@adiwajshing/baileys": "git+https://github.com/adiwajshing/baileys.git",
     "@adiwajshing/keyed-db": "^0.2.4",
     "awesome-phonenumber": "^2.70.0",
     "mailist": "^1.0.3",
     "@shineiichijo/marika": "^2.0.3",
-    "anime-character-random": "latest",
+    "anime-character-random": "^1.0.11",
     "axios": "^0.24.0",
     "chalk": "^4.1.2",
     "fs-extra": "^10.1.0",
     "cheerio": "^1.0.0-rc.10",
-    "figlet": "latest",
     "@hapi/boom": "^9.1.4",
     "child_process": "^1.0.2",
     "crypto": "^1.0.1",
@@ -50,11 +43,11 @@
     "clui": "^0.3.6",
     "discord-xp": "^1.1.16",
     "mongoose": "^6.2.1",
-    "acrcloud": "^1.4.0",
     "emoji-api": "^1.0.2",
     "google-it": "^1.6.2",
     "file-type": "^16.5.3",
     "form-data": "^4.0.0",
+    "figlet": "^1.5.0",
     "fluent-ffmpeg": "^2.1.2",
     "fs": "0.0.1-security",
     "g-i-s": "^2.1.6",
@@ -66,10 +59,8 @@
     "moment-timezone": "^0.5.34",
     "openai": "3.0.0",
     "heroku-client": "3.1.0",
-    "simple-git": "^2.37.0",
     "translatte": "^3.0.1",
     "torrent-search-api": "2.1.4",
-    "pm2": "^5.2.0",
     "nsfai": "2.0.0",
     "node-cron": "^3.0.0",
     "node-fetch": "^2.6.1",
@@ -77,12 +68,15 @@
     "google-tts-api": "^2.0.2",
     "path": "^0.12.7",
     "perf_hooks": "0.0.1",
+    "pino": "^7.0.5",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
     "util": "^0.12.4",
     "wa-sticker-formatter": "^4.3.2",
     "yt-search": "^2.10.2",
-    "ytdl-core": "4.11.1",
+    "ytdl-core": "4.11.0",
+    "secktor-api": "1.1.0",
+    "qr-image": "latest",
     "pastebin-js": "latest"
   },
   "directories": {
@@ -90,7 +84,7 @@
     "assets": "assets"
   },
   "devDependencies": {
-    "pino": "^7.0.5"
+    "simple-git": ">=3.5.0"
   },
   "repository": {
     "type": "git",
