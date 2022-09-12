@@ -211,7 +211,7 @@
 		}
 		break;
 		case 'horo': {
-			const URL = 'https://aztro.sameerkumar.website/?sign=aries&day=today';
+			const URL = `https://aztro.sameerkumar.website/?sign=${querie}&day=today`;
 			fetch(URL, {
 					method: 'POST'
 				})
