@@ -28,6 +28,9 @@
 
   Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use.
 
+# What's New
+
+[Changelog](https://github.com/SecktorBot/Secktor-Md/wiki/Change-Log)
 
 ### Deployment Method
 
