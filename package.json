@@ -2,11 +2,11 @@
   "name": "Secktor-Bot",
   "version": "1.0.0",
   "description": "Multi device wa bot created by Team CitelVoid.",
-  "main": "core.js",
+  "main": "lib/client.js",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm i --location=global forever && forever core.js"
+    "start": "npm i --location=global forever && forever lib/client.js"
   },
   "keywords": [
     "termux",
