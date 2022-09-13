@@ -17,8 +17,7 @@
   </a>
 </p>
 <p align="center">
-  <a aria-label="Deploy on heroku" href="https://www.heroku.com/deploy/?template=https://github.com/SamPandey001/Secktor-Md"><b>Deploy on heroku</b></a>
- |
+  
   <a aria-label="secktor documentation" href="https://citel.vercel.app">Read the Documentation 📚</a>
 </p>
 
