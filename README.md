@@ -16,10 +16,7 @@
     <img alt="License: GPL-3" src="https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/" target="_blank" />
   </a>
 </p>
-<p align="center">
-  
-  <a aria-label="secktor documentation" href="https://citel.vercel.app">Read the Documentation 📚</a>
-</p>
+
 
 ---
 
