@@ -16,7 +16,7 @@ module.exports = {
   sessionName: process.env.SESSION_ID || 'PUT-HERE',
   author: 'SamPandey001',
   packname: 'Secktor',
-  autoreaction: process.env.AUTO_REACTION || 'off',
+  autoreaction: process.env.AUTO_REACTION || 'false',
   prefix: process.env.PREFIX || ['.'],
   nsfw_detect_ai : process.env.NSFW_DETECTION_AI || 'false',
   pmpermit: process.env.PMPERMIT || "false",
