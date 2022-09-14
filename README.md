@@ -29,13 +29,13 @@
 [Changelog](https://github.com/SecktorBot/Secktor-Md/wiki/Change-Log)
 
 ### Deployment Method
-
+---
 1. Click [SCAN](https://secktorbot.herokuapp.com/session) and scan QR code. `Whatapp>Three dots>Linked Devices`
 2. You will get a session id in whatsapp, copy id only.
 3. If You don't have a account in [Heroku](https://signup.heroku.com/), Create a account.
 4. Click [FORK](https://github.com/SecktorBot/Secktor-MD)
 5. Now [DEPLOY](https://secktorbot.herokuapp.com/deploy)
-
+---
 6. More info about [Secktor](https://secktorbot.herokuapp.com/).
 7. Deploy tutorial [Youtube Video](https://youtu.be/4u0uv3IiAAc).
 8. Docs [Secktor-Docs](https://citel.vercel.app/).
