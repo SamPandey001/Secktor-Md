@@ -14,7 +14,7 @@ module.exports = {
   botname: process.env.BOT_NAME || '𝐒𝐞𝐜𝐤𝐭𝐨𝐫 𝐁𝐨𝐭𝐭𝐨',
   ownername:process.env.ownername || 'Citels',
   sessionName: process.env.SESSION_ID || 'PUT-HERE',
-  author: 'SamPandey001',
+  author: process.env.SPACK_NAME || 'SamPandey001',
   packname: 'Secktor',
   autoreaction: process.env.AUTO_REACTION || 'false',
   prefix: process.env.PREFIX || ['.'],
