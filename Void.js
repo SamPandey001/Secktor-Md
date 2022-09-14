@@ -61,8 +61,6 @@ const {smsg,formatDate,getTime,isUrl,sleep,clockString,runtime,fetchJson,getBuff
 const secktorofftopic = '120363043857093839@g.us'
 
 const speedofbot = require("performance-now");
-const eco = require('discord-mongoose-economy')
-eco.connect(mongodb);
 global.db = JSON.parse(fs.readFileSync("./lib/database.json"));
 let vote = db.others.vote = []
 const {pinterest,wallpaper,wikimedia,aiovideodl,styletext,toAudio,toPTT,toVideo,ffmpeg,TelegraPh,UploadFileUgu,webp2mp4File} = require('./lib/scraper')
