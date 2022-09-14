@@ -13,7 +13,7 @@
     },
     "ALIVE_MESSAGE": {
       "description": "Alive message for bot",
-       "required" :"false"
+       "required" :false
       },
         "PREFIX": {
     "description": "Enter your desired prefix for bot.",
@@ -28,22 +28,23 @@
     },
       "OPENAI_API_KEY": {
       "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
-         "value": "Replace Me"
+         "value": "Replace Me",
+         "required" :false
     },
     "WELCOME_MESSAGE": {
       "description": "Enter the message here which you want to see in Welcome when a new user joins a Group.",
-         "value": "Replace Me"
+         "value": "Replace Me",
+         "required" :false
     },
     "MONGODB_URI": {
       "description": "A secret String for Mongodb Connection.(Required)"
     },
       "THEME": {
-      "description": "Put the theme name you want to use. Avilable themes are SECKTOR and ZZEROTWO..",
+      "description": "Put the theme name you want to use. Avilable themes are SECKTOR,ZEROTWO,NEZUKO,LUFFY,GOKU and many more..",
        "value": "SECKTOR"
     },
        "HEROKU_API_KEY": {
-      "description": "Enter your Heroku api key.",
-       "value": "Paste Here"
+      "description": "Enter your Heroku api key."
     },
            "HEROKU_APP_NAME": {
       "description": "Enter your HEROKU APP name same as above."
@@ -54,7 +55,13 @@
     },
     "SPACK_NAME": {
       "description": "Put Your Sticker Pack Name",
-       "value": "Zero-Two",
+       "required": false
+         
+      
+    },
+        "AUTO_REACTION": {
+      "description": "Reacts emoji to all commands.",
+       "value": "false",
        "required": false
          
       
