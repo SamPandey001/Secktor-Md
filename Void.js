@@ -172,7 +172,9 @@ try {
     //     ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
     //         Blocking commmands in Pm.
     //      ╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺╺
+    if(Config.disablepm){
     if (icmd && !citel.isGroup && !isCreator) return citel.reply(`*_Sorry ${pushname} ${LangG.greet},using commands are not allowed in Dm_*\n\n*_https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC_*`)
+    }
     let totalhit = require("util")
       .inspect(hit.all);
     if (icmd) {
