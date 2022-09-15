@@ -149,6 +149,7 @@
 			}
 		}
 		break
+		case "imagefromurl":
 		case "jpeg": {
 			if (querie === "help") {
 				await citel.reply(`*❗Command:*   JPEG\n*🍀Aliases* ${prefix + command}\n*🧩Category:* Downloader\n*🛠️Usage:* ${prefix + command} image link\n\n*📚Description:* Downloads image from given link and Sends that in chat.`);
