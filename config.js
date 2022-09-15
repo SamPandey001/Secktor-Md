@@ -21,6 +21,7 @@ module.exports = {
   nsfw_detect_ai : process.env.NSFW_DETECTION_AI || 'false',
   pmpermit: process.env.PMPERMIT || "false",
   mongodb_url: process.env.MONGODB_URI || "Enter-Mongo-URI-HERE",
+  disablepm : process.env.DISABLE_PM || false,
   HEROKU: {
         HEROKU: process.env.HEROKU || `true`,
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '1abfce1e-1bee-4334-9f6c-f4c1cb1cafab' : process.env.HEROKU_API_KEY,

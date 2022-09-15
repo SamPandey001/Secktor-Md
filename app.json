@@ -15,6 +15,10 @@
       "description": "Alive message for bot",
        "required" :false
       },
+     "DISABLE_PM": {
+      "description": "Disable bot in pm",
+       "required" :false
+      },
         "PREFIX": {
     "description": "Enter your desired prefix for bot.",
         "value": "."
