@@ -2,7 +2,7 @@ const fs = require('fs')
 const chalk = require('chalk');
 const { existsSync } = require('fs')
 //═══════[Required Variables]════════\\
-let number = process.env.OWNER_NUMBER;
+let number = process.env.BOT_NUMBER;
 if (!number) { number = "919628516236"; }
 global.owner = number.split(",");
 global.mongodb = process.env.MONGODB_URI || "Enter-MongoURI-HERE"
