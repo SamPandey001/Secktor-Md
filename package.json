@@ -1,6 +1,6 @@
 {
-  "name": "Secktor-Bot",
-  "version": "1.0.0",
+  "name": "secktor-api",
+  "version": "0.0.4",
   "description": "Multi device wa bot created by Team CitelVoid.",
   "main": "lib/client.js",
   "type": "commonjs",
