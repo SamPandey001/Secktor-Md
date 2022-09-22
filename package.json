@@ -23,7 +23,7 @@
   "author": "SamPandey001",
   "license": "GNU",
   "dependencies": {
-    "@adiwajshing/baileys": "git+https://github.com/adiwajshing/baileys.git",
+    "@adiwajshing/baileys": "git+https://github.com/sampandey001/baileys.git",
     "@adiwajshing/keyed-db": "^0.2.4",
     "awesome-phonenumber": "^2.70.0",
     "mailist": "^1.0.3",
