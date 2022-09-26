@@ -6,7 +6,7 @@ module.exports = {
     name: 'act',
     category: 'group',
     desc: 'Switches for varios works.',
-    async exec(citel, Void,args,isCreator,isAdmins) {
+    async exec(citel, Void,args) {
         if (!args.join(" ")) return citel.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw`)
 			if (!citel.isGroup) return citel.reply("This command is only for group")
 			if (!isAdmins || !isCreator) return citel.reply("❌ This command is only for admin")
