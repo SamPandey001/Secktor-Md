@@ -2,26 +2,29 @@ const fs = require('fs')
 const chalk = require('chalk');
 const { existsSync } = require('fs')
 //═══════[Required Variables]════════\\
-let number = process.env.BOT_NUMBER;
-if (!number) { number = "919628516236"; }
-global.owner = number.split(",");
+global.owner = process.env.OWNER_NUMBER.split(",")
 global.mongodb = process.env.MONGODB_URI || "Enter-MongoURI-HERE"
 global.port= process.env.PORT || 5000
 global.email = 'sam@secktor.live'
 global.github = 'https://github.com/SamPandey001/Secktor-Md'
 global.location = 'Sultanpur IN'
+global.sudo = process.env.SUDO || '919628516236'
 module.exports = {
   botname: process.env.BOT_NAME || '𝐒𝐞𝐜𝐤𝐭𝐨𝐫 𝐁𝐨𝐭𝐭𝐨',
   ownername:process.env.ownername || 'Citels',
   sessionName: process.env.SESSION_ID || 'PUT-HERE',
-  author: process.env.SPACK_NAME || 'SamPandey001',
-  packname: 'Secktor',
-  autoreaction: process.env.AUTO_REACTION || 'false',
+  author: process.env.PACK_INFO.split(";")[0], 
+  packname: process.env.PACK_INFO.split(";")[1],
+  autoreaction: process.env.AUTO_REACTION || 'off',
+  antibadword : process.env.ANTI_BAD_WORD || '92',
+  antifake : process.env.FAKE_COUNTRY_CODE || '',
+  readmessage: process.env.READ_MESSAGE || true,
   prefix: process.env.PREFIX || ['.'],
   nsfw_detect_ai : process.env.NSFW_DETECTION_AI || 'false',
   pmpermit: process.env.PMPERMIT || "false",
   mongodb_url: process.env.MONGODB_URI || "Enter-Mongo-URI-HERE",
-  disablepm : process.env.DISABLE_PM || false,
+  warncount : process.env.WARN_COUNT || 3,
+  disablepm: process.env.DISABLE_PM || "flase",
   HEROKU: {
         HEROKU: process.env.HEROKU || `true`,
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '1abfce1e-1bee-4334-9f6c-f4c1cb1cafab' : process.env.HEROKU_API_KEY,
