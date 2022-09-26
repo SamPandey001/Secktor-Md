@@ -1,0 +1,108 @@
+{
+  "name": "secktor-api",
+  "version": "0.0.5",
+  "description": "Multi device wa bot created by Team CitelVoid.",
+  "main": "lib/client.js",
+  "type": "commonjs",
+  "node_args" : "--max-old-space-size=480",
+    "nodemonConfig": {
+    "ignore": [
+      "/app/*"
+    ],
+    "delay": 2500
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start . --deep-monitoring --attach"
+  },
+  "keywords": [
+    "termux",
+    "whatsapp",
+    "SamPandey001",
+    "Zero-Two",
+    "wabase-md",
+    "base",
+    "baileys-md",
+    "bot",
+    "bot-md",
+    "multi-device"
+  ],
+  "author": "SamPandey001",
+  "license": "GNU",
+  "dependencies": {
+    "@adiwajshing/baileys": "github:sampandey001/baileys",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@bochilteam/scraper": "2.0.0",
+    "@discordjs/collection": "1.1.0",
+    "link-preview-js" : "latest",
+    "anime-wallpaper" : "1.1.1",
+    "awesome-phonenumber": "^3.3.0",
+    "mailist": "^1.0.3",
+    "@shineiichijo/marika": "^2.0.3",
+    "anime-character-random": "latest",
+    "axios": "^0.24.0",
+    "chalk": "^4.1.2",
+    "fs-extra": "^10.1.0",
+    "cheerio": "^1.0.0-rc.10",
+    "figlet": "latest",
+    "@hapi/boom": "^9.1.4",
+    "child_process": "^1.0.2",
+    "crypto": "^1.0.1",
+    "hxz-api": "^1.0.1",
+    "mumaker": "^1.0.0",
+    "canvacord": "^5.2.3",
+    "cookie": "^0.4.2",
+    "clui": "^0.3.6",
+    "discord-xp": "^1.1.16",
+    "mongoose": "^6.2.1",
+    "acrcloud": "^1.4.0",
+    "emoji-api": "^1.0.2",
+    "google-it": "^1.6.2",
+    "file-type": "^16.5.3",
+    "form-data": "^4.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "0.0.1-security",
+    "g-i-s": "^2.1.6",
+    "human-readable": "^0.2.1",
+    "jimp": "^0.16.1",
+    "express": "^4.17.1",
+    "jsdom": "^16.4.0",
+    "mathjs": "^9.4.4",
+    "moment-timezone": "^0.5.34",
+    "openai": "3.0.0",
+    "heroku-client": "3.1.0",
+    "simple-git": "^2.37.0",
+    "translatte": "^3.0.1",
+    "torrent-search-api": "2.1.4",
+    "pm2": "^5.2.0",
+    "nsfai": "2.0.0",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "node-webpmux": "^3.1.0",
+    "google-tts-api": "^2.0.2",
+    "path": "^0.12.7",
+    "perf_hooks": "0.0.1",
+    "prompt-sync": "^4.2.0",
+    "request": "^2.88.2",
+    "util": "^0.12.4",
+    "wa-sticker-formatter": "^4.3.2",
+    "yt-search": "^2.10.2",
+    "ytdl-core": "4.11.2",
+    "pastebin-js": "latest"
+  },
+  "directories": {
+    "lib": "lib",
+    "assets": "assets"
+  },
+  "devDependencies": {
+    "pino": "^7.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamPandey001/Secktor-Md.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SamPandey001/Secktor-Md/issues"
+  },
+  "homepage": "https://github.com/SamPandey001/Secktor-Md#readme"
+}
