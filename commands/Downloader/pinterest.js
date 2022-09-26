@@ -1,4 +1,4 @@
-const { tlang, pinterest } = require('../../lib')
+const { tlang, pinterest } = require('../../lib/scraper')
 const { prefix } = require('../../config')
 const Config = require('../../config')
 
