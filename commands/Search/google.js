@@ -1,12 +1,13 @@
 const axios = require('axios')
 const { tlang } = require('../../lib/scraper')
+const { prefix } = require('../../config')
 
 module.exports = {
    name: 'google',
    category: 'search',
    desc: 'Sends info of given query from Google Search.',
    async exec(citel, Void,args) {
-    if (!args[0]) throw `Example : ${command} Secktor Userbot`
+    if (!args[0]) citel.reply(`Please Provide me text.\nExample : ${prefix}google Secktor Userbot`)
     let google = require('google-it')
     google({'query': args.join(" ")}).then(res => {
     let text = `Google Search From : ${args.join(" ")}\n\n`
