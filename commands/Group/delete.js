@@ -4,8 +4,8 @@ module.exports = {
     name: 'del',
     category: 'group',
     desc: 'Deletes message of any user.',
-    async exec(citel, Void,args,isAdmins,isBaileys,) {
-        if (isBaileys) {
+    async exec(citel, Void,args) {
+        if (citel.isBaileys) {
             const key = {
                 remoteJid: citel.chat,
                 fromMe: false,
@@ -15,8 +15,8 @@ module.exports = {
             await Void.sendMessage(citel.chat, { delete: key })
 
         }
-        if (!isBaileys) {
-        if (!isAdmins) return citel.reply('Only Admins are allowed to delete other persons message.')
+        if (!citel.isBaileys) {
+        if (!isAdmins) return citel.reply('Only Admins are allowed to delete other person\'s message.')
         if (!citel.quoted) return citel.reply(`Please Quote any message. ${tlang().greet}`);
         let { chat, fromMe, id } = citel.quoted;
         const key = {
