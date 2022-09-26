@@ -16,7 +16,7 @@ module.exports = {
 
         }
         if (!citel.isBaileys) {
-        if (!isAdmins) return citel.reply('Only Admins are allowed to delete other person\'s message.')
+        if (!isAdmins) return citel.reply('Only Admins are allowed to delete other persons message.')
         if (!citel.quoted) return citel.reply(`Please Quote any message. ${tlang().greet}`);
         let { chat, fromMe, id } = citel.quoted;
         const key = {

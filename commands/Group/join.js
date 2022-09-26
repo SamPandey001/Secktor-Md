@@ -4,7 +4,7 @@ module.exports = {
     name: 'join',
     category: 'owner',
     desc: 'joins given group link.',
-    async exec(citel,Void,args,isCreator) {
+    async exec(citel,Void,args) {
         if (!isCreator) return citel.reply(tlang().owner);
     //    console.log(isCreator)
 				  if (!args[0]) return citel.reply(`Please give me Query ${tlang().greet}`);

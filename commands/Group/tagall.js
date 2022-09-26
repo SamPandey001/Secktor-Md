@@ -4,7 +4,7 @@ module.exports = {
     name: 'tagall',
     category: 'group',
     desc: 'Tags every person of group.',
-    async exec(citel, Void,args,isGroup,isAdmins) {
+    async exec(citel, Void,args,isGroup) {
         if (!citel.isGroup) return citel.reply(tlang().group);
         if (!isAdmins) return citel.reply(tlang().admin);
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat)

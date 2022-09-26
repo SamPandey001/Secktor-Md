@@ -5,7 +5,7 @@ module.exports = {
    name: 'unban',
    category: 'owner',
    desc: 'Unbans banned user (from using bot).',
-   async exec(citel, Void,args,isCreator,mentionByTag) {
+   async exec(citel, Void,args,mentionByTag) {
     if (!isCreator) return citel.reply("This command is onlt for my Owner")
     try {
                          let mention = mentionByTag

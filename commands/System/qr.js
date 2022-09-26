@@ -1,12 +1,11 @@
 const { tlang,botpic } = require('../../lib/scraper')
 const { getBuffer } = require('../../lib/myfuncn');
-const { prefix } = require('../../config')
 
 module.exports = {
    name: 'qr',
    category: 'system',
    desc: 'Sends CitelsVoid Qr code to scan and get your session id.',
-   async exec(citel, Void,args) {
+   async exec(citel, Void,args,prefix,icmd) {
 	if(args[0]){
 	let h =  await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${args.join(" ")}`)
 	await Void.sendMessage(citel.chat, { image: h })

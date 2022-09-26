@@ -9,7 +9,7 @@ module.exports = {
 		const mentionByTag = citel.mtype == "extendedTextMessage" && citel.message.extendedTextMessage.contextInfo != null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [];
 			  if (!citel.isGroup) return citel.reply(tlang().group);
 			  if (!isAdmins) return citel.reply(tlang().admin);
-	                  if (!isBotAdmins) return citel.reply(tlang().botAdmin);
+	 if (!isBotAdmins) return citel.reply(tlang().botAdmin);
 			  
 			  try {
 				let mention = mentionByTag;

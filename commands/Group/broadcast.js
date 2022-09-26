@@ -5,7 +5,7 @@ module.exports = {
     category: 'owner',
     desc: 'Sends SECKTOR userbot group link.',
     async exec(citel, Void,args) {
-      
+      if(!isCreator) return citel.reply(tlang().owner)
         let getGroups = await Void.groupFetchAllParticipating();
 			let groups = Object.entries(getGroups)
 				.slice(0)

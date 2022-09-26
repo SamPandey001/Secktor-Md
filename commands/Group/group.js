@@ -5,7 +5,7 @@ module.exports = {
     name: 'group',
     category: 'group',
     desc: 'activates and deactivates group\nuse open or close option to toggle.',
-    async exec(citel, Void,args,isAdmins,isBotAdmins) {
+    async exec(citel, Void,args) {
 
         if (!citel.isGroup) citel.reply(tlang().group);
 			if (!isBotAdmins) citel.reply(tlang().botAdmin);

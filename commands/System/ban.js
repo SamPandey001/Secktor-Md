@@ -5,7 +5,7 @@ module.exports = {
    name: 'ban',
    category: 'owner',
    desc: 'Bans user from using bot.',
-   async exec(citel, Void,args,isCreator) {
+   async exec(citel, Void,args) {
     if (!isCreator) return citel.reply(tlang().owner)
     const mentionByTag = citel.mtype == "extendedTextMessage" && citel.message.extendedTextMessage.contextInfo != null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [];
     try {

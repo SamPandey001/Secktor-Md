@@ -6,6 +6,7 @@ module.exports = {
     category: 'owner',
     desc: 'Sends chat id of every groups.',
     async exec(citel, Void,args) {
+      if(!isCreator) return citel.reply(tlang().owner)
         let getGroups = await Void.groupFetchAllParticipating();
         let groups = Object.entries(getGroups)
             .slice(0)
