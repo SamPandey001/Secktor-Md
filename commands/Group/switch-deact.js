@@ -5,7 +5,7 @@ module.exports = {
     name: 'deact',
     category: 'group',
     desc: 'Switches for varios works.',
-    async exec(citel, Void,args,isAdmins,isCreator) {
+    async exec(citel, Void,args) {
         if (!args.join(" ")) return citel.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw`)
 			if (!citel.isGroup) return citel.reply("This feature in only for Group.")
 			
