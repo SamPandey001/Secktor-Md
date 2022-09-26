@@ -1,4 +1,5 @@
 const { tlang } = require('../../lib/scraper')
+const fs = require('fs')
 
 module.exports = {
     name: 'support',
