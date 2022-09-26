@@ -7,8 +7,8 @@ module.exports = {
    async exec(citel, Void,args) {
     const { Manga } = require("@shineiichijo/marika");
     const manga = new Manga();
-    if (!querie) return reply("Which manga do you want to search My Lord") &&  await SendNo()
-    let srh = await manga.searchManga(querie);
+    if (!args[0]) return reply("Which manga do you want to search My Lord")
+    let srh = await manga.searchManga(args.join(" "));
     let mang = `*🎀Title: ${srh.data[0].title}*\n`;
     mang += `*📈Status: ${srh.data[0].status}*\n`;
     mang += `*🌸Total Volumes: ${srh.data[0].volumes}*\n`;
@@ -31,7 +31,6 @@ module.exports = {
   /\[Written by Sam]/g,
   ""
 )}`;
-await SendYes()
     Void.sendMessage(citel.chat, {
         image: {
             url: srh.data[0].images.jpg.large_image_url,
