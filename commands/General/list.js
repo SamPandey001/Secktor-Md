@@ -3,6 +3,7 @@ const moment = require("moment-timezone")
 const fs = require("fs")
 const Config = require('../../config')
 let { fancy,botpic,tlang } = require("../../lib/scraper");
+let { runtime } = require('../../lib/myfuncn');
 module.exports = {
     name: "list",
     alias: ["l", "cmdlist", "listmenu"],
@@ -23,7 +24,8 @@ category.push(info)
                 
                 
             }
-str += `│ *Hey ${citel.pushName}.*\n│ *This is  ${tlang().title}.*\n│ *My commands list is given*\n│ *below.*\n│ *Total Commands* ${category.length}\n╰─────────────◆\n`
+str += `│ ❋ ╭─────────────\n`        
+str += `│ ❋ │ *Hey ${citel.pushName}.*\n│ ❋ │ *This is  ${tlang().title}.*\n│ ❋ │ *Commands:* ${category.length}\n│ ❋ │ *Uptime:* ${runtime(process.uptime())}\n│ ❋ │ *Owner:-* ${Config.ownername}\n│ ❋ │ *My commands list is given*\n│ ❋ │ *down below.*\n│ ❋ ╰───────────\n╰─────────────◆\n`
 str += `╭───────────────◆\n`
 str += `│ ⿻ ╭───────────────◆\n`
 for (let i = 0; i < category.length; i++ ) {
