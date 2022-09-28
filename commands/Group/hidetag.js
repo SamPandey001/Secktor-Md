@@ -9,7 +9,7 @@ module.exports = {
       const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat)
       .catch((e) => {}) : "";
       const participants = citel.isGroup ? await groupMetadata.participants : "";
-  if (!isBotAdmins) citel.reply(tlang().botAdmin);
+  if (!Admins) return citel.reply(tlang().admin);
         Void.sendMessage(citel.chat, {
           text: args.join(" ") ? args.join(" ") : "",
           mentions: participants.map((a) => a.id),
