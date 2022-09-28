@@ -34,7 +34,7 @@
 2. You will get a session id in whatsapp, copy id only.
 3. If You don't have a account in [Heroku](https://signup.heroku.com/), Create a account.
 4.  Grab a Mongodb uri from [Mongodb](signup.mongodb.com) for more instructions check yt video [Youtube Video](https://youtu.be/4u0uv3IiAAc).
-5. Click [FORK](https://github.com/SecktorBot/Secktor-MD/fork)
+5. Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork)
 6. Now [DEPLOY](https://secktorbot.herokuapp.com/deploy)
 ---
 7. More info about [Secktor](https://secktorbot.herokuapp.com/).
