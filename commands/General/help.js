@@ -73,8 +73,8 @@ str += `╰─────────────◆\n`
 							body: 'Help List',
 							thumbnail: log0,
 							mediaType: 2,
-							mediaUrl: ``,
-							sourceUrl: ``,
+							mediaUrl: `https://github.com/SamPandey001/Secktor-Md`,
+							sourceUrl: `https://github.com/SamPandey001/Secktor-Md`,
 						},
 					},
 				};
