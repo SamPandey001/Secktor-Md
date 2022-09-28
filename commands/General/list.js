@@ -11,12 +11,10 @@ module.exports = {
     async exec(citel, Void, args,pushname) {
        
 const { prefix, commands } = discordjs;
-let todlink = [12,9,8,3,5,2,6
-  ];
+let todlink = [12,9,8,3,5,2,6];
 let j = todlink[Math.floor(Math.random() * todlink.length)];
             const cmds = commands.keys()
             let category = [];
-let str = `╭───────────────◆\n`
             for (let cmd of cmds) {
                 let info = commands.get(cmd);
                 if (!cmd) continue;
@@ -24,14 +22,24 @@ category.push(info)
                 
                 
             }
-str += `│ ❋ ╭─────────────\n`        
-str += `│ ❋ │ *Hey ${citel.pushName}.*\n│ ❋ │ *This is  ${tlang().title}.*\n│ ❋ │ *Commands:* ${category.length}\n│ ❋ │ *Uptime:* ${runtime(process.uptime())}\n│ ❋ │ *Owner:-* ${Config.ownername}\n│ ❋ │ *My commands list is given*\n│ ❋ │ *down below.*\n│ ❋ ╰───────────\n╰─────────────◆\n`
+let str = `
+╭───〘 ${Config.ownername} Bot 〙────
+│ ✵ ╭──────────────      
+│ ✵ │ *Hey ${citel.pushName}.*
+│ ✵ │ *This is  ${tlang().title}.*
+│ ✵ │ *Commands:* _${category.length}_
+│ ✵ │ *Uptime:* _${runtime(process.uptime())}_
+│ ✵ │ *Owner:-* _${Config.ownername}_
+│ ✵ │ _My commands list is given_
+│ ✵ │ _down below._
+│ ✵ ╰───────────
+╰─────────────◆\n`
 str += `╭───────────────◆\n`
-str += `│ ⿻ ╭───────────────◆\n`
+str += `│ ⿻ ╭─────────────\n`
 for (let i = 0; i < category.length; i++ ) {
   str+=`│ ⿻ │ ${i+1}. `+ await fancy(category[i].name,j)+'\n'
 }
-str += `│ ⿻ ╰─────────────◆\n`
+str += `│ ⿻ ╰─────────────\n`
 str += `╰─────────────◆\n`
 citel.reply(str)
 }
