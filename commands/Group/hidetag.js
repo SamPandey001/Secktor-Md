@@ -5,11 +5,11 @@ module.exports = {
     category: 'group',
     desc: 'Tags everyperson of group without mentioning their numbers.',
     async exec(citel, Void,args) {
-      if(!citel.isGroup) return citel.reply(tlang().title)
+      if(!citel.isGroup) return citel.reply(tlang().group)
       const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat)
       .catch((e) => {}) : "";
       const participants = citel.isGroup ? await groupMetadata.participants : "";
-  if (!isAdmins) return citel.reply(tlang().admin);
+  if (!isBotAdmins) citel.reply(tlang().botAdmin);
         Void.sendMessage(citel.chat, {
           text: args.join(" ") ? args.join(" ") : "",
           mentions: participants.map((a) => a.id),
