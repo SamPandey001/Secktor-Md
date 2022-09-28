@@ -8,8 +8,8 @@ module.exports = {
     async exec(citel, Void,args) {
 
         if (!citel.isGroup) citel.reply(tlang().group);
-			if (!isBotAdmins) citel.reply(tlang().botAdmin);
-			if (!isAdmins) citel.reply(tlang().admin);
+			if (!isBotAdmins) return citel.reply(tlang().botAdmin);
+			if (!isAdmins) return citel.reply(tlang().admin);
 			if (args[0] === "close") {
 				await Void.groupSettingUpdate(citel.chat, "announcement")
 					.then((res) => reply(`Group Chat Muted :)`))
