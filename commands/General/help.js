@@ -3,7 +3,6 @@ const moment = require("moment-timezone")
 const fs = require("fs")
 const Config = require('../../config')
 let { randomfancy,botpic,tlang } = require("../../lib/scraper");
-const ucap = "𝙼𝚢 𝚞𝚜𝚊𝚋𝚕𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚊𝚛𝚎\n│ 𝚕𝚒𝚜𝚝𝚎𝚍 𝚋𝚎𝚕𝚘𝚠."
  
 module.exports = {
     name: "help",
@@ -38,21 +37,30 @@ module.exports = {
                     category[info.category].push(info);
                 }
             }
-            let str = `╭───────────────◆\n`        
-str += `│ *Hello, ${citel.pushName}*\n│ *This is ${tlang().title}*\n│ *A whatsapp bot developed*\n│ *by ${Config.ownername}*\n│${ucap}\n│\n`;
-str += `╰─────────────◆\n`
+let str = `
+╭───────────────◆        
+│ *Hello, ${citel.pushName}*
+│ *This is ${tlang().title}*
+│ *A whatsapp bot developed*
+│ *by ${Config.ownername}*
+│ 𝙼𝚢 𝚞𝚜𝚊𝚋𝚕𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚊𝚛𝚎
+│ 𝚕𝚒𝚜𝚝𝚎𝚍 𝚋𝚎𝚕𝚘𝚠
+╰─────────────◆\n`
             const keys = Object.keys(category);
-            str += `╭───『 *Commands* 』──◆\n`
+            str += `╭───『 *Commands* 』──◆`
             for (const key of keys) {
             	let anu = key[0].toUpperCase()
            
-            	str += `│ ⿻ ╭─────────────◆\n`
-                str += `│ ⿻ │ ⦿---- *${anu}${key.slice(1)}* ----⦿\n│ ⿻ ╰┬────────────◆\n│ ⿻ ┌┤\n${category[key]
-                    .map((cmd, idx) =>
-                    `│ ⿻ │ ✭ ${idx + 1}. ${prefix}`+`${cmd.name}`).join('\n')}\n│ ⿻ ╰─────────────◆\n`
+str += `
+│ ⿻ ╭─────────────◆
+│ ⿻ │ ⦿---- *${anu}${key.slice(1)}* ----⦿
+│ ⿻ ╰┬────────────◆
+│ ⿻ ┌┤ ${category[key].map((cmd, idx) =>`
+│ ⿻ │ ✭ ${idx + 1}. ${prefix}`+`${cmd.name}`)}
+│ ⿻ ╰─────────────◆`
             }
-            str += `╰────────────────◆\n`
-            str += `_🔖Send ${prefix}help <command name> to get detailed information of specific command._\n*📍Eg:* _${prefix}help anime_`;
+str += `\n╰────────────────◆\n`
+str += `_🔖Send ${prefix}help <command name> to get detailed information of specific command._\n*📍Eg:* _${prefix}help anime_`;
             let generatebutton = [{
 					buttonId: `${prefix}repo`,
 					buttonText: {
