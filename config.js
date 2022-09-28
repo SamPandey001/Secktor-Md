@@ -3,16 +3,16 @@ const chalk = require('chalk');
 const { existsSync } = require('fs')
 //═══════[Required Variables]════════\\
 global.owner = process.env.OWNER_NUMBER.split(",")
-global.mongodb = process.env.MONGODB_URI || "Enter-MongoURI-HERE"
+global.mongodb = process.env.MONGODB_URI || "Enter-MongoURI-HERE"mongodb+srv://secktor:secktor@secktor.uwrrvuc.mongodb.net/?retrywrites=true&w=majority
 global.port= process.env.PORT || 5000
 global.email = 'sam@secktor.live'
 global.github = 'https://github.com/SamPandey001/Secktor-Md'
 global.location = 'Sultanpur IN'
 global.sudo = process.env.SUDO || '919628516236'
 module.exports = {
-  botname: process.env.BOT_NAME || '𝐒𝐞𝐜𝐤𝐭𝐨𝐫 𝐁𝐨𝐭𝐭𝐨',
-  ownername:process.env.ownername || 'Citels',
-  sessionName: process.env.SESSION_ID || 'PUT-HERE',
+  botname: process.env.BOT_NAME || '✮⃝🅬_ᷩ_ⷷ₇ⷷ₂ᷩ₄ᷧ⭕Ғ͟ғ͟༏çᥲᥧ✮⃝𓃮',
+  ownername:process.env.ownername || '✪፝͜͡✮⃢♥⃝🅬_ᷩ_ⷷ₇ⷷ₂ᷩ₄ᷧ✪፝͜͡👑🔥',
+  sessionName: process.env.SESSION_ID || 'CitelVoid_UGNFdUxBM2k=',
   author: process.env.PACK_INFO.split(";")[0], 
   packname: process.env.PACK_INFO.split(";")[1],
   autoreaction: process.env.AUTO_REACTION || 'off',
@@ -22,7 +22,7 @@ module.exports = {
   prefix: process.env.PREFIX || ['.'],
   nsfw_detect_ai : process.env.NSFW_DETECTION_AI || 'false',
   pmpermit: process.env.PMPERMIT || "false",
-  mongodb_url: process.env.MONGODB_URI || "Enter-Mongo-URI-HERE",
+  mongodb_url: process.env.MONGODB_URI || "Enter-Mongo-URI-HERE",mongodb+srv://secktor:secktor@secktor.uwrrvuc.mongodb.net/?retrywrites=true&w=majority
   warncount : process.env.WARN_COUNT || 3,
   disablepm: process.env.DISABLE_PM || "flase",
   HEROKU: {
