@@ -1,19 +1,13 @@
 {
-  "name": "secktor-api",
+  "name": "Secktor-Md",
   "version": "0.0.5",
-  "description": "Multi device wa bot created by Team CitelVoid.",
+  "description": "Multi device whatsapp bot.",
   "main": "lib/client.js",
   "type": "commonjs",
-  "node_args" : "--max-old-space-size=480",
-    "nodemonConfig": {
-    "ignore": [
-      "/app/*"
-    ],
-    "delay": 2500
-  },
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start . --deep-monitoring --attach"
+
+    "start": "pm2 start . --attach --name ֎"
   },
   "keywords": [
     "termux",
@@ -31,12 +25,11 @@
   "license": "GNU",
   "dependencies": {
     "@adiwajshing/baileys": "github:sampandey001/baileys",
-    "@adiwajshing/keyed-db": "^0.2.4",
-    "@bochilteam/scraper": "2.0.0",
+    "@adiwajshing/keyed-db": "latest",
     "@discordjs/collection": "1.1.0",
-    "link-preview-js" : "latest",
-    "anime-wallpaper" : "1.1.1",
     "awesome-phonenumber": "^3.3.0",
+    "anime-wallpaper" : "1.1.1",
+    "@bochilteam/scraper": "2.0.0",
     "mailist": "^1.0.3",
     "@shineiichijo/marika": "^2.0.3",
     "anime-character-random": "latest",
@@ -92,7 +85,7 @@
   },
   "directories": {
     "lib": "lib",
-    "assets": "assets"
+    "assets": "lib/assets"
   },
   "devDependencies": {
     "pino": "^7.0.5"
