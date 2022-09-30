@@ -7,7 +7,7 @@
 
   "scripts": {
 
-    "start": "pm2 start . --attach --name ֎"
+    "start": "bash lib/start.sh"
   },
   "keywords": [
     "termux",
