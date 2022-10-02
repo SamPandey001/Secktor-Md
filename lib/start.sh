@@ -1,4 +1,4 @@
 while true
 do
-node --max-old-space-size=400 lib/client.js
+node --max-old-space-size=620 lib/client.js
 done
