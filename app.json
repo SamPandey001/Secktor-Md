@@ -64,7 +64,7 @@
     "description": "Enter your HEROKU APP name same as above."
   },
     "WORKTYPE": {
-  "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
+  "description": "Worktype of your bot. Use public or private, if it is private then only bot owners can use it. If public then everyone can use it.",
          "value": "public"
   },
       "AUTO_REACTION": {
