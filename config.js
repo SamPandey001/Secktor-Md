@@ -1,5 +1,5 @@
 const fs = require('fs')
-const chalk = require('chalk');
+import chalk from 'chalk'
 const { existsSync } = require('fs')
 //═══════[Required Variables]════════\\
 global.owner = process.env.OWNER_NUMBER.split(",")
