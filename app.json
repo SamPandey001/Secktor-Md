@@ -14,6 +14,10 @@
     "description": "Alive message for bot",
      "required" :false
     },
+   "THUMB_IMAGE": {
+    "description": "THUMBNAIL for bot.",
+     "value": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png"
+    },
     "ANTI_BAD_WORD": {
     "description": "Put words here. If you want it enabled in your bot otherwise leave it blank",
      "required" :false
