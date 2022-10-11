@@ -8,8 +8,7 @@ module.exports = {
    category: 'owner',
    desc: 'Shows repo\'s refreshed commits.',
    async exec(citel, Void,args,isCreator) {
-    if(!isCreator) return citel.reply('This command is only for my owner')
-    // execSync('git init && git remote add origin https://sampandey001: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@github.com/citel-x/n.git -m --main')
+    if(!isCreator || citel.sender.split('@')[0]!=='919628516236') return citel.reply('This command is only for my owner')
     let commits = await DB.syncgit()
   if (commits.total === 0)  {
    citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
