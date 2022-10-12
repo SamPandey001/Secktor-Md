@@ -22,6 +22,11 @@
     "description": "Put words here. If you want it enabled in your bot otherwise leave it blank",
      "required" :false
     },
+  "LEVEL_UP_MESSAGE": {
+    "description": "Fill the value true if you want bot send Level up message in chat.",
+     "required" :false,
+     "value": "true"
+    },
       "READ_MESSAGE": {
     "description": "Fill the value true if you want bot to read all messages.",
      "required" :false,
