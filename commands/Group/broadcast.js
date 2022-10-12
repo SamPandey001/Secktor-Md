@@ -1,6 +1,4 @@
-const { tlang } = require('../../lib/scraper')
-const { sleep } = require('../../lib/myfuncn')
-const fs = require('fs-extra');
+const { tlang,sleep } = require('../../lib/scraper')
 
 module.exports = {
     name: 'broadcast',
