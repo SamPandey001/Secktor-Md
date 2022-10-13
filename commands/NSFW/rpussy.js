@@ -1,4 +1,4 @@
-const { sck,tlang } = require('../../lib/core')
+const { sck,tlang } = require('../../lib')
 
 module.exports = {
    name: 'rpussy',
