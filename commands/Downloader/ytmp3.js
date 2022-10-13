@@ -43,7 +43,7 @@ module.exports = {
             console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
             if (fileSizeInMegabytes <= 40) {
                 let buttonMessage = { 
-  audio: fs.readFileSync(`./${randomName}`),
+  document: fs.readFileSync(`./${randomName}`),
   mimetype: 'audio/mpeg',
   fileName: titleYt + ".mp3",
             headerType: 4,
