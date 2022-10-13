@@ -1,4 +1,4 @@
-const { sck,tlang } = require('../../lib/core')
+const { sck,tlang } = require('../../lib')
 module.exports = {
    name: 'vixen',
    category:'nsfw',
@@ -6,7 +6,7 @@ module.exports = {
    use: '<query>',
    async exec(citel, Void, args,isGroup) {
       try {
-if(!isGroup) return citel.reply('This feature is only for Groups.')
+if(!citel.isGroup) return citel.reply('This feature is only for Groups.')
         var vixend = "Vixen Porn HD PICS";
 			let gis = require("g-i-s");
 			let zerogroup = (await sck.findOne({
@@ -16,7 +16,7 @@ if(!isGroup) return citel.reply('This feature is only for Groups.')
 				})
 				.save());
 			let mongoschemas = zerogroup.nsfw || "false";
-            if (mongoschemas == "false") return citel.reply("*NSFW* is not active.");
+            if (mongoschemas == "false") return citel.reply("*NSFW* is not active in current group.");
 			gis(vixend, async (error, result) => {
 				n = result;
 				images = n[Math.floor(Math.random() * n.length)].url;
