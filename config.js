@@ -27,6 +27,8 @@ module.exports = {
   warncount : process.env.WARN_COUNT || 3,
   disablepm: process.env.DISABLE_PM || "flase",
   levelupmessage: process.env.LEVEL_UP_MESSAGE || 'false',
+  antilink: process.env.ANTILINK_VALUES || 'chat.whatsapp.com',
+  antilinkaction: process.env.ANTILINK_ACTION || 'kick',
   HEROKU: {
         HEROKU: process.env.HEROKU || `true`,
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '1abfce1e-1bee-4334-9f6c-f4c1cb1cafab' : process.env.HEROKU_API_KEY,
