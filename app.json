@@ -22,12 +22,12 @@
     "description": "Put words here. If you want it enabled in your bot otherwise leave it blank",
      "required" :false
     },
-   "ANTILINK_VALUES: {
+   "ANTILINK_VALUES": {
     "description": "Put words for antilink",
      "value": "chat.whatsapp.com,fb.com,instagram",
      "required" :false
     },
-     "ANTILINK_ACTION: {
+     "ANTILINK_ACTION": {
     "description": "Put action for antilink",
      "value": "kick",
      "required" :false
