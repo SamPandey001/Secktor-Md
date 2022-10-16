@@ -1,5 +1,5 @@
-const { tlang } = require('../../lib/scraper')
-const { sleep } = require('../../lib/myfuncn')
+const { tlang,sleep } = require('../../lib/')
+
 module.exports = {
     name: 'block',
     category: 'owner',

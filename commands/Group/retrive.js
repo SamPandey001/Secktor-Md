@@ -1,5 +1,5 @@
 const djs = require("@discordjs/collection")
-const {tlang} = require('../../lib/scraper')
+const {tlang} = require('../../lib/')
 module.exports = {
    name: 'retrive',
    category: 'group',

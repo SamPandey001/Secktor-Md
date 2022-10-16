@@ -1,4 +1,4 @@
-let { TelegraPh } = require('../../lib/scraper')
+let { TelegraPh } = require('../../lib')
 const fs = require('fs-extra')
 
 module.exports = {

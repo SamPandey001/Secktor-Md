@@ -1,6 +1,5 @@
 const axios = require('axios')
-const { fetchJson,getBuffer } = require('../../lib/myfuncn')
-const { tlang } = require('../../lib/scraper')
+const { fetchJson,getBuffer ,tlang } = require('../../lib')
 
 module.exports = {
    name: 'waifu',

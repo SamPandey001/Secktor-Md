@@ -1,5 +1,4 @@
-const { warndb } = require('../../lib/core')
-const { tlang } = require('../../lib/scraper')
+const { warndb,tlang} = require('../../lib/')
 
 module.exports = {
    name: 'resetwarn',

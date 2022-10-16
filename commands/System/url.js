@@ -1,4 +1,4 @@
-let { UploadFileUgu,webp2mp4File,TelegraPh,tlang} = require("../../lib/scraper");
+let { UploadFileUgu,webp2mp4File,TelegraPh,tlang} = require("../../lib");
 const util = require("util");
 const fs = require('fs')
 

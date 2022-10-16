@@ -1,4 +1,4 @@
-const { warndb } = require('../../lib/core')
+const { warndb } = require('../../lib')
 const moment = require("moment-timezone");
 
 module.exports = {

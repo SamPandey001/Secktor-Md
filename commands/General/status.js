@@ -1,4 +1,4 @@
-const { runtime,tlang,botpic } = require('../../lib/myfuncn')
+const { runtime,tlang,botpic } = require('../../lib/')
 const Config = require('../../config')
 const prefix = Config.prefix
 const speed = require('performance-now')

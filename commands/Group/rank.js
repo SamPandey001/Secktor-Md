@@ -1,7 +1,7 @@
-const { sck,RandomXP } = require('../../lib/core')
+const { sck,RandomXP,tlang} = require('../../lib/')
 const canvacord = require("canvacord");
 const Levels = require("discord-xp");
-const { tlang } = require('../../lib/scraper')
+
 module.exports = {
     name: 'rank',
     category: 'group',

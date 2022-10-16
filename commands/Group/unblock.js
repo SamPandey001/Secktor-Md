@@ -1,4 +1,4 @@
-const { tlang } = require('../../lib/scraper')
+const { tlang } = require('../../lib')
 
 module.exports = {
     name: 'unblock',

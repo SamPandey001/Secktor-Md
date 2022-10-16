@@ -1,4 +1,4 @@
-const { addnote,tlang} = require('../../lib/scraper')
+const { addnote,tlang} = require('../../lib/')
 
 module.exports = {
    name: 'addnote',

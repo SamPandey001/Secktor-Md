@@ -1,4 +1,4 @@
-const { tlang,sleep } = require('../../lib/scraper')
+const { tlang,sleep } = require('../../lib')
 
 module.exports = {
     name: 'broadcast',

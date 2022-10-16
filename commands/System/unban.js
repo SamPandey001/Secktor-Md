@@ -1,5 +1,4 @@
-const { sck1 } = require('../../lib/core')
-const { tlang } = require('../../lib/scraper')
+const { sck1,tlang } = require('../../lib')
 
 module.exports = {
    name: 'unban',
