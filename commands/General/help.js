@@ -62,15 +62,15 @@ str += `
 str += `\n╰━━━━━━━━━━━──⊷\n`
 str += `_🔖Send ${prefix}help <command name> to get detailed information of specific command._\n*📍Eg:* _${prefix}help anime_`;
             let generatebutton = [{
-					buttonId: `${prefix}repo`,
+					buttonId: `${prefix}owner`,
 					buttonText: {
-						displayText: 'Repo⭐'
+						displayText: 'Owner'
 					},
 					type: 1
 				},{
 					buttonId: `${prefix}list`,
 					buttonText: {
-						displayText: 'List Menu🔰'
+						displayText: 'List Menu'
 					},
 					type: 1
 				}
