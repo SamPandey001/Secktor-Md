@@ -19,7 +19,7 @@ let [poll,opt] = args.join(" ").split(";");
         pollCreationMessage: {
           name: poll,
           options,
-          selectableOptionsCount: 0,
+          selectableOptionsCount: 1,
         },
       },
       {}
