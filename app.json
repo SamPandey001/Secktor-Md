@@ -24,7 +24,7 @@
     },
    "ANTILINK_VALUES": {
     "description": "Put words for antilink",
-     "value": "chat.whatsapp.com,fb.com,instagram",
+     "value": "chat.whatsapp.com,fb.com,instagram.com",
      "required" :false
     },
      "ANTILINK_ACTION": {
