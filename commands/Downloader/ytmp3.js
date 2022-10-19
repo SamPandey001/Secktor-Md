@@ -43,21 +43,23 @@ module.exports = {
             console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
             if (fileSizeInMegabytes <= 40) {
                 let buttonMessage = { 
-  audio: fs.readFileSync(`./${randomName}`),
-  mimetype: 'audio/mpeg',
-  fileName: titleYt + ".mp3",
-            headerType: 4,
-            contextInfo: {
-          externalAdReply: {
-            title: titleYt + ".mp3",
-            body: tlang().title,
-            previewType: "PHOTO",
-            thumbnailUrl: ``,
-            thumbnail: log0,
-            sourceUrl: ``,
-          },
-        },
-          }
+                    audio: fs.readFileSync(`./${randomName}`),
+                    mimetype: 'audio/mpeg',
+                    fileName: titleYt + ".mp3",
+                              headerType: 4,
+                              contextInfo: {
+                            externalAdReply: {
+                              title: titleYt,
+                              body: tlang().title,
+                              renderLargerThumbnail: true,
+                               thumbnailUrl: gurl,
+                               mediaUrl: '',
+                               mediaType: 1,
+                              thumbnail: log0,
+                              sourceUrl: gurl,
+                            },
+                          },
+                            }
           Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             } else {
                 citel.reply(`❌ File size bigger than 40mb.`);

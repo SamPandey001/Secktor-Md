@@ -47,8 +47,10 @@ module.exports = {
               externalAdReply: {
                 title: titleYt,
                 body: `${tlang().title}`,
+                renderLargerThumbnail: true,
+                thumbnailUrl: gurl,
                 thumbnail: log0,
-                mediaType: 2,
+                mediaType: 1,
                 mediaUrl: args[0],
                 sourceUrl: args[0]
               }
