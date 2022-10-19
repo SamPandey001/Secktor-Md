@@ -22,7 +22,7 @@ module.exports = {
                 return;
             }
             let infoYt = await ytdl.getInfo(urlYt);
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
+            if (infoYt.videoDetails.lengthSeconds >= 7200) {
                 citel.reply(`❌ I can't download that long video!`);
                 return;
             }
@@ -41,7 +41,7 @@ module.exports = {
             let fileSizeInBytes = stats.size;
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
             console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 40) {
+            if (fileSizeInMegabytes <= 120) {
                 let buttonMessage = { 
                     audio: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
@@ -62,7 +62,7 @@ module.exports = {
                             }
           Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             } else {
-                citel.reply(`❌ File size bigger than 40mb.`);
+                citel.reply(`❌ File size bigger than 120mb.`);
             }
             fs.unlinkSync(`./${randomName}`);
         } catch (e) {
