@@ -36,7 +36,7 @@ module.exports = {
             let stats = fs.statSync(`./${randomName}`);
             let fileSizeInBytes = stats.size;
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            if (fileSizeInMegabytes <= 100) {
+            if (fileSizeInMegabytes <= 140) {
                 let buttonMessage = {
             video:fs.readFileSync(`./${randomName}`),
             mimetype: 'video/mp4',
@@ -56,7 +56,7 @@ module.exports = {
           }
           Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             } else {
-                citel.reply(`❌ File size bigger than 40mb.`);
+                citel.reply(`❌ File size bigger than 140mb.`);
             }
             
             fs.unlinkSync(`./${randomName}`);
