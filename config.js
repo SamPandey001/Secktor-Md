@@ -1,5 +1,5 @@
 const fs = require('fs')
-
+ 
 const { existsSync } = require('fs')
 //═══════[Required Variables]════════\\
 global.owner = process.env.OWNER_NUMBER.split(",")
