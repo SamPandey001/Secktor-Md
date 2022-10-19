@@ -8,6 +8,7 @@ global.port= process.env.PORT || 5000
 global.email = 'sam@secktor.live'
 global.github = 'https://github.com/SamPandey001/Secktor-Md'
 global.location = 'Sultanpur IN'
+global.gurl = 'https://instagram.com/' // add your username
 global.sudo = process.env.SUDO || '919628516236'
 global.website = 'https://github.com/SamPandey001/Secktor-Md' //wa.me/+91000000000000
 module.exports = {
