@@ -1,5 +1,4 @@
-const { tlang } = require('../../lib/scraper')
-let { runtime } = require('../../lib/myfuncn');
+const { tlang,runtime  } = require('../../lib')
 
 module.exports = {
    name: 'uptime',

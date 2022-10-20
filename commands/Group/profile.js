@@ -13,7 +13,7 @@ module.exports = {
 			let idd = ''
 		let	huh = await haigu.findOne({id: citel.sender})
 			try{
-			  let haigu = require('./lib/core')
+			  let haigu = require('./lib/')
 		 idd = huh.haig
 			} catch {
 			  idd = 'No Haigusha'
