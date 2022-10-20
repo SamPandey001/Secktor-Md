@@ -1,4 +1,4 @@
-const { tlang,getAdmin,prefix,Module,Config,sck } = require('../../lib')
+const { tlang,getAdmin,prefix,addCommand,Config,sck } = require('../../lib')
 
 module.exports = {
     name: 'antilink',
