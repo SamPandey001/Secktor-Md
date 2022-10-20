@@ -1,7 +1,7 @@
 
 const axios = require('axios')
 const { Anime, Manga } = require("@shineiichijo/marika");
-const { tlang } = require('../../lib/')
+const { tlang,addCommand } = require('../../lib/')
 
 module.exports = {
    name: 'animenews',
