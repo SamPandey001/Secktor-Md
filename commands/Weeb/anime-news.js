@@ -27,11 +27,10 @@ module.exports = {
       let result = await response;
       result = result.data.articles;
       result.map(async (r, idx) => {
-      let fatihganst = fs.readFileSync(`./assets/images (1).jpeg`);
         Void.sendMessage(
           citel.chat,
           {
-            image: fatihganst,
+            image: log0,
             caption: `*Title🔰:* ${r.title}\n\n*Content🧩:* ${r.content}\n*Author📌:* ${r.author}\n*Source♦️:* ${r.source.name}\n*Created On☘️:* ${r.publishedAt}\n*More on✨:* ${r.url}\n\n*Powered by ${tlang().title}*`,
           },
           {
