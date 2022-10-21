@@ -35,16 +35,14 @@ module.exports = {
  }
 
 
- addCommand({ on: "body" }, async (Void,citel,icmd) => {
-	if (Config.autoreaction ==='true') {
+ addCommand({ on: "body" }, async (Void,citel) => {
+	if (Config.autoreaction ==='true' && citel.text.startsWith(prefix)) {
 		const emojis = ['❤','💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌','🙂','🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋']
 		const emokis = emojis[Math.floor(Math.random() * (emojis.length))]
-		 if (icmd) {
 		Void.sendMessage(citel.chat, {
 			  react: {
 				text: emokis,
 				key: citel.key
 			  }})
-			}
 	}
  })
