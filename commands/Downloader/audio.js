@@ -1,5 +1,4 @@
-const { tlang } = require('../../lib')
-const {prefix} = require('../../config')
+const { tlang,prefix } = require('../../lib')
 
 module.exports = { 
     name: 'audio',
@@ -8,7 +7,7 @@ module.exports = {
     desc: 'Downloads audio from youtube.',
     use: 'text',
     async exec(citel, Void,args) {
-        if (!args.join(" ")) return citel.reply(`Example : ${prefix + command} Back in black`)
+        if (!args.join(" ")) return citel.reply(`Example : ${prefix}audio Back in black`)
         let yts = require("yt-search")
         let search = await yts(args.join(" "))
         listSerch = []
