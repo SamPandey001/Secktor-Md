@@ -2,7 +2,7 @@ const djs = require("@discordjs/collection")
 const moment = require("moment-timezone")
 const fs = require("fs")
 const Config = require('../../config')
-let { fancytext,botpic,tlang } = require("../../lib");
+let { fancytext,botpic,tlang,tiny } = require("../../lib");
  
 module.exports = {
     name: "help",
@@ -49,14 +49,13 @@ str+=
 ╰━━━━━━━━━━━──⊷\n`
             const keys = Object.keys(category);
  str += `╭───『 `+ fancytext('Commands',57)+`』──◆`
-for (const key of keys) {
-  let anu = key[0].toUpperCase()           
+for (const key of keys) {       
 str += `
 ┃ ⿻ ╭─────────────◆
-┃ ⿻ │ ⦿---- ${anu}${key.slice(1)} ----⦿
+┃ ⿻ │ ⦿---- ${tiny(key)} ----⦿
 ┃ ⿻ ╰┬────────────◆
 ┃ ⿻ ┌┤ ${category[key].map((cmd, idx) =>`
-┃ ⿻ │ ✭ ${idx + 1}. ${prefix}`+`${cmd.name}`)}
+┃ ⿻ │ ✭ ${idx + 1}. `+`${cmd.name}`)}
 ┃ ⿻ ╰─────────────◆`
             }
 str += `\n╰━━━━━━━━━━━──⊷\n`
@@ -80,18 +79,7 @@ str += `_🔖Send ${prefix}help <command name> to get detailed information of sp
 					caption: str,
 					footer: tlang().title,
 					headerType: 4,
-				 buttons: generatebutton,
-					contextInfo: {
-						externalAdReply: {
-							title: tlang().title,
-							body: 'Help List',
-							thumbnail: log0,
-							mediaType: 2,
-							showAdAttribution: true,
-							mediaUrl: `https://github.com/SamPandey001/Secktor-Md`,
-							sourceUrl: `https://github.com/SamPandey001/Secktor-Md`,
-						},
-					},
+				 buttons: generatebutton
 				};
 				await Void.sendMessage(citel.chat, buttonMessaged, {
 					quoted: citel,
