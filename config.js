@@ -18,7 +18,7 @@ module.exports = {
   author: process.env.PACK_INFO.split(";")[0], 
   packname: process.env.PACK_INFO.split(";")[1],
   autoreaction: process.env.AUTO_REACTION || 'off',
-  antibadword : process.env.ANTI_BAD_WORD || '92',
+  antibadword : process.env.ANTI_BAD_WORD || 'fuck',
   antifake : process.env.FAKE_COUNTRY_CODE || '',
   readmessage: process.env.READ_MESSAGE || true,
   prefix: process.env.PREFIX || ['.'],
