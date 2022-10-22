@@ -59,7 +59,7 @@
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
-       "value": "Replace Me",
+       "value": "Replace Me(optional)",
        "required" :false
   },
   "WELCOME_MESSAGE": {
