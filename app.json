@@ -55,7 +55,7 @@
        "value": "923042205427"
   },
    "SESSION_ID": {
-    "description": "Please put your SESSION_ID here,if you don't have visit https://princemd.herokuapp.com/session "
+    "description": "Please put your SESSION_ID here,if you don't have visit https://secktorbot.herokuapp.com/session "
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
