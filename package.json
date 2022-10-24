@@ -1,7 +1,7 @@
 {
-  "name": "Secktor-Md",
+  "name": "princemd",
   "version": "0.0.5",
-  "description": "Multi device whatsapp bot by SamPandey001.",
+  "description": "Multi device whatsapp bot by Princegds786.",
   "main": "lib/client.js",
   "type": "commonjs",
   "scripts": {
@@ -10,7 +10,7 @@
   "keywords": [
     "termux",
     "whatsapp",
-    "SamPandey001",
+    "Princegds786",
     "Zero-Two",
     "wabase-md",
     "base",
@@ -19,10 +19,10 @@
     "bot-md",
     "multi-device"
   ],
-  "author": "SamPandey001",
+  "author": "Princegds786",
   "license": "GNU",
   "dependencies": {
-    "@adiwajshing/baileys": "git+https://github.com/sampandey001/Baileys.git",
+    "@adiwajshing/baileys": "git+https://github.com/Princegds786/Baileys.git",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@discordjs/collection": "1.1.0",
     "awesome-phonenumber": "^3.3.0",
@@ -79,10 +79,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SamPandey001/Secktor-Md.git"
+    "url": "git+https://github.com/Princegds786/princemd.git"
   },
   "bugs": {
-    "url": "https://github.com/SamPandey001/Secktor-Md/issues"
+    "url": "https://github.com/Princegds786/princemd/issues"
   },
-  "homepage": "https://github.com/SamPandey001/Secktor-Md#readme"
+  "homepage": "https://github.com/Princegds786/princemd#readme"
 }
