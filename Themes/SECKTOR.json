@@ -1,6 +1,6 @@
 {
   "__JSON__": true,
-  "AUTHOR": "SamPandey001",
+  "AUTHOR": "Princegds786",
   "LANGUAGE": "English",
   "LANGCODE": "en",
   "STRINGS": {
@@ -10,16 +10,16 @@
           "UPDATED_LOCAL": "*Successfully Updated!*"
       },
       "global": {
-          "botName": " Powered by Secktor",
+          "botName": " Powered by Prince",
           "body": "𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡",
           "greet2" : "Sir",
-          "pic1": "https://telegra.ph/file/77520024feb8aac4157b0.jpg",
-          "pic2": "https://telegra.ph/file/77520024feb8aac4157b0.jpg",
-          "pic3": "https://telegra.ph/file/69be508896c985e91a46d.jpg",
-          "pic4": "https://telegra.ph/file/1aa44e92c9bca7a56dcf9.jpg",
-          "pic5": "https://telegra.ph/file/41be11a63bfe8fa23e534.jpg",
-          "pic6": "https://telegra.ph/file/eff1ad812fecae4f7aa6e.jpg",
-          "pic7": "https://telegra.ph/file/529f73b19f85b7f1b6f6b.jpg",
+          "pic1": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
+          "pic2": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
+          "pic3": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
+          "pic4": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
+          "pic5": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
+          "pic6": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
+          "pic7": "https://telegra.ph/file/479332543dde9a1db0677.jpg",
            "greet" : "Sir",
          "dotbody" : "I'm Alive.",
           "promote": "Admin Role Given to my Darling",
