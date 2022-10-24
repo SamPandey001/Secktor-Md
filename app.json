@@ -1,8 +1,8 @@
 {
-  "name": "Secktor-Md",
+  "name": "𝑷𝒓𝒊𝒏𝒄𝒆𝑩𝑶𝑻",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
-  "logo": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "SecktorBot", "theme bot","multi device"],
+  "logo": "https://i.imgur.com/9oQlq6w.jpeg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "𝑷𝒓𝒊𝒏𝒄𝒆𝑩𝑶𝑻", "𝑷𝒓𝒊𝒏𝒄𝒆𝑩𝑶𝑻", "theme bot","multi device"],
   "success_url": "/",
   "stack": "container",
 "env": {
@@ -16,7 +16,7 @@
     },
    "THUMB_IMAGE": {
     "description": "THUMBNAIL for bot.",
-     "value": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png"
+     "value": "https://i.imgur.com/9oQlq6w.jpeg"
     },
     "ANTI_BAD_WORD": {
     "description": "Put words here. If you want it enabled in your bot otherwise leave it blank",
@@ -52,10 +52,10 @@
   },
   "OWNER_NUMBER": {
     "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-       "value": "919628516236"
+       "value": "923042205427"
   },
    "SESSION_ID": {
-    "description": "Please put your SESSION_ID here,if you don't have visit https://secktorbot.herokuapp.com/session "
+    "description": "Please put your SESSION_ID here,if you don't have visit https://princemd.herokuapp.com/session "
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
@@ -65,7 +65,7 @@
   "WELCOME_MESSAGE": {
     "description": "Enter the message here which you want to see in Welcome when a new user joins a Group.",
        "value": "  *Hi,* @user \n*Welcome in* @gname \n*Member count* : @count th",
-       "required" :false
+       "required" :ture
   },
   "MONGODB_URI": {
     "description": "A secret String for Mongodb Connection.(Required)"
@@ -87,12 +87,12 @@
       "AUTO_REACTION": {
     "description": "Reacts emoji to all commands.",
      "value": "false",
-     "required": false 
+     "required": true
   },
   "PACK_INFO": {
     "description": "Put packname;authorname.",
      "value": "SamPandey001;Secktor",
-     "required": false 
+     "required": true
   }
 },
   "formation": {
