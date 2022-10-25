@@ -5,7 +5,7 @@
   "main": "lib/client.js",
   "type": "commonjs",
   "scripts": {
-    "start": "pm2 start . --attach --name ⛥"
+    "start": "pm2 start . --deep-monitoring --attach --name ⛥"
   },
   "keywords": [
     "termux",
