@@ -2,7 +2,7 @@
   "name": "Secktor-Md",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
   "logo": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "SecktorBot", "theme bot","multi device"],
+  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "SecktorBot", "Secktor","SecktorMD","theme bot","multi device"],
   "success_url": "/",
   "stack": "container",
 "env": {
@@ -29,7 +29,7 @@
     },
      "ANTILINK_ACTION": {
     "description": "Put action for antilink",
-     "value": "kick",
+     "value": "remove",
      "required" :false
     },
   "LEVEL_UP_MESSAGE": {
