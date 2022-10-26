@@ -15,8 +15,8 @@ module.exports = {
 			for (let i of search.all) {
 				listSerch.push({
 					title: i.title,
-					rowId: `${prefix}ytmp4 ${i.url}`,
-					description: `Secktor / ${i.timestamp}`
+					rowId: `${prefix}ytv ${i.url}`,
+					description: `Prince / ${i.timestamp}`
 				})
 			}
 			const sections = [
