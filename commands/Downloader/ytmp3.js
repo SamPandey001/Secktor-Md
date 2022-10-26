@@ -41,7 +41,7 @@ module.exports = {
             let fileSizeInBytes = stats.size;
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
             console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 40) {
+            if (fileSizeInMegabytes <= 300) {
                 let buttonMessage = { 
   audio: fs.readFileSync(`./${randomName}`),
   mimetype: 'audio/mpeg',
@@ -60,7 +60,7 @@ module.exports = {
           }
           Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
             } else {
-                citel.reply(`❌ File size bigger than 40mb.`);
+                citel.reply(`❌ File size bigger than 300mb.`);
             }
             fs.unlinkSync(`./${randomName}`);
         } catch (e) {
