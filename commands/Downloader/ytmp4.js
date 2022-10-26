@@ -36,7 +36,7 @@ module.exports = {
             let stats = fs.statSync(`./${randomName}`);
             let fileSizeInBytes = stats.size;
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            if (fileSizeInMegabytes <= 100) {
+            if (fileSizeInMegabytes <= 500) {
                 let buttonMessage = {
             video:fs.readFileSync(`./${randomName}`),
             mimetype: 'video/mp4',
