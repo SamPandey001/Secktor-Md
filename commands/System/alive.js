@@ -7,7 +7,7 @@ module.exports = {
     desc: 'Tells, is bot alive??.',
     async exec(citel, Void,args,isAdmins) {
         const aliveadm = isAdmins ? "True" : "False";
-			let alivemessage = process.env.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
+			let alivemessage = process.env.ALIVE_MESSAGE || `*A bot developed by 🅿🆁🅸🅽🅲🅴🅶🅳🆂.*`
 			const alivtxt = `
 *Hello, my ${citel.pushName},*
 *This is  ${tlang().title}.*
