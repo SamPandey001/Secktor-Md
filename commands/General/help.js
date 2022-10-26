@@ -88,8 +88,8 @@ str += `_🔖Send ${prefix}help <command name> to get detailed information of sp
 							thumbnail: log0,
 							mediaType: 2,
 							showAdAttribution: true,
-							mediaUrl: `https://github.com/SamPandey001/Secktor-Md`,
-							sourceUrl: `https://github.com/SamPandey001/Secktor-Md`,
+							mediaUrl: `https://github.com/Princegds786/princemd`,
+							sourceUrl: `https://github.com/Princegds786/princemd`,
 						},
 					},
 				};
