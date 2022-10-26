@@ -5,7 +5,7 @@ module.exports = {
    name: 'getvar',
    category: 'owner',
    desc: 'To get vars from heroku.',
-   use: 'OWNER|919628516236',
+   use: 'OWNER|923042205427',
    async exec(citel, Void,args,isCreator) {
             if (!isCreator) return citel.reply(tlang().owner);
 			if (!args[0]) return citel.reply(`Please Give me var name, ${tlang().greet}`)
