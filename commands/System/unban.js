@@ -4,10 +4,11 @@ module.exports = {
    name: 'unban',
    category: 'owner',
    desc: 'Unbans banned user (from using bot).',
-   async exec(citel, Void,args,mentionByTag,isCreator) {
+   async exec(citel, Void,args,isCreator) {
     if (!isCreator) return citel.reply("This command is onlt for my Owner")
     try {
-                         let mention = mentionByTag
+   
+   let mention = citel.mtype == "extendedTextMessage" && citel.message.extendedTextMessage.contextInfo != null ? citel.message.extendedTextMessage.contextInfo.mentionedJid : [];
    let users = await (mention[0]) || citel.msg.contextInfo.participant
  if (!users) return citel.reply("Please mention any user.❌")
 let pushnamer = Void.getName(users);
