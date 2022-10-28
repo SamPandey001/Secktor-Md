@@ -1,4 +1,4 @@
-const { tlang } = require('../../lib')
+const { tlang,prefix } = require('../../lib')
 let yts = require("yt-search");
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
     desc: 'Gives descriptive info of query from youtube.',
     use: '<text>',
     async exec(citel, Void,args,from) {
-        if (!args) return citel.reply(`Example : ${prefix + command} ${LangG.title} WhatsApp Bot`);
+        if (!args[0]) return citel.reply(`Example : ${prefix}yts ${tlang().title} WhatsApp Bot`);
         let search = await yts(args.join(" "));
         let textt = "*YouTube Search*\n\n Result From " + args.join(" ") + "\n\n───────────────────\n";
         let no = 1;
@@ -20,7 +20,7 @@ module.exports = {
           i.url
         }\n\n──────────────\n\n`;
         }
-        Void.sendMessage(from, {
+        Void.sendMessage(citel.chat, {
             image: {
                 url: search.all[0].thumbnail,
             },
