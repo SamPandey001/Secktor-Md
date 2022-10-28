@@ -21,7 +21,7 @@ module.exports = {
   antibadword : process.env.ANTI_BAD_WORD || 'fuck',
   antifake : process.env.FAKE_COUNTRY_CODE || '',
   readmessage: process.env.READ_MESSAGE || true,
-  prefix: process.env.PREFIX || ['.'],
+  prefix: process.env.PREFIX || ['.''],
   nsfw_detect_ai : process.env.NSFW_DETECTION_AI || 'false',
   pmpermit: process.env.PMPERMIT || "false",
   mongodb_url: process.env.MONGODB_URI || "Enter-Mongo-URI-HERE",
