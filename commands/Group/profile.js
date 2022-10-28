@@ -1,5 +1,5 @@
 
-const { haigu,RandomXP,tlang,botpic} = require('../../lib')
+const { RandomXP,tlang,botpic} = require('../../lib')
 const { prefix } = require('../../config') 
 const Levels = require("discord-xp");
 const moment = require("moment-timezone");
@@ -7,20 +7,9 @@ module.exports = {
     name: 'profile',
     category: 'group',
     desc: 'Shows profile of user.',
-    async exec(citel, Void,args,groupName,isAdmins) {
+    async exec(citel, Void,args,isAdmins) {
         var bio = await Void.fetchStatus(citel.sender);
 			var bioo = bio.status;
-			let idd = ''
-		let	huh = await haigu.findOne({id: citel.sender})
-			try{
-			  let haigu = require('./lib/')
-		 idd = huh.haig
-			} catch {
-			  idd = 'No Haigusha'
-  
-           }
-			let hgg = idd.haig || 'No Haigusha'
-			const adn = isAdmins ? "True" : "False";
 			let meh = citel.sender;
 			   const userq = await Levels.fetch(citel.sender, "RandomXP");
 			   const lvpoints = userq.level;
@@ -113,9 +102,6 @@ module.exports = {
 *Here is your profile information*
 *👤Username:* ${citel.pushName}
 *⚡Bio:* ${bioo}
-*☘️Group:*  ${groupName}
-*🦸Admin* ${adn}
-*🍀Haigusha* ${hgg}
 *🧩Role:* ${role}
 *🍁Level:* ${userq.level}
 *📥 Total Messages* ${ttms}
@@ -123,9 +109,9 @@ module.exports = {
 `;
 			const buttonsd = [
 				{
-					buttonId: `${prefix}alive`,
+					buttonId: `${prefix}rank`,
 					buttonText: {
-						displayText: "Alive",
+						displayText: "Rank",
 					},
 					type: 1,
           },
