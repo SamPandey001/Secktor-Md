@@ -46,12 +46,12 @@ const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 let str = `╭────〔 `+ fancytext(Config.ownername.split(' ')[0],58) +` 〕─────⊷\n` 
 str+=
 '```'+`│ ╭──────────────
-│ │ User:- _${citel.pushName}_
-│ │ Theme:- _${tlang().title}_
-│ │ Prefix:- _[ ${Config.prefix[0]} ]_
-│ │ Owner:- _${Config.ownername}_
-│ │ Uptime:- _${runtime(process.uptime())}_
-│ │ Mem:- _${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}_
+│ │ User:- ${citel.pushName}
+│ │ Theme:- ${tlang().title}
+│ │ Prefix:- [ ${Config.prefix[0]} ]
+│ │ Owner:- ${Config.ownername}
+│ │ Uptime:- ${runtime(process.uptime())}
+│ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 │ │ Time:- ${time}
 │ │ Date:- ${date}
 │ ╰────────────
