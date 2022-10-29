@@ -1,12 +1,11 @@
-const { tlang,sleep } = require('../../lib')
-
+const { tlang } = require('../../lib/scraper')
+const { sleep } = require('../../lib/myfuncn')
 module.exports = {
     name: 'broadcast',
     category: 'owner',
     desc: 'Sends SECKTOR userbot group link.',
     async exec(citel, Void,args,isCreator) {
       if(!isCreator) return citel.reply(tlang().owner)
-      if(!args[0]) return citel.reply('_Provide me text to broadcast._')
         let getGroups = await Void.groupFetchAllParticipating();
 			let groups = Object.entries(getGroups)
 				.slice(0)
@@ -17,8 +16,29 @@ module.exports = {
             } second`);
 			for (let i of anu) {
 				await sleep(1500);
-				let txt = `*--❗${tlang().title} Broadcast❗--*\n\n *🍀Author:* ${citel.pushName}\n\n${args.join(" ")}`;
-				Void.send5ButImg(i, txt, Void.user.name,log0);
+				let txt = `*❗${tlang().title} Broadcast❗*\n\n *🍀Author:* ${citel.pushName}\n\n${args.join(" ")}`;
+				let buttonMessaged = {
+					image:  log0,
+					caption: txt,
+					footer: citel.pushName,
+					headerType: 1,
+					contextInfo: {
+                                                forwardingScore: 999,
+		                                isForwarded: false,
+						externalAdReply: {
+							 title: 'Broadcast by '+citel.pushName,
+							 body: tlang().title,
+							 thumbnail: log0,
+							 mediaUrl: '',
+                                                         mediaType: 2,
+							 sourceUrl: gurl,
+                                                         showAdAttribution: true,
+						},
+					},
+				};
+				await Void.sendMessage(i, buttonMessaged, {
+					quoted: citel,
+				});  
 			}
 			citel.reply(`*Successful Sending Broadcast To ${anu.length} Group(s)*`);
     }
