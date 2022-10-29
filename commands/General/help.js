@@ -1,9 +1,10 @@
 const djs = require("@discordjs/collection")
+const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
 const Config = require('../../config')
-let { fancytext,botpic,tlang,tiny } = require("../../lib");
- 
+let { fancytext,tlang,tiny,runtime,formatp,botpic} = require("../../lib");
+
 module.exports = {
     name: "help",
     alias: ["h", "cmd", "menu"],
@@ -37,26 +38,34 @@ module.exports = {
                     category[info.category].push(info);
                 }
             }
-let str = `╭━━〘 `+ fancytext(Config.ownername.split(' ')[0],58) +` 〙━━──⊷`     
+const time = moment(moment())
+      .format('HH:mm:ss')
+    moment.tz.setDefault('Asia/KOLKATA')
+      .locale('id')
+const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+let str = `╭────〔 `+ fancytext(Config.ownername.split(' ')[0],58) +` 〕─────⊷\n` 
 str+=
-`
-┃ *Hello, ${citel.pushName}*
-┃ *This is ${tlang().title}*
-┃ *A whatsapp bot developed*
-┃ *by ${Config.ownername}*
-┃ 𝙼𝚢 𝚞𝚜𝚊𝚋𝚕𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚊𝚛𝚎
-┃ 𝚕𝚒𝚜𝚝𝚎𝚍 𝚋𝚎𝚕𝚘𝚠
-╰━━━━━━━━━━━──⊷\n`
-            const keys = Object.keys(category);
+'```'+`│ ╭──────────────
+│ │ User:- _${citel.pushName}_
+│ │ Theme:- _${tlang().title}_
+│ │ Prefix:- _[ ${Config.prefix[0]} ]_
+│ │ Owner:- _${Config.ownername}_
+│ │ Uptime:- _${runtime(process.uptime())}_
+│ │ Mem:- _${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}_
+│ │ Time:- ${time}
+│ │ Date:- ${date}
+│ ╰────────────
+╰───────────────⊷\n`+'```'
+       const keys = Object.keys(category);
  str += `╭───『 `+ fancytext('Commands',57)+`』──◆`
 for (const key of keys) {       
 str += `
-┃ ⿻ ╭─────────────◆
-┃ ⿻ │ ⦿---- ${tiny(key)} ----⦿
-┃ ⿻ ╰┬────────────◆
-┃ ⿻ ┌┤ ${category[key].map((cmd, idx) =>`
-┃ ⿻ │ ✭ ${idx + 1}. `+`${cmd.name}`)}
-┃ ⿻ ╰─────────────◆`
+┃  ╭─────────────◆
+┃  │ ✯---- ${tiny(key)} ----⦿
+┃  ╰┬────────────◆
+┃  ┌┤ ${category[key].map((cmd, idx) =>`
+┃  │ ❒ ${idx + 1}. `+`${cmd.name}`)}
+┃  ╰─────────────◆`
             }
 str += `\n╰━━━━━━━━━━━──⊷\n`
 str += `_🔖Send ${prefix}help <command name> to get detailed information of specific command._\n*📍Eg:* _${prefix}help anime_`;
@@ -81,9 +90,7 @@ str += `_🔖Send ${prefix}help <command name> to get detailed information of sp
 					headerType: 4,
 				 buttons: generatebutton
 				};
-				await Void.sendMessage(citel.chat, buttonMessaged, {
-					quoted: citel,
-				});
+				await Void.sendMessage(citel.chat, buttonMessaged);
         }
     }
 }
