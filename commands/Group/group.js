@@ -15,12 +15,12 @@ module.exports = {
 			if (!isAdmins) return citel.reply(tlang().admin);
 			if (args[0] === "close") {
 				await Void.groupSettingUpdate(citel.chat, "announcement")
-					.then((res) => reply(`Group Chat Muted :)`))
+					.then((res) => citel.reply(`Group Chat Muted :)`))
 					.catch((err) => console.log(err));
 			}
 			else if (args[0] === "open") {
 				await Void.groupSettingUpdate(citel.chat, "not_announcement")
-					.then((res) => reply(`Group Chat Unmuted :)`))
+					.then((res) => citel.reply(`Group Chat Unmuted :)`))
 					.catch((err) => console.log(err));
 			}
 			else {
