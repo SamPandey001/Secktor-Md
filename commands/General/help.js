@@ -49,6 +49,7 @@ str+=
 │ │ User:- ${citel.pushName}
 │ │ Theme:- ${tlang().title}
 │ │ Prefix:- [ ${Config.prefix[0]} ]
+│ │ Plugins:- ${djs.commands.size}
 │ │ Owner:- ${Config.ownername}
 │ │ Uptime:- ${runtime(process.uptime())}
 │ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
