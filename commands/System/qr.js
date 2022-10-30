@@ -28,7 +28,7 @@ module.exports = {
 					contextInfo: {
 						externalAdReply: {
 							title: 'Secktor Session',
-							body: 'Get you Session ID',
+							body: 'Get your Session ID',
 							thumbnail: log0,
 							mediaType: 2,
 							mediaUrl: ``,
