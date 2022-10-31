@@ -8,25 +8,22 @@ module.exports = {
    desc: 'Makes Sticker of quoted text.',
    use: '<reply to any users message>',  
    async exec(citel, Void,args) {
-
-    if (!citel.quoted) return citel.reply("Please quote/reply to any message");
-			//let pfp = await Void.profilePictureUrl(citel.quoted.sender, 'image');
+   if (!citel.quoted) return citel.reply("Please quote/reply to any message");
 			let textt = citel.quoted.text;
+			let pfp;
 			try {
 				pfp = await Void.profilePictureUrl(citel.quoted.sender, "image");
 			}
 			catch (e) {
-				pfp = "https://raw.githubusercontent.com/SamPandey001/Secktor-Md/main/assets/SocialLogo%201.png";
+				pfp = THUMB_IMAGE;
 			}
-			// var randomColor= Math.floor(Math.random()*16777215).toString(16);
 			let todlinkf = ["#FFFFFF", "#000000"];
 			let todf = todlinkf[Math.floor(Math.random() * todlinkf.length)];
-			let samhh = args[1] || todf;
-			let tname = args[0] || Void.getName(citel.quoted.sender);
+			let tname = Void.getName(citel.quoted.sender) || citel.pushName
 			let body = {
 				type: "quote",
 				format: "png",
-				backgroundColor: samhh,
+				backgroundColor: todf,
 				width: 512,
 				height: 512,
 				scale: 3,
@@ -49,13 +46,13 @@ module.exports = {
 			let res = await axios.post("https://bot.lyo.su/quote/generate", body);
 			let img = Buffer.alloc(res.data.result.image.length, res.data.result.image, "base64");
 			let sticker = new Sticker(img, {
-				pack: 'Secktor-Quotely', // The pack name
-				author: 'SamPandey001', // The author name
-				type: StickerTypes.FULL, // The sticker type
-				categories: ['🤩', '🎉'], // The sticker category
-				id: '12345', // The sticker id
-				quality: 85, // The quality of the output file
-				background: 'transparent' // The sticker background color (only for full stickers)
+				pack: 'Secktor-Quotely',
+				author: 'SamPandey001', 
+				type: StickerTypes.FULL,
+				categories: ['🤩', '🎉'],
+				id: '12345', 
+				quality: 85,
+				background: 'transparent'
 			})
 			const buffer = await sticker.toBuffer()
 			Void.sendMessage(citel.chat, {
@@ -63,6 +60,5 @@ module.exports = {
 			}, {
 				quoted: citel
 			})
-      
    }
 }
