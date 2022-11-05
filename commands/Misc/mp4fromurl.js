@@ -6,15 +6,15 @@ module.exports = {
    desc: 'download mp4 from url.',
    async exec(citel, Void,args) {
     if (!args[0]) return citel.reply(`Where's the link ?`);
-        Void.sendMessage(from, {
+        await Void.sendMessage(citel.chat, {
             video: {
                 url: args[0],
             },
-            caption: "*HERE WE GO*",
+            caption: "*Media from url.*",
             contextInfo: {
                 externalAdReply: {
                     title: tlang().title,
-                    body: `${global.ownername}`,
+                    body: `MP4 From URL`,
                     thumbnail: log0,
                     mediaType: 2,
                     mediaUrl: ``,
