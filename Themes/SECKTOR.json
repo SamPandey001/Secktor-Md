@@ -1,6 +1,6 @@
 {
   "__JSON__": true,
-  "AUTHOR": "SamPandey001",
+  "AUTHOR": "༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝.inc",
   "LANGUAGE": "English",
   "LANGCODE": "en",
   "STRINGS": {
@@ -10,8 +10,8 @@
           "UPDATED_LOCAL": "*Successfully Updated!*"
       },
       "global": {
-          "botName": " Powered by Secktor",
-          "body": "𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡",
+          "botName": " Powered by ༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝",
+          "body": "NoCTurNO.inc_BOT",
           "greet2" : "Sir",
           "pic1": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/new/first.jpg",
           "pic2": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/new/second.jpg",
@@ -21,20 +21,20 @@
           "pic6": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/new/sixth.jpg",
           "pic7": "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/new/seventh.jpg",
            "greet" : "Sir",
-         "dotbody" : "I'm Alive.",
+         "dotbody" : "I'm Alive , unlike your father.",
           "promote": "Admin Role Given to my Darling",
-          "pmallow": "*Hii,This is Secktor*\n*An assistant of My Master.*\nMy Master is busy right now.\nKindly Leave your Message.\n\n_I will inform him about your message asap......_",
-          "pmblock": "❌ Blocked*\n\n You have been blocked for spamming.\n\n _ Powered by Secktor_",
+          "pmallow": "*Hii,This is *༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝*An assistant of My Master.*\nMy Master is busy right now.\nKindly Leave your Message.\n\n_I will inform him about your message asap......_",
+          "pmblock": "❌ Blocked*\n\n You have been blocked for spamming.\n\n _ Powered by ༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝",
           "pmwarn": "✋Hii* \nPlease don't spam else I'll block you for spamming. _You have ${checkPermit.times} warning(s)._\n\n *Powered by Secktor*",
-          "permited": "Hii ${tname} Sir*\n\nNow You are permitted by my owner to pm now.\n\n *Powered by Secktor", 
-          "revoked" : "*Hii ${tname} Sir*\n\nYour pm permit permission has been prevoked now.\n\n _Powered by Secktor_",
+          "permited": "Hii ${tname} Sir*\n\nNow You are permitted by my owner to pm now.\n\n *Powered by ༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝", 
+          "revoked" : "*Hii ${tname} Sir*\n\nYour pm permit permission has been prevoked now.\n\n _Powered by ༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝",
           "demote": "Uhh,Admin Role Taken back",
           "antlink": "Link Detected.\n*Good Bye Sir*",
-          "session": "\n*This is your session.sam.json,keep it safe and store it properly*\n_Now Upload This json file in Your Forked Repo_\n Connect your repo to Heroku and *Deploy Branch* and Bot will run for Always\n\n*Powered by Secktor*",
+          "session": "\n*This is your session.sam.json,keep it safe and store it properly*\n_Now Upload This json file in Your Forked Repo_\n Connect your repo to Heroku and *Deploy Branch* and Bot will run for Always\n\n*Powered by ༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝*",
           "mention": " Please mention any user Sir",
-          "title": "Secktor",
-          "footer": "Secktor",
-          "by": "Made by: *CitelVoid*",
+          "title": "༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝",
+          "footer": "༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝",
+          "by": "Made by: *༒⃝⬩࿚𝑁𝑜𝐶𝑇𝑢𝑟𝑁𝑂--𝑀D᭄࿙⬩༒⃝*",
           "chat_desc": "Options Avilable* : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete",
           "success": "Done ✓",
           "dot": "Did you mean *help?*",
@@ -49,7 +49,7 @@
           "wait": "𝑷𝒓𝒐𝒄𝒆𝒔𝒔𝒊𝒏𝒈 𝒚𝒐𝒖𝒓 𝒓𝒆𝒒𝒖𝒆𝒔𝒕✅" 
       },
       "error": {
-          "text": "*Uhh,Got an Error*"
+          "text": "*Uhh,Got an Error , now give up msoon*"
       }
   }
 }
