@@ -10,20 +10,15 @@ let [poll,opt] = args.join(" ").split(";");
         `${prefix}poll question;option1,option2,option3.....`
       );  
     let options = [];
-    for (let i of opt.split(',')) {
-      options.push({ optionName: i });
-    } 
- await Void.relayMessage(
-      citel.chat,
-      {
-        pollCreationMessage: {
-          name: poll,
-          options,
-          selectableOptionsCount: 1,
-        },
-      },
-      {}
-    );
+        for (let i of opt.split(',')) {
+            options.push(i);
+        }
+        await Void.sendMessage(citel.chat, {
+            poll: {
+                name: poll,
+                values: options
+            }
+        })
     }
  }
 
