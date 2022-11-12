@@ -55,7 +55,7 @@ cmd({
                     } else {
                         if (checkgroup.economy == "true") return citel.reply("Economy was alredy enabled is already enabled")
                         await sck.updateOne({ id: citel.chat }, { economy: "true" })
-                        citel.reply('Economy antilink in current chat.')
+                        citel.reply('Economy enabled in current chat.')
                         return
                     }
                 }
@@ -119,7 +119,7 @@ cmd({
                 break
             default:
                 {
-                    citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\4-bot\5-cardgame")
+                    citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\4-bot\5-economy")
                 }
         }
     }
