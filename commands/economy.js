@@ -10,7 +10,7 @@
  * @version 0.0.6
  **/
 
- const { sck,sck1,cmd, getAdmin, tlang, prefix } = require('../lib')
+ const { sck,sck1,cmd, getBuffer, tlang, prefix } = require('../lib')
  const Config = require('../config')
  const eco = require('discord-mongoose-economy')
  const ty = eco.connect(mongodb);
@@ -470,6 +470,39 @@ default:
      const k = 50
      const a = (k) > parseInt(value)
      const twice = gg*2
+          var hjkl;
+     if(opp==='left')
+     {
+         hjkl = 'https://github.com/SecktorBot/Brandimages/blob/main/Nezuko/leftr.webp?raw=true'
+     } 
+    else if(opp==='right') 
+    {
+        hjkl = 'https://github.com/SecktorBot/Brandimages/blob/main/Nezuko/rightr.webp?raw=true'
+    } else if(opp==='up') 
+    {
+        hjkl = 'https://github.com/SecktorBot/Brandimages/blob/main/Nezuko/upr.webp?raw=true'
+    } else if (opp==='down'){
+        hjkl = 'https://github.com/SecktorBot/Brandimages/blob/main/Nezuko/downr.webp?raw=true'
+    } else{
+        citel.reply(`Please provide direction(left,right,up,down).\nEg:- ${prefix}gamble 200 left`)
+    }
+   const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
+   let media = await getBuffer(hjkl)
+   let sticker = new Sticker(media, {
+                    pack: "Secktor", // The pack name
+                    author: 'Economy', // The author name
+                    type: StickerTypes.FULL, // The sticker type
+                    categories: ["🤩", "🎉"], // The sticker category
+                    id: "12345", // The sticker id
+                    quality: 70, // The quality of the output file
+                    background: "transparent", // The sticker background color (only for full stickers)
+                });
+                const stikk = await sticker.toBuffer();
+                await Void.sendMessage(citel.chat, {
+                    sticker: stikk,
+                }, {
+                    quoted: citel,
+                });
      const f = ["up", "right", "left", "down", "up", "left", "down", "right", "up", "down", "right", "left"]
      const r = f[Math.floor(Math.random () * f.length)]
      if (!text) return citel.reply(
