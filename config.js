@@ -19,7 +19,7 @@ module.exports = {
   author: process.env.PACK_INFO.split(";")[0] || 'author', 
   packname: process.env.PACK_INFO.split(";")[1] || 'Name',
   autoreaction: process.env.AUTO_REACTION || 'off',
-  antibadword : process.env.ANTI_BAD_WORD || 'fuck',
+  antibadword : process.env.ANTI_BAD_WORD || 'nobadwordokey',
   antifake : process.env.FAKE_COUNTRY_CODE || '',
   readmessage: process.env.READ_MESSAGE || false,
   HANDLERS: process.env.PREFIX || ['.'],
@@ -30,7 +30,7 @@ module.exports = {
   disablepm: process.env.DISABLE_PM || "flase",
   levelupmessage: process.env.LEVEL_UP_MESSAGE || 'false',
   antilink: process.env.ANTILINK_VALUES || 'chat.whatsapp.com',
-  antilinkaction: process.env.ANTILINK_ACTION || 'kick',
+  antilinkaction: process.env.ANTILINK_ACTION || 'remove',
   HEROKU: {
         HEROKU: process.env.HEROKU || `true`,
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '1abfce1e-1bee-4334-9f6c-f4c1cb1cafab' : process.env.HEROKU_API_KEY,
