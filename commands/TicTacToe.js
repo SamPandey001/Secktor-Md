@@ -8,9 +8,10 @@
  * @description : Secktor,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
-const { tlang } = require('../lib')
+
 const Secktor = require('../lib/')
 Secktor.cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
+    const { tlang } = require('../lib')
    if (!citel.isGroup) return citel.reply(tlang().group);
    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 	 const participants = citel.isGroup ? await groupMetadata.participants : "";
