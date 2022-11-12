@@ -58,6 +58,8 @@
         ];
         return await Void.sendButtonText(citel.chat, buttons, `You already claimed daily for today, come back in ${daily.cdL}`, `Secktor-Economy
 Version: 0.0.6`, citel);
+	 } else {
+	 citel.reply(`you claimed 💎${daily.amount} for today.`);   
 	 }
  }
  )
