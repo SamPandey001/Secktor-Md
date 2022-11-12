@@ -644,7 +644,7 @@ if(value<=balance.wallet){
 
 cmd({
     pattern: "slot2",
-    desc: "shows bank amount.",
+    desc: "slot game.",
     category: "economy",
     react: "✅"
 },
