@@ -1,0 +1,55 @@
+{
+  "__JSON__": true,
+  "AUTHOR": "SamPandey001",
+  "LANGUAGE": "English",
+  "LANGCODE": "en",
+  "STRINGS": {
+      "updater": {
+          "UPDATE": "*البوت الخاص بك موجود بالفعل على أحدث إصدار يا حبيبي*",
+          "NEW_UPDATE": "*هناك تحديث جديد متاح للبوت!*\n\n*التغييرات:*\n",
+          "UPDATED_LOCAL": "*تم التحديث بنجاح!*"
+      },
+      "global": {
+          "greet2": "Konnichiwa!(💚ω💚)",
+          "botName": "بوت زورو🦉",
+          "body": "𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝-𝐵𝑜𝑡𝑡𝑜",
+          "pic1": "https://telegra.ph/file/e726e02c5175f48fab754.jpg",
+          "pic2": "https://telegra.ph/file/3e82ff214922c137fe687.jpg",
+          "pic3": "https://telegra.ph/file/89109c2923c418fe4b33d.jpg",
+          "pic4": "https://telegra.ph/file/6c4d721f190fd87ab7f2f.jpg",
+          "pic5": "https://telegra.ph/file/676f97857fc8d13b0a5ee.jpg",
+          "pic6": "https://telegra.ph/file/2677d4204987c80273591.jpg",
+          "pic7": "https://telegra.ph/file/5421ed1db19ced6918216.jpg",
+           "greet" : "Darling",
+          "dotbody" : "هلا انا اونلاين",
+          "promote": "Admin Role Given to my Darling",
+          "pmallow": "*هلا,انا بوت زورو*\n*مساعد سيدي.*\nسيدي مشغول الآن.\nيرجى ترك رسالتك.\n\n_سوف أبلغه عن رسالتك في أسرع وقت ممكن......_",
+          "pmblock": "❌ حظر*\n\n You have been blocked for spamming.\n\n _𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝓏ℴ𝓇ℴ🦉_",
+          "pmwarn": "✋هلا* \nارجو عدم الاسبام لڪي لا ينحظر رقم البوت. _عندك ${checkPermit.times} تحذير(s)._\n\n *𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝓏ℴ𝓇ℴ🦉*",
+          "permited": "هلا ${tname} صديق*\n\nالآن سمح لك مالك بلدي مساء الآن.\n\n *𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝓏ℴ𝓇ℴ🦉*", 
+          "revoked" : "*هلا ${tname} Sir*\n\nتم إبطال إذن تصريح رئيس الوزراء الخاص بك الآن.\n\n _𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝓏ℴ𝓇ℴ🦉_",
+          "demote": "ههههه,  لقد اصبحت مشرفاً 🗿",
+          "antlink": "احتذف الرابط.\n*برا يكلب*",
+          "session": "\n*This is your session.sam.json,keep it safe and store it properly*\n_Now Upload This json file in Your Forked Repo_\n Connect your repo to Heroku and *Deploy Branch* and Bot will run for Always\n\n*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝓏ℴ𝓇ℴ🦉*",
+          "mention": " Please mention any user Darling",
+          "title": "𝓏ℴ𝓇ℴ🦉",
+          "footer": "zoro 𝐌𝐝",
+          "by": "Made by: *zoro*",
+          "chat_desc": "خيارات متاحه* : 1. قفل\n2. فتح\n3. ارشفه\n4. فك ارشفه\n5. قرائه\n6. فك قرائه\n7. حذف",
+          "success": "*｢تم ✓｣*",
+          "dot": "هل تقصد * مساعدة؟ *",
+          "couple_male": "*لا أريد أن أموت وحدي ، أريد أنثى*",
+          "couple_female": "*لا أريد أن أموت وحدي ، أريد يار ذكر*",
+          "admin": "*｢هذه الميزه للمشرفين فقط｣*",
+          "botAdmin": "*｢جيب اشراف لتفعيل الأمر｣*",
+          "owner": "*｢هذه الميزه لمطوري فقط｣*",
+          "group": "*｢هذه الميزه بالقروبات فقط｣*",
+          "private": "*｢هذه الميزه للمالك فقط｣*",
+          "bot": "*｢هذه الميزه للبوت فقط｣*",
+          "wait": "*✅｢انتظر قليل.......｣*"
+      },
+      "error": {
+          "text": "*Uhh,Got an Error*"
+      }
+  }
+}
