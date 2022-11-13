@@ -32,8 +32,8 @@ Secktor.cmd({
                 const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
                 if (!cmd) return await citel.reply("*❌No Such commands.*");
                 else arr.push(`*🍁Command:* ${cmd.pattern}`);
-                if (cmd.category) arr.push(`*🧩Type:* ${cmd.category}`);
-                if (cmd.alias) arr.push(`*🧩Type:* ${cmd.alias}`);
+                if (cmd.category) arr.push(`*🧩Category:* ${cmd.category}`);
+                if (cmd.alias) arr.push(`*🧩Alias:* ${cmd.alias}`);
                 if (cmd.desc) arr.push(`*🧩Description:* ${cmd.desc}`);
                 if (cmd.use) arr.push(`*〽️Usage:*\n \`\`\`${prefix}${cmd.pattern} ${cmd.use}\`\`\``);
                 return await citel.reply(arr.join('\n'));
