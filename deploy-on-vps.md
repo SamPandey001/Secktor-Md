@@ -38,9 +38,9 @@
       copy paste lines below.
 
       ```
-      OWNER_NUMBER="919628516236,918953092716"
-      MONGODB_URI="mongodb+srv://sam:sam@cluster0.pgtpxcl.mongodb.net/?retryWrites=true&w=majority"
-      SESSION_ID = "U2FsdGVkX186bS2YAbmhaB/_S-E-C-K-T-O-R_KJUzWAFwR2/_S-E-C-K-T-O-R_IxqZmFELw="
+      OWNER_NUMBER="911234567890"
+      MONGODB_URI="mongodb+srv://*************"
+      SESSION_ID = "secktorbot.herokuapp.com/session"
       THUMB_IMAGE = "https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png"
       port = 5000
       email = "sam@secktor.live"
