@@ -9,7 +9,7 @@
   bash <(curl -L https://gist.githubusercontent.com/SamPandey001/012a7d671b143170bf34b419419327d5/raw)
   ```
 
--  make a file with name ```config.env``` and will given vars
+-  make a file with name ```config.env``` and fill given vars
 -  To make file
 
     ```
