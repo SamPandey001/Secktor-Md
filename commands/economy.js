@@ -512,23 +512,8 @@ default:
     } else{
         citel.reply(`Please provide direction(left,right,up,down).\nEg:- ${prefix}gamble 200 left`)
     }
-   const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
    let media = await getBuffer(hjkl)
-   let sticker = new Sticker(media, {
-                    pack: "Secktor", // The pack name
-                    author: 'Economy', // The author name
-                    type: StickerTypes.FULL, // The sticker type
-                    categories: ["🤩", "🎉"], // The sticker category
-                    id: "12345", // The sticker id
-                    quality: 70, // The quality of the output file
-                    background: "transparent", // The sticker background color (only for full stickers)
-                });
-                const stikk = await sticker.toBuffer();
-                await Void.sendMessage(citel.chat, {
-                    sticker: stikk,
-                }, {
-                    quoted: citel,
-                });
+   citel.reply(media,{packname:'Secktor',author:'Economy'},"sticker")
      const f = ["up", "right", "left", "down", "up", "left", "down", "right", "up", "down", "right", "left"]
      const r = f[Math.floor(Math.random () * f.length)]
      if (!text) return citel.reply(
