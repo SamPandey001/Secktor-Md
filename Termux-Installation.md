@@ -1,7 +1,7 @@
 ## Install Secktor on Termux
 
 -  All you need is patient and Internet in phone with termux.
--  If you don't have termux install from [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en_IN&gl=US&pli=1)
+-  If you don't have termux install from [Termux here with no issues.](https://f-droid.org/repo/com.termux_118.apk)
 -  First fork Repo and edit sample.config.env to config.env
 -  Fill variables in config.env file.
 -  Open termux and run this commands
