@@ -14,7 +14,6 @@ const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
 const canvacord = require("canvacord");
-const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 //---------------------------------------------------------------------------
 cmd({
             pattern: "join",
@@ -48,47 +47,9 @@ cmd({
 
             pack = Config.packname
             author = Config.author
-
-            if (citel.quoted) {
                 let media = await citel.quoted.download();
                 citel.reply("*Processing Your request*");
-                let sticker = new Sticker(media, {
-                    pack: pack, // The pack name
-                    author: author, // The author name
-                    type: text.includes("--crop" || '-c') ? StickerTypes.CROPPED : StickerTypes.FULL,
-                    categories: ["🤩", "🎉"], // The sticker category
-                    id: "12345", // The sticker id
-                    quality: 75, // The quality of the output file
-                    background: "transparent", // The sticker background color (only for full stickers)
-                });
-                const buffer = await sticker.toBuffer();
-                Void.sendMessage(citel.chat, {
-                    sticker: buffer,
-                }, {
-                    quoted: citel,
-                });
-            } else if (/video/.test(mime)) {
-                if ((quoted.msg || quoted)
-                    .seconds > 20) return citel.reply("Cannot fetch videos longer than *20 Seconds*");
-                let media = await quoted.download();
-                let sticker = new Sticker(media, {
-                    pack: pack, // The pack name
-                    author: author, // The author name
-                    type: StickerTypes.FULL, // The sticker type
-                    categories: ["🤩", "🎉"], // The sticker category
-                    id: "12345", // The sticker id
-                    quality: 70, // The quality of the output file
-                    background: "transparent", // The sticker background color (only for full stickers)
-                });
-                const stikk = await sticker.toBuffer();
-                Void.sendMessage(citel.chat, {
-                    sticker: stikk,
-                }, {
-                    quoted: citel,
-                });
-            } else {
-                citel.reply("*Uhh,Please reply to any image or video*");
-            }
+                return citel.reply(media,{packname:'Secktor',author:citel.pushName},"sticker")
         }
     )
     //---------------------------------------------------------------------------
