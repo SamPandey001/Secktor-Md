@@ -10,7 +10,6 @@
  **/
 
 const axios = require('axios')
-const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 const { sck1, tiny, fancytext, listall,cmd } = require('../lib/')
 const fs = require('fs-extra');
 const { exec } = require('child_process')
@@ -87,21 +86,7 @@ cmd({
             };
             let res = await axios.post("https://bot.lyo.su/quote/generate", body);
             let img = Buffer.alloc(res.data.result.image.length, res.data.result.image, "base64");
-            let sticker = new Sticker(img, {
-                pack: 'Secktor-Quotely', // The pack name
-                author: 'SamPandey001', // The author name
-                type: StickerTypes.FULL, // The sticker type
-                categories: ['🤩', '🎉'], // The sticker category
-                id: '12345', // The sticker id
-                quality: 85, // The quality of the output file
-                background: 'transparent' // The sticker background color (only for full stickers)
-            })
-            const buffer = await sticker.toBuffer()
-            Void.sendMessage(citel.chat, {
-                sticker: buffer
-            }, {
-                quoted: citel
-            })
+            return citel.reply(img,{packname:'Secktor',author:'Quotely'},"sticker")
 
         }
     )
