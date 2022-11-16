@@ -389,7 +389,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "botpic",
-            desc: "Sets profile pic on userbot.",
+            desc: "Sets profile pic.",
             fromMe: true,
             category: "misc",
         },

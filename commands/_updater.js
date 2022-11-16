@@ -48,9 +48,13 @@ cmd({
         if (commits.total === 0) {
             citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
         } else {
-            citel.reply('Updating userbot.......')
+            citel.reply('Updating now.......')
+            try{
             let update = await DB.updatedb()
             citel.reply(update)
+            } catch {
+                citel.reply('_error._')
+            }
         }
     }
 )

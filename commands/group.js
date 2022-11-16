@@ -55,7 +55,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "support",
-        desc: "Sends SECKTOR userbot group link.",
+        desc: "Sends official support group link.",
         category: "group",
     },
     async(Void, citel, text) => {

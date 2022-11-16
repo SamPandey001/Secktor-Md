@@ -186,7 +186,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "shutdown",
-            desc: "Shuts userbot down...",
+            desc: "Shuts secktor down...",
             fromMe: true,
             category: "heroku",
         },

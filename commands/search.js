@@ -202,7 +202,7 @@ cmd({
             use: '<text>',
         },
         async(Void, citel, text) => {
-            if (!text) throw `Example : ${prefix}google Secktor Userbot`
+            if (!text) throw `Example : ${prefix}google Secktor Md`
             let google = require('google-it')
             google({ 'query': text }).then(res => {
                 let text = `Google Search From : ${text}\n\n`
