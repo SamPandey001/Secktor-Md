@@ -25,7 +25,7 @@
   <p align="center"> Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use. </p
 
 - Install [External Plugins](https://github.com/SamPandey001/Secktor-Plugins)
-### Deployment Method
+## Deployment Method for Heroku
 ---
 1. Click [SCAN](https://secktorbot.herokuapp.com/session) and scan QR code. `Whatapp>Three dots>Linked Devices`
 2. You will get a session id in whatsapp, copy id only.
@@ -36,8 +36,22 @@
     <img alt="DEPLOY on Heroku" height="40" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
   
-7. [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
-8. [Deploy Secktor on Termux easily](https://github.com/SamPandey001/Secktor-Md/blob/main/Termux-Installation.md)
+## 7. Deploy in any shell including Termux
+-  All you need is patient and Internet and shell or phone with termux.
+-  If you don't have termux install from [Termux here with no issues.](https://f-droid.org/repo/com.termux_118.apk)
+-  First fork Repo and edit sample-config.env to config.env
+-  Fill variables in config.env file.
+-  Open shell or termux and run this commands
+
+  ```
+  bash <(curl -L https://gist.github.com/SamPandey001/e855b6593d076a1ede60c103bea336c4/raw)
+  ```
+
+-  Put your github username when it asks
+-  Volla!! bot is alive.
+
+
+8. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
 ---
 9. More info about [Secktor](https://secktorbot.herokuapp.com/).
 10. Deploy tutorial [Youtube Video](https://www.youtube.com/watch?v=7YWI50BDO5o).
