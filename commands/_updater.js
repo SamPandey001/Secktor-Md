@@ -16,7 +16,7 @@ const { tlang, Config, prefix,cmd } = require('../lib')
 cmd({
             pattern: "update",
             desc: "Shows repo\'s refreshed commits.",
-            category: "heroku",
+            category: "misc",
         },
         async(Void, citel, text,{ isCreator }) => {
             console.log(isCreator)
