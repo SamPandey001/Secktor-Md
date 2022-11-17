@@ -56,7 +56,7 @@
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttons, `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttons, `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 	 } else {
 	 citel.reply(`you claimed 🪙${daily.amount} for today.`);   
@@ -131,7 +131,7 @@ async(Void, citel, text,{ isCreator }) => {
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttons, `*1000 🪙diamond storage has been added in ${pushname} bank*`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttons, `*1000 🪙diamond storage has been added in ${pushname} bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
               break
@@ -155,7 +155,7 @@ Version: 0.0.6`, citel);
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttonss, `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttonss, `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
 
@@ -180,7 +180,7 @@ Version: 0.0.6`, citel);
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttonst, `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttonst, `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
 
@@ -229,7 +229,7 @@ default:
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
     }
 )
@@ -308,7 +308,7 @@ async(Void, citel, text,{ isCreator }) => {
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*📠 Transaction successful of ${value[0]} 💰*`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `*📠 Transaction successful of ${value[0]} 💰*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
 
@@ -348,7 +348,7 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -405,7 +405,7 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*🏦 ${citel.pushName}'s Bank:*\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `*🏦 ${citel.pushName}'s Bank:*\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -571,7 +571,7 @@ default:
         },
     ];
     citel.react('⭐️')
-    return await Void.sendButtonText(citel.chat, buttons, `*📈 You won 🪙${twice}*`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `*📈 You won 🪙${twice}*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
         }
@@ -593,7 +593,7 @@ Version: 0.0.6`, citel);
         },
     ];
     citel.react('🤮')
-    return await Void.sendButtonText(citel.chat, buttons,`*📉 You lost 🪙${texts[0]}*`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons,`*📉 You lost 🪙${texts[0]}*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
          }
@@ -800,7 +800,7 @@ async(Void, citel, text,{ isCreator }) => {
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons,str+`You got ${deduff*10} in your wallet.`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons,str+`You got ${deduff*10} in your wallet.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
     } else {
@@ -823,7 +823,7 @@ Version: 0.0.6`, citel);
         type: 1,
     },
 ];
-return await Void.sendButtonText(citel.chat, buttons,str+` ${deduff}.`, `Secktor-Economy
+return await Void.sendButtonText(citel.chat, buttons,str+` ${deduff}.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 }
 }
