@@ -441,19 +441,21 @@ Version: 0.0.6`, citel);
     if (k > balance2.wallet) return citel.reply(`*Sorry, your victim is too poor 🤷🏽‍♂️ let go👀.*`);
     let tpy = random    
     switch (random) {
-       const deduff = Math.floor(Math.random() * 1000)
+       
         case 'ran':
               await citel.reply(`*Your victim escaped, be more scary next time👀.*`)
 
               break
         case 'rob':
-          const deduct1 = await eco.deduct(user2, secktor, deduff);
-          const add2 = eco.give(citel.sender, secktor, deduff);
+	  const deduff = Math.floor(Math.random() * 1000)	    
+          await eco.deduct(user2, secktor, deduff);
+          await eco.give(citel.sender, secktor, deduff);
           await citel.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou can ${deduff} amount in your wallet.`)
               break
         case 'caught':
-           const deduct2 = await eco.deduct(user1, secktor, deduff);
-           await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${deduff}💎 from wallet.*`)
+           const rmoney = Math.floor(Math.random() * 1000)
+           await eco.deduct(user1, secktor, rmoney);
+           await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${rmoney} 💎 from wallet.*`)
 
              break
 default:
