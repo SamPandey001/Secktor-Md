@@ -26,7 +26,7 @@
          pattern: "daily",
          desc: "daily gold.",
          category: "economy",
-         react: "✅"
+         react: "💷"
      },
      async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -56,10 +56,10 @@
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttons, `You already claimed daily for today, come back in ${daily.cdL}`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttons, `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`, `Secktor-Economy
 Version: 0.0.6`, citel);
 	 } else {
-	 citel.reply(`you claimed 💎${daily.amount} for today.`);   
+	 citel.reply(`you claimed 🪙${daily.amount} for today.`);   
 	 }
  }
  )
@@ -68,7 +68,6 @@ Version: 0.0.6`, citel);
          pattern: "resetwallet",
          desc: "reset wallet of quoted user.",
          category: "economy",
-         react: "✅"
      },
      async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -84,7 +83,8 @@ Version: 0.0.6`, citel);
 	if(!users) return citel.reply('Please give me user.')
         const balance  = await eco.balance(users, "secktor")
         await eco.deduct(users, "secktor", balance.wallet);
-        return await citel.reply(`*Hey ${users.split('@')[0]} you lost all 💎 in wallet.*\n_Now live with that poverty._`,{mentions:[users]})
+        citel.react('🫡')
+        return await citel.reply(`*🧧Hey ${users.split('@')[0]} you lost all 🪙 in wallet.*\n_Now live with that poverty._`,{mentions:[users]})
  }
  )
     //---------------------------------------------------------------------------
@@ -92,7 +92,7 @@ Version: 0.0.6`, citel);
     pattern: "capacity",
     desc: "update capacity.",
     category: "economy",
-    react: "✅"
+    react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
     let zerogroup = (await sck.findOne({
@@ -104,7 +104,7 @@ async(Void, citel, text,{ isCreator }) => {
     let mongoschemas = zerogroup.economy || "false";
     if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
     if (!citel.isGroup) return citel.reply(tlang().group);
-    if (!text) return citel.reply(`💴 *Bank-capacity* 💳\n\n1 | *1000 sp* = 💎100\n\n2 | *100000 sp* = 💎1000\n\n3 | *10000000 sp* = 💎10000000\n\nExample- ${prefix}capacity 1 OR ${prefix}bankupgrade 1000`)
+    if (!text) return citel.reply(`💴 *Bank-capacity* 💳\n\n1 | *1000 sp* = 🪙100\n\n2 | *100000 sp* = 🪙1000\n\n3 | *10000000 sp* = 🪙10000000\n\nExample- ${prefix}capacity 1 OR ${prefix}bankupgrade 1000`)
     let user = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
     const secktor = "secktor"
 	let value = text.trim();
@@ -113,7 +113,7 @@ async(Void, citel, text,{ isCreator }) => {
     switch (value) {
         case '1000':
         case '1':
-        if (k > balance.wallet ) return citel.reply(`*_You need to pay 💎100 to increase bank capacity ~ 1000 sp_*`);
+        if (k > balance.wallet ) return citel.reply(`*_You need to pay 🪙100 to increase bank capacity ~ 1000 sp_*`);
           const deduct1 = await eco.deduct(user, secktor, 100);
           const add1 = eco.giveCapacity(user, secktor, 1000);
               let buttons = [{
@@ -131,13 +131,13 @@ async(Void, citel, text,{ isCreator }) => {
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttons, `*1000 💎diamond storage has been added in ${pushname} bank*`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttons, `*1000 🪙diamond storage has been added in ${pushname} bank*`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
               break
         case '100000':
         case '2':
-        if (k < balance.wallet) return citel.reply(`*You need to pay 💎1000 to increase bank capacity ~ 100000 sp*`);
+        if (k < balance.wallet) return citel.reply(`*You need to pay 🪙1000 to increase bank capacity ~ 100000 sp*`);
           const deduct2 = await eco.deduct(user, secktor, 1000);
           const add2 = eco.giveCapacity(user, secktor, 100000);
               let buttonss = [{
@@ -155,14 +155,14 @@ Version: 0.0.6`, citel);
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttonss, `*100000 💎diamond storage has been added in ${citel.pushName} bank*`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttonss, `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
 
               break
         case '10000000':
         case '3':
-        if (k < balance.wallet) return citel.reply(`You need to pay 💎10000 to increase bank capacity ~ 1000 sp`);
+        if (k < balance.wallet) return citel.reply(`You need to pay 🪙10000 to increase bank capacity ~ 1000 sp`);
            const deduct3 = await eco.deduct(user, secktor, 10000);
            const add3 = eco.giveCapacity(user, secktor, 10000000);
                let buttonst = [{
@@ -180,7 +180,7 @@ Version: 0.0.6`, citel);
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttonst, `*10000000 💎diamond storage has been added in ${citel.pushName}\'s bank*`, `Secktor-Economy
+        return await Void.sendButtonText(citel.chat, buttonst, `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
 
@@ -197,7 +197,7 @@ default:
         pattern: "deposit",
         desc: "deposit gold.",
         category: "economy",
-        react: "✅"
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -229,7 +229,7 @@ default:
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `Successfully 💰Deposited 💎${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `Secktor-Economy
 Version: 0.0.6`, citel);
     }
 )
@@ -237,7 +237,7 @@ Version: 0.0.6`, citel);
         pattern: "lb",
         desc: "check leaderboard.",
         category: "economy",
-        react: "✅",
+        react: "💷",
 	cool: 3
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -264,7 +264,7 @@ cmd({
     pattern: "transfer",
     desc: "transfer gold.",
     category: "economy",
-    react: "✅"
+    react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
     let zerogroup = (await sck.findOne({
@@ -320,7 +320,7 @@ Version: 0.0.6`, citel);
         pattern: "wallet",
         desc: "shows wallet.",
         category: "economy",
-        react: "✅"
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -348,7 +348,7 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*👛 ${citel.pushName}'s Purse:*\n\n_💎${balance.wallet}_`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -359,7 +359,7 @@ Version: 0.0.6`, citel);
         pattern: "give",
         desc: "Add money in wallet.",
         category: "economy",
-        react: "✅"
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         if(!isCreator) return
@@ -378,7 +378,7 @@ Version: 0.0.6`, citel);
         pattern: "bank",
         desc: "shows bank amount.",
         category: "economy",
-        react: "✅"
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -405,7 +405,7 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*🏦 ${citel.pushName}'s Bank:*\n\n_💎${balance.bank}/${balance.bankCapacity}_`, `Secktor-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `*🏦 ${citel.pushName}'s Bank:*\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -416,7 +416,6 @@ Version: 0.0.6`, citel);
         pattern: "rob",
         desc: "rob bank amount.",
         category: "economy",
-        react: "✅"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -438,12 +437,13 @@ Version: 0.0.6`, citel);
 	const typ = ['ran','rob','caught'];
     const random = typ[Math.floor(Math.random() * typ.length)];
     if (k > balance1.wallet) return citel.reply(`*☹️ You don't have enough money to pay incase you get caught*`);
-    if (k > balance2.wallet) return citel.reply(`*Sorry, your victim is too poor 🤷🏽‍♂️ let go👀.*`);
+    if (k > balance2.wallet) return citel.reply(`*Sorry, your victim is too poor 🤷🏽‍♂️ let go🫤.*`);
     let tpy = random    
     switch (random) {
        
         case 'ran':
-              await citel.reply(`*Your victim escaped, be more scary next time👀.*`)
+              await citel.reply(`*Your victim escaped, be more scary next time🫰.*`)
+              citel.react('🥹')
 
               break
         case 'rob':
@@ -451,15 +451,17 @@ Version: 0.0.6`, citel);
           await eco.deduct(user2, secktor, deduff);
           await eco.give(citel.sender, secktor, deduff);
           await citel.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou can ${deduff} amount in your wallet.`)
+          citel.react('💀')
               break
         case 'caught':
            const rmoney = Math.floor(Math.random() * 1000)
            await eco.deduct(user1, secktor, rmoney);
-           await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${rmoney} 💎 from wallet.*`)
-
+           await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${rmoney} 🪙 from wallet🥹.*`)
+           citel.react('😦')
              break
 default:
  await citel.reply('*What are you trying to do👀*.')
+ citel.react('🤔')
 
  }
 
@@ -471,7 +473,7 @@ default:
         pattern: "withdraw",
         desc: "withdraw money from bank account.",
         category: "economy",
-        react: "✅"
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -487,9 +489,9 @@ default:
 		const query = text.trim();
         const secktor = "secktor"
         const withdraw = await eco.withdraw(user, secktor, query);
-        if(withdraw.noten) return citel.reply('*🏧 Insufficient fund in bank👀*'); //if user states more than whats in his wallet
+        if(withdraw.noten) return citel.reply('*🏧 Insufficient fund in bank🫤*'); //if user states more than whats in his wallet
         const add = eco.give(user, secktor, query);
-          citel.reply(`*🏧 ALERT* \n _💎${withdraw.amount} has been withdrawn from your wallet💰._`)
+          citel.reply(`*🏧 ALERT* \n _🪙${withdraw.amount} has been withdrawn from your wallet💰._`)
     }
 )
 
@@ -498,7 +500,7 @@ default:
         pattern: "gamble",
         desc: "gamble money.",
         category: "economy",
-        react: "✅"
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -549,8 +551,8 @@ default:
             if (!value) return citel.reply("*Please, specify the amount you are gambling with!*");
             if (!opp) return citel.reply("*Specify the direction you are betting on!*");
             if (!gg) return citel.reply("*Check your text please, You are using the command in a wrong way*")
-            if (g == false) return citel.reply(`*You don't have sufficient 💎 Diamond to gamble with*`);
-        if (a == true) return citel.reply(`*Sorry ${citel.pushName}, you can only gamble with more than 💎50.*`);
+            if (g == false) return citel.reply(`*You don't have sufficient 🪙 Diamond to gamble with*`);
+        if (a == true) return citel.reply(`*Sorry ${citel.pushName}, you can only gamble with more than 🪙50.*`);
         if ( r == opp){
            let give = await eco.give(user , secktor, twice);
            let buttons = [{
@@ -568,7 +570,8 @@ default:
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*📈 You won 💎${twice}*`, `Secktor-Economy
+    citel.react('⭐️')
+    return await Void.sendButtonText(citel.chat, buttons, `*📈 You won 🪙${twice}*`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
         }
@@ -589,7 +592,8 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons,`*📉 You lost 💎${texts[0]}*`, `Secktor-Economy
+    citel.react('🤮')
+    return await Void.sendButtonText(citel.chat, buttons,`*📉 You lost 🪙${texts[0]}*`, `Secktor-Economy
 Version: 0.0.6`, citel);
 
          }
@@ -601,10 +605,10 @@ Version: 0.0.6`, citel);
 
      //---------------------------------------------------------------------------
      cmd({
-        pattern: "slot",
+        pattern: "slot2",
         desc: "withdraw money from bank account.",
         category: "economy",
-         react: "✅"
+         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -617,8 +621,8 @@ Version: 0.0.6`, citel);
         if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
         var today = new Date();
         if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0){
-            if (text == 'help') return citel.reply(`*1:* Use ${prefix}slot to play\n\n*2:* You must have 💎100 in your wallet\n\n*3:* If you don't have money in wallet then 👛withdraw from your bank🏦\n\n*4:* If you don't have 🤑 money in your 🏦bank too then use economy features to 📈gain money`)
-            if (text == 'money') return citel.reply(`*1:* Small Win --> +💎20\n\n*2:* Small Lose --> -💎20\n\n*3:* Big Win --> +💎100\n\n*4:* Big Lose --> -💎50\n\n*5:* 🎉 JackPot --> +💎1000`)
+            if (text == 'help') return citel.reply(`*1:* Use ${prefix}slot to play\n\n*2:* You must have 🪙100 in your wallet\n\n*3:* If you don't have money in wallet then 👛withdraw from your bank🏦\n\n*4:* If you don't have 🤑 money in your 🏦bank too then use economy features to 📈gain money`)
+            if (text == 'money') return citel.reply(`*1:* Small Win --> +🪙20\n\n*2:* Small Lose --> -🪙20\n\n*3:* Big Win --> +🪙100\n\n*4:* Big Lose --> -🪙50\n\n*5:* 🎉 JackPot --> +🪙1000`)
             const fruit1= ["🥥", "🍎", "🍇"]
             const fruit2 = ["🍎", "🍇", "🥥"]
             const fruit3 = ["🍇", "🥥", "🍎"]
@@ -627,12 +631,12 @@ Version: 0.0.6`, citel);
             const smallLose = ['*You cannot harvest coconut 🥥 in a pineapple 🍍 farm*\n\n_--> 🍍>🥥<🍍_', '*Apples and Coconut are not best Combo*\n\n_--> 🍎>🥥<🍎_', '*Coconuts and Apple are not great deal*\n\n_--> 🥥>🍎<🥥_']
             const won = ['*You harvested a basket of*\n\n_--> 🍎+🍎+🍎_', '*Impressive, You must be a specialist in plucking coconuts*\n\n_--> 🥥+🥥+🥥_', '*Amazing, you are going to be making pineapple juice for the family*\n\n_--> 🍍+🍍+🍍_']
             const near = ['*Wow, you were so close to winning pineapples*\n\n_--> 🍎-🍍+🍍_', '*Hmmm, you were so close to winning Apples*\n\n_--> 🍎+🍎-🍍_']
-            const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊 You Just hit a jackpot worth 💎1000*']
+            const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊 You Just hit a jackpot worth 🪙1000*']
             const user = citel.sender
             const secktor = "secktor"
             const k = 100
             const balance1  = await eco.balance(user, secktor)
-            if (k > balance1.wallet) return citel.reply(`You are going to be spinning on your wallet, you need at least 💎100`);
+            if (k > balance1.wallet) return citel.reply(`You are going to be spinning on your wallet, you need at least 🪙100`);
             const f1 = fruit1[Math.floor(Math.random() * fruit1.length)];
             const f2 = fruit2[Math.floor(Math.random() * fruit2.length)];
             const f3 = fruit3[Math.floor(Math.random() * fruit3.length)];
@@ -650,27 +654,27 @@ if(value<=balance.wallet){
     const deduff = Math.floor(Math.random() * value)
     if ((f1 !== f2) && f2 !== f3){
         const deduct1 = await eco.deduct(user, secktor, deduff);
-        return citel.reply(`${mess1}\n\n*Big Lose -->* _💎${deduff}_`)
+        return citel.reply(`${mess1}\n\n*Big Lose -->* _🪙${deduff}_`)
      }
      else if ((f1 == f2) && f2 == f3){
         const give1 = await eco.give(user, secktor, deduff/2);
-        return citel.reply(`${mess2}\n*_Little Jackpot -->* _💎${deduff/2}_`)
+        return citel.reply(`${mess2}\n*_Little Jackpot -->* _🪙${deduff/2}_`)
      }
      else if ((f1 == f2) && f2 !== f3){
         const give2 = await eco.give(user, secktor, deduff);
-        return citel.reply(`${mess3}\n*Small Win -->* _💎${deduff}_`)
+        return citel.reply(`${mess3}\n*Small Win -->* _🪙${deduff}_`)
      }
      else if ((f1 !== f2) && f1 == f3){
         const deduct2 = await eco.deduct(user, secktor, deduff);
-        return citel.reply(`${mess5}\n\n*Small Lose -->* _💎${deduff}_`)
+        return citel.reply(`${mess5}\n\n*Small Lose -->* _🪙${deduff}_`)
      }
      else if ((f1 !== f2) && f2 == f3){
         const give4 = eco.give(user, secktor, deduff);
-        return citel.reply(`${mess3}\n\n*Small Win -->* _💎${deduff}_`)
+        return citel.reply(`${mess3}\n\n*Small Win -->* _🪙${deduff}_`)
      }
      else if ((f1 == f2) && (f2 == f3) && (f3 == f4)){
         const give5 = eco.give(user, secktor, deduff*20);
-        return citel.reply(`${mess4}\n\n_🎊 JackPot --> _💎${deduff*20}_`)
+        return citel.reply(`${mess4}\n\n_🎊 JackPot --> _🪙${deduff*20}_`)
      }
      else {
         return citel.reply(`Do you understand what you are doing?`)
@@ -682,27 +686,27 @@ if(value<=balance.wallet){
             }
             if ((f1 !== f2) && f2 !== f3){
                const deduct1 = await eco.deduct(user, secktor, 50);
-                      citel.reply(`${mess1}\n\n*Big Lose -->* _💎50_`)
+                      citel.reply(`${mess1}\n\n*Big Lose -->* _🪙50_`)
             }
             else if ((f1 == f2) && f2 == f3){
                const give1 = await eco.give(user, secktor, 100);
-                     citel.reply(`${mess2}\n*_Little Jackpot -->* _💎100_`)
+                     citel.reply(`${mess2}\n*_Little Jackpot -->* _🪙100_`)
             }
             else if ((f1 == f2) && f2 !== f3){
                const give2 = await eco.give(user, secktor, 20);
-                     citel.reply(`${mess3}\n*Small Win -->* _💎20_`)
+                     citel.reply(`${mess3}\n*Small Win -->* _🪙20_`)
             }
             else if ((f1 !== f2) && f1 == f3){
                const deduct2 = await eco.deduct(user, secktor, 20);
-                     citel.reply(`${mess5}\n\n*Small Lose -->* _💎20_`)
+                     citel.reply(`${mess5}\n\n*Small Lose -->* _🪙20_`)
             }
             else if ((f1 !== f2) && f2 == f3){
                const give4 = eco.give(user, secktor, 20);
-                     citel.reply(`${mess3}\n\n*Small Win -->* _💎20_`)
+                     citel.reply(`${mess3}\n\n*Small Win -->* _🪙20_`)
             }
             else if ((f1 == f2) && (f2 == f3) && (f3 == f4)){
                const give5 = eco.give(user, secktor, 1000);
-                    citel.reply(`${mess4}\n\n_🎊 JackPot --> _💎1000_`)
+                    citel.reply(`${mess4}\n\n_🎊 JackPot --> _🪙1000_`)
             }
             else {
                     citel.reply(`Do you understand what you are doing?`)
@@ -715,10 +719,10 @@ if(value<=balance.wallet){
 )
 
 cmd({
-    pattern: "slot2",
+    pattern: "slot",
     desc: "slot game.",
     category: "economy",
-    react: "✅"
+    react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
     let zerogroup = (await sck.findOne({
@@ -731,7 +735,7 @@ async(Void, citel, text,{ isCreator }) => {
     if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
     const kg = 100
             const balance1  = await eco.balance(citel.sender, "secktor")
-            if (kg > balance1.wallet) return citel.reply(`You are going to be spinning on your wallet, you need at least 💎100`);
+            if (kg > balance1.wallet) return citel.reply(`You are going to be spinning on your wallet, you need at least 🪙100`);
     var r_ban = new Array ();
     r_ban[0] =    "1 : 2 : 3"
     r_ban[1] = "1 : 2 : 3"
@@ -777,8 +781,8 @@ async(Void, citel, text,{ isCreator }) => {
     if(ttt[0]===ttt[1] && ttt[0]===ttt[2]) lol = true
     if(t[0]===ttt[1] && t[0]===ttt[2]) lol = true
     if(lol){
-        const deduff = Math.floor(Math.random() * 10000)
-        const give2 = await eco.give(citel.sender, "secktor", deduff*10);
+        const deduff = Math.floor(Math.random() * 5000)
+        const give2 = await eco.give(citel.sender, "secktor", deduff*2);
         let st = `🎰 Slot Machine Result\n     ${i}\n\n     ${j}\n\n     ${k}\n\nWow Jackpot🎊.`
         let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `  `)
         let buttons = [{
