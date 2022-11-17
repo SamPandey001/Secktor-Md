@@ -432,27 +432,26 @@ Version: 0.0.6`, citel);
         const user1 = citel.sender
         const user2 = users
 	const secktor = "secktor"
-	    const k = 250
+	    const k = 1000
         const balance1  = await eco.balance(user1, secktor)
 	const balance2  = await eco.balance(user2, secktor)
 	const typ = ['ran','rob','caught'];
     const random = typ[Math.floor(Math.random() * typ.length)];
     if (k > balance1.wallet) return citel.reply(`*☹️ You don't have enough money to pay incase you get caught*`);
     if (k > balance2.wallet) return citel.reply(`*Sorry, your victim is too poor 🤷🏽‍♂️ let go👀.*`);
-    let tpy = random
+    let tpy = random    
     switch (random) {
+       const deduff = Math.floor(Math.random() * 1000)
         case 'ran':
               await citel.reply(`*Your victim escaped, be more scary next time👀.*`)
 
               break
         case 'rob':
-          const deduct1 = await eco.deduct(user2, secktor, balance2.wallet);
-          const add2 = eco.give(user1, secktor, balance2.wallet);
-              await citel.reply(`*🤑 Robbery operation successfully.🗡️*`)
-
+          const deduct1 = await eco.deduct(user2, secktor, deduff);
+          const add2 = eco.give(citel.sender, secktor, deduff);
+          await citel.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou can ${deduff} amount in your wallet.`)
               break
         case 'caught':
-	    const deduff = Math.floor(Math.random() * 1000)
            const deduct2 = await eco.deduct(user1, secktor, deduff);
            await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${deduff}💎 from wallet.*`)
 
