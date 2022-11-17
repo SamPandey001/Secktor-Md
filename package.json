@@ -24,7 +24,6 @@
                        "discord-mongoose-economy": "^1.2.0",          
                        "fs-extra": "^10.1.0",
                        "dotenv": "^16.0.0",
-                       "canvacord": "^5.2.3",
                        "discord-xp": "^1.1.16",
                        "mongoose": "^6.2.1",
                        "mumaker": "^1.0.0",
