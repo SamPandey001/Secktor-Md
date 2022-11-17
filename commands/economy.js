@@ -83,7 +83,7 @@ Version: 0.0.6`, citel);
 	if(!users) return citel.reply('Please give me user.')
         const balance  = await eco.balance(users, "secktor")
         await eco.deduct(users, "secktor", balance.wallet);
-        citel.react('🫡')
+        //citel.react('🫡')
         return await citel.reply(`*🧧Hey ${users.split('@')[0]} you lost all 🪙 in wallet.*\n_Now live with that poverty._`,{mentions:[users]})
  }
  )
@@ -443,7 +443,7 @@ Version: 0.0.6`, citel);
        
         case 'ran':
               await citel.reply(`*Your victim escaped, be more scary next time🫰.*`)
-              citel.react('🥹')
+              ////citel.react('🥹')
 
               break
         case 'rob':
@@ -451,17 +451,17 @@ Version: 0.0.6`, citel);
           await eco.deduct(user2, secktor, deduff);
           await eco.give(citel.sender, secktor, deduff);
           await citel.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou can ${deduff} amount in your wallet.`)
-          citel.react('💀')
+          ////citel.react('💀')
               break
         case 'caught':
            const rmoney = Math.floor(Math.random() * 1000)
            await eco.deduct(user1, secktor, rmoney);
            await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${rmoney} 🪙 from wallet🥹.*`)
-           citel.react('😦')
+           ////citel.react('😦')
              break
 default:
  await citel.reply('*What are you trying to do👀*.')
- citel.react('🤔')
+ //citel.react('🤔')
 
  }
 
@@ -570,7 +570,7 @@ default:
             type: 1,
         },
     ];
-    citel.react('⭐️')
+    //citel.react('⭐️')
     return await Void.sendButtonText(citel.chat, buttons, `*📈 You won 🪙${twice}*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
@@ -592,7 +592,7 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    citel.react('🤮')
+    //citel.react('🤮')
     return await Void.sendButtonText(citel.chat, buttons,`*📉 You lost 🪙${texts[0]}*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
