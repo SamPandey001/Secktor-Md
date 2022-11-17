@@ -9,11 +9,10 @@
  * @version 0.0.6
  **/
 
-const { sck, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin, prefix } = require('../lib')
+const { sck, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin,getBuffer, prefix } = require('../lib')
 const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
-const canvacord = require("canvacord");
 //---------------------------------------------------------------------------
 cmd({
             pattern: "join",
@@ -428,29 +427,12 @@ cmd({
             } catch {
                 ppuser = THUMB_IMAGE;
             }
-            const rank = new canvacord.Rank()
-                .setAvatar(ppuser)
-                .setLevel(userq.level)
-                .setLevelColor("#ffa200", "#ffa200")
-                .setCurrentXP(userq.xp)
-                .setStatus("online")
-                .setBackground("IMAGE", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJQ2FaU2C-dSC-6OlY14wM_7hWajwD3x41cA&usqp=CAU")
-                .setOverlay("#ffffff", 100, false)
-                .setRequiredXP(Levels.xpFor(userq.level + 1))
-                .setProgressBar("#ffa200", "COLOR")
-                .setRank(0, role, false)
-                .setBackground("COLOR", "#000000")
-                .setUsername("Rank Check!")
-                .setDiscriminator(disc);
-            rank.build()
-                .then(async(data) => {
                     Void.sendMessage(citel.chat, {
-                        image: data,
+                        image: await getBuffer(ppuser),
                         caption: textr,
                     }, {
                         quoted: citel,
                     });
-                });
         }
     )
     //---------------------------------------------------------------------------
