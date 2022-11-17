@@ -26,35 +26,10 @@ cmd({
                 citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
             } else {
                 let update = await DB.sync()
-                let buttons = [
-                    { buttonId: `${prefix}updatenow`, buttonText: { displayText: 'UPDATE NOW' }, type: 1 },
-                ]
-                await Void.sendButtonText(citel.chat, buttons, update, Void.user.name)
+                 return citel.reply(update)
 
             }
 
         }
     )
-    //---------------------------------------------------------------------------
-cmd({
-        pattern: "updatenow",
-        desc: "Updates bot with repo\'s refreshed commits",
-        fromMe: true,
-        category: "heroku",
-    },
-    async(Void, citel, text,{ isCreator }) => {
-        if (!isCreator) return citel.reply('This command is only for my owner.')
-        let commits = await DB.syncgit()
-        if (commits.total === 0) {
-            citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
-        } else {
-            citel.reply('Updating now.......')
-            try{
-            let update = await DB.updatedb()
-            citel.reply(update)
-            } catch {
-                citel.reply('_error._')
-            }
-        }
-    }
-)
+  
