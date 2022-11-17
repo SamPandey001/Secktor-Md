@@ -32,15 +32,10 @@ module.exports = {
   levelupmessage: process.env.LEVEL_UP_MESSAGE || 'false',
   antilink: process.env.ANTILINK_VALUES || 'chat.whatsapp.com',
   antilinkaction: process.env.ANTILINK_ACTION || 'remove',
-  HEROKU: {
-        HEROKU: process.env.HEROKU || `true`,
-        API_KEY: process.env.HEROKU_API_KEY === undefined ? '1abfce1e-1bee-4334-9f6c-f4c1cb1cafab' : process.env.HEROKU_API_KEY,
-        APP_NAME: process.env.HEROKU_APP_NAME === undefined ? 'zeropgg' : process.env.HEROKU_APP_NAME
-    },
   BRANCH: 'main',
   VERSION: process.env.VERSION === undefined ? 'v.0.0.3' : process.env.VERSION,
- LANG: process.env.THEME|| 'SECKTOR',
- WORKTYPE: process.env.WORKTYPE === undefined ? 'public' : process.env.WORKTYPE
+  LANG: process.env.THEME|| 'SECKTOR',
+  WORKTYPE: process.env.WORKTYPE === undefined ? 'public' : process.env.WORKTYPE
 };
 
 
