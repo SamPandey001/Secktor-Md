@@ -84,7 +84,7 @@ Version: 0.0.6`, citel);
 	if(!users) return citel.reply('Please give me user.')
         const balance  = await eco.balance(users, "secktor")
         await eco.deduct(users, "secktor", balance.wallet);
-        return await citel.reply(`*Hey ${users} you lost all 💎 in wallet.*\n_Now live with that poverty._`,{mentions:[users]})
+        return await citel.reply(`*Hey ${users.split('@')[0]} you lost all 💎 in wallet.*\n_Now live with that poverty._`,{mentions:[users]})
  }
  )
     //---------------------------------------------------------------------------
@@ -452,8 +452,9 @@ Version: 0.0.6`, citel);
 
               break
         case 'caught':
-           const deduct2 = await eco.deduct(user1, secktor, balance1.wallet);
-               await citel.reply(`*Sorry FBI👮 caught up with you, you lost all 💎 in wallet.*`)
+	    const deduff = Math.floor(Math.random() * 1000)
+           const deduct2 = await eco.deduct(user1, secktor, deduff);
+           await citel.reply(`*Sorry FBI👮 caught up with you, you paid ${deduff}💎 from wallet.*`)
 
              break
 default:
