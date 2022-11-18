@@ -192,9 +192,6 @@ async(Void, citel, text) => {
         if (!cmd) return await citel.reply("*❌No Such commands.*");
         else arr.push(`*🍁Command:* ${cmd.pattern}`);
         if (cmd.category) arr.push(`*🧩Type:* ${cmd.category}`);
-        if (cmd.alias) arr.push(`*🧩Type:* ${cmd.alias}`);
-        if (cmd.desc) arr.push(`*🧩Description:* ${cmd.desc}`);
-        if (cmd.use) arr.push(`*〽️Usage:*\n \`\`\`${prefix}${cmd.pattern} ${cmd.use}\`\`\``);
         if(cmd.filename) arr.push(`✨FileName: ${cmd.filename}`)
         return await citel.reply(arr.join('\n'));
 
