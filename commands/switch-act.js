@@ -16,6 +16,7 @@ cmd({
         pattern: "act",
         desc: "Switches for varios works.",
         category: "group",
+        filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
         //-----------------------------------------

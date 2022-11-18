@@ -14,7 +14,8 @@ const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime
 cmd({
             pattern: "addnote",
             category: "owner",
-            desc: "Adds a note on db."
+            desc: "Adds a note on db.",
+            filename: __filename
         },
         async(Void, citel, text,{ isCreator }) => {
             if (!isCreator) return citel.reply(tlang().owner)
@@ -29,6 +30,7 @@ cmd({
 cmd({
             pattern: "qr",
             category: "owner",
+            filename: __filename,
             desc: "Sends CitelsVoid Qr code to scan and get your session id."
         },
         async(Void, citel, text) => {
@@ -77,6 +79,7 @@ cmd({
 cmd({
             pattern: "unban",
             category: "misc",
+            filename: __filename,
             desc: "Unbans banned user (from using bot)."
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -107,6 +110,7 @@ cmd({
 cmd({
             pattern: "url",
             category: "misc",
+            filename: __filename,
             desc: "image to url."
         },
         async(Void, citel, text) => {
@@ -127,6 +131,7 @@ cmd({
 cmd({
             pattern: "trt",
             category: "misc",
+            filename: __filename,
             desc: "Translate\'s given text in desird language."
         },
         async(Void, citel, text) => {
@@ -148,6 +153,7 @@ cmd({
 cmd({
             pattern: "shell",
             category: "owner",
+            filename: __filename,
             desc: "Runs command in Heroku(server) shell."
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -165,6 +171,7 @@ cmd({
 cmd({
             pattern: "eval",
             category: "owner",
+            filename: __filename,
             desc: "Runs js code on node server."
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -183,6 +190,7 @@ cmd({
 cmd({
             pattern: "delnote",
             category: "owner",
+            filename: __filename,
             desc: "Deletes note from db."
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -197,6 +205,7 @@ cmd({
 cmd({
             pattern: "delallnotes",
             category: "owner",
+            filename: __filename,
             desc: "Deletes all notes from db."
         },
         async(Void, citel, text, isCreator) => {
@@ -211,6 +220,7 @@ cmd({
 cmd({
             pattern: "ban",
             category: "owner",
+            filename: __filename,
             desc: "Bans user from using bot."
         },
         async(Void, citel, text,{ isCreator}) => {
@@ -241,6 +251,7 @@ cmd({
 cmd({
             pattern: "alive",
             category: "general",
+            filename: __filename,
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
@@ -277,6 +288,7 @@ ${alivemessage}
 cmd({
         pattern: "allnotes",
         category: "owner",
+        filename: __filename,
         desc: "Shows list of all notes."
     },
     async(Void, citel, text,{ isCreator }) => {

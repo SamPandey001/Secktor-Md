@@ -17,6 +17,7 @@ cmd({
             pattern: "question",
             desc: "Random Question.",
             category: "fun",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             return await citel.reply(`${random_question()}`);
@@ -27,6 +28,7 @@ cmd({
             pattern: "truth",
             desc: "truth and dare(truth game.).",
             category: "fun",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             return await citel.reply(`${truth()}`);
@@ -37,6 +39,7 @@ cmd({
             pattern: "dare",
             desc: "truth and dare(dare game.).",
             category: "fun",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             return await citel.reply(`${dare()}`);
@@ -47,6 +50,7 @@ cmd({
         pattern: "meme",
         desc: "Sends meme in chat.",
         category: "fun",
+        filename: __filename,
     },
     async(Void, citel, text) => {
         waifudd = await axios.get("https://meme-api.herokuapp.com/gimme");

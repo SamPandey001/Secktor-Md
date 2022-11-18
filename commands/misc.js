@@ -18,6 +18,7 @@ cmd({
             pattern: "attp",
             desc: "Makes glowing sticker of text.",
             category: "sticker",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             Void.sendMessage(citel.chat, {
@@ -35,6 +36,7 @@ cmd({
             pattern: "exec",
             desc: "Evaluates quoted code with given language.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             try {
@@ -63,6 +65,7 @@ cmd({
             pattern: "readmore",
             desc: "Adds *readmore* in given text.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             await citel.reply(text.replace(/\+/g, (String.fromCharCode(8206)).repeat(4001)))
@@ -74,6 +77,7 @@ cmd({
             pattern: "steal",
             desc: "Makes sticker of replied image/video.",
             category: "sticker",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Mention any Image or video Sir.*`);
@@ -100,6 +104,7 @@ cmd({
             pattern: "uptime",
             desc: "Tells runtime/uptime of bot.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             const upt = runtime(process.uptime())
@@ -111,6 +116,7 @@ cmd({
             pattern: "wm",
             desc: "Makes wa me of quoted or mentioned user.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             let users = citel.mentionedJid ? citel.mentionedJid[0].split('@')[0] : citel.quoted ? citel.quoted.sender.split('@')[0] : text.replace('@')[0]
@@ -123,6 +129,7 @@ cmd({
             pattern: "pick",
             desc: "Pics random user from Group",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, match) => {
             if (!match) return citel.reply("*Which type of User you want?*");
@@ -145,6 +152,7 @@ cmd({
             pattern: "nsfw",
             desc: "activates and deactivates nsfw.\nuse buttons to toggle.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -178,6 +186,7 @@ cmd({
             desc: "download mp4 from url.",
             category: "search",
             use: '<package name>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply('Please give me package name.📦')
@@ -193,6 +202,7 @@ cmd({
             desc: "Flips given text.",
             category: "misc",
             use: '<query>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Example : ${prefix}fliptext Back in black`)
@@ -207,6 +217,7 @@ cmd({
             desc: "download mp4 from url.",
             category: "misc",
             use: '<url>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Where's the link ?`);
@@ -236,6 +247,7 @@ cmd({
             pattern: "events",
             desc: "activates and deactivates events.\nuse buttons to toggle.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -269,6 +281,7 @@ cmd({
             desc: "Mixes two emojies.",
             category: "misc",
             use: '<query>',
+            filename: __filename,
         },
         async(Void, citel, text,{ isCreator }) => {
             if (!text) return citel.reply(`Example : ${prefix}emix 😅,🤔`);
@@ -358,6 +371,7 @@ cmd({
             desc: "encode binary",
             category: "misc",
             use: '<query>',
+            filename: __filename,
         },
         async(Void, citel, text,{ isCreator }) => {
             try {
@@ -377,6 +391,7 @@ cmd({
             desc: "decode binary",
             category: "misc",
             use: '<query>',
+            filename: __filename,
         },
         async(Void, citel, text,{ isCreator }) => {
             try {
@@ -394,6 +409,7 @@ cmd({
             desc: "Sets profile pic.",
             fromMe: true,
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`Send/Reply Image With Caption ${command}`);
@@ -413,6 +429,7 @@ cmd({
             pattern: "bot",
             desc: "activates and deactivates bot.\nuse buttons to toggle.",
             category: "misc",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -444,6 +461,7 @@ cmd({
             pattern: "antilink",
             desc: "activates and deactivates antilink.\nuse buttons to toggle.",
             category: "group",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.isGroup) return citel.reply(tlang().group);

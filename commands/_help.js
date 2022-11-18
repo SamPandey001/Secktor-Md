@@ -23,7 +23,8 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "Help list",
             category: "general",
-            react: "✨"
+            react: "✨",
+            filename: __filename
         },
         async(Void, citel, text) => {
             const { commands } = require('../lib');
@@ -144,7 +145,8 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To check ping",
         category: "general",
-        react: "💜"
+        react: "💜",
+        filename: __filename
     },
     async(Void, citel) => {
         const Config = require('../config')
@@ -175,3 +177,26 @@ Secktor.cmd({
 
     }
 )
+
+Secktor.cmd({
+    pattern: "file",
+    desc: "to get extact name where that command is in repo.\nSo any user can edit that.",
+    category: "general",
+    react: "✨",
+    filename: __filename
+},
+async(Void, citel, text) => {
+ const { commands } = require('../lib');
+ let arr = [];
+        const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
+        if (!cmd) return await citel.reply("*❌No Such commands.*");
+        else arr.push(`*🍁Command:* ${cmd.pattern}`);
+        if (cmd.category) arr.push(`*🧩Type:* ${cmd.category}`);
+        if (cmd.alias) arr.push(`*🧩Type:* ${cmd.alias}`);
+        if (cmd.desc) arr.push(`*🧩Description:* ${cmd.desc}`);
+        if (cmd.use) arr.push(`*〽️Usage:*\n \`\`\`${prefix}${cmd.pattern} ${cmd.use}\`\`\``);
+        if(cmd.filename) arr.push(`✨FileName: ${cmd.filename}`)
+        return await citel.reply(arr.join('\n'));
+
+
+})

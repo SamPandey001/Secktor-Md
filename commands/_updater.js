@@ -17,6 +17,7 @@ cmd({
             pattern: "update",
             desc: "Shows repo\'s refreshed commits.",
             category: "misc",
+            filename: __filename
         },
         async(Void, citel, text,{ isCreator }) => {
             console.log(isCreator)

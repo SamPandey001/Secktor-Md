@@ -21,6 +21,7 @@ cmd({
             pattern: "tgs",
             desc: "Downloads telegram stickers.",
             category: "downloader",
+            filename: __filename,
             use: '<add sticker url.>',
         },
         async(Void, citel, text) => {
@@ -32,6 +33,7 @@ cmd({
             pattern: "tts",
             desc: "text to speech.",
             category: "downloader",
+            filename: __filename,
             use: '<Hii,this is Secktor>',
         },
         async(Void, citel, text) => {
@@ -59,6 +61,7 @@ cmd({
             pattern: "video",
             desc: "Downloads video from yt.",
             category: "downloader",
+            filename: __filename,
             use: '<faded-Alan Walker>',
         },
         async(Void, citel, text) => {
@@ -101,6 +104,7 @@ cmd({
             pattern: "play",
             desc: "Sends info about the query(of youtube video/audio).",
             category: "downloader",
+            filename: __filename,
             use: '<faded-Alan walker.>',
         },
         async(Void, citel, text) => {
@@ -154,6 +158,7 @@ cmd({
             pattern: "ringtone",
             desc: "Downloads ringtone.",
             category: "downloader",
+            filename: __filename,
             use: '<ringtone name>',
         },
         async(Void, citel, text) => {
@@ -168,6 +173,7 @@ cmd({
             pattern: "pint",
             desc: "Downloads image from pinterest.",
             category: "downloader",
+            filename: __filename,
             use: '<text|image name>',
         },
         async(Void, citel, text) => {
@@ -220,6 +226,7 @@ cmd({
             pattern: "mediafire",
             desc: "Downloads zip from Mediafire.",
             category: "downloader",
+            filename: __filename,
             use: '<url of mediafire>',
         },
         async(Void, citel, text) => {
@@ -251,6 +258,7 @@ cmd({
             pattern: "audio",
             desc: "Downloads audio from youtube.",
             category: "downloader",
+            filename: __filename,
             use: '<text>',
         },
         async(Void, citel, text) => {
@@ -292,6 +300,7 @@ cmd({
             pattern: "yts",
             desc: "Gives descriptive info of query from youtube..",
             category: "downloader",
+            filename: __filename,
             use: '<yt search text>',
         },
         async(Void, citel, text) => {
@@ -325,6 +334,7 @@ cmd({
             pattern: "ytmp4",
             desc: "Downloads video from youtube.",
             category: "downloader",
+            filename: __filename,
             use: '<yt video url>',
         },
         async(Void, citel, text) => {

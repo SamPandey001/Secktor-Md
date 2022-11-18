@@ -20,6 +20,7 @@ cmd({
             category: "search",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
@@ -61,6 +62,7 @@ cmd({
             category: "search",
             desc: "Sends info of given username.",
             use: '<username>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Give me username ${tlang().greet}.`);
@@ -94,6 +96,7 @@ cmd({
             category: "search",
             desc: "Sends info of given IP.",
             use: '<ip>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`_Give me an IP ${tlang().greet}._`);
@@ -129,6 +132,7 @@ cmd({
             category: "search",
             desc: "Sends weather info about asked place.",
             use: '<location>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply("Give me location.Baka!!");
@@ -164,6 +168,7 @@ cmd({
             category: "search",
             desc: "Gives horoscope info of user.",
             use: '<sign>\n:Example: horo libra',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply("Provide me a sign!")
@@ -200,6 +205,7 @@ cmd({
             category: "search",
             desc: "Sends info of given query from Google Search.",
             use: '<text>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) throw `Example : ${prefix}google Secktor Md`
@@ -222,6 +228,7 @@ cmd({
             category: "search",
             desc: "Searches Image on Google",
             use: '<text>',
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply("Provide me a query!")
@@ -253,7 +260,8 @@ cmd({
 cmd({
             pattern: "couplepp",
             category: "search",
-            desc: "Sends two couples pics."
+            desc: "Sends two couples pics.",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -268,6 +276,7 @@ cmd({
         category: "search",
         desc: "Searches in given rage about given number.",
         use: '9112345678xx',
+        filename: __filename,
     },
     async(Void, citel, text) => {
         var inputnumber = text.split(" ")[0]

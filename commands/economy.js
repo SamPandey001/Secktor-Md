@@ -26,6 +26,7 @@
          pattern: "daily",
          desc: "daily gold.",
          category: "economy",
+         filename: __filename,
          react: "💷"
      },
      async(Void, citel, text,{ isCreator }) => {
@@ -68,6 +69,7 @@ Version: 0.0.6`, citel);
          pattern: "resetwallet",
          desc: "reset wallet of quoted user.",
          category: "economy",
+         filename: __filename,
      },
      async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -92,6 +94,7 @@ Version: 0.0.6`, citel);
     pattern: "capacity",
     desc: "update capacity.",
     category: "economy",
+    filename: __filename,
     react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
@@ -197,6 +200,7 @@ default:
         pattern: "deposit",
         desc: "deposit gold.",
         category: "economy",
+        filename: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -237,6 +241,7 @@ Version: 0.0.6`, citel);
         pattern: "lb",
         desc: "check leaderboard.",
         category: "economy",
+        filename: __filename,
         react: "💷",
 	cool: 3
     },
@@ -264,6 +269,7 @@ cmd({
     pattern: "transfer",
     desc: "transfer gold.",
     category: "economy",
+    filename: __filename,
     react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {
@@ -320,6 +326,7 @@ Version: 0.0.6`, citel);
         pattern: "wallet",
         desc: "shows wallet.",
         category: "economy",
+        filename: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -359,6 +366,7 @@ Version: 0.0.6`, citel);
         pattern: "give",
         desc: "Add money in wallet.",
         category: "economy",
+        filename: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -378,6 +386,7 @@ Version: 0.0.6`, citel);
         pattern: "bank",
         desc: "shows bank amount.",
         category: "economy",
+        filename: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -416,6 +425,7 @@ Version: 0.0.6`, citel);
         pattern: "rob",
         desc: "rob bank amount.",
         category: "economy",
+        filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -473,6 +483,7 @@ default:
         pattern: "withdraw",
         desc: "withdraw money from bank account.",
         category: "economy",
+        filename: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -500,6 +511,7 @@ default:
         pattern: "gamble",
         desc: "gamble money.",
         category: "economy",
+        filename: __filename,
         react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -608,7 +620,8 @@ Version: 0.0.6`, citel);
         pattern: "slot2",
         desc: "withdraw money from bank account.",
         category: "economy",
-         react: "💷"
+        filename: __filename,
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -722,6 +735,7 @@ cmd({
     pattern: "slot",
     desc: "slot game.",
     category: "economy",
+    filename: __filename,
     react: "💷"
 },
 async(Void, citel, text,{ isCreator }) => {

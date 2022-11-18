@@ -38,6 +38,7 @@ cmd({
             alias: ["s"],
             desc: "Makes sticker of replied image/video.",
             category: "group",
+            filename: __filename,
             use: '<reply to any image/video.>',
         },
         async(Void, citel, text) => {
@@ -56,6 +57,7 @@ cmd({
         pattern: "support",
         desc: "Sends official support group link.",
         category: "group",
+        filename: __filename,
     },
     async(Void, citel, text) => {
         citel.reply(`*Check your Pm ${tlang().greet}*`);
@@ -72,6 +74,7 @@ cmd({
             pattern: "warn",
             desc: "Warns user in Group.",
             category: "group",
+            filename: __filename,
             use: '<quote|reply|number>',
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -88,6 +91,8 @@ cmd({
             pattern: "unblock",
             desc: "Unblocked to the quoted user.",
             category: "owner",
+            filename: __filename,
+
         },
         async(Void, citel, text,{ isCreator }) => {
 
@@ -104,8 +109,10 @@ cmd({
         pattern: "ujid",
         desc: "get jid of all user in a group.",
         category: "owner",
+        filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
+        if(!isCreator) return citel.reply(tlang().owner)
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 		const participants = citel.isGroup ? await groupMetadata.participants : "";
     let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
@@ -122,6 +129,7 @@ cmd({
         pattern: "tagall",
         desc: "Tags every person of group.",
         category: "group",
+        filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
         if (!citel.isGroup) return citel.reply(tlang().group);
@@ -154,6 +162,7 @@ cmd({
             pattern: "request",
             desc: "Sends requst to main Bot developer.",
             category: "group",
+            filename: __filename,
             use: '<text>',
         },
         async(Void, citel, text) => {
@@ -187,6 +196,7 @@ cmd({
             pattern: "retrive",
             desc: "Copies and Forwords viewonce message.",
             category: "group",
+            filename: __filename,
             use: '<reply to a viewonce message.>',
         },
         async(Void, citel, text) => {
@@ -197,7 +207,7 @@ cmd({
                 delete quoted.message[mtype].viewOnce;
                 const msgs = proto.Message.fromObject({
                     ...quoted.message,
-                });
+                  });
                 const prep = generateWAMessageFromContent(citel.chat, msgs, { quoted: citel });
                 await Void.relayMessage(citel.chat, prep.message, { messageId: prep.key.id });
             } else {
@@ -210,6 +220,7 @@ cmd({
             pattern: "resetwarn",
             desc: "Deletes all previously given warns to quoted user.",
             category: "group",
+           filename: __filename,
             use: '<quote|reply|number>',
         },
         async(Void, citel, text) => {
@@ -223,6 +234,7 @@ cmd({
             pattern: "poll",
             desc: "Makes poll in group.",
             category: "group",
+            filename: __filename,
             use: `question;option1,option2,option3.....`,
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -249,6 +261,7 @@ cmd({
             pattern: "profile",
             desc: "Shows profile of user.",
             category: "group",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             var bio = await Void.fetchStatus(citel.sender);
@@ -361,6 +374,7 @@ cmd({
             pattern: "rank",
             desc: "Sends rank card of user.",
             category: "group",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             const userq = await Levels.fetch(citel.sender, "RandomXP");
@@ -441,6 +455,7 @@ cmd({
             alias: ["deck"],
             desc: "To check leaderboard",
             category: "general",
+            filename: __filename,
         },
         async(Void, citel) => {
             const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
@@ -514,6 +529,7 @@ cmd({
             pattern: "promote",
             desc: "Provides admin role to replied/quoted user",
             category: "group",
+            filename: __filename,
             use: '<quote|reply|number>',
         },
         async(Void, citel, text) => {
@@ -540,6 +556,7 @@ cmd({
             pattern: "kick",
             desc: "Kicks replied/quoted user from group.",
             category: "group",
+            filename: __filename,
             use: '<quote|reply|number>',
         },
         async(Void, citel, text) => {
@@ -566,6 +583,7 @@ cmd({
             pattern: "memegen",
             desc: "Write text on quoted image.",
             category: "group",
+            filename: __filename,
             use: '<text>',
         },
         async(Void, citel, text) => {
@@ -584,6 +602,7 @@ cmd({
             pattern: "group",
             desc: "mute and unmute group.",
             category: "group",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -627,6 +646,7 @@ cmd({
             pattern: "grouppic",
             desc: "Sets a profile pic in Group..",
             category: "group",
+            filename: __filename,
         },
         async(Void, citel, text) => {
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -658,6 +678,7 @@ cmd({
             alias: ["htag"],
             desc: "Tags everyperson of group without mentioning their numbers",
             category: "group",
+            filename: __filename,
             use: '<text>',
         },
         async(Void, citel, text) => {
@@ -683,6 +704,7 @@ cmd({
             desc: "Add that person in group",
             fromMe: true,
             category: "group",
+            filename: __filename,
             use: '<number>',
         },
         async(Void, citel, text) => {
@@ -705,6 +727,7 @@ cmd({
             pattern: "getjids",
             desc: "Sends chat id of every groups.",
             category: "group",
+            filename: __filename,
         },
         async(Void, citel, text,{ isCreator }) => {
             if (!isCreator) return citel.reply(tlang().owner)
@@ -732,6 +755,7 @@ cmd({
         pattern: "demote",
         desc: "Demotes replied/quoted user from group",
         category: "group",
+        filename: __filename,
         use: '<quote|reply|number>',
     },
     async(Void, citel, text) => {
@@ -760,6 +784,7 @@ cmd({
             alias: ["delete"],
             desc: "Deletes message of any user",
             category: "group",
+            filename: __filename,
             use: '<quote/reply message.>',
         },
         async(Void, citel, text) => {
@@ -798,6 +823,7 @@ cmd({
             pattern: "checkwarn",
             desc: "Check warns",
             category: "group",
+            filename: __filename,
             use: '<quoted/reply user.>',
         },
         async(Void, citel, text) => {
@@ -823,6 +849,7 @@ cmd({
             desc: "blocks that person",
             fromMe: true,
             category: "owner",
+            filename: __filename,
             use: '<quote/reply user.>',
         },
         async(Void, citel, text) => {
@@ -842,6 +869,7 @@ cmd({
         desc: "Bot makes a broadcast in all groups",
         fromMe: true,
         category: "group",
+        filename: __filename,
         use: '<text for broadcast.>',
     },
     async(Void, citel, text) => {

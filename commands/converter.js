@@ -20,6 +20,7 @@ cmd({
             desc: "Makes photo of replied sticker.",
             category: "converter",
             use: '<reply to any gif>',
+            filename: __filename
         },
         async(Void, citel, text) => {
             const getRandom = (ext) => {
@@ -44,6 +45,7 @@ cmd({
             alias: ["q"],
             category: "converter",
             use: '<reply to any message.>',
+            filename: __filename
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply("Please quote/reply to any message");
@@ -97,6 +99,7 @@ cmd({
             category: "converter",
             use: '56 Secktor',
             react: "✅",
+            filename: __filename
         },
         async(Void, citel, text) => {
             if (isNaN(text.split(" ")[0]) || !text) {
@@ -121,6 +124,7 @@ cmd({
             category: "converter",
             use: '<url>',
             react: "✅",
+            filename: __filename
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply('Provide me a link')
@@ -139,6 +143,7 @@ cmd({
         desc: "changes type to audio.",
         category: "converter",
         use: '<reply to any audio>',
+        filename: __filename
     },
     async(Void, citel, text) => {
         if (!citel.quoted) return citel.reply('_Need Media._')

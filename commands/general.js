@@ -18,6 +18,7 @@ cmd({
         desc: "chat with an AI",
         category: "general",
         use: '<Hii,Secktor>',
+        filename: __filename,
     },
     async(Void, citel,text) => {
         let zx = text.length;
@@ -50,6 +51,7 @@ cmd({
         alias: ["git", "sc", "script"],
         desc: "Sends info about repo.",
         category: "general",
+        filename: __filename,
     },
     async(Void, citel) => {
         let { data } = await axios.get('https://api.github.com/repos/SamPandey001/Secktor-Md')
@@ -88,6 +90,7 @@ cmd({
         alias: ["about"],
         desc: "To check bot status",
         category: "general",
+        filename: __filename,
     },
     async(Void, citel) => {
         const dbut = [{

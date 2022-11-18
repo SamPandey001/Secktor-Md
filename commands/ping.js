@@ -15,6 +15,7 @@ Secktor.cmd({
         pattern: "ping",
         desc: "To check ping",
         category: "general",
+        filename: __filename,
     },
     async(Void, citel) => {
         var inital = new Date().getTime();

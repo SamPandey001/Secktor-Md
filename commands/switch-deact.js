@@ -17,6 +17,7 @@
          pattern: "deact",
          desc: "Switches for varios works.",
          category: "group",
+         filename: __filename
      },
      async(Void, citel, text,{ isCreator }) => {
          //-----------------------------------------	
