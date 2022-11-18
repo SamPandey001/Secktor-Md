@@ -60,7 +60,7 @@
         return await Void.sendButtonText(citel.chat, buttons, `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 	 } else {
-	 citel.reply(`you claimed 🪙${daily.amount} for today.`);   
+	 citel.reply(`you claimed daily ${daily.amount} 🪙 for today🎉.`);   
 	 }
  }
  )
@@ -70,6 +70,7 @@ Version: 0.0.6`, citel);
          desc: "reset wallet of quoted user.",
          category: "economy",
          filename: __filename,
+         react: "💷"
      },
      async(Void, citel, text,{ isCreator }) => {
         let zerogroup = (await sck.findOne({
@@ -85,8 +86,7 @@ Version: 0.0.6`, citel);
 	if(!users) return citel.reply('Please give me user.')
         const balance  = await eco.balance(users, "secktor")
         await eco.deduct(users, "secktor", balance.wallet);
-        //citel.react('🫡')
-        return await citel.reply(`*🧧Hey ${users.split('@')[0]} you lost all 🪙 in wallet.*\n_Now live with that poverty._`,{mentions:[users]})
+        return await citel.reply(`⛩️ User: @${users.split('@')[0]} \n *🧧 @${users.split('@')[0]} lost all 🪙 in wallet.*\n_Now live with that poverty.🫡_`,{mentions:[users]})
  }
  )
     //---------------------------------------------------------------------------
@@ -134,7 +134,7 @@ async(Void, citel, text,{ isCreator }) => {
                 type: 1,
             },
         ];
-        return await Void.sendButtonText(citel.chat, buttons, `*1000 🪙diamond storage has been added in ${pushname} bank*`, `${Config.ownername.split(' ')[0]}-Economy
+        return await Void.sendButtonText(citel.chat, buttons, `*1000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
               break
@@ -213,7 +213,7 @@ default:
         let mongoschemas = zerogroup.economy || "false";
         if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
       //  let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
-        if (!text) return citel.reply("Provide the 💰amount you want to deposit!");
+        if (!text) return citel.reply("Baka!! Provide the 💰amount you want to deposit!");
         let d = parseInt(text)
         const deposit = await eco.deposit(citel.sender, "secktor", d);
         const balance = await eco.balance(citel.sender, "secktor")
@@ -233,7 +233,7 @@ default:
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${Config.ownername.split(' ')[0]}-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `⛩️ Sender: ${citel.pushName}\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
     }
 )
@@ -242,8 +242,7 @@ Version: 0.0.6`, citel);
         desc: "check leaderboard.",
         category: "economy",
         filename: __filename,
-        react: "💷",
-	cool: 3
+        react: "💷"
     },
     async(Void, citel, text,{ isCreator }) => {
 	let h = await eco.lb('secktor',10);
@@ -414,7 +413,7 @@ Version: 0.0.6`, citel);
             type: 1,
         },
     ];
-    return await Void.sendButtonText(citel.chat, buttons, `*🏦 ${citel.pushName}'s Bank:*\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${Config.ownername.split(' ')[0]}-Economy
+    return await Void.sendButtonText(citel.chat, buttons, `🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -460,7 +459,7 @@ Version: 0.0.6`, citel);
 	  const deduff = Math.floor(Math.random() * 1000)	    
           await eco.deduct(user2, secktor, deduff);
           await eco.give(citel.sender, secktor, deduff);
-          await citel.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou can ${deduff} amount in your wallet.`)
+          await citel.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou ran with ${deduff} amount in your wallet.`)
           ////citel.react('💀')
               break
         case 'caught':

@@ -265,7 +265,7 @@ ${alivemessage}
 *Uptime:-* ${runtime(process.uptime())}
 *Owner:-* ${Config.ownername}
 *Branch:-* ${Config.BRANCH}
-*Edition:-* PUBLIC
+
 *Type ${prefix}menu for my command list.*
 
 *Powered by ${Config.ownername}*

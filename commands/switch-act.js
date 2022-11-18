@@ -38,7 +38,7 @@ cmd({
                             .save()
                         return citel.reply(' Antilink Enabled Successfully')
                     } else {
-                        if (checkgroup.antilink == "true") return citel.reply("Antilink was alredy enabled is already enabled")
+                        if (checkgroup.antilink == "true") return citel.reply("Antilink was alredy  enabled here.")
                         await sck.updateOne({ id: citel.chat }, { antilink: "true" })
                         citel.reply('Enabled antilink in current chat.')
                         return
@@ -54,7 +54,7 @@ cmd({
                             .save()
                         return citel.reply(' Economy Enabled Successfully')
                     } else {
-                        if (checkgroup.economy == "true") return citel.reply("Economy was alredy enabled is already enabled")
+                        if (checkgroup.economy == "true") return citel.reply("Economy was alredy enabled.")
                         await sck.updateOne({ id: citel.chat }, { economy: "true" })
                         citel.reply('Economy enabled in current chat.')
                         return
@@ -83,7 +83,7 @@ cmd({
                             .save()
                         return citel.reply("Successfully Enabled *Card Game*")
                     } else {
-                        if (checkgroup.cardgame == "active") return citel.reply("*Card Game* are already enabled")
+                        if (checkgroup.cardgame == "active") return citel.reply("*Card Game* was already enabled")
                         await sck.updateOne({ id: citel.chat }, { cardgame: "active" })
                         return citel.reply("Successfully Enabled *Card Game.*")
                     }
