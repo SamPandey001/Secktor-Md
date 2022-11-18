@@ -43,6 +43,8 @@
 -  If you don't have termux install from [Termux here with no issues.](https://f-droid.org/repo/com.termux_118.apk)
 -  First fork Repo and edit sample-config.env to config.env
 -  Fill variables in config.env file.
+-  Don't put OWNER_NUMBER,MONGODB_URI,SESSION_ID as it can be stolen.
+-  Put them during installation when it asks.
 -  Open shell or termux and run this commands
 
   ```
