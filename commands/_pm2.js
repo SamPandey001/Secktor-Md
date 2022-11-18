@@ -10,8 +10,8 @@
  **/
 
 //---------------------------------------------------------------------------
-const Secktor = require('../lib')
-Secktor.cmd({
+const {cmd,tlang} = require('../lib')
+cmd({
         pattern: "restart",
         desc: "To restart bot",
         category: "tools",
