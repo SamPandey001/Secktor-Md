@@ -21,6 +21,7 @@ module.exports = {
   packname: process.env.PACK_INFO.split(";")[1] || 'Name',
   autoreaction: process.env.AUTO_REACTION || 'off',
   antibadword : process.env.ANTI_BAD_WORD || 'nobadwordokey',
+  alwaysonline: process.env.ALWAYS_ONLINE || 'false',
   antifake : process.env.FAKE_COUNTRY_CODE || '',
   readmessage: process.env.READ_MESSAGE || false,
   HANDLERS: process.env.PREFIX || ['.'],
