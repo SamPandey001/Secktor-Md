@@ -13,6 +13,44 @@
  let { dBinary, eBinary } = require("../lib/binary");
  const fs = require('fs')
  const axios = require('axios')
+  //---------------------------------------------------------------------------
+ cmd({
+    pattern: "setwelcome",
+    desc: "sets welcome message in specific group.",
+    category: "misc",
+},
+async(Void, citel, text,{ isCreator }) => {
+    if (!isCreator) return citel.reply(tlang().owner)
+          let Group = await sck.findOne({ id: citel.chat })
+            if (!Group) {
+                await new sck({ id: citel.chat, welcome: text }).save()
+                return citel.reply('Welcome added added for this group.')
+            } else {
+                await await sck.updateOne({ id: citel.chat }, { welcome:text })
+                return citel.reply('Welcome updated successfully.')
+                
+            }      
+}
+)
+ //---------------------------------------------------------------------------
+cmd({
+    pattern: "setgoodbye",
+    desc: "sets goodbye message in specific group.",
+    category: "misc",
+},
+async(Void, citel, text,{ isCreator }) => {
+    if (!isCreator) return citel.reply(tlang().owner)
+          let Group = await sck.findOne({ id: citel.chat })
+            if (!Group) {
+                await new sck({ id: citel.chat, goodbye: text }).save()
+                return citel.reply('Goodbye added for this group.')
+            } else {
+                await await sck.updateOne({ id: citel.chat }, { goodbye:text })
+                return citel.reply('Goodbye updated successfully.')
+                
+            }      
+}
+)
  //---------------------------------------------------------------------------
  cmd({
              pattern: "attp",
