@@ -6,7 +6,8 @@ cmd({
         filename: __filename
     },
     async(Void, citel,text,{isCreator}) => {
-     let response = await Insta(text)
+if(!text) return citel.reply('Need post url.')
+let response = await Insta(text)
 for (let i=0;i<response.length;i++) {
 await Void.sendFileUrl(citel.chat, response[i], `*Downloaded Media from instagram.*`, citel)
 }
