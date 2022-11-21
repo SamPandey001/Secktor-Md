@@ -27,12 +27,12 @@
 - Install [External Plugins](https://github.com/SamPandey001/Secktor-Plugins)
 ## Deployment Method for Heroku
 ---
-1. Click [SCAN](https://secktorbot.herokuapp.com/session) and scan QR code. `Whatapp>Three dots>Linked Devices`
+1. Click [SCAN](https://secktorbot.me/session) and scan QR code. `Whatapp>Three dots>Linked Devices`
 2. You will get a session id in whatsapp, copy id only.
 3. If You don't have a account in [Heroku](https://signup.heroku.com/), Create a account.
 4.  Grab a Mongodb uri from [Mongodb](https://signup.mongodb.com) for more instructions check yt video [Youtube Video](https://youtu.be/4u0uv3IiAAc).
 5. Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork)
-6.  <a href="https://secktorbot.herokuapp.com/deploy">
+6.  <a href="https://secktorbot.me/deploy">
     <img alt="DEPLOY on Heroku" height="40" src="https://www.herokucdn.com/deploy/button.svg">
   </a>
   
@@ -42,7 +42,7 @@
 
 9. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
 ---
-10. More info about [Secktor](https://secktorbot.herokuapp.com/).
+10. More info about [Secktor](https://secktorbot.me/).
 11. Deploy tutorial [Youtube Video](https://www.youtube.com/watch?v=7YWI50BDO5o).
 12. Docs [Secktor-Docs](https://citel.vercel.app/).
 
