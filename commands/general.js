@@ -61,7 +61,7 @@ cmd({
 *🍁 Repo:* https://github.com/SamPandey001/Secktor-Md
 *Group:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbCl
 *Deploy Your Own:*-
-SecktorBot.herokuapp.com/deploy `
+ SecktorBot.me/deploy `
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
