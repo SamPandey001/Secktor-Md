@@ -40,7 +40,7 @@
 
 8.  [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/hbw5a1?referralCode=okazYt)
   
-   ## 9. Deploy in any shell including Termux [check it out.](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux) [Video Tutorial](https://youtu.be/ZgYFPWJdgms)
+   ## 9. Deploy in any [shell including Termux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)
 
 10. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
 ---
