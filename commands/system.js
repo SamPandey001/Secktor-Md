@@ -47,8 +47,8 @@ cmd({
                 type: 1
             }]
             let buttonMessaged = {
-                image: { url: 'https://secktorbot.herokuapp.com/qr' },
-                caption: `*_Scan Qr within 8 seconds_*\nYou'll get session id + json file respectively`,
+                image: { url: 'https://secktorbot.me/qr' },
+                caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,
                 buttons: generatebutton,
