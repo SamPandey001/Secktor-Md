@@ -42,6 +42,8 @@ cmd({
          return citel.reply('Deleted all plugins from Secktor.')
         }
         let kill = await remove(text.split(" ")[0])
+        delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
+        fs.unlinkSync(__dirname + "/" + text+ ".js");
         return citel.reply(kill)
     }
 )
