@@ -36,7 +36,6 @@
                        "human-readable": "^0.2.1",
                        "jimp": "^0.16.1",
                        "jsdom": "^16.4.0",
-                       "link-preview-js": "^3.0.4",
                        "moment-timezone": "^0.5.34",
                        "mailist": "^1.0.3",
                        "openai": "3.0.0",
