@@ -58,10 +58,10 @@ cmd({
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* secktorbot.me/repo
-*Group:* secktorbot.me/support
+*🍁 Repo:* secktorbot.tech/repo
+*Group:* secktorbot.tech/support
 *Deploy Your Own:*-
- SecktorBot.me/youtube`
+ SecktorBot.tech/youtube`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
