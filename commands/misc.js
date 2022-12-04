@@ -23,10 +23,10 @@ async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
-                await new sck({ id: citel.chat, welcome: text }).save()
+                await new sck({ id: citel.chat, welcome: text,events:'true' }).save()
                 return citel.reply('Welcome added added for this group.')
             } else {
-                await await sck.updateOne({ id: citel.chat }, { welcome:text })
+                await await sck.updateOne({ id: citel.chat }, { welcome:text ,events:'true'})
                 return citel.reply('Welcome updated successfully.')
                 
             }      
@@ -42,12 +42,11 @@ async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
-                await new sck({ id: citel.chat, goodbye: text }).save()
-                return citel.reply('Goodbye added for this group.')
+                await new sck({ id: citel.chat, goodbye: text,events:'true' }).save()
+                return citel.reply('Goodbye added for this group.');
             } else {
-                await await sck.updateOne({ id: citel.chat }, { goodbye:text })
-                return citel.reply('Goodbye updated successfully.')
-                
+                await await sck.updateOne({ id: citel.chat }, { goodbye:text,events:'true' })
+                return citel.reply('Goodbye updated successfully.');     
             }      
 }
 )
