@@ -7,6 +7,14 @@
 5. Now tap on ***Add-On Dashboard*** and scroll.
 6. Tap on lock and ***copy it.***
 ---
+
+# Getting Mongodb URI from Railway.
+1. ***Create a account at [Railway](https://railway.app/)***
+2. Create a project as ***Mongodb database***
+3. Open Connect tab, ***Copy Mongodb Connection URL***
+---
+
+
 # Getting Mongodb URI from Mongodb Atlas.
 1. Create a account at [MongoDB](mongodb.com)
 2. Create cluster
