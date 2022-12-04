@@ -24,7 +24,7 @@
   <p align="center"> Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use. </p
  
 - Install [External Plugins](https://github.com/SamPandey001/Secktor-Plugins)
-## Deployment Method for Heroku
+## Deployment Methods
 ---
 1. ***Get [SESSION-ID](https://secktorbot.tech) and scan QR code. `Whatapp>Three dots>Linked Devices`***
 2.  ***Get a Mongodb uri from [Mongodb](https://github.com/SamPandey001/Secktor-Md/blob/main/Mongodb-URI.md).***
