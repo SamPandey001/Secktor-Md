@@ -9,10 +9,6 @@
                 "start": "pm2 start lib/client.js --deep-monitoring --attach --name secktor",
                 "stop": "pm2 stop secktor"
                 },
-  "engines":  {
-                "node": ">=16.0.0"
-                 "npm":  ">=9.1.3"
-               },
                "author": "SamPandey001",
               "dependencies": {
                        "@adiwajshing/baileys": "latest", 
