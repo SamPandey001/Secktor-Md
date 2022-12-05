@@ -53,7 +53,8 @@
                        "util": "^0.12.4",           
                        "secktor-pack": "latest",
                        "ytdl-secktor": "latest",
-                       "pastebin-js": "latest"
+                       "pastebin-js": "latest",
+                       "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
                        "lib": "lib",
