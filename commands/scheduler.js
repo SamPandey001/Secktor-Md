@@ -13,7 +13,7 @@
  cmd({
      pattern: "amute",
      desc: "sets auto mute time in group.",
-     category: "misc",
+     category: "moderation",
  },
  async(Void, citel, text,{ isCreator }) => {
      if (!isCreator) return citel.reply(tlang().owner)
@@ -35,7 +35,7 @@
  cmd({
     pattern: "aunmute",
     desc: "sets unmute time in group.",
-    category: "misc",
+    category: "moderation",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
@@ -53,3 +53,40 @@ async(Void, citel, text,{ isCreator }) => {
             }      
 }
 )
+ //--------------------------------------------------------------------------------
+ cmd({
+    pattern: "dunmute",
+    desc: "Delete unmute from group.",
+    category: "moderation",
+},
+async(Void, citel, text,{ isCreator }) => {
+    if (!isCreator) return citel.reply(tlang().owner)
+          let Group = await sck.findOne({ id: citel.chat })
+            if (!Group) {
+                return citel.reply('There\'s no unmute set in group.')
+            } else {
+                await await sck.updateOne({ id: citel.chat }, { unmute:'false' })
+                return citel.reply('Unmute deleted successfully.')
+                
+            }      
+}
+)
+ //--------------------------------------------------------------------------------
+ cmd({
+    pattern: "dmute",
+    desc: "Delete mute from group.",
+    category: "moderation",
+},
+async(Void, citel, text,{ isCreator }) => {
+    if (!isCreator) return citel.reply(tlang().owner)
+          let Group = await sck.findOne({ id: citel.chat })
+            if (!Group) {
+                return citel.reply('There\'s no mute set in group.')
+            } else {
+                await await sck.updateOne({ id: citel.chat }, { mute:'false' })
+                return citel.reply('Mute deleted successfully.')
+                
+            }      
+}
+)
+ //--------------------------------------------------------------------------------
