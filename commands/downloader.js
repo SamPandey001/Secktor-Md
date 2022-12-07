@@ -13,7 +13,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic, getBuffer, pinterest, pre
 const { mediafire } = require("../lib/mediafire.js");
 const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
-const fs = require('fs')
+const fs = require('fs-extra')
 var videotime = 6000 // 100 min
 var dlsize = 100 // 100mb
     //---------------------------------------------------------------------------
@@ -393,12 +393,12 @@ cmd({
                             }
                         }
                     }
-                    return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 return fs.unlinkSync(`./${randomName}`);
                 } else {
-                    citel.reply(`❌ File size bigger than 40mb.`);
+                    citel.reply(`❌ File size bigger than 100mb.`);
                 }
-
-                fs.unlinkSync(`./${randomName}`);
+                return fs.unlinkSync(`./${randomName}`);      
             } catch (e) {
                 console.log(e)
             }
@@ -467,9 +467,10 @@ cmd({
                         },
                     },
                 }
-                return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                return fs.unlinkSync(`./${randomName}`);
             } else {
-                citel.reply(`❌ File size bigger than 40mb.`);
+                citel.reply(`❌ File size bigger than 100mb.`);
             }
             fs.unlinkSync(`./${randomName}`);
         } catch (e) {
@@ -542,9 +543,10 @@ cmd({
                         },
                     },
                 }
-                return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                return fs.unlinkSync(`./${randomName}`);
             } else {
-                citel.reply(`❌ File size bigger than 40mb.`);
+                citel.reply(`❌ File size bigger than 100mb.`);
             }
             fs.unlinkSync(`./${randomName}`);
         } catch (e) {
