@@ -19,6 +19,7 @@ module.exports = {
   ownername:process.env.OWNER_NAME || 'SamPandey001',
   sessionName: process.env.SESSION_ID || 'PUT-HERE',
   author: process.env.PACK_INFO.split(";")[0] || 'author', 
+  auto_read_status : process.env.AUTO_READ_STATUS || 'false',
   packname: process.env.PACK_INFO.split(";")[1] || 'Name',
   autoreaction: process.env.AUTO_REACTION || 'off',
   antibadword : process.env.ANTI_BAD_WORD || 'nobadwordokey',
