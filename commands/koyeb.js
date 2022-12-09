@@ -9,7 +9,7 @@
  * @version 0.0.6
  **/
 const axios = require('axios');
-const { tlang } = require('../lib')
+const { tlang,cmd } = require('../lib')
 cmd(
   {
     pattern: "updatenow",
