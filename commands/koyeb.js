@@ -10,6 +10,7 @@
  **/
 const axios = require('axios');
 const { tlang,cmd } = require('../lib')
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 cmd(
   {
     pattern: "updatenow",
@@ -18,11 +19,87 @@ cmd(
     category: "misc",
   },
   async (Void,citel,text,{isCreator}) => {
+       require('child_process').exec('git pull')
        if(!isCreator) return citel.reply(tlang().owner);
        let data = await redeploy();
        return citel.reply(data)
   })
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+cmd(
+  {
+    pattern: "getvar",
+    desc: "get desired var from koyeb.",
+    filename: __filename,
+    category: "misc",
+  },
+  async (Void,citel,text,{isCreator}) => {
+       if(!isCreator) return citel.reply(tlang().owner);
+       let data = await getvar(text);
+       return citel.reply(data)
+  })
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+cmd(
+  {
+    pattern: "getallvar",
+    desc: "get all vars from koyeb.",
+    filename: __filename,
+    category: "misc",
+  },
+  async (Void,citel,text,{isCreator}) => {
+       if(!isCreator) return citel.reply(tlang().owner);
+       let data = await getallvar();
+       return citel.reply(data)
+  })
 
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+async function getallvar(){
+let koyeb_api = process.env.KOYEB_API || "No-api"
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Authorization": `Bearer ${koyeb_api}`
+  }
+};
+let { data } = await axios.get(`https://app.koyeb.com/v1/services`,axiosConfig)
+let b = await axios.get(`https://app.koyeb.com/v1/deployments/${data.services[0].latest_deployment_id}`,axiosConfig)
+let values = []
+for(var i=0;i<b.data.deployment.definition.env.length;i++){
+if(!b.data.deployment.definition.env[i].key) continue
+values.push('*'+b.data.deployment.definition.env[i].key+'* : _'+b.data.deployment.definition.env[i].value+'_')
+}
+return (values.join('\n'))
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+async function getvar(key){
+let koyeb_api = process.env.KOYEB_API || "No-api"
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Authorization": `Bearer ${koyeb_api}`
+  }
+};
+let { data } = await axios.get(`https://app.koyeb.com/v1/services`,axiosConfig)
+let b = await axios.get(`https://app.koyeb.com/v1/deployments/${data.services[0].latest_deployment_id}`,axiosConfig)
+for(var i=0;i<b.data.deployment.definition.env.length;i++){
+if(!b.data.deployment.definition.env[i].key) continue
+   if(b.data.deployment.definition.env[i].key===key){
+return (b.data.deployment.definition.env[i].key+':'+b.data.deployment.definition.env[i].value)
+}
+}
+}
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 async function redeploy(){
 let koyeb_api = process.env.KOYEB_API || "No-api"
 let axiosConfig = {
