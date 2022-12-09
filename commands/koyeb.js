@@ -35,6 +35,7 @@ cmd(
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
+       if(!text) return citel.reply('Please provide key.\n_Eg: .getvar PORT_')
        let data = await getvar(text);
        return citel.reply(data)
   })
@@ -76,7 +77,7 @@ cmd(
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
-       if(!text.split(':')[1]) return citel.reply('*Wrong Format.*\nPlease provide key and value.\n_Eg: .setvar THEME:SECKTOR_')
+       if(!text) return citel.reply('Please provide key.\n_Eg: .delvar PORT_')
        let data = await delvar(text)
        return citel.reply(data)
   })
