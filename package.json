@@ -11,7 +11,7 @@
                 },
                "author": "SamPandey001",
               "dependencies": {
-                       "@adiwajshing/baileys": "git+https://github.com/sampandey001/baileys.git", 
+                       "@adiwajshing/baileys": "^4.4.0", 
                        "@adiwajshing/keyed-db": "^0.2.4",
                        "awesome-phonenumber": "^3.3.0",
                        "anime-character-random": "latest",
