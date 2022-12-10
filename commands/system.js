@@ -21,7 +21,7 @@ cmd({
             if (!isCreator) return citel.reply(tlang().owner)
             if (!text) return citel.reply("🔍 Please provide me a valid gist url.")
             await addnote(text)
-            citel.reply(`New note ${text} added in mongodb.`)
+            return citel.reply(`New note ${text} added in mongodb.`)
 
         }
     )
@@ -47,7 +47,7 @@ cmd({
                 type: 1
             }]
             let buttonMessaged = {
-                image: { url: 'https://laventer-production.up.railway.app/' },
+                image: { url: 'https://secktorbot.onrender.com/' },
                 caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,
@@ -122,6 +122,7 @@ cmd({
                 return citel.reply(`Here is url of your uploaded Media on Telegraph.\n\n` + util.format(anu));
             } else if (!/image/.test(mime)) {
                 let anu = await TelegraPh(media);
+                await fs.unlinkSync(media);
                 return citel.reply(`Here is url of your uploaded Media on Telegraph.\n\n` + util.format(anu));
             }
             await fs.unlinkSync(media);
@@ -182,7 +183,7 @@ cmd({
                     citel.reply(JSON.stringify(resultTest));
                 else citel.reply(resultTest.toString());
             } catch (err) {
-                citel.reply(err.toString());
+                return  citel.reply(err.toString());
             }
         }
     )
@@ -197,7 +198,7 @@ cmd({
             const { tlang } = require('../lib/scraper')
             if (!isCreator) return citel.reply(tlang().owner)
             await delnote(text.split(" ")[0])
-            citel.reply(`Id: ${text.split(" ")[0]}\'s note has been deleted from mongodb.`)
+             return citel.reply(`Id: ${text.split(" ")[0]}\'s note has been deleted from mongodb.`)
 
         }
     )
@@ -212,7 +213,7 @@ cmd({
             const { tlang } = require('../lib/scraper')
             if (!isCreator) return citel.reply(tlang().owner)
             await delallnote()
-            citel.reply(`All notes deleted from mongodb.`)
+             return citel.reply(`All notes deleted from mongodb.`)
 
         }
     )
@@ -255,20 +256,20 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            const aliveadm = isAdmins ? "True" : "False";
             let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
             const alivtxt = `
-*Hello, my ${citel.pushName},*
-*This is  ${tlang().title}.*
+*Hello, ${citel.pushName},*
+_This is  ${tlang().title}._
 ${alivemessage}
-*Version:-* 0.0.6
-*Uptime:-* ${runtime(process.uptime())}
-*Owner:-* ${Config.ownername}
-*Branch:-* ${Config.BRANCH}
 
-*Type ${prefix}menu for my command list.*
+*Version:-* _0.0.6_
+*Uptime:-* _${runtime(process.uptime())}_
+*Owner:-* _${Config.ownername}_
+*Branch:-* _${Config.BRANCH}_
 
-*Powered by ${Config.ownername}*
+_Type ${prefix}menu for my command list._
+
+_Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
@@ -278,7 +279,7 @@ ${alivemessage}
                 footer: tlang().footer,
                 headerType: 4,
             };
-            Void.sendMessage(citel.chat, aliveMessage, {
+             return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
             });
 
@@ -297,8 +298,7 @@ cmd({
         const note_store = new Array()
         let leadtext = `All Available Notes are:-\n\n`
         leadtext += await allnotes()
-
-        citel.reply(leadtext)
+        return citel.reply(leadtext)
 
     }
 )
