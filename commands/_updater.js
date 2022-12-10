@@ -26,8 +26,20 @@ cmd({
                 citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
             } else {
                 let update = await DB.sync()
-                 return citel.reply(update)
-
+                  let button = [{
+                    buttonId: `${prefix}updatenow`,
+                    buttonText: {
+                        displayText: 'UPDATE'
+                    },
+                    type: 1
+                }]
+                  let buttonMessaged = {
+                    text: update,
+                    footer: 'UPDATER',
+                    headerType: 4,
+                    buttons: button
+                };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
             }
 
         }
