@@ -833,7 +833,7 @@ cmd({
                 const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
                 const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
                 if (!isAdmins) return citel.reply('Only Admins are allowed to delete other persons message.')
-                if (!isBotAdmins) return citel.reply('I can delete anyones message without getting Admin Role.')
+                if (!isBotAdmins) return citel.reply('I can\'t delete anyones message without getting Admin Role.')
                 if (!citel.quoted) return citel.reply(`Please reply to any message. ${tlang().greet}`);
                 let { chat, fromMe, id } = citel.quoted;
                 const key = {
