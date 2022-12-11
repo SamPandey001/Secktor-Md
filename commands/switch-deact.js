@@ -89,20 +89,6 @@
                         }
                     }
                     break
-                case 'bot':
-                    {
-                        let checkgroup = await sck.findOne({ id: citel.chat })
-                        if (!checkgroup) {
-                            await new sck({ id: citel.chat, botenable: "false" })
-                                .save()
-                            return citel.reply(`Successfully disabled *${tlang().title}*`)
-                        } else {
-                            if (checkgroup.botenable == "false") return citel.reply("*Bot* was already disabled")
-                            await sck.updateOne({ id: citel.chat }, { botenable: "false" })
-                            return citel.reply(`Successfully disabled *${tlang().title}*`)
-                        }
-                    }
-                    break
                 case 'nsfw':
                     {
                         let checkgroup = await sck.findOne({ id: citel.chat })
@@ -120,7 +106,7 @@
                     break
                 default:
                     {
-                        citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\4-bot\5-cardgame")
+                        citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\n4-cardgame")
                     }
          }
      }
