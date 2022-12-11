@@ -89,20 +89,6 @@ cmd({
                     }
                 }
                 break
-            case 'bot':
-                {
-                    let checkgroup = await sck.findOne({ id: citel.chat })
-                    if (!checkgroup) {
-                        await new sck({ id: citel.chat, botenable: "true" })
-                            .save()
-                        return citel.reply(`Successfully Enabled *${tlang().title}*`)
-                    } else {
-                        if (checkgroup.botenable == "true") return citel.reply("*Bot* was already enabled")
-                        await sck.updateOne({ id: citel.chat }, { botenable: "true" })
-                        return citel.reply(`Successfully Enabled *${tlang().title}*`)
-                    }
-                }
-                break
             case 'nsfw':
                 {
                     let checkgroup = await sck.findOne({ id: citel.chat })
@@ -120,7 +106,7 @@ cmd({
                 break
             default:
                 {
-                    citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\4-bot\5-economy")
+                    citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\n4-economy")
                 }
         }
     }
