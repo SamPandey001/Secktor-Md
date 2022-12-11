@@ -447,7 +447,7 @@ async(Void, citel, text,{ isCreator }) => {
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "botpic",
+             pattern: "pp",
              desc: "Sets profile pic.",
              fromMe: true,
              category: "misc",
@@ -467,37 +467,66 @@ async(Void, citel, text,{ isCreator }) => {
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "bot",
-             desc: "activates and deactivates bot.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             if (!citel.isGroup) return citel.reply(tlang().group);
-             const groupAdmins = await getAdmin(Void, citel)
-             const botNumber = await Void.decodeJid(Void.user.id)
-             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-             if (!isAdmins) return citel.reply(tlang().admin)
-             if (!isBotAdmins) return citel.reply(tlang().botadmin)
-             let buttons = [{
-                     buttonId: `${prefix}act bot`,
-                     buttonText: {
-                         displayText: "Turn On",
-                     },
-                     type: 1,
-                 },
-                 {
-                     buttonId: `${prefix}deact bot`,
-                     buttonText: {
-                         displayText: "Turn Off",
-                     },
-                     type: 1,
-                 },
-             ];
-             await Void.sendButtonText(citel.chat, buttons, `Act/deact bot:in specific group`, Void.user.name, citel);
-         })
+cmd({
+  pattern: "bot",
+  desc: "activates and deactivates bot.\nuse buttons to toggle.",
+  category: "misc",
+  filename: __filename,
+},
+async(Void, citel, text,{isCreator}) => {
+  if (!citel.isGroup) return citel.reply(tlang().group);
+  if(!isCreator) return //citel.reply(tlang().owner)
+switch (text.split(" ")[0]) {
+ case 'on':{
+         let checkgroup = await sck.findOne({ id: citel.chat })
+         if (!checkgroup) {
+             await new sck({ id: citel.chat, botenable: "true" }).save()
+             return citel.reply(`Successfully Enabled *${tlang().title}*`)
+         } else {
+             if (checkgroup.botenable == "true") return citel.reply("*Bot* was already enabled")
+             await sck.updateOne({ id: citel.chat }, { botenable: "true" })
+             return citel.reply(`Successfully Enabled *${tlang().title}*`)
+         }
+     }
+  
+ break
+case 'off':{
+            {
+             let checkgroup = await sck.findOne({ id: citel.chat })
+             if (!checkgroup) {
+                 await new sck({ id: citel.chat, botenable: "false" })
+                     .save()
+                 return citel.reply(`Successfully disabled *${tlang().title}*`)
+             } else {
+                 if (checkgroup.botenable == "false") return citel.reply("*Bot* was already disabled")
+                 await sck.updateOne({ id: citel.chat }, { botenable: "false" })
+                 return citel.reply(`Successfully disabled *${tlang().title}*`)
+             }
+         }
+}
+break
+default:{
+let checkgroup = await sck.findOne({ id: citel.chat })
+let buttons = [{
+          buttonId: `${prefix}bot on`,
+          buttonText: {
+              displayText: "Turn On",
+          },
+          type: 1,
+      },
+      {
+          buttonId: `${prefix}bot off`,
+          buttonText: {
+              displayText: "Turn Off",
+          },
+          type: 1,
+      },
+  ];
+  await Void.sendButtonText(citel.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Void.user.name, citel);
+}
+}
+})   
+         
      //---------------------------------------------------------------------------
  cmd({
              pattern: "antilink",
