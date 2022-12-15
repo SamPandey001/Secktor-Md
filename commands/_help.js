@@ -52,9 +52,9 @@ Secktor.cmd({
                     .locale('id')
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 let total = await sck1.countDocuments()
-                let str = `╭────〔 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〕─────⊷\n`
+                let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
-                    '```' + `│ ╭──────────────
+                    '```' + `│ ╭───────✧❁✧───────«
 │ │ User:- ${citel.pushName}
 │ │ Theme:- ${tlang().title}
 │ │ Prefix:- [ ${prefix} ]
@@ -65,18 +65,18 @@ Secktor.cmd({
 │ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 │ │ Time:- ${time}
 │ │ Date:- ${date}
-│ ╰────────────
+│ ╰───────✧❁✧───────»
 ╰───────────────⊷\n
 ` + '```'
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
                     str += `
-┃  ╭─────────────◆
+┃  ╭───────✧❁✧───────«
 ┃  │ ✯---- ${tiny(category)} ----⦿
-┃  ╰┬────────────◆
+┃  ╰┬──────✧❁✧───────»
 ┃  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `┃  │ ❒ ${plugins}\n`
+                        str += `┃  │ ✭ ${plugins}\n`
                     }
                     str += `┃  ╰─────────────◆`
                 }
@@ -86,6 +86,12 @@ Secktor.cmd({
                     buttonId: `${prefix}owner`,
                     buttonText: {
                         displayText: 'Owner'
+                    },
+                    type: 1
+                },{
+                    buttonId: `${prefix}ping`,
+                    buttonText: {
+                        displayText: 'SPEED'
                     },
                     type: 1
                 }, {
@@ -180,7 +186,7 @@ Secktor.cmd({
 
 Secktor.cmd({
     pattern: "file",
-    desc: "to get extact name where that command is in repo.\nSo any user can edit that.",
+    desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
     react: "✨",
     filename: __filename
