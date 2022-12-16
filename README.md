@@ -34,17 +34,18 @@
 5. ***[Deploy on Koyeb](https://secktorbot.me/koyeb)***
 
 6.  ***[Deploy on Railway](https://secktorbot.tech/railway)***
+7. ***[Deploy on MOGENIOUS](https://github.com/SamPandey001/Secktor-Md/wiki/Deploy-on-MOGENIOUS)***
   
-7. ***Deploy in [Linux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)***
+8. ***Deploy in [Linux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)***
 
-8. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
+9. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
 ---
-9. More info about [Secktor](https://secktorbot.tech/).
-10. Deploy tutorial [Youtube Video](https://secktorbot.tech/youtube).
+10. More info about [Secktor](https://secktorbot.tech/).
+11. Deploy tutorial [Youtube Video](https://secktorbot.tech/youtube).
 
-11. SUPPORT GROUP: <a href="https://secktorbot.tech/support"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
+12. SUPPORT GROUP: <a href="https://secktorbot.tech/support"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
 
-12. Star ⭐ repo if you like Secktor.
+- Star ⭐ repo if you like Secktor.
 ### Thanks To
 
 - [Yusuf Usta](https://github.com/yusufusta) for Ideas
