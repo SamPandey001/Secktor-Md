@@ -446,28 +446,6 @@ async(Void, citel, text,{ isCreator }) => {
              }
          }
      )
-     //---------------------------------------------------------------------------
- cmd({
-             pattern: "pp",
-             desc: "Sets profile pic.",
-             fromMe: true,
-             category: "misc",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             if (!citel.quoted) return citel.reply(`Send/Reply Image With Caption ${command}`);
-             let mime = citel.quoted.mtype
-             if (!/image/.test(mime)) return citel.reply(`Send/Reply Image With Caption ${command}`);
-             if (/webp/.test(mime)) return citel.reply(`Send/Reply Image With Caption ${command}`);
-             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-             await Void.updateProfilePicture(Void.user.id, {
-                     url: media,
-                 })
-                 .catch((err) => fs.unlinkSync(media));
-             citel.reply(tlang().success);
-         }
-     )
-     //---------------------------------------------------------------------------
 cmd({
   pattern: "bot",
   desc: "activates and deactivates bot.\nuse buttons to toggle.",
