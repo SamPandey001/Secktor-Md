@@ -14,8 +14,8 @@ const { mediafire } = require("../lib/mediafire.js");
 const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
 const fs = require('fs-extra')
-var videotime = 6000 // 100 min
-var dlsize = 100 // 100mb
+var videotime = 60000 // 1000 min
+var dlsize = 1000 // 1000mb
     //---------------------------------------------------------------------------
 cmd({
             pattern: "tgs",
