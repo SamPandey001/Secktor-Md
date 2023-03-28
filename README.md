@@ -1,7 +1,7 @@
   <p align="center">  
   <a href="https://secktoruserbot.onrender.com/">
     <img alt="secktor docs" height="300" src="https://telegra.ph/file/3ea745aa166421cf48df7.jpg">
-    <h1 align="center">Secktor MD Whatsapp bot</h1>
+    <h1 align="center">THUSHAN MD BOT</h1>
   </a>
 </p>
    
