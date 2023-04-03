@@ -1,13 +1,13 @@
   <p align="center">  
   <a href="https://secktoruserbot.onrender.com/">
-    <img alt="secktor docs" height="300" src="https://secktoruserbot.onrender.com//main.jpg">
+    <img alt="secktor docs" height="300" src="https://secktoruserbot.onrender.com/main.jpg">
     <h1 align="center">Secktor MD Whatsapp bot</h1>
   </a>
 </p>
    
 <p align="center">
 
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/Fo5bT3lQSF53NfJp0u9BqJ" target="_blank">
+  <a aria-label="Join our chats" href="https://www.youtube.com/@YourPenPal" target="_blank">
     <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
  
@@ -21,7 +21,17 @@
 
 <p align="center"><img src="https://profile-counter.glitch.me/{SamPandey001}/count.svg" alt="SamPandey001 :: Visitor's Count" /></p>
 
-  <p align="center"> Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use. </p
+  <p align="center"> Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use. </p>
+ 
+ ***<p align="center"> Support us by subscribing our channel </p>***
+ 
+   <p align="center">  
+  <a href="https://youtu.be/It-Ak-aSx0c">
+    <img alt="secktor docs" height="300" src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg">
+    <h1 align="center">Tap on above Image</h1>
+  </a>
+</p>
+ 
  
 - Install [External Plugins](https://github.com/SamPandey001/Secktor-Plugins)
 ## Deployment Methods
