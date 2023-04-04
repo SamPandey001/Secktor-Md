@@ -112,28 +112,6 @@ cmd({
             let yts = require("secktor-pack");
             let search = await yts(text);
             let anu = search.videos[0];
-            let buttons = [{
-                    buttonId: `${prefix}ytmp4 ${anu.url}`,
-                    buttonText: {
-                        displayText: "► Video",
-                    },
-                    type: 1,
-                },
-                {
-                    buttonId: `${prefix}ytmp3 ${anu.url}`,
-                    buttonText: {
-                        displayText: "♫ Audio",
-                    },
-                    type: 1,
-                },
-                  {
-                    buttonId: `${prefix}ytdoc ${anu.url}`,
-                    buttonText: {
-                        displayText: "♫ Document",
-                    },
-                    type: 1,
-                },
-            ];
             let buttonMessage = {
                 image: {
                     url: anu.thumbnail,
@@ -151,7 +129,6 @@ cmd({
 ⦿ *Url* : ${anu.url}
 `,
                 footer: tlang().footer,
-                buttons: buttons,
                 headerType: 4,
             };
             return Void.sendMessage(citel.chat, buttonMessage, {
@@ -193,22 +170,12 @@ cmd({
             try {
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                let buttons = [{
-                        buttonId: `${prefix}pint ${text}`,
-                        buttonText: {
-                            displayText: 'Next Image🎀'
-                        },
-                        type: 1
-                    }
-
-                ]
                 let buttonMessage = {
                     image: {
                         url: result
                     },
                     caption: ` `,
                     footer: tlang().footer,
-                    buttons: buttons,
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {

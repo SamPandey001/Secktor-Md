@@ -367,28 +367,12 @@ cmd({
 *📥 Total Messages* ${ttms}
 *Powered by ${tlang().title}*
 `;
-            const buttonsd = [{
-                    buttonId: `${prefix}rank`,
-                    buttonText: {
-                        displayText: "Rank",
-                    },
-                    type: 1,
-                },
-                {
-                    buttonId: `${prefix}help`,
-                    buttonText: {
-                        displayText: " Help",
-                    },
-                    type: 1,
-                },
-            ];
             let buttonMessage = {
                 image: {
                     url: pfp,
                 },
                 caption: profile,
                 footer: tlang().footer,
-                buttons: buttonsd,
                 headerType: 4,
             };
             Void.sendMessage(citel.chat, buttonMessage, {
@@ -650,22 +634,8 @@ cmd({
                     .then((res) => reply(`Group Chat Unmuted :)`))
                     .catch((err) => console.log(err));
             } else {
-                let buttons = [{
-                        buttonId: `${prefix}group open`,
-                        buttonText: {
-                            displayText: "📍Unmute",
-                        },
-                        type: 1,
-                    },
-                    {
-                        buttonId: `${prefix}group close`,
-                        buttonText: {
-                            displayText: "📍Mute",
-                        },
-                        type: 1,
-                    },
-                ];
-                await Void.sendButtonText(citel.chat, buttons, `Group Mode`, Void.user.name, citel);
+
+                return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close`);
             }
         }
     )

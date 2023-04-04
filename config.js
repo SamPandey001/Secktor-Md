@@ -34,7 +34,7 @@ module.exports = {
   antilinkaction: process.env.ANTILINK_ACTION || 'remove',
   BRANCH: 'main',
   ALIVE_MESSAGE: process.env.ALIVE_MESSAGE || '',
-  OPENAI_API_KEY: process.env.OPENAI_API_KEY || 'put-key-here',
+  OPENAI_API_KEY: process.env.OPENAI_API_KEY || 'OPENAI_KEY',
   VERSION: process.env.VERSION === undefined ? 'v.0.0.3' : process.env.VERSION,
   LANG: process.env.THEME|| 'SECKTOR',
   WORKTYPE: process.env.WORKTYPE === undefined ? 'public' : process.env.WORKTYPE

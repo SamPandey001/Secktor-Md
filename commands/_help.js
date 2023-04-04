@@ -82,31 +82,11 @@ Secktor.cmd({
                 }
 
                 str += `\n╰━━━━━━━━━━━──⊷\n`
-                let generatebutton = [{
-                    buttonId: `${prefix}owner`,
-                    buttonText: {
-                        displayText: 'Owner'
-                    },
-                    type: 1
-                },{
-                    buttonId: `${prefix}ping`,
-                    buttonText: {
-                        displayText: 'SPEED'
-                    },
-                    type: 1
-                }, {
-                    buttonId: `${prefix}list`,
-                    buttonText: {
-                        displayText: 'List Menu'
-                    },
-                    type: 1
-                }]
                 let buttonMessaged = {
                     image: { url: await botpic() },
                     caption: str,
                     footer: tlang().title,
-                    headerType: 4,
-                    buttons: generatebutton
+                    headerType: 4
                 };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }

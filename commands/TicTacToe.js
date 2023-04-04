@@ -206,12 +206,6 @@ ${
       if (isWin || isTie) {
         await Void.sendMessage(citel.chat, {
           text: str,
-          buttons: [
-            {
-              buttonId: `${prefix}ttt`,
-              buttonText: { displayText: "Play again" },
-            },
-          ],
           mentions: [room.game.playerO,room.game.playerX],
         });
       } else {
