@@ -57,6 +57,510 @@ cmd({
 
     )
     //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayhindi",
+        desc: "text to hindi speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ja",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayhidni",
+        desc: "text to hindi speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "hi",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+    
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayarabic",
+        desc: "text to arabic speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ar",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayfrench",
+        desc: "text to french speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "fr",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayspanish",
+        desc: "text to spanish speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "es",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayrussian",
+        desc: "text to russian speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ru",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saychinese",
+        desc: "text to chinses speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "zh",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayturkish",
+        desc: "text to turkish speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "tr",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayslovak",
+        desc: "text to slovak speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "sk",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saymindo",
+        desc: "text to indo speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "id",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayitalian",
+        desc: "text to italia speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "it",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saybihari",
+        desc: "text to bihari speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "bh",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayassamese",
+        desc: "text to assamese speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "as",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saybengali",
+        desc: "text to bengali speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "bn",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saygerman",
+        desc: "text to german speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "de",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saypujabi",
+        desc: "text to punjabi speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "pa",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayportuguese",
+        desc: "text to portuguese speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "pt",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saykorean",
+        desc: "text to korean speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "kr",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
 cmd({
             pattern: "video",
             desc: "Downloads video from yt.",
