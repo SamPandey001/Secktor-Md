@@ -310,7 +310,7 @@ cmd({
 )
     //---------------------------------------------------------------------------
     cmd({
-        pattern: "saymindo",
+        pattern: "sayindo",
         desc: "text to indo speech.",
         category: "downloader",
         filename: __filename,
@@ -478,7 +478,7 @@ cmd({
 )
     //---------------------------------------------------------------------------
     cmd({
-        pattern: "saypujabi",
+        pattern: "saypunjabi",
         desc: "text to punjabi speech.",
         category: "downloader",
         filename: __filename,
@@ -559,6 +559,60 @@ cmd({
         });
     }
 
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayromanian",
+        desc: "text to romanian speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ro",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+    
+)
+cmd({
+    pattern: "saysanskrit",
+    desc: "text to sanskrit speech.",
+    category: "downloader",
+    filename: __filename,
+    use: '<Hii,this is Secktor>',
+},
+async(Void, citel, text) => {
+    if (!text) return citel.reply('Please give me Sentence to change into audio.')
+    let texttts = text
+    const ttsurl = googleTTS.getAudioUrl(texttts, {
+        lang: "sa",
+        slow: false,
+        host: "https://translate.google.com",
+    });
+    return Void.sendMessage(citel.chat, {
+        audio: {
+            url: ttsurl,
+        },
+        mimetype: "audio/mpeg",
+        fileName: `ttsCitelVoid.m4a`,
+    }, {
+        quoted: citel,
+    });
+}
 )
     //---------------------------------------------------------------------------
 cmd({
