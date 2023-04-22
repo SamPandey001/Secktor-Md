@@ -41,8 +41,23 @@
          if (!citel.isGroup) return citel.reply(tlang().group);
 	const secktor = "secktor"
 	const daily  = await eco.daily(citel.sender, secktor, 2000); //give 500 for daily, can be changed
-	 if (daily.cd) { //cdL is already formatted cooldown Left            
-        return await Void.sendButtonText(citel.chat, texts, `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`, `${Config.ownername.split(' ')[0]}-Economy
+	 if (daily.cd) { //cdL is already formatted cooldown Left
+            let buttons = [{
+                buttonId: `${prefix}wallet`,
+                buttonText: {
+                    displayText: "Wallet👛",
+                },
+                type: 1,
+            },
+            {
+                buttonId: `${prefix}Bank`,
+                buttonText: {
+                    displayText: "Bank🏦",
+                },
+                type: 1,
+            },
+        ];
+        return await Void.sendButtonText(citel.chat, buttons, `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 	 } else {
 	 citel.reply(`you claimed daily ${daily.amount} 🪙 for today🎉.`);   
@@ -104,7 +119,22 @@ async(Void, citel, text,{ isCreator }) => {
         if (k > balance.wallet ) return citel.reply(`*_You need to pay 🪙100 to increase bank capacity ~ 1000 sp_*`);
           const deduct1 = await eco.deduct(user, secktor, 100);
           const add1 = eco.giveCapacity(user, secktor, 1000);
-        return await Void.sendText(citel.chat, texts, `*1000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy
+              let buttons = [{
+                buttonId: `${prefix}wallet`,
+                buttonText: {
+                    displayText: "Wallet👛",
+                },
+                type: 1,
+            },
+            {
+                buttonId: `${prefix}Bank`,
+                buttonText: {
+                    displayText: "Bank🏦",
+                },
+                type: 1,
+            },
+        ];
+        return await Void.sendButtonText(citel.chat, buttons, `*1000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
               break
@@ -113,7 +143,22 @@ Version: 0.0.6`, citel);
         if (k < balance.wallet) return citel.reply(`*You need to pay 🪙1000 to increase bank capacity ~ 100000 sp*`);
           const deduct2 = await eco.deduct(user, secktor, 1000);
           const add2 = eco.giveCapacity(user, secktor, 100000);
-        return await Void.sendText(citel.chat, texts, `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy
+              let buttonss = [{
+                buttonId: `${prefix}wallet`,
+                buttonText: {
+                    displayText: "Wallet👛",
+                },
+                type: 1,
+            },
+            {
+                buttonId: `${prefix}Bank`,
+                buttonText: {
+                    displayText: "Bank🏦",
+                },
+                type: 1,
+            },
+        ];
+        return await Void.sendButtonText(citel.chat, buttonss, `*100000 🪙diamond storage has been added in ${citel.pushName} bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
 
@@ -123,7 +168,22 @@ Version: 0.0.6`, citel);
         if (k < balance.wallet) return citel.reply(`You need to pay 🪙10000 to increase bank capacity ~ 1000 sp`);
            const deduct3 = await eco.deduct(user, secktor, 10000);
            const add3 = eco.giveCapacity(user, secktor, 10000000);
-        return await Void.sendText(citel.chat, texts, `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `${Config.ownername.split(' ')[0]}-Economy
+               let buttonst = [{
+                buttonId: `${prefix}wallet`,
+                buttonText: {
+                    displayText: "Wallet👛",
+                },
+                type: 1,
+            },
+            {
+                buttonId: `${prefix}Bank`,
+                buttonText: {
+                    displayText: "Bank🏦",
+                },
+                type: 1,
+            },
+        ];
+        return await Void.sendButtonText(citel.chat, buttonst, `*10000000 🪙diamond storage has been added in ${citel.pushName}\'s bank*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
 
@@ -158,7 +218,22 @@ default:
         const deposit = await eco.deposit(citel.sender, "secktor", d);
         const balance = await eco.balance(citel.sender, "secktor")
         if(deposit.noten) return citel.reply('You can\'t deposit what you don\'t have💰.'); //if user states more than whats in his wallet
-    return await Void.sendText(citel.chat, texts, `⛩️ Sender: ${citel.pushName}\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${Config.ownername.split(' ')[0]}-Economy
+         let buttons = [{
+            buttonId: `${prefix}wallet`,
+            buttonText: {
+                displayText: "Wallet👛",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}Bank`,
+            buttonText: {
+                displayText: "Bank🏦",
+            },
+            type: 1,
+        },
+    ];
+    return await Void.sendButtonText(citel.chat, buttons, `⛩️ Sender: ${citel.pushName}\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.Upgrade your bank capacity to add more money📈.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
     }
 )
@@ -223,7 +298,22 @@ async(Void, citel, text,{ isCreator }) => {
 
         const deduct = await eco.deduct(user1, secktor, value[0]);
         const give = await eco.give(user2, secktor, value[0]);
-    return await Void.sendText(citel.chat, texts, `*📠 Transaction successful of ${value[0]} 💰*`, `${Config.ownername.split(' ')[0]}-Economy
+        let buttons = [{
+            buttonId: `${prefix}wallet`,
+            buttonText: {
+                displayText: "Wallet👛",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}Bank`,
+            buttonText: {
+                displayText: "Bank🏦",
+            },
+            type: 1,
+        },
+    ];
+    return await Void.sendButtonText(citel.chat, buttons, `*📠 Transaction successful of ${value[0]} 💰*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
 
@@ -249,7 +339,22 @@ Version: 0.0.6`, citel);
         if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
          const secktor = "secktor"
          const balance = await eco.balance(citel.sender, secktor); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
-    return await Void.sendText(citel.chat, texts, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `${Config.ownername.split(' ')[0]}-Economy
+         let buttons = [{
+            buttonId: `${prefix}deposit`,
+            buttonText: {
+                displayText: "Deposit",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}Bank`,
+            buttonText: {
+                displayText: "Bank🏦",
+            },
+            type: 1,
+        },
+    ];
+    return await Void.sendButtonText(citel.chat, buttons, `*👛 ${citel.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -293,7 +398,22 @@ Version: 0.0.6`, citel);
         let mongoschemas = zerogroup.economy || "false";
         if (mongoschemas == "false") return citel.reply("*🚦Economy* is not active in current group.");
         const balance = await eco.balance(citel.sender, "secktor"); //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
-    return await Void.sendText(citel.chat, texts, `🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${Config.ownername.split(' ')[0]}-Economy
+        let buttons = [{
+            buttonId: `${prefix}slot`,
+            buttonText: {
+                displayText: "Slot🎰",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}wallet`,
+            buttonText: {
+                displayText: "Wallet👛",
+            },
+            type: 1,
+        },
+    ];
+    return await Void.sendButtonText(citel.chat, buttons, `🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${balance.bankCapacity}_`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
     }
@@ -446,6 +566,21 @@ default:
         if (a == true) return citel.reply(`*Sorry ${citel.pushName}, you can only gamble with more than 🪙50.*`);
         if ( r == opp){
            let give = await eco.give(user , secktor, twice);
+           let buttons = [{
+            buttonId: `${prefix}slot`,
+            buttonText: {
+                displayText: "Slot🎰",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}Bank`,
+            buttonText: {
+                displayText: "Bank🏦",
+            },
+            type: 1,
+        },
+    ];
     //citel.react('⭐️')
     return await Void.sendButtonText(citel.chat, buttons, `*📈 You won 🪙${twice}*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
@@ -453,6 +588,21 @@ Version: 0.0.6`, citel);
         }
         else{
            let deduct = await eco.deduct(user, secktor, texts[0]);
+           let buttons = [{
+            buttonId: `${prefix}slot`,
+            buttonText: {
+                displayText: "Slot🎰",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}wallet`,
+            buttonText: {
+                displayText: "Wallet👛",
+            },
+            type: 1,
+        },
+    ];
     //citel.react('🤮')
     return await Void.sendButtonText(citel.chat, buttons,`*📉 You lost 🪙${texts[0]}*`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
@@ -648,7 +798,21 @@ async(Void, citel, text,{ isCreator }) => {
         const give2 = await eco.give(citel.sender, "secktor", deduff*2);
         let st = `🎰 Slot Machine Result\n     ${i}\n\n     ${j}\n\n     ${k}\n\nWow Jackpot🎊.`
         let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `  `)
-        
+        let buttons = [{
+            buttonId: `${prefix}slot`,
+            buttonText: {
+                displayText: "Slot🎰",
+            },
+            type: 1,
+        },
+        {
+            buttonId: `${prefix}Bank`,
+            buttonText: {
+                displayText: "Bank🏦",
+            },
+            type: 1,
+        },
+    ];
     return await Void.sendButtonText(citel.chat, buttons,str+`You got ${deduff*10} in your wallet.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 
@@ -657,7 +821,21 @@ Version: 0.0.6`, citel);
     const deduct1 = await eco.deduct(citel.sender, "secktor", deduff);
     let st = `\n🎰 Slot Machine Result\n     ${i}\n\n      ${j}\n\n      ${k}\n\nNot Jacpot📉 but lost `
             let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `    `)
-    
+    let buttons = [{
+        buttonId: `${prefix}slot`,
+        buttonText: {
+            displayText: "Slot🎰",
+        },
+        type: 1,
+    },
+    {
+        buttonId: `${prefix}Bank`,
+        buttonText: {
+            displayText: "Bank🏦",
+        },
+        type: 1,
+    },
+];
 return await Void.sendButtonText(citel.chat, buttons,str+` ${deduff}.`, `${Config.ownername.split(' ')[0]}-Economy
 Version: 0.0.6`, citel);
 }
