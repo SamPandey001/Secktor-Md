@@ -41,7 +41,7 @@
 3.  ***Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork)***
 4.  ***Deploy on [Heroku](https://secktoruserbot.onrender.com/heroku)***
 
-5. ***[Deploy on Koyeb](https://secktoruserbot.onrender.com/koyeb)*** .
+5. ***[Deploy on Koyeb](https://app.koyeb.com/auth/signin?next=%2Fapps%2Fdeploy%3Ftype%3Dgit%26repository%3Dgithub.com%252FAYUSHDEVELOPER001%252FSecktor-Md%26branch%3Dmain%26env%255BSESSION_ID%255D%3D%26env%255BOWNER_NUMBER%255D%3D%26env%255BMONGODB_URI%255D%3D%26env%255BOWNER_NAME%255D%3D%26env%255BKOYEB_API%255D%3D%26env%255BPREFIX%255D%3D.%26env%255BTHUMB_IMAGE%255D%3Dhttps%253A%252F%252Fraw.githubusercontent.com%252FSecktorBot%252FBrandimages%252Fmain%252Flogos%252FSocialLogo%25201.png%26env%255Bemail%255D%3Dsam%2540secktor.live%26env%255Bglobal_url%255D%3Dinstagram.com%26env%255BFAKE_COUNTRY_CODE%255D%3D92%26env%255BREAD_MESSAGE%255D%3Dfalse%26env%255BDISABLE_PM%255D%3Dfalse%26env%255BWORKTYPE%255D%3Dpublic%26env%255BTHEME%255D%3DSECKTOR%26env%255BPACK_INFO%255D%3DSam%253BPandey%26name%3Dsecktorbot%26env%255BKOYEB_NAME%255D%3Dsecktorbot%26env%255BANTILINK_VALUES%255D%3Dchat.whatsapp.com%26env%255BPORT%255D%3D8000)*** .
 
 6.  ***[Deploy on Railway](https://secktoruserbot.onrender.com/railway)***
 7. ***[Deploy on MOGENIOUS](https://github.com/SamPandey001/Secktor-Md/wiki/Deploy-on-MOGENIOUS)***
