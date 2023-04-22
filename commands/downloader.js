@@ -58,8 +58,8 @@ cmd({
     )
     //---------------------------------------------------------------------------
     cmd({
-        pattern: "sayhindi",
-        desc: "text to hindi speech.",
+        pattern: "sayjapanese",
+        desc: "text to japanese speech.",
         category: "downloader",
         filename: __filename,
         use: '<Hii,this is Secktor>',
@@ -86,7 +86,7 @@ cmd({
 )
     //---------------------------------------------------------------------------
     cmd({
-        pattern: "sayhidni",
+        pattern: "sayhindi",
         desc: "text to hindi speech.",
         category: "downloader",
         filename: __filename,
