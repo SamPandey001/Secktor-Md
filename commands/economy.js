@@ -630,14 +630,14 @@ async(Void, citel, text,{ isCreator }) => {
         const give2 = await eco.give(citel.sender, "secktor", deduff*2);
         let st = `🎰 Slot Machine Result\n     ${i}\n\n     ${j}\n\n     ${k}\n\nWow Jackpot🎊.`
         let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `  `)
-    return await Void.sendMessage(citel.chat,str+` ${deduff}`);
+    return await citel.reply(citel.chat,str+` ${deduff}`);
 
     } else {
     const deduff = Math.floor(Math.random() * 300)
     const deduct1 = await eco.deduct(citel.sender, "secktor", deduff);
     let st = `\n🎰 Slot Machine Result\n     ${i}\n\n      ${j}\n\n      ${k}\n\nNot Jacpot📉 but lost `
             let str = st.replace(/1/g, `🔴`).replace(/2/g, `🔵`).replace(/3/g, `🟣`).replace(/4/g, `🟢`).replace(/5/g, `🟡`).replace(/6/g, `⚪️`).replace(/7/g, `⚫️`).replace(/:/g, `    `)
-return await Void.sendMessage(citel.chat,str+` ${deduff}`);
+return await citel.reply(citel.chat,str+` ${deduff}`);
 }
 }
 ) 
