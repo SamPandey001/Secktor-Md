@@ -579,7 +579,7 @@ cmd({
 
                         fileName: `${titleYt}.mp4`,
 
-                        caption: `secktor bot ⦁ ᴍᴀᴅᴇ ʙʏ no-name\nʀᴇʟᴇᴀsᴇᴅ ⦁ 𝟸𝟶𝟸𝟹/𝟶𝟷/𝟶𝟸`,
+                        caption: `here your song/nusing me`,
 
                         headerType: 4,
 
@@ -660,7 +660,7 @@ cmd({
                         jpegThumbnail: log0,
                         mimetype: 'audio/mp4',
                         fileName: `${titleYt}.mp4`,
-                        caption: `secktor md ⦁ ᴍᴀᴅᴇ ʙʏ no-name\nʀᴇʟᴇᴀsᴇᴅ ⦁ 𝟸𝟶𝟸𝟹/𝟶𝟷/𝟶𝟸`,
+                        caption: `here your song/nusing me,
                         headerType: 4,
                     }
                     return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
@@ -1073,7 +1073,7 @@ async(Void, citel, text) => {
 
                     fileName: `${titleYt}.mp3`,
 
-                    caption: `ᴘʀᴀʙᴀᴛʜ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ ᴘʀᴀʙᴀᴛʜ\nʀᴇʟᴇᴀsᴇᴅ ⦁ 𝟸𝟶𝟸𝟹/𝟶𝟷/𝟶𝟸`,
+                    caption: `here your song/nusing me`,
 
                     headerType: 4,
 
@@ -1202,7 +1202,7 @@ async(Void, citel, text) => {
 
                     fileName: `${titleYt}.mp4`,
 
-                    caption: `ᴘʀᴀʙᴀᴛʜ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ ᴘʀᴀʙᴀᴛʜ\nʀᴇʟᴇᴀsᴇᴅ ⦁ 𝟸𝟶𝟸𝟹/𝟶𝟷/𝟶𝟸`,
+                    caption: `here your song/nusing me`,
 
                     headerType: 4,
 
