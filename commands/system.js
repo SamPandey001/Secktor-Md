@@ -256,9 +256,9 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Ayush (No-Name)\nhttps://wa.me/16468338933.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Ayush (No-Name)\nhttps://wa.me/16468338933/n to buy your own bot.*`
             const alivtxt = `
-*Hello, ${citel.pushName},*
+*Hello, ${citel.pushName},* 
 _This is  ${tlang().title}._
 ${alivemessage}
 
@@ -302,3 +302,40 @@ cmd({
 
     }
 )
+    //---------------------------------------------------------------------------
+cmd({
+            pattern: "buybot",
+            category: "general",
+            filename: __filename,
+            desc: "how to get own bot??"
+        },
+        async(Void, citel, text, isAdmins) => {
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Ayush (No-Name)\nhttps://wa.me/16468338933.*`
+            const alivtxt = `
+*Hello, ${citel.pushName},*
+_This is  ${tlang().title}._
+${alivemessage}
+
+*Version:-* _0.0.6_
+*Uptime:-* _${runtime(process.uptime())}_
+*Owner:-* _${Config.ownername}_
+*Branch:-* _${Config.BRANCH}_
+
+_Type ${prefix}menu for my command list._
+
+_Powered by ${Config.ownername}_
+`;
+            let aliveMessage = {
+                image: {
+                    url: await botpic(),
+                },
+                caption: alivtxt,
+                footer: tlang().footer,
+                headerType: 4,
+            };
+             return Void.sendMessage(citel.chat, aliveMessage, {
+                quoted: citel,
+            });
+
+        }
+    )
