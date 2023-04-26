@@ -366,34 +366,6 @@ cmd({
 )
     //---------------------------------------------------------------------------
     cmd({
-        pattern: "saybihari",
-        desc: "text to bihari speech.",
-        category: "downloader",
-        filename: __filename,
-        use: '<Hii,this is Secktor>',
-    },
-    async(Void, citel, text) => {
-        if (!text) return citel.reply('Please give me Sentence to change into audio.')
-        let texttts = text
-        const ttsurl = googleTTS.getAudioUrl(texttts, {
-            lang: "bh",
-            slow: false,
-            host: "https://translate.google.com",
-        });
-        return Void.sendMessage(citel.chat, {
-            audio: {
-                url: ttsurl,
-            },
-            mimetype: "audio/mpeg",
-            fileName: `ttsCitelVoid.m4a`,
-        }, {
-            quoted: citel,
-        });
-    }
-
-)
-    //---------------------------------------------------------------------------
-    cmd({
         pattern: "saybengali",
         desc: "text to bengali speech.",
         category: "downloader",
