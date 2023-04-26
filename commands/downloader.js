@@ -579,7 +579,7 @@ cmd({
 
                         fileName: `${titleYt}.mp4`,
 
-                        caption: `here your song/nusing me`,
+                        caption: `here your video/nthanks for using me`,
 
                         headerType: 4,
 
@@ -660,7 +660,7 @@ cmd({
                         jpegThumbnail: log0,
                         mimetype: 'audio/mp4',
                         fileName: `${titleYt}.mp4`,
-                        caption: `here your song/nusing me,
+                        caption: `here your song/nthanks for using me,
                         headerType: 4,
                     }
                     return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
@@ -1073,7 +1073,7 @@ async(Void, citel, text) => {
 
                     fileName: `${titleYt}.mp3`,
 
-                    caption: `here your song/nusing me`,
+                    caption: `here your song/nthanks for using me`,
 
                     headerType: 4,
 
@@ -1202,7 +1202,7 @@ async(Void, citel, text) => {
 
                     fileName: `${titleYt}.mp4`,
 
-                    caption: `here your song/nusing me`,
+                    caption: `here your video/nthanks for using me`,
 
                     headerType: 4,
 
