@@ -91,12 +91,28 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
+            caption: `*Group Name: Ayush-Support*\n*Group Link:* Not available`,
         });
 
     }
 )
 
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "buy",
+        desc: "Sends bot buying link.",
+        category: "group",
+        filename: __filename,
+    },
+    async(Void, citel, text) => {
+        citel.reply(`*Check your Pm ${tlang().greet}*`);
+        await Void.sendMessage(`${citel.sender}`, {
+            image: log0,
+            caption: `*Hey friendo*/n*if you wanna buy this bot you can contact wa.me/16468338933*/n*Only for Indians`,
+        });
+
+    }
+)
 //---------------------------------------------------------------------------
 cmd({
             pattern: "warn",
