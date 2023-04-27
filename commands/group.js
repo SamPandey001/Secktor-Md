@@ -108,7 +108,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Hey friendo*/n*if you wanna buy this bot you can contact wa.me/16468338933*/n*Only for Indians`,
+            caption: `*Hey friendo if you wanna buy this bot you can contact wa.me/16468338933 Only for Indians`,
         });
 
     }

@@ -256,7 +256,7 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Ayush (No-Name)\nhttps://wa.me/16468338933.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Ayush\nhttps://wa.me/16468338933.*`
             const alivtxt = `
 *Hello, ${citel.pushName},* 
 _This is  ${tlang().title}._
@@ -313,7 +313,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Hey friendo*/n*if you wanna buy this bot you can contact wa.me/16468338933*/n*Only for Indians/nYou can have credit and custom theme of this bot and I can create more commands as your wish and if you buy today then I will give you extra hours of the bot`,
+            caption: `*Hey friendo if you wanna buy this bot you can contact wa.me/16468338933Only for Indians only`,
         });
 
     }
