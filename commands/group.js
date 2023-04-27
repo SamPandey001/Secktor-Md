@@ -44,8 +44,8 @@ cmd({
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Mention any Image or video Sir.*`);
             let mime = citel.quoted.mtype
-            pack = Config.packname
-            author = Config.author
+            pack = citel.packname
+            author = citel.pushName
             if (citel.quoted) {
                 let media = await citel.quoted.download();
                 citel.reply("*Processing Your request*");
