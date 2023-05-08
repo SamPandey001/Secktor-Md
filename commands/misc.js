@@ -51,24 +51,6 @@ async(Void, citel, text,{ isCreator }) => {
             }      
 }
 )
- //---------------------------------------------------------------------------
- cmd({
-             pattern: "attp",
-             desc: "Makes glowing sticker of text.",
-             category: "sticker",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             Void.sendMessage(citel.chat, {
-                 sticker: {
-                     url: `https://api.xteam.xyz/attp?file&text=${encodeURI(text)}`
-                 }
-             }, {
-                 quoted: citel
-             })
- 
-         }
-     )
      //---------------------------------------------------------------------------
  cmd({
              pattern: "exec",
@@ -124,11 +106,11 @@ async(Void, citel, text,{ isCreator }) => {
              var author;
              if (text) {
                  anu = text.split("|");
-                 pack = anu[0] !== "" ? anu[0] : citel.pushName + '♥️';
+                 pack = anu[0] !== "" ? anu[0] : citel.pushName + 'Ayush-MD';
                  author = anu[1] !== "" ? anu[1] : Config.author;
              } else {
                  pack = citel.pushName;
-                 author = "♥️";
+                 author = "Ayush-MD";
              }
                  let media = await citel.quoted.download();
                  citel.reply("*Processing Your request*");
