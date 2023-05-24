@@ -83,7 +83,7 @@ Secktor.cmd({
 
                 str += `\n╰━━━━━━━━━━━──⊷\n`
                 let buttonMessaged = {
-                    video: { url: await video() },
+                    video: { url: await botvideo() },
                     caption: str,
                     footer: tlang().title,
                     headerType: 4
