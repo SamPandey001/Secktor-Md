@@ -15,7 +15,7 @@ const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
 const fs = require('fs-extra')
 var videotime = 60000 // 1000 min
-var dlsize = 1000 // 1000mb
+var dlsize = 90 // 90mb
     //---------------------------------------------------------------------------
 cmd({
             pattern: "tgs",
@@ -57,84 +57,619 @@ cmd({
 
     )
     //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayjapanese",
+        desc: "text to japanese speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ja",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayhindi",
+        desc: "text to hindi speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "hi",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+    
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayarabic",
+        desc: "text to arabic speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ar",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayfrench",
+        desc: "text to french speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "fr",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayspanish",
+        desc: "text to spanish speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "es",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayrussian",
+        desc: "text to russian speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ru",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saychinese",
+        desc: "text to chinses speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "zh",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayturkish",
+        desc: "text to turkish speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "tr",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayslovak",
+        desc: "text to slovak speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "sk",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayindo",
+        desc: "text to indo speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "id",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayitalian",
+        desc: "text to italia speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "it",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saybengali",
+        desc: "text to bengali speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "bn",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "saygerman",
+        desc: "text to german speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "de",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayportuguese",
+        desc: "text to portuguese speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "pt",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "sayromanian",
+        desc: "text to romanian speech.",
+        category: "downloader",
+        filename: __filename,
+        use: '<Hii,this is Secktor>',
+    },
+    async(Void, citel, text) => {
+        if (!text) return citel.reply('Please give me Sentence to change into audio.')
+        let texttts = text
+        const ttsurl = googleTTS.getAudioUrl(texttts, {
+            lang: "ro",
+            slow: false,
+            host: "https://translate.google.com",
+        });
+        return Void.sendMessage(citel.chat, {
+            audio: {
+                url: ttsurl,
+            },
+            mimetype: "audio/mpeg",
+            fileName: `ttsCitelVoid.m4a`,
+        }, {
+            quoted: citel,
+        });
+    }
+    
+)
+//---------------------------------------------------------------------------
 cmd({
-            pattern: "video",
-            desc: "Downloads video from yt.",
-            category: "downloader",
-            filename: __filename,
-            use: '<faded-Alan Walker>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Example : ${prefix}audio Back in black`)
-            let yts = require("secktor-pack")
-            let search = await yts(text)
-            listSerch = []
-            teskd = `\nResult got from ${text}.\n`
-            for (let i of search.all) {
-                listSerch.push({
-                    title: i.title,
-                    rowId: `${prefix}ytmp4 ${i.url}`,
-                    description: `Secktor / ${i.timestamp}`
-                })
-            }
-            const sections = [
 
-                {
-                    title: "Total Search🔍" + search.all.length,
-                    rows: listSerch
-                }
+        pattern: "video",
 
-            ]
-            const listMessage = {
-                text: teskd,
-                footer: tlang().footer,
-                title: ` *Youtube Search results by  ${tlang().title}.*`,
-                buttonText: "Videos",
-                mentions: await Void.parseMention(teskd),
-                sections
-            }
-            return Void.sendMessage(citel.chat, listMessage, {
-                quoted: citel
-            })
+        desc: "Downloads audio by yt link.",
+
+        category: "downloader",
+
+        react: "📽️",
+
+        use: '<yt video url>',
+
+    },
+
+    async(Void, citel, text) => {
+
+        let yts = require("secktor-pack");
+
+            let search = await yts(text);
+
+            let anu = search.videos[0];
+
+        const getRandom = (ext) => {
+
+            return `${Math.floor(Math.random() * 10000)}${ext}`;
+
+        };
+
+        if (text.length === 0) {
+
+            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+
+            return;
 
         }
+
+        try {
+
+            let urlYt = text;
+
+            if (!urlYt.startsWith("")) {
+
+                citel.reply(`*Give Video Name!*❗`);
+
+                return;
+
+            }
+
+            let infoYt = await ytdl.getInfo(anu.url);
+
+            //30 MIN
+
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+
+            let titleYt = infoYt.videoDetails.title;
+
+            let randomName = getRandom(".mp3");
+
+            const stream = ytdl(anu.url, {
+
+                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
+
+                })
+
+                .pipe(fs.createWriteStream(`./${randomName}`));
+
+            await new Promise((resolve, reject) => {
+
+                stream.on("error", reject);
+
+                stream.on("finish", resolve);
+
+            });
+
+            let stats = fs.statSync(`./${randomName}`);
+
+            let fileSizeInBytes = stats.size;
+
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+
+            if (fileSizeInMegabytes <= dlsize) {
+
+                let yts = require("secktor-pack");
+
+            citel.reply(`📽️ ━━━━━━━━━━ *𝗩𝗜𝗗𝗘𝗢_𝗜𝗡𝗙𝗢* ━━━━━━━━━━ 📽️\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+
+                let search = await yts(text);
+
+            citel.react("✅");
+
+                let buttonMessage = {
+
+                        video: fs.readFileSync(`./${randomName}`),
+
+                        jpegThumbnail: log0,
+
+                        mimetype: 'video/mp4',
+
+                        fileName: `${titleYt}.mp4`,
+
+                        caption: `Ayush-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ Ayush`,
+
+                        headerType: 4,
+
+                    }
+
+                    return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+
+                } else {
+
+                    citel.reply(`*The limit has been exceeded.*❗`);
+
+                }
+
+                fs.unlinkSync(`./${randomName}`);
+
+            } catch (e) {
+
+                console.log(e)
+
+            }
+
+        }
+
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "play",
-            desc: "Sends info about the query(of youtube video/audio).",
-            category: "downloader",
-            filename: __filename,
-            use: '<faded-Alan walker.>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Use ${command} Back in Black`);
-            let yts = require("secktor-pack");
+        pattern: "play",
+        alias: ["song"],
+        desc: "Downloads audio by yt link.",
+        category: "downloader",
+        react: "🎶",
+        use: '<yt video url>',
+    },
+    async(Void, citel, text) => {
+        let yts = require("secktor-pack");
+
             let search = await yts(text);
+
             let anu = search.videos[0];
-            let buttonMessage = {
-                image: {
-                    url: anu.thumbnail,
-                },
-                caption: `
-╭───────────────◆
-│⿻ ${tlang().title} 
-│  *Youtube Player* ✨
-│⿻ *Title:* ${anu.title}
-│⿻ *Duration:* ${anu.timestamp}
-│⿻ *Viewers:* ${anu.views}
-│⿻ *Uploaded:* ${anu.ago}
-│⿻ *Author:* ${anu.author.name}
-╰────────────────◆
-⦿ *Url* : ${anu.url}
-`,
-                footer: tlang().footer,
-                headerType: 4,
-            };
-            return Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
+        const getRandom = (ext) => {
+            return `${Math.floor(Math.random() * 10000)}${ext}`;
+        };
+
+        if (text.length === 0) {
+            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+            return;
+        }
+        try {
+            let urlYt = text;
+            if (!urlYt.startsWith("")) {
+                citel.reply(`*Give Song Name!*❗`);
+                return;
+            }
+            let infoYt = await ytdl.getInfo(anu.url);
+            //30 MIN
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+            let titleYt = infoYt.videoDetails.title;
+            let randomName = getRandom(".mp3");
+            const stream = ytdl(anu.url, {
+                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
+                })
+                .pipe(fs.createWriteStream(`./${randomName}`));
+            await new Promise((resolve, reject) => {
+                stream.on("error", reject);
+                stream.on("finish", resolve);
             });
 
+            let stats = fs.statSync(`./${randomName}`);
+            let fileSizeInBytes = stats.size;
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            if (fileSizeInMegabytes <= dlsize) {
+                let yts = require("secktor-pack");
+            citel.reply(`🎵 ━━━━━━━━━━ *𝗔𝗨𝗗𝗜𝗢_𝗜𝗡𝗙𝗢* ━━━━━━━━━━ 🎵\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+                let search = await yts(text);
+            citel.react("✅");
+                let buttonMessage = {
+                        audio: fs.readFileSync(`./${randomName}`),
+                        jpegThumbnail: log0,
+                        mimetype: 'audio/mp4',
+                        fileName: `${titleYt}.mp4`,
+                        caption: `Ayush-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ Ayush`,
+                        headerType: 4,
+                    }
+                    return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                } else {
+                    citel.reply(`*The limit has been exceeded.*❗`);
+                }
+
+                fs.unlinkSync(`./${randomName}`);
+            } catch (e) {
+                console.log(e)
+            }
         }
     )
     //---------------------------------------------------------------------------
@@ -269,39 +804,56 @@ cmd({
             })
         }
     )
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "yts",
-            desc: "Gives descriptive info of query from youtube..",
-            category: "downloader",
-            filename: __filename,
-            use: '<yt search text>',
-        },
-        async(Void, citel, text) => {
-            let yts = require("secktor-pack");
-            if (!text) return citel.reply(`Example : ${prefix}yts ${tlang().title} WhatsApp Bot`);
-            let search = await yts(text);
-            let textt = "*YouTube Search*\n\n Result From " + text + "\n\n───────────────────\n";
-            let no = 1;
-            for (let i of search.all) {
-                textt += `⚡ No : ${no++}\n ❤Title : ${i.title}\n♫ Type : ${
-          i.type
-        }\n🙈Views : ${i.views}\n⌛Duration : ${
-          i.timestamp
-        }\n🌟Upload At : ${i.ago}\n👑Author : ${i.author.name}\n🎵Url : ${
-          i.url
-        }\n\n──────────────\n\n`;
-            }
-            return Void.sendMessage(citel.chat, {
-                image: {
-                    url: search.all[0].thumbnail,
-                },
-                caption: textt,
-            }, {
-                quoted: citel,
-            });
+    //-------------------------------------------------------------------------    
+    cmd({
+        pattern: "yts",
+        alias: ["ytsearch","yt"],
+        desc: "Gives descriptive info of query from youtube..",
+        category: "downloader",
+        filename: __filename,
+        use: '<yt search text>',
+    },
+    async(Void, citel, text) => {
+        let yts = require("secktor-pack");
+        citel.reply("*Searching on YouTube* 🌎");
+        if (!text) return citel.reply(`*Enter the search word* ❗`);
+        let search = await yts(text);
+        let textt = "*YouTube Search*\n\n Result From " + text + "\n\n━━━━━━━━━━━━━━━━━━━━━━━\n";
+    
+        let no = 1;
+    
+        for (let i of search.all) {
+    
+            textt += `🌐 No : ${no++}\n\n ℹ️Title : ${i.title}\n♫ Type : ${
+      i.type
+    }\n👀Views : ${i.views}\n🕑Duration : ${
+      i.timestamp
+    }\n⬆️Upload At : ${i.ago}\n💬Author : ${i.author.name}\n🎊Url : ${
+      i.url
+    }\n\n━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    
         }
+    
+        return Void.sendMessage(citel.chat, {
+    
+            image: {
+    
+                url: search.all[0].thumbnail,
+    
+            },
+    
+            caption: textt,
+    
+        }, {
+    
+            quoted: citel,
+    
+        });
+    
+    }
+    
     )
+    
     //---------------------------------------------------------------------------
 
 cmd({
@@ -448,77 +1000,262 @@ cmd({
 )
 
   //---------------------------------------------------------------------------
+
 cmd({
-        pattern: "ytdoc",
-        desc: "Downloads audio by yt link as document.",
+
+        pattern: "docsong",
+
+        alias: ["document song"],
+
+        desc: "Downloads audio by yt link.",
+
         category: "downloader",
-        use: '<ytdoc video url>',
+
+        react: "📂",
+
+        use: '<yt video url>',
+
     },
+
     async(Void, citel, text) => {
+
+        let yts = require("secktor-pack");
+
+            let search = await yts(text);
+
+            let anu = search.videos[0];
+
         const getRandom = (ext) => {
+
             return `${Math.floor(Math.random() * 10000)}${ext}`;
+
         };
 
         if (text.length === 0) {
+
             reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+
             return;
+
         }
+
         try {
+
             let urlYt = text;
-            if (!urlYt.startsWith("http")) {
-                citel.reply(`❌ Give youtube link!`);
+
+            if (!urlYt.startsWith("")) {
+
+                citel.reply(`*Give Song Name!*❗`);
+
                 return;
+
             }
-            let infoYt = await ytdl.getInfo(urlYt);
+
+            let infoYt = await ytdl.getInfo(anu.url);
+
             //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= videotime) {
-                reply(`❌ I can't download that long video!`);
-                return;
-            }
+
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+
             let titleYt = infoYt.videoDetails.title;
+
             let randomName = getRandom(".mp3");
-            const stream = ytdl(urlYt, {
+
+            const stream = ytdl(anu.url, {
+
                     filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
+
                 })
+
                 .pipe(fs.createWriteStream(`./${randomName}`));
+
             await new Promise((resolve, reject) => {
+
                 stream.on("error", reject);
+
                 stream.on("finish", resolve);
+
             });
 
             let stats = fs.statSync(`./${randomName}`);
+
             let fileSizeInBytes = stats.size;
+
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+
             if (fileSizeInMegabytes <= dlsize) {
+
                 let yts = require("secktor-pack");
+
+            citel.reply(`📂 ━━━━━━━━━ *𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧_𝗜𝗡𝗙𝗢* ━━━━━━━━━ 🎵\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+
                 let search = await yts(text);
+
+            citel.react("✅");
+
                 let buttonMessage = {
-                    document: fs.readFileSync(`./${randomName}`),
-                    mimetype: 'audio/mpeg',
-                    fileName: titleYt + ".mp3",
-                    headerType: 4,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: titleYt,
-                            body: citel.pushName,
-                            renderLargerThumbnail: true,
-                            thumbnailUrl: search.all[0].thumbnail,
-                            mediaUrl: text,
-                            mediaType: 1,
-                            thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: text,
-                        },
-                    },
+
+                        document: fs.readFileSync(`./${randomName}`),
+
+                        jpegThumbnail: log0,
+
+                        mimetype: 'audio/mp4',
+
+                        fileName: `${titleYt}.mp3`,
+
+                        caption: `Ayush-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ Ayush`,
+
+                        headerType: 4,
+
+                    }
+
+                    return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+
+                } else {
+
+                    citel.reply(`*The limit has been exceeded.*❗`);
+
                 }
-                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-                return fs.unlinkSync(`./${randomName}`);
-            } else {
-                citel.reply(`❌ File size bigger than 100mb.`);
+
+                fs.unlinkSync(`./${randomName}`);
+
+            } catch (e) {
+
+                console.log(e)
+
             }
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            console.log(e)
+
         }
 
-    }
-)
+    )
+
+  //---------------------------------------------------------------------------
+
+cmd({
+
+        pattern: "docvideo",
+
+        alias: ["document song"],
+
+        desc: "Downloads audio by yt link.",
+
+        category: "downloader",
+
+        react: "📂",
+
+        use: '<yt video url>',
+
+    },
+
+    async(Void, citel, text) => {
+
+        let yts = require("secktor-pack");
+
+            let search = await yts(text);
+
+            let anu = search.videos[0];
+
+        const getRandom = (ext) => {
+
+            return `${Math.floor(Math.random() * 10000)}${ext}`;
+
+        };
+
+        if (text.length === 0) {
+
+            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+
+            return;
+
+        }
+
+        try {
+
+            let urlYt = text;
+
+            if (!urlYt.startsWith("")) {
+
+                citel.reply(`*Give Video Name!*❗`);
+
+                return;
+
+            }
+
+            let infoYt = await ytdl.getInfo(anu.url);
+
+            //30 MIN
+
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+
+            let titleYt = infoYt.videoDetails.title;
+
+            let randomName = getRandom(".mp3");
+
+            const stream = ytdl(anu.url, {
+
+                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
+
+                })
+
+                .pipe(fs.createWriteStream(`./${randomName}`));
+
+            await new Promise((resolve, reject) => {
+
+                stream.on("error", reject);
+
+                stream.on("finish", resolve);
+
+            });
+
+            let stats = fs.statSync(`./${randomName}`);
+
+            let fileSizeInBytes = stats.size;
+
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+
+            if (fileSizeInMegabytes <= dlsize) {
+
+                let yts = require("secktor-pack");
+
+            citel.reply(`📂 ━━━━━━━━━ *𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧_𝗜𝗡𝗙𝗢* ━━━━━━━━━ 📽️\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+
+                let search = await yts(text);
+
+            citel.react("✅");
+
+                let buttonMessage = {
+
+                        document: fs.readFileSync(`./${randomName}`),
+
+                        jpegThumbnail: log0,
+
+                        mimetype: 'video/mp4',
+
+                        fileName: `${titleYt}.mp4`,
+
+                        caption: `Ayush-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ Ayush`,
+
+                        headerType: 4,
+
+                    }
+
+                    return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+
+                } else {
+
+                    citel.reply(`*The limit has been exceeded.*❗`);
+
+                }
+
+                fs.unlinkSync(`./${randomName}`);
+
+            } catch (e) {
+
+                console.log(e)
+
+            }
+
+        }
+
+    )
+

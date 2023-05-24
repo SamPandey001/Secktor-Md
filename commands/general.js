@@ -54,14 +54,14 @@ cmd({
         filename: __filename,
     },
     async(Void, citel) => {
-        let { data } = await axios.get('https://api.github.com/repos/SamPandey001/Secktor-Md')
+        let { data } = await axios.get('https://api.github.com/repos/Ayushdeveloper001/Atlaslegend')
         let cap = `Hey ${citel.pushName}\n
-*⭐ Total Stars:* ${data.stargazers_count} stars
+*⭐ Total Stars:* private
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* secktorbot.tech/repo
-*Group:* secktorbot.tech/support
+*🍁 Repo:* private
+*Group:* private
 *Deploy Your Own:*-
- SecktorBot.tech/youtube`
+not available`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
@@ -98,7 +98,7 @@ cmd({
         latensie = speed() - timestampe;
         let ter = `
 🔰 *${tlang().title}* 🔰
-*🌟Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
+*🌟Description:* A WhatsApp bot with rich features, build by ayush (no name) .
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
 *🕸Version:* 1.0.0

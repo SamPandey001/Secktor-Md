@@ -44,8 +44,8 @@ cmd({
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Mention any Image or video Sir.*`);
             let mime = citel.quoted.mtype
-            pack = Config.packname
-            author = Config.author
+            pack = citel.packname
+            author = citel.pushName
             if (citel.quoted) {
                 let media = await citel.quoted.download();
                 citel.reply("*Processing Your request*");
@@ -91,12 +91,28 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
+            caption: `*Group Name: Ayush-Support*\n*Group Link:* Not available`,
         });
 
     }
 )
 
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "buy",
+        desc: "Sends bot buying link.",
+        category: "group",
+        filename: __filename,
+    },
+    async(Void, citel, text) => {
+        citel.reply(`*Check your Pm ${tlang().greet}*`);
+        await Void.sendMessage(`${citel.sender}`, {
+            image: log0,
+            caption: `*Hey friendo if you wanna buy this bot you can contact wa.me/16468338933\nOnly for Indians only\n\nYou can have credit and your own choice menu and other commands\n\n\nwhatsapp- wa.me/16468338933\nInsta-instagram.com/itzisaac_god`,
+        });
+
+    }
+)
 //---------------------------------------------------------------------------
 cmd({
             pattern: "warn",

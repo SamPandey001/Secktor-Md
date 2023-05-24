@@ -255,10 +255,10 @@ cmd({
             filename: __filename,
             desc: "is bot alive??"
         },
-        async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
+        async(Void, citel, text) => {
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Ayush\nhttps://wa.me/16468338933.*`
             const alivtxt = `
-*Hello, ${citel.pushName},*
+*Hello, ${citel.pushName},* 
 _This is  ${tlang().title}._
 ${alivemessage}
 
@@ -299,6 +299,22 @@ cmd({
         let leadtext = `All Available Notes are:-\n\n`
         leadtext += await allnotes()
         return citel.reply(leadtext)
+
+    }
+)
+    //---------------------------------------------------------------------------
+    cmd({
+        pattern: "buybot",
+        desc: "Sends bot buying link.",
+        category: "gernal",
+        filename: __filename,
+    },
+    async(Void, citel, text) => {
+        citel.reply(`*Check your Pm ${tlang().greet}*`);
+        await Void.sendMessage(`${citel.sender}`, {
+            image: log0,
+            caption: `*Hey friendo if you wanna buy this bot you can contact wa.me/16468338933\nOnly for Indians only\n\nYou can have credit and your own choice menu and other commands\n\n\nwhatsapp- wa.me/16468338933\nInsta-instagram.com/itzisaac_god`,
+        });
 
     }
 )
