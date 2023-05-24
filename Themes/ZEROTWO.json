@@ -11,9 +11,11 @@
       },
       "global": {
           "greet2": "Konnichiwa!(💚ω💚)",
-          "botName": "𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐞𝐫𝐨 𝐓𝐰𝐨",
+          "botName": "𝑴𝒂𝒅𝒆 𝑩𝒚 𝒁𝒆𝒓𝒐 𝑻𝒘𝒐 𝑴𝑫",
           "body": "𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝-𝐵𝑜𝑡𝑡𝑜",
           "video1": "https://graph.org/file/04af19c8e2a1a1d1a31b7.mp4"
+          "video2" : "https://graph.org/Zero-2-MD-05-24"
+          "video3" : "https://graph.org/zero-two-3-05-24"
           "pic1": "https://images3.alphacoders.com/949/949253.jpg",
           "pic2": "https://images7.alphacoders.com/898/898638.jpg",
           "pic3": "https://images4.alphacoders.com/908/908470.jpg",
@@ -22,13 +24,13 @@
           "pic6": "https://images4.alphacoders.com/923/923051.jpg",
           "pic7": "https://images4.alphacoders.com/923/923051.jpg",
            "greet" : "Darling",
-          "dotbody" : "Hey Love,I am Alive.",
+          "dotbody" : "Hey 𝑫𝒂𝒓𝒍𝒊𝒏𝒈,I am Alive.",
           "promote": "Admin Role Given to my Darling",
           "pmallow": "*Hii,This is Zero-Two*\n*An assistant of My Master.*\nMy Master is busy right now.\nKindly Leave your Message.\n\n_I will inform him about your message asap......_",
           "pmblock": "❌ Blocked*\n\n You have been blocked for spamming.\n\n _𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐞𝐫𝐨 𝐓𝐰𝐨_",
           "pmwarn": "✋Hii* \nPlease don't spam else I'll block you for spamming. _You have ${checkPermit.times} warning(s)._\n\n *𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐞𝐫𝐨 𝐓𝐰𝐨*",
           "permited": "Hii ${tname} Sir*\n\nNow You are permitted by my owner to pm now.\n\n *𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐞𝐫𝐨 𝐓𝐰𝐨*", 
-          "revoked" : "*Hii ${tname} Sir*\n\nYour pm permit permission has been prevoked now.\n\n _𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐞𝐫𝐨 𝐓𝐰𝐨_",
+          "revoked" : "*Hii ${tname} Sir*\n\nYour pm permit permission has been prevoked now.\n\n _*𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐞𝐫𝐨 𝐓𝐰𝐨*_",
           "demote": "Uhh,Admin Role Taken back",
           "antlink": "Link Detected.\n*Good Bye Sir*",
           "session": "\n*This is your session.sam.json,keep it safe and store it properly*\n_Now Upload This json file in Your Forked Repo_\n Connect your repo to Heroku and *Deploy Branch* and Bot will run for Always\n\n*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝒁𝒆𝒓𝒐 𝑻𝒘𝒐*",
