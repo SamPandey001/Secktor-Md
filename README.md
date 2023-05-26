@@ -36,7 +36,7 @@
 - Install [External Plugins](https://github.com/SamPandey001/Secktor-Plugins)
 ## Deployment Methods
 ---
-1. ***Get [SESSION-ID](https://secktoruserbot.onrender.com/) by scanning QR code. `Whatapp>Three dots>Linked Devices`***
+1. ***Get [SESSION-ID](https://secktoruserbot.onrender.com/repl) by scanning QR code. `Whatapp>Three dots>Linked Devices`***
 2.  ***Get a Mongodb uri from [Mongodb](https://github.com/SamPandey001/Secktor-Md/wiki/Mongodb-URI) | [Tutorial](https://www.youtube.com/watch?v=WWrpBCBlyuo).***
 3.  ***Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork)***
 4.  ***Deploy on [Heroku](https://secktoruserbot.onrender.com/heroku)***
