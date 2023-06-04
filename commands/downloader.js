@@ -57,87 +57,7 @@ cmd({
 
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "qqqwweremovedbyprabath",
-            desc: "Downloads video from yt.",
-            category: "downloader",
-            filename: __filename,
-            use: '<faded-Alan Walker>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Example : ${prefix}audio Back in black`)
-            let yts = require("secktor-pack")
-            let search = await yts(text)
-            listSerch = []
-            teskd = `\nResult got from ${text}.\n`
-            for (let i of search.all) {
-                listSerch.push({
-                    title: i.title,
-                    rowId: `${prefix}ytmp4 ${i.url}`,
-                    description: `Secktor / ${i.timestamp}`
-                })
-            }
-            const sections = [
 
-                {
-                    title: "Total Search🔍" + search.all.length,
-                    rows: listSerch
-                }
-
-            ]
-            const listMessage = {
-                text: teskd,
-                footer: tlang().footer,
-                title: ` *Youtube Search results by  ${tlang().title}.*`,
-                buttonText: "Videos",
-                mentions: await Void.parseMention(teskd),
-                sections
-            }
-            return Void.sendMessage(citel.chat, listMessage, {
-                quoted: citel
-            })
-
-        }
-    )
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "playhaa",
-            desc: "Sends info about the query(of youtube video/audio).",
-            category: "downloader",
-            filename: __filename,
-            use: '<faded-Alan walker.>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Use ${command} Back in Black`);
-            let yts = require("secktor-pack");
-            let search = await yts(text);
-            let anu = search.videos[0];
-            let buttonMessage = {
-                image: {
-                    url: anu.thumbnail,
-                },
-                caption: `
-╭───────────────◆
-│⿻ ${tlang().title} 
-│  *Youtube Player* ✨
-│⿻ *Title:* ${anu.title}
-│⿻ *Duration:* ${anu.timestamp}
-│⿻ *Viewers:* ${anu.views}
-│⿻ *Uploaded:* ${anu.ago}
-│⿻ *Author:* ${anu.author.name}
-╰────────────────◆
-⦿ *Url* : ${anu.url}
-`,
-                footer: tlang().footer,
-                headerType: 4,
-            };
-            return Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
-            });
-
-        }
-    )
-    //---------------------------------------------------------------------------
 cmd({
             pattern: "ringtone",
             desc: "Downloads ringtone.",
@@ -195,81 +115,6 @@ cmd({
                 console.log(e)
             }
         })
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "mediafire",
-            desc: "Downloads zip from Mediafire.",
-            category: "downloader",
-            filename: __filename,
-            use: '<url of mediafire>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Give link ${tlang().greet}`);
-            if (!isUrl(text.split(" ")[0]) && !text.split(" ")[0].includes("mediafire.com")) return reply(`The link you provided is invalid`);
-            const baby1 = await mediafire(text);
-            if (baby1[0].size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1));
-            const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
-*Nᴀᴍᴇ* : ${baby1[0].nama}
-*Sɪᴢᴇ* : ${baby1[0].size}
-*Mɪᴍᴇ* : ${baby1[0].mime}
-*Lɪɴᴋ* : ${baby1[0].link}`;
-            reply(`${result4}`);
-            return Void.sendMessage(citel.chat, {
-                    document: {
-                        url: baby1[0].link,
-                    },
-                    fileName: baby1[0].nama,
-                    mimetype: baby1[0].mime,
-                }, {
-                    quoted: citel,
-                })
-                .catch((err) => reply("could not found anything"));
-
-        }
-    )
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "audiojajwj",
-            desc: "Downloads audio from youtube.",
-            category: "downloader",
-            filename: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Example : ${prefix + command} Back in black`)
-            let yts = require("secktor-pack")
-            let search = await yts(text)
-            listSerch = []
-            teskd = `Result From ${text}.\n_+ ${search.all.length} more results._`
-            for (let i of search.all) {
-                listSerch.push({
-                    title: i.title,
-                    rowId: `${prefix}ytmp3 ${i.url}`,
-                    description: `Secktor / ${i.timestamp}`
-                })
-            }
-            const sections = [
-
-                {
-                    title: "Total Search🔍" + search.all.length,
-                    rows: listSerch
-                }
-
-            ]
-            const listMessage = {
-                text: teskd,
-                footer: tlang().footer,
-                title: ``,
-                buttonText: "Songs",
-                mentions: await Void.parseMention(teskd),
-                sections
-            }
-            return Void.sendMessage(citel.chat, listMessage, {
-                quoted: citel
-            })
-        }
-    )
-
 
     //---------------------------------------------------------------------------
 cmd({
@@ -328,7 +173,7 @@ cmd({
                 let yts = require("secktor-pack");
                 let search = await yts(text);
                 let anu = search.videos[0];
-                let urlYt = anu.url;
+                let urlYt = text;
                 let infoYt = await ytdl.getInfo(urlYt);
                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
                 let titleYt = infoYt.videoDetails.title;
