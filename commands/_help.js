@@ -83,7 +83,7 @@ Secktor.cmd({
 
                 str += `\n╰━━━━━━━━━━━──⊷\n`
                 let buttonMessaged = {
-                    image: { url: await botpic() },
+                    image: { url: `https://i.ibb.co/b19P1XS/20230604-215245.jpg` },
                     caption: str,
                     footer: tlang().title,
                     headerType: 4
