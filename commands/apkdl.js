@@ -27,10 +27,6 @@ let result = await download(text)
 
 *Size:* ${result.size}
 
-
-ᴘʀᴀʙᴀᴛʜ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ ᴘʀᴀʙᴀᴛʜ
-ʀᴇʟᴇᴀsᴇᴅ ⦁ 𝟸𝟶𝟸𝟹/𝟶𝟷/𝟶𝟸
-
 `
 
 const getreact = await Void.sendMessage(citel.chat, { image: { url: icon }, caption: desc }, { quoted: citel });
@@ -48,8 +44,6 @@ const getreacta = await Void.sendMessage(citel.chat, {
                 mimetype: "application/vnd.android.package-archive",
 
                 caption: `                 
-ᴘʀᴀʙᴀᴛʜ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ ᴘʀᴀʙᴀᴛʜ
-ʀᴇʟᴇᴀsᴇᴅ ⦁ 𝟸𝟶𝟸𝟹/𝟶𝟷/𝟶𝟸
 `,
 
                 fileName: getname ,
