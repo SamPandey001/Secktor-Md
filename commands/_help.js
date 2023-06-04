@@ -88,6 +88,7 @@ Secktor.cmd({
                     footer: tlang().title,
                     headerType: 4
                 };
+                await Void.sendMessage(citel.chat, { audio: {url: "https://github.com/dilmkh/Dsjd/blob/main/migumi.m4a?raw=true" }, mimetype: 'audio/mp4', ptt: true, }, { quoted: citel })
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }
         }
