@@ -55,7 +55,7 @@
                        "secktor-pack": "latest",
                        "ytdl-secktor": "latest",
                        "pastebin-js": "latest",
-                       "aptoide-scraper": "^1.0.1",q
+                       "aptoide-scraper": "^1.0.1",
                        "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
