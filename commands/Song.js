@@ -96,6 +96,7 @@ cmd({
 ☍ ⦁ *Uploaded:* ${anu.ago}
 ☍ ⦁ *Author:* ${anu.author.name}
 ☍ ⦁ *Url:* ${anu.url}
+  • ꜱᴏɴɢ ʙʏ ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ
 `;    
 
             let stats = fs.statSync(`./${randomName}`);
