@@ -273,7 +273,7 @@ _Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
-                    url: await botpic(),
+                    url: `https://i.ibb.co/b19P1XS/20230604-215245.jpg`,
                 },
                 caption: alivtxt,
                 footer: tlang().footer,
