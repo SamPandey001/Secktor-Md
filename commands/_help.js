@@ -68,7 +68,7 @@ Secktor.cmd({
 │ ╰───────✧✺✧───────»
 ╰───────────────⊷\n
 ` + '```'
-                str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
+                str += `╭─── ` + fancytext('DARK-SHADOW-MD', 57) + `──◆`
                 for (const category in cmds) {
                     str += `
 ┃ ╭─────────────────«
