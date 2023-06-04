@@ -30,17 +30,15 @@ cmd({
 
             let anu = search.videos[0];  
 
-           
+          
 
-const dataget = result.link
-
-const ytvideo = await fetchJson(`https://saipulanuar.ga/api/download/ytmp4?url=${anu.url}`)
+const ytvideo = await fetchJson(`https://api.alyachan.my.id/api/ytv?url=${anu.url}`)
 
         
 
-const videolink = ytvideo.result.url
+const videolink = ytvideo.url
 
-const name = ytvideo.result.title
+const name = ytvideo.title
 
 let descget = `
 
