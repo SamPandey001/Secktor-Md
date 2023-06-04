@@ -12,7 +12,7 @@ var dlsize = 1000 // 1000mb
 
 cmd({
 
-        pattern: "video",
+        pattern: "testvideo",
 
         desc: "Downloads audio by yt link.",
 
