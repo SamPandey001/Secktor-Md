@@ -89,17 +89,11 @@ cmd({
             let descget = `
 
 ☍ ⦁ *Title:* ${anu.title}
-
 ☍ ⦁ *Duration:* ${anu.timestamp}
-
 ☍ ⦁ *Viewers:* ${anu.views}
-
 ☍ ⦁ *Uploaded:* ${anu.ago}
-
 ☍ ⦁ *Author:* ${anu.author.name}
-
 ☍ ⦁ *Url:* ${anu.url}
-
   
 
   ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ 
@@ -136,7 +130,7 @@ cmd({
                         fileName: `${titleYt}.mp4`,
 
                        caption: `ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ 
-  ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ •`,
+                       ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ •`,
 
                         headerType: 4,
 
