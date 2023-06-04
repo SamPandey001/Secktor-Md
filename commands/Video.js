@@ -32,11 +32,11 @@ cmd({
 
             let anu = search.videos[0];
 
-        const ytvideo = await fetchJson(`https://saipulanuar.ga/api/download/ytmp4?url=${anu.url}`)
+        const ytvideo = await fetchJson(`https://darkalphaxteam-api.cyclic.app/api/download/ytmp4?url=${anu.url}&apikey=prabath}`)
 
-        const linkget = ytvideo.result.url
+        const linkget = ytvideo.download
 
-        const name = ytvideo.result.title
+        const name = ytvideo.title
 
         const getRandom = (ext) => {
 
