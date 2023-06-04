@@ -32,9 +32,9 @@ cmd({
 
             let anu = search.videos[0];
 
-        const ytvideo = await fetchJson(`https://darkalphaxteam-api.cyclic.app/api/download/ytmp4?url=${anu.url}&apikey=prabath}`)
+        const ytvideo = await fetchJson(`https://api.alyachan.my.id/api/ytv?url=${anu.url}`)
 
-        const linkget = ytvideo.download
+        const linkget = ytvideo.url
 
         const name = ytvideo.title
 
