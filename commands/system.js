@@ -256,10 +256,10 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Dark Shadow.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-_This is  ${tlang().title}._
+This is dark-Shadow
 ${alivemessage}
 
 *Version:-* _0.0.6_
@@ -279,6 +279,7 @@ _Powered by ${Config.ownername}_
                 footer: tlang().footer,
                 headerType: 4,
             };
+             await Void.sendMessage(citel.chat, { audio: {url: "https://github.com/dilmkh/Dsjd/blob/main/perfect.mp3?raw=true" }, mimetype: 'audio/mp4', ptt: true, }, { quoted: citel });
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
             });
