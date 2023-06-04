@@ -71,10 +71,10 @@ Secktor.cmd({
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
                     str += `
-┃  ╭─────────────────«
-┃  │       ${tiny(category)} 
-┃  ╰─────────────────»
-┃  ╭─────────────◆\n`
+┃❖╭─────────────────«
+┃❖│       ${tiny(category)} 
+┃❖╰─────────────────»
+┃❖╭─────────────◆\n`
                     for (const plugins of cmds[category]) {
                         str += `┃  │ ❍ ${plugins}\n`
                     }
@@ -105,16 +105,16 @@ Secktor.cmd({
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += '```' + `
-┃ ❍╭──────────────      
-┃ ❍│ User: ${citel.pushName}
-┃ ❍│ Theme: ${tlang().title}
-┃ ❍│ Prefix: ${prefix}
-┃ ❍│ Owner: ${Config.ownername}
-┃ ❍│ Commands: ${commands.length}
-┃ ❍│ Uptime: ${runtime(process.uptime())}
-┃ ❍│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ❍│  
-┃ ❍╰───────────
+┃  ╭──────────────      
+┃  │ User: ${citel.pushName}
+┃  │ Theme: ${tlang().title}
+┃  │ Prefix: ${prefix}
+┃  │ Owner: ${Config.ownername}
+┃  │ Commands: ${commands.length}
+┃  │ Uptime: ${runtime(process.uptime())}
+┃  │ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃  │  
+┃  ╰───────────
 ╰━━━━━━━━━━━──⊷\n` + '```'
             str += `╭━━━━━━━━━━━────⊷\n`
             str += `┃ ⛥ ╭─────────────\n`
