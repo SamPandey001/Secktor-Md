@@ -122,7 +122,7 @@ cmd({
 
                 let buttonMessage = {
 
-                        video: linkget ,
+                        document: linkget ,
 
                         jpegThumbnail: log0,
 
