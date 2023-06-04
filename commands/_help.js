@@ -126,7 +126,6 @@ Secktor.cmd({
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
     )
-await Void.sendMessage(citel.chat, { audio: {url :"https://github.com/dilmkh/Secktor-Md/blob/main/migumi.m4a"  }, mimetype: 'audio/mp4', ptt: true, fileName: "Alive Audio.mp3" }, { quoted: citel })
     //---------------------------------------------------------------------------
 Secktor.cmd({
         pattern: "owner",
