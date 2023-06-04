@@ -74,7 +74,7 @@ Secktor.cmd({
 ┃  ╭─────────────────«
 ┃  │       ${tiny(category)} 
 ┃  ╰─────────────────»
-┃   ╭─────────────◆\n`
+┃  ╭─────────────◆\n`
                     for (const plugins of cmds[category]) {
                         str += `┃  │ ❍ ${plugins}\n`
                     }
