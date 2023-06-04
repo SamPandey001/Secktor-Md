@@ -97,7 +97,8 @@ cmd({
 ☍ ⦁ *Author:* ${anu.author.name}
 ☍ ⦁ *Url:* ${anu.url}
   
-  ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ •
+  ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ 
+  ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ •
 `;    
 
             let stats = fs.statSync(`./${randomName}`);
