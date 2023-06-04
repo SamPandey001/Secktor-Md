@@ -58,7 +58,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "video",
+            pattern: "qqqwweremovedbyprabath",
             desc: "Downloads video from yt.",
             category: "downloader",
             filename: __filename,
@@ -101,7 +101,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "play",
+            pattern: "playhaa",
             desc: "Sends info about the query(of youtube video/audio).",
             category: "downloader",
             filename: __filename,
@@ -229,7 +229,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "audio",
+            pattern: "audiojajwj",
             desc: "Downloads audio from youtube.",
             category: "downloader",
             filename: __filename,
@@ -269,6 +269,8 @@ cmd({
             })
         }
     )
+
+
     //---------------------------------------------------------------------------
 cmd({
             pattern: "yts",
