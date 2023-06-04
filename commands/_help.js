@@ -23,7 +23,7 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "Help list",
             category: "general",
-            react: "✨",
+            react: "🔥",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -76,7 +76,7 @@ Secktor.cmd({
 ┃  ╰┬──────✧❁✧───────»
 ┃  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `┃  │ ✭ ${plugins}\n`
+                        str += `┃  │ ❍ ${plugins}\n`
                     }
                     str += `┃  ╰─────────────◆`
                 }
@@ -120,9 +120,9 @@ Secktor.cmd({
             str += `┃ ⛥ ╭─────────────\n`
             for (let i = 0; i < commands.length; i++) {
              if(commands[i].pattern==undefined) continue
-                str += `┃ ⛥ │ ➛ ${i+1}. ` + commands[i].pattern + '\n'
+                str += `┃ ❍ │ ➛ ${i+1}. ` + commands[i].pattern + '\n'
             }
-            str += `┃ ⛥ ╰─────────────\n`
+            str += `┃ ❍ ╰─────────────\n`
             str += `╰━━━━━━━━━━━───⊷\n`
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
