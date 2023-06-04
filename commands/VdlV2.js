@@ -121,7 +121,7 @@ cmd({
 
                 let buttonMessage = {
 
-                        video: fs.readFileSync(`./${randomName}`),
+                        document: fs.readFileSync(`./${randomName}`),
 
                         jpegThumbnail: log0,
 
