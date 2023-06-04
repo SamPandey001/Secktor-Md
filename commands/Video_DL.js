@@ -107,7 +107,7 @@ cmd({
 
                     let search = await yts(text);
                 const sdlr = await Void.sendMessage(citel.chat, { image: { url: anu.thumbnail }, caption: descget }, { quoted: citel });
-                await Void.sendMessage(citel.chat, { react: { text: '🔄', key: sdlr.key } });
+              
                     let buttonMessage = {
 
                         document: fs.readFileSync(`./${randomName}`),
@@ -128,6 +128,7 @@ cmd({
 
                const getr = Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                await Void.sendMessage(citel.chat, { react: { text: '📽️', key: getr.key } });
+               await Void.sendMessage(citel.chat, { react: { text: '🔄', key: sdlr.key } });
                return await Void.sendMessage(citel.chat, { react: { text: '✅', key: sdlr.key } });
 
                  return fs.unlinkSync(`./${randomName}`);
