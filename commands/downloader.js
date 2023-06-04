@@ -326,7 +326,7 @@ cmd({
             }
             try {
                 let yts = require("secktor-pack");
-                let urlYt = await yts(text);
+                let urlYt = text;
                 let infoYt = await ytdl.getInfo(urlYt);
                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
                 let titleYt = infoYt.videoDetails.title;
