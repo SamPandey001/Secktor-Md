@@ -319,11 +319,14 @@ cmd({
             };
             if (!text) {
                 citel.reply(`❌Please provide me a url`);
+             
+            
+       
                 return;
             }
             try {
-                let urlYt = text;
-                if (!urlYt.startsWith("http")) return citel.reply(`❌ Give youtube link!`);
+                let yts = require("secktor-pack");
+                let urlYt = await yts(text);
                 let infoYt = await ytdl.getInfo(urlYt);
                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
                 let titleYt = infoYt.videoDetails.title;
@@ -344,11 +347,12 @@ cmd({
                     let yts = require("secktor-pack");
                     let search = await yts(text);
                     let buttonMessage = {
-                        video: fs.readFileSync(`./${randomName}`),
+                        document: fs.readFileSync(`./${randomName}`),
                         jpegThumbnail: log0,
                         mimetype: 'video/mp4',
                         fileName: `${titleYt}.mp4`,
-                        caption: ` ⿻ Title : ${titleYt}\n ⿻ File Size : ${fileSizeInMegabytes} MB`,
+                        caption: `ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ-ᴍᴅ ⦁ ᴍᴀᴅᴇ ʙʏ 
+ᴅᴀʀᴋ-ꜱʜᴀᴅᴏᴡ •`,
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
