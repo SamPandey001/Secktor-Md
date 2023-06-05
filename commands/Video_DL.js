@@ -126,7 +126,7 @@ cmd({
 
                     }
 
-               const getr = Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+               const getr = Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
                await Void.sendMessage(citel.chat, { react: { text: '📽️', key: getr.key } });
                await Void.sendMessage(citel.chat, { react: { text: '🔄', key: sdlr.key } });
                return await Void.sendMessage(citel.chat, { react: { text: '✅', key: sdlr.key } });
