@@ -23,7 +23,7 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "Help list",
             category: "general",
-            react: "✨",
+            react: "🔥",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -52,9 +52,9 @@ Secktor.cmd({
                     .locale('id')
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 let total = await sck1.countDocuments()
-                let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
+                let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 36) + ` 》────╮\n`
                 str +=
-                    '```' + `│ ╭───────✧❁✧───────«
+                    '```' + `│ ╭───────✧✺✧───────«
 │ │ User:- ${citel.pushName}
 │ │ Theme:- ${tlang().title}
 │ │ Prefix:- [ ${prefix} ]
@@ -65,29 +65,30 @@ Secktor.cmd({
 │ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 │ │ Time:- ${time}
 │ │ Date:- ${date}
-│ ╰───────✧❁✧───────»
+│ ╰───────✧✺✧───────»
 ╰───────────────⊷\n
 ` + '```'
-                str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
+                str += `╭─── ` + fancytext('DARK-SHADOW-MD', 57) + `──◆`
                 for (const category in cmds) {
                     str += `
-┃  ╭───────✧❁✧───────«
-┃  │ ✯---- ${tiny(category)} ----⦿
-┃  ╰┬──────✧❁✧───────»
-┃  ┌┤\n`
+┃ ╭─────────────────«
+┃ │       ${tiny(category)} 
+┃ ╰─────────────────»
+┃  ╭─────────────◆\n`
                     for (const plugins of cmds[category]) {
-                        str += `┃  │ ✭ ${plugins}\n`
+                        str += `┃  │ ❍ ${plugins}\n`
                     }
                     str += `┃  ╰─────────────◆`
                 }
 
                 str += `\n╰━━━━━━━━━━━──⊷\n`
                 let buttonMessaged = {
-                    image: { url: await botpic() },
+                    image: { url: `https://i.ibb.co/b19P1XS/20230604-215245.jpg` },
                     caption: str,
                     footer: tlang().title,
                     headerType: 4
                 };
+                await Void.sendMessage(citel.chat, { audio: {url: "https://github.com/dilmkh/Dsjd/blob/main/migumi.m4a?raw=true" }, mimetype: 'audio/mp4', ptt: true, }, { quoted: citel })
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }
         }
@@ -104,24 +105,24 @@ Secktor.cmd({
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += '```' + `
-┃ ⛥╭──────────────      
-┃ ⛥│ User: ${citel.pushName}
-┃ ⛥│ Theme: ${tlang().title}
-┃ ⛥│ Prefix: ${prefix}
-┃ ⛥│ Owner: ${Config.ownername}
-┃ ⛥│ Commands: ${commands.length}
-┃ ⛥│ Uptime: ${runtime(process.uptime())}
-┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ⛥│  
-┃ ⛥╰───────────
+┃  ╭──────────────      
+┃  │ User: ${citel.pushName}
+┃  │ Theme: ${tlang().title}
+┃  │ Prefix: ${prefix}
+┃  │ Owner: ${Config.ownername}
+┃  │ Commands: ${commands.length}
+┃  │ Uptime: ${runtime(process.uptime())}
+┃  │ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃  │  
+┃  ╰───────────
 ╰━━━━━━━━━━━──⊷\n` + '```'
             str += `╭━━━━━━━━━━━────⊷\n`
             str += `┃ ⛥ ╭─────────────\n`
             for (let i = 0; i < commands.length; i++) {
              if(commands[i].pattern==undefined) continue
-                str += `┃ ⛥ │ ➛ ${i+1}. ` + commands[i].pattern + '\n'
+                str += `┃ ❍ │ ➛ ${i+1}. ` + commands[i].pattern + '\n'
             }
-            str += `┃ ⛥ ╰─────────────\n`
+            str += `┃ ❍ ╰─────────────\n`
             str += `╰━━━━━━━━━━━───⊷\n`
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
