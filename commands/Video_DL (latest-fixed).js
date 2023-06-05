@@ -143,7 +143,7 @@ cmd({
                 return fs.unlinkSync(`./${randomName}`);      
 
             } catch (e) {
-
+citel.reply(`${e}`)
                 console.log(e)
 
             }
