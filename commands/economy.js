@@ -840,4 +840,4 @@ return await Void.sendButtonText(citel.chat, buttons,str+` ${deduff}.`, `${Confi
 Version: 0.0.6`, citel);
 }
 }
-)
+) 

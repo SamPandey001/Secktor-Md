@@ -11,6 +11,7 @@
 
  const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd } = require('../lib')
  let { dBinary, eBinary } = require("../lib/binary");
+const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
  const axios = require('axios')
   //---------------------------------------------------------------------------
@@ -23,10 +24,10 @@ async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
-                await new sck({ id: citel.chat, welcome: text }).save()
+                await new sck({ id: citel.chat, welcome: text,events:'true' }).save()
                 return citel.reply('Welcome added added for this group.')
             } else {
-                await await sck.updateOne({ id: citel.chat }, { welcome:text })
+                await await sck.updateOne({ id: citel.chat }, { welcome:text ,events:'true'})
                 return citel.reply('Welcome updated successfully.')
                 
             }      
@@ -42,12 +43,11 @@ async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
-                await new sck({ id: citel.chat, goodbye: text }).save()
-                return citel.reply('Goodbye added for this group.')
+                await new sck({ id: citel.chat, goodbye: text,events:'true' }).save()
+                return citel.reply('Goodbye added for this group.');
             } else {
-                await await sck.updateOne({ id: citel.chat }, { goodbye:text })
-                return citel.reply('Goodbye updated successfully.')
-                
+                await await sck.updateOne({ id: citel.chat }, { goodbye:text,events:'true' })
+                return citel.reply('Goodbye updated successfully.');     
             }      
 }
 )
@@ -123,8 +123,7 @@ async(Void, citel, text,{ isCreator }) => {
              var pack;
              var author;
              if (text) {
-                 anu = text
-                     .split("|");
+                 anu = text.split("|");
                  pack = anu[0] !== "" ? anu[0] : citel.pushName + '♥️';
                  author = anu[1] !== "" ? anu[1] : Config.author;
              } else {
@@ -133,13 +132,23 @@ async(Void, citel, text,{ isCreator }) => {
              }
                  let media = await citel.quoted.download();
                  citel.reply("*Processing Your request*");
-                 return citel.reply(media,{packname:pack,author:author},"sticker")
- 
+                let sticker = new Sticker(media, {
+                    pack: pack, // The pack name
+                    author: author, // The author name
+                    type: text.includes("--crop" || '-c') ? StickerTypes.CROPPED : StickerTypes.FULL,
+                    categories: ["🤩", "🎉"], // The sticker category
+                    id: "12345", // The sticker id
+                    quality: 75, // The quality of the output file
+                    background: "transparent", // The sticker background color (only for full stickers)
+                });
+                const buffer = await sticker.toBuffer();
+                return Void.sendMessage(citel.chat, {sticker: buffer }, {quoted: citel });
          }
      )
      //---------------------------------------------------------------------------
  cmd({
              pattern: "uptime",
+             alias: ["runtime"],
              desc: "Tells runtime/uptime of bot.",
              category: "misc",
              filename: __filename,
@@ -437,59 +446,66 @@ async(Void, citel, text,{ isCreator }) => {
              }
          }
      )
-     //---------------------------------------------------------------------------
- cmd({
-             pattern: "botpic",
-             desc: "Sets profile pic.",
-             fromMe: true,
-             category: "misc",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             if (!citel.quoted) return citel.reply(`Send/Reply Image With Caption ${command}`);
-             let mime = citel.quoted.mtype
-             if (!/image/.test(mime)) return citel.reply(`Send/Reply Image With Caption ${command}`);
-             if (/webp/.test(mime)) return citel.reply(`Send/Reply Image With Caption ${command}`);
-             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-             await Void.updateProfilePicture(Void.user.id, {
-                     url: media,
-                 })
-                 .catch((err) => fs.unlinkSync(media));
-             citel.reply(tlang().success);
+cmd({
+  pattern: "bot",
+  desc: "activates and deactivates bot.\nuse buttons to toggle.",
+  category: "misc",
+  filename: __filename,
+},
+async(Void, citel, text,{isCreator}) => {
+  if (!citel.isGroup) return citel.reply(tlang().group);
+  if(!isCreator) return //citel.reply(tlang().owner)
+switch (text.split(" ")[0]) {
+ case 'on':{
+         let checkgroup = await sck.findOne({ id: citel.chat })
+         if (!checkgroup) {
+             await new sck({ id: citel.chat, botenable: "true" }).save()
+             return citel.reply(`Successfully Enabled *${tlang().title}*`)
+         } else {
+             if (checkgroup.botenable == "true") return citel.reply("*Bot* was already enabled")
+             await sck.updateOne({ id: citel.chat }, { botenable: "true" })
+             return citel.reply(`Successfully Enabled *${tlang().title}*`)
          }
-     )
-     //---------------------------------------------------------------------------
- cmd({
-             pattern: "bot",
-             desc: "activates and deactivates bot.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             if (!citel.isGroup) return citel.reply(tlang().group);
-             const groupAdmins = await getAdmin(Void, citel)
-             const botNumber = await Void.decodeJid(Void.user.id)
-             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-             if (!isAdmins) return citel.reply(tlang().admin)
-             if (!isBotAdmins) return citel.reply(tlang().botadmin)
-             let buttons = [{
-                     buttonId: `${prefix}act bot`,
-                     buttonText: {
-                         displayText: "Turn On",
-                     },
-                     type: 1,
-                 },
-                 {
-                     buttonId: `${prefix}deact bot`,
-                     buttonText: {
-                         displayText: "Turn Off",
-                     },
-                     type: 1,
-                 },
-             ];
-             await Void.sendButtonText(citel.chat, buttons, `Act/deact bot:in specific group`, Void.user.name, citel);
-         })
+     }
+  
+ break
+case 'off':{
+            {
+             let checkgroup = await sck.findOne({ id: citel.chat })
+             if (!checkgroup) {
+                 await new sck({ id: citel.chat, botenable: "false" })
+                     .save()
+                 return citel.reply(`Successfully disabled *${tlang().title}*`)
+             } else {
+                 if (checkgroup.botenable == "false") return citel.reply("*Bot* was already disabled")
+                 await sck.updateOne({ id: citel.chat }, { botenable: "false" })
+                 return citel.reply(`Successfully disabled *${tlang().title}*`)
+             }
+         }
+}
+break
+default:{
+let checkgroup = await sck.findOne({ id: citel.chat })
+let buttons = [{
+          buttonId: `${prefix}bot on`,
+          buttonText: {
+              displayText: "Turn On",
+          },
+          type: 1,
+      },
+      {
+          buttonId: `${prefix}bot off`,
+          buttonText: {
+              displayText: "Turn Off",
+          },
+          type: 1,
+      },
+  ];
+  await Void.sendButtonText(citel.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Void.user.name, citel);
+}
+}
+})   
+         
      //---------------------------------------------------------------------------
  cmd({
              pattern: "antilink",

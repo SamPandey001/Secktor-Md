@@ -22,7 +22,7 @@ cmd({
     },
     async(Void, citel,text) => {
         let zx = text.length;
-        if (zx < 30) {
+        if (zx < 8) {
             let {data} = await axios.get(`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=[${citel.sender.split("@")[0]}]&msg=[${text}]`);
             return citel.reply(data.cnt);  
         }
@@ -58,10 +58,10 @@ cmd({
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* secktorbot.me/repo
-*Group:* secktorbot.me/support
+*🍁 Repo:* secktorbot.tech/repo
+*Group:* secktorbot.tech/support
 *Deploy Your Own:*-
- SecktorBot.me/youtube`
+ SecktorBot.tech/youtube`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
@@ -93,22 +93,6 @@ cmd({
         filename: __filename,
     },
     async(Void, citel) => {
-        const dbut = [{
-                buttonId: `${prefix}help`,
-                buttonText: {
-                    displayText: "Menu",
-                },
-                type: 1,
-            },
-
-            {
-                buttonId: `${prefix}rank`,
-                buttonText: {
-                    displayText: "Rank",
-                },
-                type: 1,
-            },
-        ];
         const uptime = process.uptime();
         timestampe = speed();
         latensie = speed() - timestampe;
@@ -127,7 +111,6 @@ cmd({
             },
             caption: ter,
             footer: tlang().footer,
-            buttons: dbut,
             headerType: 4,
             contextInfo: {
                 externalAdReply: {

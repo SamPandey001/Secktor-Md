@@ -13,6 +13,7 @@ const { sck, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, w
 const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
+const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
 //---------------------------------------------------------------------------
 cmd({
             pattern: "join",
@@ -38,18 +39,45 @@ cmd({
             alias: ["s"],
             desc: "Makes sticker of replied image/video.",
             category: "group",
-            filename: __filename,
             use: '<reply to any image/video.>',
         },
         async(Void, citel, text) => {
             if (!citel.quoted) return citel.reply(`*Mention any Image or video Sir.*`);
             let mime = citel.quoted.mtype
-
             pack = Config.packname
             author = Config.author
+            if (citel.quoted) {
                 let media = await citel.quoted.download();
                 citel.reply("*Processing Your request*");
-                return citel.reply(media,{packname:'Secktor',author:citel.pushName},"sticker")
+                let sticker = new Sticker(media, {
+                    pack: pack, // The pack name
+                    author: author, // The author name
+                    type: text.includes("--crop" || '-c') ? StickerTypes.CROPPED : StickerTypes.FULL,
+                    categories: ["🤩", "🎉"], // The sticker category
+                    id: "12345", // The sticker id
+                    quality: 75, // The quality of the output file
+                    background: "transparent", // The sticker background color (only for full stickers)
+                });
+                const buffer = await sticker.toBuffer();
+                return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
+            } else if (/video/.test(mime)) {
+                if ((quoted.msg || citel.quoted)
+                    .seconds > 20) return citel.reply("Cannot fetch videos longer than *20 Seconds*");
+                let media = await quoted.download();
+                let sticker = new Sticker(media, {
+                    pack: pack, // The pack name
+                    author: author, // The author name
+                    type: StickerTypes.FULL, // The sticker type
+                    categories: ["🤩", "🎉"], // The sticker category
+                    id: "12345", // The sticker id
+                    quality: 70, // The quality of the output file
+                    background: "transparent", // The sticker background color (only for full stickers)
+                });
+                const stikk = await sticker.toBuffer();
+                return Void.sendMessage(citel.chat, {  sticker: stikk   }, {    quoted: citel });
+            } else {
+                citel.reply("*Uhh,Please reply to any image or video*");
+            }
         }
     )
     //---------------------------------------------------------------------------
@@ -339,28 +367,12 @@ cmd({
 *📥 Total Messages* ${ttms}
 *Powered by ${tlang().title}*
 `;
-            const buttonsd = [{
-                    buttonId: `${prefix}rank`,
-                    buttonText: {
-                        displayText: "Rank",
-                    },
-                    type: 1,
-                },
-                {
-                    buttonId: `${prefix}help`,
-                    buttonText: {
-                        displayText: " Help",
-                    },
-                    type: 1,
-                },
-            ];
             let buttonMessage = {
                 image: {
                     url: pfp,
                 },
                 caption: profile,
                 footer: tlang().footer,
-                buttons: buttonsd,
                 headerType: 4,
             };
             Void.sendMessage(citel.chat, buttonMessage, {
@@ -622,22 +634,8 @@ cmd({
                     .then((res) => reply(`Group Chat Unmuted :)`))
                     .catch((err) => console.log(err));
             } else {
-                let buttons = [{
-                        buttonId: `${prefix}group open`,
-                        buttonText: {
-                            displayText: "📍Unmute",
-                        },
-                        type: 1,
-                    },
-                    {
-                        buttonId: `${prefix}group close`,
-                        buttonText: {
-                            displayText: "📍Mute",
-                        },
-                        type: 1,
-                    },
-                ];
-                await Void.sendButtonText(citel.chat, buttons, `Group Mode`, Void.user.name, citel);
+
+                return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close`);
             }
         }
     )
@@ -707,7 +705,7 @@ cmd({
             filename: __filename,
             use: '<number>',
         },
-        async(Void, citel, text) => {
+        async(Void, citel, text,{isCreator}) => {
             if (!citel.isGroup) return citel.reply(tlang().group);
             const groupAdmins = await getAdmin(Void, citel)
             const botNumber = await Void.decodeJid(Void.user.id)
@@ -715,7 +713,7 @@ cmd({
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
 
             if (!text) return citel.reply("Please provide me number.");
-            if (!isAdmins) citel.reply(tlang().admin);
+            if (!isCreator) return citel.reply(tlang().owner)
             if (!isBotAdmins) return citel.reply(tlang().botAdmin);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             await Void.groupParticipantsUpdate(citel.chat, [users], "add");
@@ -805,7 +803,7 @@ cmd({
                 const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
                 const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
                 if (!isAdmins) return citel.reply('Only Admins are allowed to delete other persons message.')
-                if (!isBotAdmins) return citel.reply('I can delete anyones message without getting Admin Role.')
+                if (!isBotAdmins) return citel.reply('I can\'t delete anyones message without getting Admin Role.')
                 if (!citel.quoted) return citel.reply(`Please reply to any message. ${tlang().greet}`);
                 let { chat, fromMe, id } = citel.quoted;
                 const key = {
