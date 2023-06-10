@@ -34,7 +34,7 @@
                        "form-data": "^4.0.0",
                        "ffmpeg": "^0.0.4",
                        "fluent-ffmpeg": "^2.1.2",
-                       "g-i-s": "^2.1.6",
+                       "async-g-i-s": "^1.4.0",
                        "human-readable": "^0.2.1",
                        "jimp": "^0.16.1",
                        "jsdom": "^16.4.0",

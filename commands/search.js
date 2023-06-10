@@ -11,7 +11,7 @@
 
 const moment = require('moment-timezone')
 const {fetchJson,cmd, tlang } = require('../lib')
-let gis = require("g-i-s");
+let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
 
@@ -170,20 +170,18 @@ cmd({
             let nn = name2
             for (let i = 0; i < nn; i++) {
 
-                gis(name1, async(error, result) => {
-                    n = result;
-                    images = n[Math.floor(Math.random() * n.length)].url;
+                let n = await gis(name1)
+                images = n[Math.floor(Math.random() * n.length)].url;
                     let buttonMessage = {
                         image: {
                             url: images,
                         },
-                        caption: ` `,
+                        caption: `_Sector Image Search_\n*${name1}*`,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
                         quoted: citel,
                     });
-                })
             }
         }
     )
