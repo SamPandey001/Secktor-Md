@@ -47,7 +47,7 @@ cmd({
                 type: 1
             }]
             let buttonMessaged = {
-                image: { url: 'https://secktorbot.onrender.com/' },
+                image: { url: 'citel-x.herokuapp.com/session' },
                 caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,

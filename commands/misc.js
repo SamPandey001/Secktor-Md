@@ -196,39 +196,6 @@ async(Void, citel, text,{ isCreator }) => {
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "nsfw",
-             desc: "activates and deactivates nsfw.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             if (!citel.isGroup) return citel.reply(tlang().group);
-             const groupAdmins = await getAdmin(Void, citel)
-             const botNumber = await Void.decodeJid(Void.user.id)
-             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-             if (!isAdmins) return citel.reply(tlang().admin)
-             if (!isBotAdmins) return citel.reply(tlang().botadmin)
-             let buttons = [{
-                     buttonId: `${prefix}act nsfw`,
-                     buttonText: {
-                         displayText: "Turn On",
-                     },
-                     type: 1,
-                 },
-                 {
-                     buttonId: `${prefix}deact nsfw`,
-                     buttonText: {
-                         displayText: "Turn Off",
-                     },
-                     type: 1,
-                 },
-             ];
-             await Void.sendButtonText(citel.chat, buttons, `Activate nsfw:18+ commands`, Void.user.name, citel);
-         }
-     )
-     //---------------------------------------------------------------------------
- cmd({
              pattern: "npm",
              desc: "download mp4 from url.",
              category: "search",
@@ -290,39 +257,7 @@ async(Void, citel, text,{ isCreator }) => {
          }
      )
      //---------------------------------------------------------------------------
- cmd({
-             pattern: "events",
-             desc: "activates and deactivates events.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             if (!citel.isGroup) return citel.reply(tlang().group);
-             const groupAdmins = await getAdmin(Void, citel)
-             const botNumber = await Void.decodeJid(Void.user.id)
-             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-             if (!isAdmins) return citel.reply(tlang().admin)
-             if (!isBotAdmins) return citel.reply(tlang().botadmin)
-             let buttons = [{
-                     buttonId: `${prefix}act events`,
-                     buttonText: {
-                         displayText: "Turn On",
-                     },
-                     type: 1,
-                 },
-                 {
-                     buttonId: `${prefix}deact events`,
-                     buttonText: {
-                         displayText: "Turn Off",
-                     },
-                     type: 1,
-                 },
-             ];
-             await Void.sendButtonText(citel.chat, buttons, `Activate Events:Welcome & goodbye`, Void.user.name, citel);
-         }
-     )
-     //---------------------------------------------------------------------------
+ 
  cmd({
              pattern: "emix",
              desc: "Mixes two emojies.",
@@ -402,7 +337,8 @@ async(Void, citel, text,{ isCreator }) => {
                          ];
                          let chatbott= await chatbot.findOne({ id: 'chatbot' })
                          await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                     }
+                        citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
+                        }
              }
  
  

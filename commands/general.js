@@ -101,7 +101,7 @@ cmd({
 *🌟Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
-*🕸Version:* 1.0.0
+*🕸Version:* 0.0.7
 *👤Owner:*  ${Config.ownername}
 *Powered by ${tlang().title}*
 `;

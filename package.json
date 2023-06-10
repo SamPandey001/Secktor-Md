@@ -1,6 +1,6 @@
 {
-               "name": "Secktor-Md",
-               "version": "0.0.6",
+               "name": "secktor-md",
+               "version": "0.0.7",
                "description": "Multi device whatsapp bot by SamPandey001.",
                "main": "lib/client.js",
                "type": "commonjs",
