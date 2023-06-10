@@ -58,10 +58,10 @@ cmd({
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* secktorbot.tech/repo
-*Group:* secktorbot.tech/support
+*🍁 Repo:* citel-x.herokuapp.com/repo
+*Group:* citel-x.herokuapp.com/support
 *Deploy Your Own:*-
- SecktorBot.tech/youtube`
+citel-x.herokuapp.com`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
