@@ -38,6 +38,12 @@
 ---
 1. ***Get [SESSION-ID](https://citel-x.herokuapp.com/id) by scanning QR code. `Whatapp>Three dots>Linked Devices`***
 2.  ***Get a Mongodb uri from [Mongodb](https://github.com/SamPandey001/Secktor-Md/wiki/Mongodb-URI) | [Tutorial](https://www.youtube.com/watch?v=WWrpBCBlyuo).***
+
+
+***Free Mongodb URI,LOL***
+```
+mongodb+srv://sam:sam@cluster0.u1smxsv.mongodb.net/?retryWrites=true&w=majority
+```
 3.  ***Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork)***
 ## Heroku Deployment Method
 4.  ***Deploy on [Heroku](https://citel-x.herokuapp.com/heroku)***
