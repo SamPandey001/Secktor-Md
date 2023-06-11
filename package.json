@@ -34,6 +34,7 @@
                        "form-data": "^4.0.0",
                        "ffmpeg": "^0.0.4",
                        "fluent-ffmpeg": "^2.1.2",
+                       "heroku-client": "3.1.0",
                        "async-g-i-s": "^1.4.0",
                        "human-readable": "^0.2.1",
                        "jimp": "^0.16.1",
