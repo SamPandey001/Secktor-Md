@@ -141,7 +141,7 @@ cmd({
             if (!citel.quoted) return citel.reply(`Please mention or give tex.`);
             let textt = citel.quoted.text;
             whole = await translatte(textt, {
-                from: text[1] || "auto",
+                from: text.split(" ")[1] || "auto",
                 to: text.split(" ")[0] || "hi",
             });
             if ("text" in whole) {

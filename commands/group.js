@@ -253,8 +253,9 @@ cmd({
         },
         async(Void, citel, text) => {
             if (!isCreator) return citel.reply(tlang().owner)
+            if (!citel.quoted) return citel.reply('Quote a user master.')
             await warndb.deleteOne({ id: citel.quoted.sender.split('@')[0] + 'warn' });
-            citel.reply('User is free as a bird.\nAll previously given warn has been deleted.')
+            return citel.reply('User is free as a bird.\nAll previously given warn has been deleted.')
         }
     )
     //---------------------------------------------------------------------------
