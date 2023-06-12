@@ -14,6 +14,14 @@
     "description": "Alive message for bot",
      "required" :false
     },
+    "HEROKU_API_KEY": {
+    "description": "Put HEROKU API KEY",
+     "required" :false
+    },
+  "HEROKU_APP_NAME": {
+    "description": "Put HEROKU APP NAME same as above.",
+     "required" :false
+    },
    "THUMB_IMAGE": {
     "description": "THUMBNAIL for bot.",
      "value": "https://camo.githubusercontent.com/14279dac3151a95fca8ec5bebda435d68d62c49f6aa4f30749f541ee985ad21b/68747470733a2f2f7365636b746f7275736572626f742e6f6e72656e6465722e636f6d2f6d61696e2e6a7067"
