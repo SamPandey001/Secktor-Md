@@ -111,10 +111,10 @@ cmd(
         let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
         await heroku.patch(baseURI + "/config-vars", {
           body: {
-                  [text(" ").split('|')[0]]: text(" ").split('|')[1],
+                  [text.split(':')[0]]: text.split(':')[1],
           },
         });
-        await citel.reply(`🟩var ${text(" ").split('|')[0]} : ${text(" ").split('|')[1]} has been set Successfuly.`);
+        await citel.reply(`🟩var ${text.split(':')[0]} : ${text.split(':')[1]} has been set Successfuly.`);
        }
        let check = await get_deployments()
        if(check==='true') return citel.reply('_Please wait..._\n_Currently 2 instances are running in Koyeb,wait to stop one of them._')
