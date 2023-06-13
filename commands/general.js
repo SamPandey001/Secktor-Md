@@ -12,11 +12,13 @@
 const { tlang, botpic, cmd, prefix, runtime, Config , sleep } = require('../lib')
 const axios = require('axios')
 const speed = require('performance-now')
+const fetch = require('node-fetch');
 //---------------------------------------------------------------------------
 cmd({
     pattern: "chat",
-    desc: "chat with an AI",
-    category: "general",
+    alias :['gpt'],
+    desc: "chat with an AI(GPT)",
+    category: "AI",
     use: '<Hii,Secktor>',
     filename: __filename,
 },
@@ -45,6 +47,47 @@ async(Void, citel,text) => {
     citel.reply(completion.data.choices[0].text);
 }
 )
+
+cmd({
+    pattern: "dalle",
+    alias : ['dall','dall-e'],
+    desc: "Create Image by AI",
+    category: "AI",
+    use: '<an astronaut in mud.>',
+    filename: __filename,
+},
+async(Void, citel,text,{isCreator}) => 
+{
+if (!isCreator) return citel.reply(tlang().owner)
+if (Config.OPENAI_API_KEY=='') return citel.reply('You Dont Have OPENAI_API_KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys');
+if (!text) return citel.reply(`*Give Me A Query To Get Dall-E Reponce ?*`); 
+const imageSize = '256x256'
+const apiUrl = 'https://api.openai.com/v1/images/generations';
+const response = await fetch(apiUrl, {
+method: 'POST',
+headers: {
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${Config.OPENAI_API_KEY}`
+},
+body: JSON.stringify({
+  model: 'image-alpha-001',
+  prompt: text,
+  size: imageSize ,
+  response_format: 'url'
+})
+});
+
+const data = await response.json();
+let buttonMessage = {
+    image:{url:data.data[0].url},
+    caption : '*---Your DALL-E Result---*'
+
+}
+
+Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
+}
+)
+
 //---------------------------------------------------------------------------
 cmd({
         pattern: "repo",
