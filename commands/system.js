@@ -129,27 +129,24 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 cmd({
-            pattern: "trt",
-            category: "misc",
-            filename: __filename,
-            desc: "Translate\'s given text in desird language."
-        },
-        async(Void, citel, text) => {
-            const translatte = require("translatte");
-            if (!citel.quoted) return citel.reply("*Please reply to any message.*");
-            if (!citel.quoted) return citel.reply(`Please mention or give tex.`);
-            let textt = citel.quoted.text;
-            whole = await translatte(textt, {
-                from: text.split(" ")[1] || "auto",
-                to: text.split(" ")[0] || "hi",
-            });
-            if ("text" in whole) {
-                return await citel.reply("*Translated Into🔎:* " + " ```" + (text.split(" ")[0] || "Auto to Hindi") + "```\n" + " *From Language🔎:* " + " ```" + (text[1] || "Auto Detect") + "```\n" + "*Result♦️:* " + " ```" + whole.text + "```");
-            }
-
-        }
-    )
+    pattern: "trt",
+    alias :['translate'],
+    category: "misc",
+    filename: __filename,
+    desc: "Translate\'s given text in desird language."
+},
+async(Void, citel, text) => {
+    if(!text && !citel.quoted) return await citel.reply(`*Please Give Me Text. Example: _${prefix}trt en Who are you_*`);
+    const translatte = require("translatte");
+    let lang = text ? text.split(" ")[0].toLowerCase() : 'en';
+    if (!citel.quoted)  { text = text.replace( lang , "");  }
+    else { text = citel.quoted.text; }
+    var whole = await translatte(text, { from:"auto",  to: lang , });
+    if ("text" in whole) { return await citel.reply('*Translated text:*\n'+whole.text); }
+}
+)
     //---------------------------------------------------------------------------
 cmd({
             pattern: "shell",
@@ -262,7 +259,7 @@ cmd({
 _This is  ${tlang().title}._
 ${alivemessage}
 
-*Version:-* _0.0.6_
+*Version:-* _0.0.7_
 *Uptime:-* _${runtime(process.uptime())}_
 *Owner:-* _${Config.ownername}_
 *Branch:-* _${Config.BRANCH}_

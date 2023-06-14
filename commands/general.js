@@ -58,7 +58,7 @@ cmd({
 },
 async(Void, citel,text,{isCreator}) => 
 {
-if (!isCreator) return citel.reply(tlang().owner)
+//if (!isCreator) return citel.reply(tlang().owner)
 if (Config.OPENAI_API_KEY=='') return citel.reply('You Dont Have OPENAI_API_KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys');
 if (!text) return citel.reply(`*Give Me A Query To Get Dall-E Reponce ?*`); 
 const imageSize = '256x256'

@@ -177,7 +177,7 @@ async(Void, citel, text) => {
         else arr.push(`*🍁Command:* ${cmd.pattern}`);
         if (cmd.category) arr.push(`*🧩Type:* ${cmd.category}`);
         if(cmd.filename) arr.push(`✨FileName: ${cmd.filename}`)
-        return await citel.reply(arr.join('\n'));
+        return citel.reply(arr.join('\n'));
 
 
 })
