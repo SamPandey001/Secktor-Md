@@ -10,10 +10,9 @@
  **/
 
 const axios = require('axios')
-const { sck1, tiny, fancytext, listall,cmd } = require('../lib/')
+const { sck1, tiny, fancytext, listall,cmd,ffmpeg } = require('../lib/')
 const fs = require('fs-extra');
 const { exec } = require('child_process')
-const ffmpeg = require('fluent-ffmpeg')
 
     //---------------------------------------------------------------------------
 cmd({

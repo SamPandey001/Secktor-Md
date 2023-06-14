@@ -14,6 +14,10 @@
     "description": "Alive message for bot",
      "required" :false
     },
+    "AUTO_STATUS_SAVER": {
+      "description": "Automatically saves status of every person and sends in log number.",
+       "required" :false
+      },
     "HEROKU_API_KEY": {
     "description": "Put HEROKU API KEY",
      "required" :false

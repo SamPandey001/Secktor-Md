@@ -16,8 +16,8 @@ const { redeploy , getvar , delvar , getallvar , change_env , get_deployments} =
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 cmd(
   {
-    pattern: "upd",
-    desc: "update bot with refreshed commit.",
+    pattern: "updatenow",
+    desc: "update bot with main repo.",
     filename: __filename,
     category: "misc",
   },

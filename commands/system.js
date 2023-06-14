@@ -107,27 +107,23 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "url",
-            category: "misc",
-            filename: __filename,
-            desc: "image to url."
-        },
-        async(Void, citel, text) => {
-            if (!citel.quoted) return citel.reply(`Pls mention me any image/video and type ${prefix + command} to upload my ${tlang().greet}`);
-            let mime = citel.quoted.mtype
-            let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-            if (/image/.test(mime)) {
-                let anu = await TelegraPh(media);
-                return citel.reply(`Here is url of your uploaded Media on Telegraph.\n\n` + util.format(anu));
-            } else if (!/image/.test(mime)) {
-                let anu = await TelegraPh(media);
-                await fs.unlinkSync(media);
-                return citel.reply(`Here is url of your uploaded Media on Telegraph.\n\n` + util.format(anu));
-            }
-            await fs.unlinkSync(media);
-        }
-    )
+    cmd({
+        pattern: "url",
+        alias : ['createurl'],
+        category: "misc",
+        filename: __filename,
+        desc: "image to url."
+    },
+    async(Void, citel, text) => {
+        if (!citel.quoted) return await citel.reply(`*Reply To Any Image/Video To Get Url*`)
+        let mime = citel.quoted.mtype
+        if(mime !='videoMessage' && mime !='imageMessage' ) return await citel.reply("Uhh Please, Reply To An Image/Video")
+        let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+        let anu = await TelegraPh(media);
+        await citel.reply(util.format(anu));
+        return await fs.unlinkSync(media);
+    })
+
     //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 cmd({
