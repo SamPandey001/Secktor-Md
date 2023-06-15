@@ -912,6 +912,7 @@ cmd({
 )
 
 //---------------------------------------------------------------------------
+if(Config.WORKTYPE!=='private'){
 cmd({ on: "text" }, async(Void, citel) => {
     const randomXp = 8;
     let usrname = citel.pushName
@@ -994,3 +995,4 @@ cmd({ on: "text" }, async(Void, citel) => {
     }
 
 })
+}
