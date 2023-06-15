@@ -10,7 +10,7 @@
  **/
 
 const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
-const { telegraph } = require('../lib/scraper')   
+const { TelegraPh } = require('../lib/scraper')   
 //---------------------------------------------------------------------------
 cmd({
             pattern: "addnote",
@@ -40,19 +40,11 @@ cmd({
                 await Void.sendMessage(citel.chat, { image: h })
                 return
             }
-            let generatebutton = [{
-                buttonId: `${prefix}qr`,
-                buttonText: {
-                    displayText: 'Generate New'
-                },
-                type: 1
-            }]
             let buttonMessaged = {
                 image: { url: 'citel-x.herokuapp.com/session' },
                 caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,
-                buttons: generatebutton,
                 contextInfo: {
                     externalAdReply: {
                         title: 'Secktor Session',
@@ -121,7 +113,7 @@ cmd({
         if(mime !='videoMessage' && mime !='imageMessage' ) return await citel.reply("Uhh Please, Reply To An Image/Video")
         let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
         let anu = await TelegraPh(media);
-        await citel.reply(util.format(anu));
+        await citel.reply('*Here is URL of your media.\n'+util.format(anu));
         return await fs.unlinkSync(media);
     })
 

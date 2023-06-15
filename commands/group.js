@@ -604,9 +604,17 @@ cmd({
             if (!/image/.test(mime)) return citel.reply(`Reply to Photo With Caption *text*`)
             mee = await Void.downloadAndSaveMediaMessage(citel.quoted)
             mem = await TelegraPh(mee)
-            meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-            memek = await Void.sendImageAsSticker(citel.chat, meme, citel, { packname: citel.pushName, author: 'Secktor' })
-            await fs.unlinkSync(memek)
+            meme = await getBuffer(`https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`)
+            let buttonMessage = {
+                image: meme,
+                caption: "Here we go",
+                footer: tlang().footer,
+                headerType: 4,
+            };
+            Void.sendMessage(citel.chat, buttonMessage, {
+                quoted: citel,
+            });
+            await fs.unlinkSync(mee)
 
         }
     )
