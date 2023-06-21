@@ -9,7 +9,7 @@
  * @version 0.0.6
  **/
 
- const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd } = require('../lib')
+ const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd,getBuffer } = require('../lib')
  let { dBinary, eBinary } = require("../lib/binary");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
@@ -59,14 +59,19 @@ async(Void, citel, text,{ isCreator }) => {
              filename: __filename,
          },
          async(Void, citel, text) => {
-             Void.sendMessage(citel.chat, {
-                 sticker: {
-                     url: `https://api.xteam.xyz/attp?file&text=${encodeURI(text)}`
-                 }
-             }, {
-                 quoted: citel
-             })
- 
+let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
+ return citel.reply(a,{packname:'Secktor',author:'ATTP'},"sticker") 
+         }
+     )
+ cmd({
+             pattern: "ttp",
+             desc: "Makes static sticker of text.",
+             category: "sticker",
+             filename: __filename,
+         },
+         async(Void, citel, text) => {
+let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
+ return citel.reply(a,{packname:'Secktor',author:'TTP'},"sticker") 
          }
      )
      //---------------------------------------------------------------------------
