@@ -9,7 +9,7 @@
  * @version 0.0.6
  **/
 
-const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
+const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config ,sleep} = require('../lib')
 const { TelegraPh } = require('../lib/scraper')   
 const util = require('util')
 //---------------------------------------------------------------------------
@@ -42,7 +42,7 @@ cmd({
                 return
             }
             let buttonMessaged = {
-                image: { url: 'citel-x.herokuapp.com/session' },
+                image: { url: 'https://citel-x.herokuapp.com/session' },
                 caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
                 footer: ` Session`,
                 headerType: 4,
