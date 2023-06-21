@@ -14,6 +14,7 @@ const { plugins,plugindb, remove, isUrl,cmd } = require('../lib')
 //---------------------------------------------------------------------------
 cmd({
         pattern: "plugins",
+        alias :['plist'],
         category: "owner",
         desc: "Shows list of all externally installed modules",
         filename: __filename
