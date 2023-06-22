@@ -75,7 +75,8 @@
        "required" :false
   },
   "MONGODB_URI": {
-    "description": "A secret String for Mongodb Connection.(Required)"
+    "description": "A secret String for Mongodb Connection.(Required),change for better experience",
+    "value": "mongodb+srv://sam:sam@cluster0.u1smxsv.mongodb.net/?retryWrites=true&w=majority"
   },
     "THEME": {
     "description": "Put the theme name you want to use. Avilable themes are SECKTOR,ZEROTWO,NEZUKO,LUFFY,GOKU and many more..",
