@@ -54,7 +54,7 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
-                    '```' + `│ ╭──────────────«
+                    '```' + `│ ╭──────────────◆
 │ │ User:- ${citel.pushName}
 │ │ Theme:- ${tlang().title}
 │ │ Prefix:- [ ${prefix} ]
@@ -65,28 +65,26 @@ Secktor.cmd({
 │ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 │ │ Time:- ${time}
 │ │ Date:- ${date}
-│ ╰──────────────»
+│ ╰──────────────◆
 ╰───────────────⊷\n
 ` + '```'
-                str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
-                for (const category in cmds) {
-                    str += `
-┃  ╭──────────────«
-┃  │ ✯---- ${tiny(category)} ----⦿
-┃  ╰┬─────────────»
-┃  ┌┤\n`
-                    for (const plugins of cmds[category]) {
-                        str += `┃  │ ✭ ${plugins}\n`
-                    }
-                    str += `┃  ╰─────────────◆`
+                for (const category in cmds) 
+                {
+                   str += `╭────❏ *${tiny(category)}* ❏\n` ;
+                   if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
+                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
+                        str += `╰━━━━━━━━━━━━━──⊷\n`  ;
+                        break ;
+                   }
+                   else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
+                         str += `╰━━━━━━━━━━━━━━──⊷\n`  ; 
+                   }
+  
                 }
-
-                str += `\n╰━━━━━━━━━━━──⊷\n`
+                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with ❤️ in Nodejs* `
                 let buttonMessaged = {
                     image: { url: await botpic() },
-                    caption: str,
-                    footer: tlang().title,
-                    headerType: 4
+                    caption: str
                 };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }
