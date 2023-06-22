@@ -17,6 +17,7 @@ let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require
 const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
+
     //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "help",
@@ -94,14 +95,13 @@ Secktor.cmd({
 Secktor.cmd({
             pattern: "list",
             desc: "list menu",
-            category: "general",
-            react: "✅"
+            category: "general"
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
-            str += '```' + `
+            str += `
 ┃ ⛥╭──────────────      
 ┃ ⛥│ User: ${citel.pushName}
 ┃ ⛥│ Theme: ${tlang().title}
@@ -112,7 +112,7 @@ Secktor.cmd({
 ┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ┃ ⛥│  
 ┃ ⛥╰───────────
-╰━━━━━━━━━━━──⊷\n` + '```'
+╰━━━━━━━━━━━──⊷\n`
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
@@ -120,7 +120,7 @@ for (let i = 0; i < commands.length; i++)
      if(commands[i].desc=undefined) commands[i].desc=""
      str += `╰➛ ${fancytext(commands[i].desc,1)}\n`
 }
-            return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
+            return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
     )
     //---------------------------------------------------------------------------

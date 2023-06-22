@@ -21,7 +21,7 @@ Secktor.cmd({
         var inital = new Date().getTime();
         const { key } = await Void.sendMessage(citel.chat, {text: '```Ping!!!```'});
         var final = new Date().getTime();
-        await Secktor.sleep(1000)
+       // await Secktor.sleep(1000)
        return await Void.sendMessage(citel.chat, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
     }
 );

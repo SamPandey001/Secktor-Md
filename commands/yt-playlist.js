@@ -7,7 +7,7 @@ var dlsize = 250 // 250mb
 
 
 cmd({
-            pattern: "plt",
+            pattern: "playlist",
             desc: "Downloads video from playlist.",
             category: "downloader",
             filename: __filename,

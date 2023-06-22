@@ -17,7 +17,7 @@ pastebin = new PastebinAPI("EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL");
 cmd({
         pattern: "pastebin",
         desc: "To check ping",
-        category: "general",
+        category: "extra",
         filename: __filename,
     },
     async(Void, citel) => {

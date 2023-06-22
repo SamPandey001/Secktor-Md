@@ -96,7 +96,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                      method: "POST",
                      json: code
                  }, function(_error, _response, body) {
-                     citel.reply("> " + text[1] + "\n\n" + "```" + body.output + "```");
+                    return citel.reply("> " + text[1] + "\n\n" + "```" + body.output + "```");
                  });
              } catch (error) {
                  console.log(error);
@@ -111,7 +111,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text) => {
-             await citel.reply(text.replace(/\+/g, (String.fromCharCode(8206)).repeat(4001)))
+            return await citel.reply(text.replace(/\+/g, (String.fromCharCode(8206)).repeat(4001)))
  
          }
      )
@@ -160,19 +160,19 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             citel.reply(`Uptime of ${tlang().title}: ${upt}`)
+             return citel.reply(`Uptime of ${tlang().title}: ${upt}`)
          }
      )
      //---------------------------------------------------------------------------
  cmd({
              pattern: "wm",
-             desc: "Makes wa me of quoted or mentioned user.",
+             desc: "Makes wa.me of quoted or mentioned user.",
              category: "misc",
              filename: __filename,
          },
          async(Void, citel, text) => {
              let users = citel.mentionedJid ? citel.mentionedJid[0].split('@')[0] : citel.quoted ? citel.quoted.sender.split('@')[0] : text.replace('@')[0]
-             citel.reply(`https://wa.me/${users}`)
+            return citel.reply(`https://wa.me/${users}`)
  
          }
      )
