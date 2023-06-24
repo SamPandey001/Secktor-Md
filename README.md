@@ -58,13 +58,19 @@ If ***RUN*** Doesn't work, paste these commands in repl shell
 yarn
 npm i pm2 -g && pm2 start lib/client.js
 ```
-Required Secrets
+Copy the JSON down and paste in repl then fill the vars
 
 ```
-SESSION_ID: 
-OWNER_NUMBER:
-PACK_INFO
-MONGODB_URI
+{
+  "SESSION_ID": "ID-Here",
+  "OWNER_NUMBER": "91xxxxxxxxxx",
+  "OWNER_NAME": "EREN JEAGER",
+  "OPENAI_API_KEY": "null",
+  "MONGODB_URI": "mongodb+srv://sam:sam@cluster0.u1smxsv.mongodb.net/?retryWrites=true&w=majority",
+  "PACK_INFO": "Sam;Pandey",
+  "PREFIX": "."
+   
+}
 ```
 
 7.  ***[Deploy on Railway](https://citel-x.herokuapp.com/railway)***
