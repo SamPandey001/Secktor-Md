@@ -56,7 +56,7 @@ If ***RUN*** Doesn't work, paste these commands in repl shell
 
 ```
 yarn
-npm i pm2 --location=global && pm2 start lib/client
+npm i pm2 -g && pm2 start lib/client.js
 ```
 Required Secrets
 
