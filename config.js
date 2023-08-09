@@ -3,25 +3,25 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/co
 
 
 //═══════[Required Variables]════════\\
-global.owner = process.env.OWNER_NUMBER.split(",")
+global.owner = process.env.OWNER_NUMBER.split("919057434516")
 global.mongodb = process.env.MONGODB_URI || "mongodb+srv://sam:sam@cluster0.u1smxsv.mongodb.net/?retryWrites=true&w=majority"
 global.port= process.env.PORT || 5000
-global.email = 'sam@secktor.live'
+global.email= gajendrakhorwal623@gmail.com'
 global.github = 'https://github.com/SamPandey001/Secktor-Md'
-global.location = 'Sultanpur IN'
-global.gurl = 'https://instagram.com/' // add your username
-global.sudo = process.env.SUDO || '919628516236'
-global.devs = '919628516236';
+global.location = kcity in'
+global.gurl = 'https://instagram.com/'gajendra_khorwal_007
+global.sudo = process.env.SUDO || 919057434516'
+global.devs = 919057434516';
 global.website = 'https://github.com/SamPandey001/Secktor-Md' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://raw.githubusercontent.com/SecktorBot/Brandimages/main/logos/SocialLogo%201.png'
 module.exports = {
-  botname:   process.env.BOT_NAME === undefined ? '𝐒𝐞𝐜𝐤𝐭𝐨𝐫 𝐁𝐨𝐭𝐭𝐨' : process.env.BOT_NAME,
-  ownername: process.env.OWNER_NAME === undefined ? 'SamPandey001' : process.env.OWNER_NAME,
-  sessionName:  process.env.SESSION_ID === undefined ? false : process.env.SESSION_ID,
+  botname:   process.env.BOT_NAME === undefined ? 'ANVI' : process.env.BOT_NAME,
+  ownername: process.env.OWNER_NAME === undefined ?GOKUBLACK' : process.env.OWNER_NAME,
+  sessionName:  process.env.SESSION_ID === undefined ? Secktor;;;LunaticSpoke : process.env.SESSION_ID,
   author:  process.env.PACK_INFO.split(";")[0] === undefined ? 'SamPandey001' : process.env.PACK_INFO.split(";")[0],
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
   packname:  process.env.PACK_INFO.split(";")[1] === undefined ? 'Secktor-Md' : process.env.PACK_INFO.split(";")[1],
-  autoreaction:  process.env.AUTO_REACTION  === undefined ? false : process.env.AUTO_REACTION ,
+  autoreaction:  process.env.AUTO_REACTION  === undefined ? true : process.env.AUTO_REACTION ,
   antibadword :  process.env.ANTI_BAD_WORD === undefined ? 'nbwoed' : process.env.ANTI_BAD_WORD,
   alwaysonline:  process.env.ALWAYS_ONLINE === undefined ? false : process.env.ALWAYS_ONLINE,
   antifake : process.env.FAKE_COUNTRY_CODE === undefined ? '971' : process.env.FAKE_COUNTRY_CODE,
