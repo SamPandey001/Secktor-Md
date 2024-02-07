@@ -26,7 +26,7 @@
  ***<p align="center"> Support us by subscribing our channel </p>***
  
    <p align="center">  
-  <a href="https://youtu.be/It-Ak-aSx0c">
+  <a href="https://www.youtube.com/watch?v=k-DOQiLNuig">
     <img alt="secktor docs" height="300" src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg">
     <h1 align="center">Tap on above Image</h1>
   </a>
