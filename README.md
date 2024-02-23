@@ -74,8 +74,6 @@ Copy the JSON down and paste in repl then fill the vars
 ```
 
 7.  ***[Deploy on Railway](https://secktorub-b34f1c3c60d3.herokuapp.com/railway)***
-
-8. ***[Deploy on MOGENIOUS](https://github.com/SamPandey001/Secktor-Md/wiki/Deploy-on-MOGENIOUS)***
   
 9. ***Deploy in [Linux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)***
 
