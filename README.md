@@ -1,7 +1,6 @@
-  <p align="center">  
-  <a href="https://keithuserbot.onrender.com/">
-    <img alt="secktor docs" height="300" src="https:/keithuserbot.onrender.com/main.jpg">
-    <h1 align="center">Keith MD Whatsapp bot</h1>
+  <p align="center">Alpha md  
+  <a href="https://keithuserbot.onrender.com/"><img alt="alpha docs" height="300" src="https://telegra.ph/file/e030502993d39dadb91f1.jpg">
+    <h1 align="center">ALPHA MD BOT</h1>
   </a>
 </p>
    
