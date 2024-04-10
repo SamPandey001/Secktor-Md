@@ -1,5 +1,5 @@
 {
-               "name": "secktor-md",
+               "name": "Keith-md",
                "version": "0.0.7",
                "description": "Multi device whatsapp bot by SamPandey001.",
                "main": "lib/client.js",
@@ -68,10 +68,10 @@
                     },
                  "repository": {
                  "type": "git",
-                 "url": "git+https://github.com/SamPandey001/Secktor-Md.git"
+                 "url": "git+https://github.com/SamPandey001/Keith-Md.git"
                   },
                  "bugs": {
-                 "url": "https://github.com/SamPandey001/Secktor-Md/issues"
+                 "url": "https://github.com/SamPandey001/keith-Md/issues"
                   },
-                 "homepage": "https://github.com/SamPandey001/Secktor-Md#readme"
+                 "homepage": "https://github.com/SamPandey001/keith-Md#readme"
                   }
