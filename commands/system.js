@@ -239,35 +239,50 @@ cmd({
 cmd({
             pattern: "alive",
             category: "general",
+            react: "",
             filename: __filename,
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
-            const alivtxt = `
-*Hello, ${citel.pushName},*
-_This is  ${tlang().title}._
-${alivemessage}
-
-*Version:-* _0.0.7_
-*Uptime:-* _${runtime(process.uptime())}_
-*Owner:-* _${Config.ownername}_
-*Branch:-* _${Config.BRANCH}_
-
-_Type ${prefix}menu for my command list._
-
-_Powered by ${Config.ownername}_
-`;
             let aliveMessage = {
                 image: {
-                    url: await botpic(),
+                    url: `https://telegra.ph/file/8eebcfc487da91fb4db36.jpg`,
                 },
-                caption: alivtxt,
-                footer: tlang().footer,
+                caption: `*◈━━━━━━━━━━━━━◈*
+          *𝗞𝙸𝙽𝙶 𝗥𝙰𝚅𝙰𝙽𝙰 𝗠𝗗*
+*◈━━━━━━━━━━━━━◈*
+
+   ~▰▰▰▰▰▰▰▰▰▰▰~
+▮▸*⃝𝐡𝐢_* 𝐩𝐫𝐚𝐦𝐞𝐬𝐡
+▮▸𝐢 𝐚𝐦 𝐜𝐨𝐦𝐦𝐢𝐧𝐠 𝐬𝐨𝐨𝐧
+▮▸𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲_𝙿𝚁𝙰𝙼𝙴𝚂𝙷 𝙻𝙸𝙾𝙽 𝙱𝙾𝚃
+▮▸𝐮𝐩𝐭𝐢𝐦𝐞 7171
+
+*𝘈_*_*📃𝘎𝘌𝘛 𝘔𝘌𝘕𝘜📃*_
+*𝘉_*_*🛡️𝘚𝘊𝘙𝘐𝘗𝘛🛡️*_
+*𝘊_*_*🙋‍♂️𝘖𝘞𝘕𝘌𝘙🙋‍♂️*_`,
+                footer: `*𝗞𝙸𝙽𝙶 𝗥𝙰𝚅𝙰𝙽𝙰 𝗠𝗗*`,
                 headerType: 4,
             };
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
+            });
+return Void.sendMessage(citel.chat, {
+
+                audio: {
+
+                    url: `https://github.com/Pramesh04/sup_to_ravana/raw/main/alive.mp3`,
+
+                },
+
+                mimetype: "audio/mpeg",
+
+                fileName: `alive.mp3`,
+
+            }, {
+
+                quoted: citel,
+
             });
 
         }
