@@ -48,7 +48,7 @@ module.exports = {
 		API_KEY: process.env.HEROKU_API_KEY || '',
 		APP_NAME: process.env.HEROKU_APP_NAME || '',
 	},
-	VERSION: process.env.VERSION || 'v.0.0.4',
+	VERSION: process.env.VERSION || 'v.0.0.8',
 	LANG: process.env.THEME || 'SECKTOR',
 	WORKTYPE: process.env.WORKTYPE || 'public',
 };
