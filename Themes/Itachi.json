@@ -1,0 +1,62 @@
+{
+  "_JSON_": true,
+  "AUTHOR": "SamPandey001",
+  "LANGUAGE": "English",
+  "LANGCODE": "en",
+  "STRINGS": {
+    "updater": {
+      "UPDATE": "Your bot is already at full power, no need to worry.",
+      "NEW_UPDATE": "A new update is ready for your bot!\n\n*Changes:*\n",
+      "UPDATED_LOCAL": "The updates have been applied, everything's in order!"
+    },
+    "global": {
+      "botName": "Powered by Itachi Uchiha",
+      "body": "I am the darkness.",
+      "greet2": "Well, well, if it isn't you.",
+      "pic1": "https://mrwallpaper.com/images/high/itachi-crow-sharingan-0d2b5rthih5j1pc2.webp",
+      "pic2": "https://4kwallpapers.com/images/wallpapers/itachi-uchiha-dark-2560x1440-20031.jpg",
+      "pic3": "https://wallpapers.com/images/featured/itachi-uchiha-background-fohqpsc35rasahas.jpg",
+      "pic4": "https://images.wallpapersden.com/image/download/itachi-uchiha-4k-naruto-red-night_bmZsaWWUmZqaraWkpJRobWllrWZubGo.jpg",
+      "pic5": "https://wallpapercg.com/download/itachi-uchiha-5120x2880-23836.jpg",
+      "pic6": "https://c4.wallpaperflare.com/wallpaper/81/823/631/naruto-shippuuden-uchiha-itachi-akatsuki-sharingan-wallpaper-preview.jpg",
+      "pic7": "https://wallpapersok.com/images/high/itachi-of-the-sharingan-akatsuki-wvd5xvhcqslgewjs.jpg",
+      "gif1": "https://media1.tenor.com/m/PU2qGjHspuUAAAAd/itachi-uchiha-itachi.gif",
+      "gif2": "https://media1.tenor.com/m/9cGXz2mKZNgAAAAC/sharingan.gif",
+      "gif3": "https://media1.tenor.com/m/xlFZTbLqs20AAAAd/itachi.gif",
+      "gif4": "https://media1.tenor.com/m/dX5Cp2i4MpwAAAAd/itachi.gif",
+      "gif5": "https://media1.tenor.com/m/mhGzi1Y-evEAAAAC/itachi-itachi-uchiha.gif",
+      "gif6": "https://media1.tenor.com/m/9BRAnfjCZQ4AAAAC/sharingan.gif",
+      "gif7": "https://media1.tenor.com/m/kVDFaxgnXOIAAAAC/sharingan.gif",
+      "greet": "Ah, it's you again.",
+      "dotbody": "I have returned... as expected.",
+      "promote": "A new force has arrived, whether you're ready or not.",
+      "pmallow": "Hii, This is Itachi Uchiha\n*My skills are locked for now.\nLeave a message, I’ll get back when I’m not busy.*",
+      "pmblock": "❌ Blocked*\n\nYour existence is insignificant right and now Genjustu...\n\n _Powered by Itachi Uchiha_*",
+      "pmwarn": "✋Hii*\nYou’re testing my patience. Keep it up, and I might block you. You have ${checkPermit.times} warning(s).\n\n *Powered by Itachi Uchiha*",
+      "permited": "Hey ${tname}*\n\nYou’re allowed to message me, for now.\n\nPowered by Itachi Uchiha",
+      "revoked": "Hey ${tname}*\n\nYour privilege to message me has been revoked. You're on your own now.\n\nPowered by Itachi Uchiha",
+      "demote": "You’re not even worth my time anymore. Enjoy being irrelevant.",
+      "antlink": "Link detected.\n*Farewell, your time has come to an end*",
+      "session": "\n*This is your session.itachi.json, handle with care*\n_Store it properly and upload to your Forked Repo_\n Connect it to Heroku for the bot to run indefinitely.\n\n*Powered by Itachi Uchiha*",
+      "mention": "Please mention another user.",
+      "title": "Itachi Uchiha",
+      "footer": "Itachi Uchiha",
+      "by": "Made by: CitelVoid",
+      "chat_desc": "Available Options: 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete",
+      "success": "Success ✓",
+      "dot": "Oh, you’re still here. Why not try -help?",
+      "couple_male": "I could have ended this long ago, but I’m letting it slide.",
+      "couple_female": "You’re the one carrying the burden. I’ve already done my part.",
+      "admin": "This command is for Admins only⚠️!",
+      "botAdmin": "Do me a favor and grant me Admin rights❗",
+      "owner": "This command is only for my Owner ⚠️",
+      "group": "Only groups can use this feature ❗",
+      "private": "Private chats only. Keep it in your own space.⚠️",
+      "bot": "This feature is exclusive to the Bot Number.⚠️",
+      "wait": "*Processing your request, as if it matters* ✅"
+    },
+    "error": {
+      "text": "Task Terminated"
+    }
+  }
+}
