@@ -6,8 +6,8 @@
   "LANGCODE": "en",
   "STRINGS": {
       "updater": {
-          "UPDATE": "*I don’t like expending more effort than I have to.\nYour bot is already up-to-date*",
-          "NEW_UPDATE": "*There is a new update available for the bot!*\n\n*Changes:*\n",
+          "UPDATE": "*I don’t like spending more effort than I have to.\nYour bot is already up-to-date*",
+          "NEW_UPDATE": "*Hey there, you gotta update your bot.*\n\n*Changes:*\n",
           "UPDATED_LOCAL": "*Successfully Updated!*"
       },
       "global": {
