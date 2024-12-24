@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://secktoruserbot.onrender.com/">
-    <img src="https://secktoruserbot.onrender.com/main.jpg" alt="Secktor MD" height="300">
+    <img src="https://raw.githubusercontent.com/SecktorBot/Brandimages/8075d6f814c48414dd03688a35f4bfd80fb6e603/logos/SocialLogo%201.svg" alt="Secktor MD" height="300">
   </a>
 </p>
 
