@@ -11,8 +11,7 @@
 	},
 	"author": "SamPandey001",
 	"dependencies": {
-		"@whiskeysockets/baileys": "^6.7.8",
-		"@adiwajshing/keyed-db": "^0.2.4",
+		"@whiskeysockets/baileys": "^6.7.9",
 		"awesome-phonenumber": "^3.3.0",
 		"anime-character-random": "latest",
 		"axios": "^0.24.0",
@@ -29,7 +28,6 @@
 		"discord-xp": "^1.1.16",
 		"mongoose": "^6.2.1",
 		"mumaker": "^1.0.0",
-		"google-it": "^1.6.2",
 		"file-type": "^16.5.3",
 		"form-data": "^4.0.0",
 		"fluent-ffmpeg": "^2.1.2",
@@ -40,7 +38,6 @@
 		"jsdom": "^16.4.0",
 		"moment-timezone": "^0.5.34",
 		"mailist": "^1.0.3",
-		"openai": "3.0.0",
 		"pm2": "^5.2.0",
 		"node-cron": "^3.0.0",
 		"node-fetch": "^2.6.1",
@@ -51,8 +48,6 @@
 		"translatte": "^3.0.1",
 		"secktor-pack": "latest",
 		"ytdl-secktor": "latest",
-		"pastebin-js": "latest",
-		"fb-info-video": "^1.0.2",
 		"wa-sticker-formatter": "^4.3.2"
 	},
 	"directories": {
