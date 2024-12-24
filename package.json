@@ -23,6 +23,7 @@
 		"discord-mongoose-economy": "^1.2.0",
 		"express": "^4.18.1",
 		"fs-extra": "^10.1.0",
+		"pastebin-js": "^1.0.6",
 		"koyeb-api-client": "latest",
 		"dotenv": "^16.0.0",
 		"discord-xp": "^1.1.16",
