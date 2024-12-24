@@ -11,7 +11,7 @@
 	},
 	"author": "SamPandey001",
 	"dependencies": {
-		"@whiskeysockets/baileys": "^6.7.9",
+		"@whiskeysockets/baileys": "6.6.0",
 		"awesome-phonenumber": "^3.3.0",
 		"anime-character-random": "latest",
 		"axios": "^0.24.0",
