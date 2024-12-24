@@ -28,7 +28,7 @@ module.exports = {
 	auto_read_status: process.env.AUTO_READ_STATUS || false,
 	packname: (process.env.PACK_INFO?.split(';') || [])[1] || 'Secktor-Md',
 	autoreaction: process.env.AUTO_REACTION || false,
-	antibadword: process.env.ANTI_BAD_WORD || null,
+	antibadword: process.env.ANTI_BAD_WORD || 'nobadwordsuntilyouputabadwordherelol',
 	alwaysonline: process.env.ALWAYS_ONLINE || false,
 	antifake: process.env.FAKE_COUNTRY_CODE || '1000',
 	readmessage: process.env.READ_MESSAGE || false,
