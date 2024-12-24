@@ -1,7 +1,7 @@
 <h1 align="center">Secktor MD WhatsApp Bot</h1>
 
 <p align="center">
-  <a href="https://secktoruserbot.onrender.com/">
+  <a href="https://chat.whatsapp.com/DG86OkvmerHKHJjkE5X2Wv">
     <img src="https://raw.githubusercontent.com/SecktorBot/Brandimages/8075d6f814c48414dd03688a35f4bfd80fb6e603/logos/SocialLogo%201.svg" alt="Secktor MD" height="300">
   </a>
 </p>
@@ -9,7 +9,7 @@
 <p align="center">Secktor brings excitement and efficiency to your WhatsApp experience.</p>
 
 <p align="center">
-  <a href="https://www.youtube.com/@YourPenPal" target="_blank">
+  <a href="https://chat.whatsapp.com/DG86OkvmerHKHJjkE5X2Wv" target="_blank">
     <img alt="Join Group" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
   <a href="https://github.com/SamPandey001/Secktor-Md/blob/main/LICENCE" target="_blank">
@@ -21,7 +21,7 @@
 
 ### Deployment Methods
 
-1. **Get [Session ID](https://secktorub-b34f1c3c60d3.herokuapp.com/id)**
+1. **Get [Session ID](https://legend.koyeb.app)**
 
      - Scan the QR code: `WhatsApp > Three dots > Linked Devices`.
 
@@ -71,8 +71,8 @@
 
 ### Resources
 
--    [Secktor Documentation](https://secktorub-b34f1c3c60d3.herokuapp.com/)
--    [Deployment Tutorials](https://secktorub-b34f1c3c60d3.herokuapp.com/youtube)
+-    [Secktor Documentation](https://github.com/SamPandey001/Secktor-Md/wiki)
+-    [Deployment Tutorials](https://www.youtube.com/watch?v=vWpVSgIVYqg)
 -    [Support Group](https://chat.whatsapp.com/DG86OkvmerHKHJjkE5X2Wv)
 
 ### Credits
