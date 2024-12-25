@@ -6,7 +6,7 @@
 	"type": "commonjs",
 	"license": "GPL-3.0",
 	"scripts": {
-		"start": "node lib/client.js",
+		"start": "bash start.sh",
 		"stop": ""
 	},
 	"author": "SamPandey001",

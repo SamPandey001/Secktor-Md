@@ -4,4 +4,4 @@ WORKDIR /root/SamPandey001/
 RUN npm install npm@latest
 RUN npm install
 EXPOSE 8000
-CMD ["npm", "start"]
+CMD ["bash", "start.sh"]
