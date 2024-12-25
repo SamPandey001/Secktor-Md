@@ -21,7 +21,7 @@
 
 ### Deployment Methods
 
-1. **Get [Session ID](https://legend.koyeb.app)**
+1. **Get [Session ID](https://secktorbot-96c32c910679.herokuapp.com/dashboard)**
 
      - Scan the QR code: `WhatsApp > Three dots > Linked Devices`.
 
@@ -38,20 +38,29 @@
      - Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork).
 
 4. **Deploy**
+## Deploy to Koyeb ↓
 
-     - **[Heroku](https://secktorub-b34f1c3c60d3.herokuapp.com/heroku)**
-     - **[Koyeb](https://secktorub-b34f1c3c60d3.herokuapp.com/koyeb)** (Get API key [here](https://app.koyeb.com/settings/api)).
-     - **[Replit](https://repl.it/github/SamPandey001/Secktor-Md)**  
-       Run these commands in the Replit shell if needed:
+<a href="https://secktorbot-96c32c910679.herokuapp.com/deploy" target="blank"><img align="center" src="https://camo.githubusercontent.com/62c6338c8ef67e362647e4a7aa1d124fb91e29cc562e788308ac598842a48743/68747470733a2f2f692e696d6775722e636f6d2f504e6f4c7446712e706e67" alt="Deploy bot" height="110" width="315" /></a>
 
-          ```bash
+## Deploy to Heroku ↓
+
+<a href="https://secktorbot-96c32c910679.herokuapp.com/heroku" target="blank"><img align="center" src="https://camo.githubusercontent.com/751f22ad02cdc356d1830bb7602ec76b1a37b5e0c5fb2cc2569e7b26a6f11d38/68747470733a2f2f692e696d6775722e636f6d2f36727336314d592e706e67" alt="Deploy bot" height="110" width="315" /></a>
+
+## Deploy to Railway ↓
+
+<a href="https://secktorbot-96c32c910679.herokuapp.com/railway" target="blank"><img align="center" src="https://camo.githubusercontent.com/e4002051668809c220b10ad92ddd6fb87f365d8cd4ff470e0aeca3bc5b05450e/68747470733a2f2f7261696c7761792e6170702f627574746f6e2e737667" alt="Deploy bot" height="70" width="205" /></a>
+
+  <div>
+<br>
+<div>
+  <br>
+  
+
+          bash
           yarn
           npm i pm2 -g && pm2 start lib/client.js
-          ```
-
-          Fill variables in the JSON format:
-
-          ```json
+       
+          #Fill variables in the JSON format:
           {
           	"SESSION_ID": "Your-Session-ID",
           	"OWNER_NUMBER": "Your-Number",
@@ -60,7 +69,7 @@
           	"PACK_INFO": "PackName;Author",
           	"PREFIX": "."
           }
-          ```
+       
 
 7.  ***[Deploy on Railway](https://secktorub-b34f1c3c60d3.herokuapp.com/railway)***
   
