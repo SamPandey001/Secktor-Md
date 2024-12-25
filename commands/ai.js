@@ -53,7 +53,7 @@ async function analyzeImage(imageUrl, query) {
 
 cmd({
     pattern: "gemini",
-    category: "BK9",
+    category: "ai",
     filename: __filename,
 },
 async (Void, citel, text) => {
