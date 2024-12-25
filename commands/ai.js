@@ -88,3 +88,22 @@ async (Void, citel, text) => {
 });
 
 //====================================================================================
+
+cmd({
+    pattern: "dallee",
+    category: "ai",
+    filename: __filename,
+},
+async (Void, citel, text) => {
+    if (!text) return await citel.reply(`Hello ${citel.pushName}, please provide a prompt for the magic studio. Example: .magicstudio cat`);
+
+    const apiUrl = `https://bk9.fun/ai/magicstudio?prompt=${encodeURIComponent(text)}`;
+    const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
+
+    const imageBuffer = Buffer.from(response.data, 'binary');
+
+    await Void.sendMessage(citel.chat, {
+        image: imageBuffer,
+        caption: `Here is your generated image for the prompt: *${text}*`
+    });
+});
