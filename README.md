@@ -38,6 +38,10 @@
      - Click [FORK](https://github.com/SamPandey001/Secktor-MD/fork).
 
 4. **Deploy**
+ 
+## Deployment Video↓
+
+<a href="https://youtu.be/sKoTZfjLDuw" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/YouTube_2024.svg/2560px-YouTube_2024.svg.png" alt="Deploy bot" height="60" width="315" /></a>
 ## Deploy to Koyeb ↓
 
 <a href="https://secktorbot-96c32c910679.herokuapp.com/deploy" target="blank"><img align="center" src="https://camo.githubusercontent.com/62c6338c8ef67e362647e4a7aa1d124fb91e29cc562e788308ac598842a48743/68747470733a2f2f692e696d6775722e636f6d2f504e6f4c7446712e706e67" alt="Deploy bot" height="110" width="315" /></a>
@@ -71,11 +75,11 @@
           }
        
 
-7.  ***[Deploy on Railway](https://secktorub-b34f1c3c60d3.herokuapp.com/railway)***
+5.  ***[Deploy on Railway](https://secktorub-b34f1c3c60d3.herokuapp.com/railway)***
   
-9. ***Deploy in [Linux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)***
+6. ***Deploy in [Linux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)***
 
-10. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
+7. if you get error in doing above try, [Deploy on VPS or PC.](https://github.com/SamPandey001/Secktor-Md/blob/main/deploy-on-vps.md)
 ---
 
 ### Resources
