@@ -1,5 +1,6 @@
 build:
   docker:
-      worker: Dockerfile
+    worker: Dockerfile
 run:
-   web: bash start.sh
+  worker: bash start.sh
+  web: npm start
