@@ -71,7 +71,7 @@ async (Void, citel, text) => {
             if (!text) return await citel.reply(`Hello ${citel.pushName}, how can I assist you? (Start your message with .gemini to get a reply)`);
 
             let users = citel.sender ? citel.sender.split('@')[0] : citel.quoted ? citel.quoted.sender.split('@')[0] : text.replace('@')[0];
-            const apiUrl = `https://bk9.fun/ai/GPT4o?q=${encodeURIComponent(text)}&userId=${users}`;
+            const apiUrl = `https://bk9.fun/ai/gemini?q=${encodeURIComponent(text)}}`;
             const response = await fetch(apiUrl);
             const result = await response.json();
 
