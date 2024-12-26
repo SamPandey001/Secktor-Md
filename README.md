@@ -12,7 +12,7 @@
   <a href="https://chat.whatsapp.com/DG86OkvmerHKHJjkE5X2Wv" target="_blank">
     <img alt="Join Group" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
-  <a href="https://github.com/SamPandey001/Secktor-Md/blob/main/LICENCE" target="_blank">
+  <a href="https://huggingface.co/spaces/ikshwakupandey43/sector" target="_blank">
     <img alt="License: GPL-3" src="https://badges.frapsoft.com/os/gpl/gpl.png?v=103" />
   </a>
 </p>
