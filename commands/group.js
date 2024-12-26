@@ -1102,7 +1102,7 @@
         } else {
           var role = "Kiddo";
         }
-        if (Config.levelupmessage !== "false") {
+        if (Config.levelupmessage !== false) {
           await Void.sendMessage(citel.chat, {
             image: {
               url: await botpic()
