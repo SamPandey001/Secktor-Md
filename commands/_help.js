@@ -28,7 +28,7 @@ Secktor.cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
-            const { commands } = require('../lib');
+            const { commands } = require(__dirname + '/../lib')
             if (text.split(" ")[0]) {
                 let arr = [];
                 const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
@@ -98,7 +98,7 @@ Secktor.cmd({
             category: "general"
         },
         async(Void, citel) => {
-            const { commands } = require('../lib');
+            const { commands } = require(__dirname + '/../lib')
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += `
@@ -169,7 +169,7 @@ Secktor.cmd({
     filename: __filename
 },
 async(Void, citel, text) => {
- const { commands } = require('../lib');
+const { commands } = require(__dirname + '/../lib')
  let arr = [];
         const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
         if (!cmd) return await citel.reply("*❌No Such commands.*");
