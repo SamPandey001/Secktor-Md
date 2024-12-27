@@ -13,7 +13,6 @@ const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
 const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require("../lib");
 const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
@@ -29,6 +28,7 @@ Secktor.cmd({
         },
         async(Void, citel, text) => {
             const { commands } = require(__dirname + '/../lib')
+            const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
                 const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
@@ -92,7 +92,7 @@ Secktor.cmd({
         }
     )
     //---------------------------------------------------------------------------
-    cmd({
+    Secktor.cmd({
         pattern: "list",
         desc: "list menu",
         category: "general"
@@ -132,6 +132,7 @@ Secktor.cmd({
     },
     async(Void, citel) => {
         const Config = require('../config')
+        const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
         const vcard = 'BEGIN:VCARD\n' +
             'VERSION:3.0\n' +
             'FN:' + Config.ownername + '\n' +
@@ -169,6 +170,7 @@ Secktor.cmd({
 },
 async(Void, citel, text) => {
 const { commands } = require(__dirname + '/../lib')
+const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
  let arr = [];
         const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
         if (!cmd) return await citel.reply("*❌No Such commands.*");
