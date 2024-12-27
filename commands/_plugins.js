@@ -101,13 +101,6 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-// Helper function to check if a string is a URL
-function isUrl(text) {
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.match(urlRegex);
-}
-
-// Command to install external modules temporarily
 cmd({
     pattern: "tinstall",
     category: "owner",
