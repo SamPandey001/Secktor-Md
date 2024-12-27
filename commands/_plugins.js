@@ -91,7 +91,7 @@ cmd({
       url: url
     };
     await new plugindb(ff).save();
-    citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
+    return citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
   }
 });
 

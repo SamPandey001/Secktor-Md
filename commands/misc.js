@@ -191,7 +191,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              let member = participants.map((u) => u.id);
              let me = citel.sender;
              let pick = member[Math.floor(Math.random() * member.length)];
-             Void.sendMessage(citel.chat, {
+             return Void.sendMessage(citel.chat, {
                  text: `The most ${match} around us is *@${pick.split("@")[0]}*`,
                  mentions: [pick],
              }, {
@@ -211,7 +211,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              if (!text) return citel.reply('Please give me package name.📦')
              axios.get(`https://api.npms.io/v2/search?q=${text}`).then(({ data }) => {
                  let txt = data.results.map(({ package: pkg }) => `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_`).join('\n\n')
-                 citel.reply(txt)
+                 return citel.reply(txt)
              }).catch(e => console.log(e))
          }
      )
@@ -226,7 +226,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          async(Void, citel, text) => {
              if (!text) return citel.reply(`Example : ${prefix}fliptext Back in black`)
              flipe = text.split('').reverse().join('')
-             citel.reply(`\`\`\`「  Text Flipper Tool  」\`\`\`\n*IGiven text :*\n${text}\n*Fliped text :*\n${flipe}`)
+             return citel.reply(`\`\`\`「  Text Flipper Tool  」\`\`\`\n*IGiven text :*\n${text}\n*Fliped text :*\n${flipe}`)
  
          }
      )
@@ -240,7 +240,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text) => {
              if (!text) return citel.reply(`Where's the link ?`);
-             Void.sendMessage(citel.chat, {
+             return await Void.sendMessage(citel.chat, {
                  video: {
                      url: text.split(" ")[0],
                  },
@@ -280,7 +280,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                      author: global.author,
                      categories: res.tags,
                  });
-                 await fs.unlinkSync(encmedia);
+                 return await fs.unlinkSync(encmedia);
              }
          }
      )
@@ -342,7 +342,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                          ];
                          let chatbott= await chatbot.findOne({ id: 'chatbot' })
                          await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                        citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
+                         return citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
                         }
              }
  
@@ -363,9 +363,9 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
  
                  let textt = text || citel.quoted.text
                  let eb = await eBinary(textt);
-                 citel.reply(eb);
+                 return  citel.reply(eb);
              } catch (e) {
-                 console.log(e)
+                return console.log(e)
              }
          }
      )
@@ -381,9 +381,9 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              try {
                  if (!text) return citel.reply(`Send text to be decoded.`);
                  let eb = await dBinary(text);
-                 citel.reply(eb);
+                 return citel.reply(eb);
              } catch (e) {
-                 console.log(e)
+                return console.log(e)
              }
          }
      )
@@ -442,7 +442,7 @@ let buttons = [{
           type: 1,
       },
   ];
-  await Void.sendButtonText(citel.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Void.user.name, citel);
+  return await Void.sendButtonText(citel.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Void.user.name, citel);
 }
 }
 })   
@@ -477,7 +477,7 @@ let buttons = [{
                      type: 1,
                  },
              ];
-             await Void.sendButtonText(citel.chat, buttons, `Activate antilink:Deletes Link + kick`, Void.user.name, citel);
+             return await Void.sendButtonText(citel.chat, buttons, `Activate antilink: Deletes Link + kick`, Void.user.name, citel);
          }
      )
      cmd({
@@ -506,7 +506,7 @@ catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
      if (Config.autoreaction === 'true' && citel.text.startsWith(prefix)) {
          const emojis = ['❤', '💕', '😻', '🧡', '💛', '💚', '💙', '💜', '🖤', '❣', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '♥', '💌', '🙂', '🤗', '😌', '😉', '🤗', '😊', '🎊', '🎉', '🎁', '🎈', '👋']
          const emokis = emojis[Math.floor(Math.random() * (emojis.length))]
-         Void.sendMessage(citel.chat, {
+         return Void.sendMessage(citel.chat, {
              react: {
                  text: emokis,
                  key: citel.key

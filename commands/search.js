@@ -49,7 +49,7 @@
  🌟imdbRating: ${data.imdbRating}
  ❎imdbVotes: ${data.imdbVotes}`;
  
-   Void.sendMessage(citel.chat, {
+ return await Void.sendMessage(citel.chat, {
      image: { url: data.Poster },
      caption: imdbt
    }, { quoted: citel });
@@ -80,7 +80,7 @@
  *Longitude:* ${data.coord.lon}
  *Country:* ${data.sys.country}`;
  
-   Void.sendMessage(citel.chat, { text: textw }, { quoted: citel });
+ return Void.sendMessage(citel.chat, { text: textw }, { quoted: citel });
  });
  
  // Horoscope search command
@@ -110,9 +110,9 @@
  *Today Mood:* ${json.mood}
  *Overall:* ${json.description}`;
  
-     citel.reply(textw);
+ return citel.reply(textw);
    } catch (e) {
-     console.error(e);
+    return console.error(e);
    }
  });
  
@@ -135,7 +135,7 @@
      msg += `➣ Title: ${g.title}\n➣ Description: ${g.snippet}\n➣ Link: ${g.link}\n\n────────────────────────\n\n`;
    });
  
-   citel.reply(msg);
+   return citel.reply(msg);
  });
  
  // Image search command
@@ -160,7 +160,7 @@
        headerType: 4
      };
  
-     Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+     return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
    }
  });
  
@@ -175,7 +175,7 @@
    const random = anu[Math.floor(Math.random() * anu.length)];
  
    Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: citel });
-   Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel });
+   return Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel });
  });
  
  // WhatsApp account search command
@@ -224,6 +224,6 @@
      }
    }
  
-   citel.reply(`${textOutput}${noBio}${noWhatsapp}`);
+   return citel.reply(`${textOutput}${noBio}${noWhatsapp}`);
  });
  

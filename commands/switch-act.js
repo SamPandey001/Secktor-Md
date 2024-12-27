@@ -89,6 +89,6 @@ cmd({
                 return citel.reply('Successfully enabled *NSFW*.');
             }
         default:
-            citel.reply("❌ Please provide a valid option:\n1- events\n2- antilink\n3- nsfw\n4- economy\n5- cardgame");
+            return citel.reply("❌ Please provide a valid option:\n1- events\n2- antilink\n3- nsfw\n4- economy\n5- cardgame");
     }
 });

@@ -131,7 +131,7 @@ cmd({
                 let resultTest = eval('const a = async()=>{\n' + text + '\n}\na()');
                 if (typeof resultTest === "object")
                     citel.reply(JSON.stringify(resultTest));
-                else citel.reply(resultTest.toString());
+                else return citel.reply(resultTest.toString());
             } catch (err) {
                 return  citel.reply(err.toString());
             }

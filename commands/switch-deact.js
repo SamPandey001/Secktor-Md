@@ -106,7 +106,7 @@
                     break
                 default:
                     {
-                        citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\n4-cardgame")
+                        return citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\n4-cardgame")
                     }
          }
      }

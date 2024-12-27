@@ -87,14 +87,14 @@ cmd({
             const result = await response.json();
 
             if (result.status && result.BK9) {
-                await citel.reply(result.BK9);
+                return await citel.reply(result.BK9);
             } else {
-                await citel.reply("Error: Unable to get a response from the API");
+                return  await citel.reply("Error: Unable to get a response from the API");
             }
         }
     } catch (error) {
         console.error("An error occurred:", error);
-        await citel.reply("🤖 : An error occurred while processing your request. Please try again.");
+       return await citel.reply("🤖 : An error occurred while processing your request. Please try again.");
     }
 });
 
@@ -119,6 +119,6 @@ cmd({
         });
     } catch (error) {
         console.error("An error occurred while generating the image:", error);
-        await citel.reply("🤖 : An error occurred while generating the image. Please try again.");
+        return await citel.reply("🤖 : An error occurred while generating the image. Please try again.");
     }
 });

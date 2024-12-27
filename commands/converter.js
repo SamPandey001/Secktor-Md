@@ -96,7 +96,7 @@ else if(citel.quoted.message.videoMessage )
 {
   let cap =citel.quoted.message.videoMessage.caption;
   let anu = await Void.downloadAndSaveMediaMessage(citel.quoted.message.videoMessage)
-  Void.sendMessage(citel.chat,{video:{url : anu},caption : cap })
+  return Void.sendMessage(citel.chat,{video:{url : anu},caption : cap })
 }
 
 }
@@ -177,7 +177,7 @@ cmd({
             }
 
             let fancytextt = await fancytext(`${text.slice(2)}`, text.split(" ")[0])
-            citel.reply(fancytextt)
+            return citel.reply(fancytextt)
 
         }
     )
@@ -195,9 +195,9 @@ cmd({
             try {
                 link = text.split(" ")[0];
                 anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-                citel.reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
+                return  citel.reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
             } catch (e) {
-                console.log(e);
+                return  console.log(e);
             }
         }
     )

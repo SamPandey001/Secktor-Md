@@ -44,7 +44,7 @@
 	 if (daily.cd) { //cdL is already formatted cooldown Left
         return await  citel.reply(`🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`)
 	 } else {
-	 citel.reply(`you claimed daily ${daily.amount} 🪙 for today🎉.`);   
+        return citel.reply(`you claimed daily ${daily.amount} 🪙 for today🎉.`);   
 	 }
  }
  )
@@ -123,7 +123,7 @@ return await citel.reply(`*10000000 🪙diamond storage has been added in ${cite
 
              break
 default:
- await citel.reply('*What are you trying to do📉*.')
+    return await citel.reply('*What are you trying to do📉*.')
 
  }
 }
@@ -178,7 +178,7 @@ return await citel.reply(`⛩️ Sender: ${citel.pushName}\n🍀Successfully �
 str+= `*${i+1}*\n╭─────────────◆\n│ *Name:-* _${tname}_\n│ *User:-* _@${h[i].userID.split('@')[0]}_\n│ *Wallet:-* _${h[i].wallet}_\n│ *Bank Amount:-* _${h[i].bank}_\n│ *Bank Capacity:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`  	 
 	 arr.push(h[i].userID)
 	 }
-	     citel.reply(str,{mentions:arr})
+     return citel.reply(str,{mentions:arr})
 	     
      })
 
@@ -337,7 +337,7 @@ return await citel.reply(`🍀User: ${citel.pushName}\n\n_🪙${balance.bank}/${
            ////citel.react('😦')
              break
 default:
- await citel.reply('*What are you trying to do👀*.')
+    return await citel.reply('*What are you trying to do👀*.')
  //citel.react('🤔')
 
  }
@@ -369,7 +369,7 @@ default:
         const withdraw = await eco.withdraw(user, secktor, query);
         if(withdraw.noten) return citel.reply('*🏧 Insufficient fund in bank🫤*'); //if user states more than whats in his wallet
         const add = eco.give(user, secktor, query);
-          citel.reply(`*🏧 ALERT* \n _🪙${withdraw.amount} has been withdrawn from your wallet💰._`)
+        return  citel.reply(`*🏧 ALERT* \n _🪙${withdraw.amount} has been withdrawn from your wallet💰._`)
     }
 )
 
@@ -417,7 +417,7 @@ default:
     } else if (opp==='down'){
         hjkl = 'https://github.com/SecktorBot/Brandimages/blob/main/Nezuko/downr.webp?raw=true'
     } else{
-        citel.reply(`Please provide direction(left,right,up,down).\nEg:- ${prefix}gamble 200 left`)
+        return citel.reply(`Please provide direction(left,right,up,down).\nEg:- ${prefix}gamble 200 left`)
     }
    let media = await getBuffer(hjkl)
    citel.reply(media,{packname:'Secktor',author:'Economy'},"sticker")
@@ -559,7 +559,7 @@ if(value<=balance.wallet){
             }
          }
          else{
-                citel.reply(`*You can only play this game during weekends*\n\n*🌿 Friday*\n*🎏 Saturday*\n*🎐 Sunday*`)
+            return  citel.reply(`*You can only play this game during weekends*\n\n*🌿 Friday*\n*🎏 Saturday*\n*🎐 Sunday*`)
          }
     }
 )
