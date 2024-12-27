@@ -672,8 +672,8 @@
       return citel.reply(tlang().botAdmin);
     }
     try {
-      let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-      if (!users) {
+        let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : null;
+        if (!users) {
         return;
       }
       await Void.groupParticipantsUpdate(citel.chat, [users], "remove");
@@ -833,7 +833,7 @@
     if (!isBotAdmins) {
       return citel.reply(tlang().botAdmin);
     }
-    let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+    let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : null;
     await Void.groupParticipantsUpdate(citel.chat, [users], "add");
   });
   //---------------------------------------------------------------------------
@@ -884,8 +884,8 @@
       return citel.reply(tlang().botAdmin);
     }
     try {
-      let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-      if (!users) {
+        let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : null;
+        if (!users) {
         return;
       }
       await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
