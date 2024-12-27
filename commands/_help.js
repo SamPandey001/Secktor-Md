@@ -98,7 +98,7 @@ Secktor.cmd({
         category: "general"
     },
     async (Void, citel) => {
-        const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE } = require(__dirname + '/../lib');
+        const { fancytext,commands, tlang, runtime, formatp, prefix, THUMB_IMAGE } = require(__dirname + '/../lib');
         let str = `
     ╭━━〘 ${fancytext(Config.ownername.split(' ')[0], 58)} 〙━━──⊷
     ┃ ⛥╭──────────────
