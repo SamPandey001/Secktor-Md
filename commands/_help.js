@@ -16,6 +16,8 @@ const Config = require('../config')
 const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
+const sck1  = require('../lib')
+
 
     //---------------------------------------------------------------------------
 Secktor.cmd({
