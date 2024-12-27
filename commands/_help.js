@@ -112,12 +112,12 @@ Secktor.cmd({
     ┃ ⛥│
     ┃ ⛥╰───────────
     ╰━━━━━━━━━━━──⊷\n`;
-     str += \n------------------------------;
+     str += `\n------------------------------`;
         for (let i = 0; i < commands.length; i++) {
             if (commands[i].pattern === undefined) continue;
-            str += \n╭ ${i + 1} *${commands[i].pattern}*\n;
+            str += `\n╭ ${i + 1} *${commands[i].pattern}*\n`;
             if (commands[i].desc === undefined) commands[i].desc = "";
-            str += ╰➛ ${commands[i].desc}\n------------------------------;
+            str += `╰➛ ${commands[i].desc}\n------------------------------`;
         }
     
         return citel.reply(str); // citel.imgurl(THUMB_IMAGE,str)
