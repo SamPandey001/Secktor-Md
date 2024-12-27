@@ -1,1 +1,40 @@
-
+{
+  "chats": [
+    {
+      "id": "1234567890@s.whatsapp.net",
+      "name": "Example Chat",
+      "messages": [
+        {
+          "id": "ABCD1234",
+          "from": "1234567890@s.whatsapp.net",
+          "to": "0987654321@s.whatsapp.net",
+          "timestamp": 1672531194000,
+          "content": "Hello, this is a test message."
+        },
+        {
+          "id": "ABCD5678",
+          "from": "0987654321@s.whatsapp.net",
+          "to": "1234567890@s.whatsapp.net",
+          "timestamp": 1672531254000,
+          "content": "Hi, this is a reply."
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1234567890@s.whatsapp.net",
+      "name": "John Doe",
+      "number": "+1234567890"
+    },
+    {
+      "id": "0987654321@s.whatsapp.net",
+      "name": "Jane Smith",
+      "number": "+0987654321"
+    }
+  ],
+  "settings": {
+    "auto_read_status": true,
+    "auto_status_saver": true
+  }
+}
