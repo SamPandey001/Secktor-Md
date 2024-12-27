@@ -886,7 +886,7 @@
     try {
         let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : null;
         if (!users) {
-        return citel.reply('Please tag a user.';
+        return citel.reply('Please tag a user.');
       }
      return await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
     } catch {
