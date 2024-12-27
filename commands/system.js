@@ -147,7 +147,7 @@ async (Void, citel, text) => {
     }
 
     let mime = citel.quoted.mtype;
-    if (mime !== 'videoMessage' && mime !== 'imageMessage') {
+    if (mime !== 'videoMessage' && mime !== 'imageMessage' && mime !== 'audioMessage' && mime !== 'audioMessage') {
         return await citel.reply("Uhh Please, Reply To An Image/Video");
     }
 
