@@ -834,7 +834,7 @@
       return citel.reply(tlang().botAdmin);
     }
     let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : null;
-    await Void.groupParticipantsUpdate(citel.chat, [users], "add");
+    return await Void.groupParticipantsUpdate(citel.chat, [users], "add");
   });
   //---------------------------------------------------------------------------
   cmd({
@@ -860,7 +860,7 @@
       jackhuh += `*Member :* ${metadata.participants.length}\n`;
       jackhuh += `*Jid:-* ${i}\n\n`;
     }
-    citel.reply(jackhuh);
+    return citel.reply(jackhuh);
   });
   //---------------------------------------------------------------------------
   cmd({
@@ -886,9 +886,9 @@
     try {
         let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : null;
         if (!users) {
-        return;
+        return citel.reply('Please tag a user.';
       }
-      await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
+     return await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
     } catch {
       //		citel.reply(tlang().botAdmin);
     }
@@ -903,7 +903,7 @@
     filename: __filename,
     use: "<quote/reply message.>"
   }, async (Void, citel, text) => {
-    if (citel.quoted.Bot) {
+    if (citel.quoted.isBaileys) {
       const key = {
         remoteJid: citel.chat,
         fromMe: false,
