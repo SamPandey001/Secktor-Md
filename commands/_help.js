@@ -100,18 +100,18 @@ Secktor.cmd({
     async (Void, citel) => {
         const { fancytext,commands, tlang, runtime, formatp, prefix, THUMB_IMAGE } = require(__dirname + '/../lib');
         let str = `
-    \n╭━━〘 ${fancytext(Config.ownername.split(' ')[0], 58)} 〙━━──⊷
-    \n┃ ⛥╭──────────────
-    \n┃ ⛥│ User: ${citel.pushName}
-    \n┃ ⛥│ Theme: ${tlang().title}
-    \n┃ ⛥│ Prefix: ${prefix}
-    \n┃ ⛥│ Owner: ${Config.ownername}
-    \n┃ ⛥│ Commands: ${commands.length}
-    \n┃ ⛥│ Uptime: ${runtime(process.uptime())}
-    \n┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-    \n┃ ⛥│
-   \n ┃ ⛥╰───────────
-   \n ╰━━━━━━━━━━━──⊷\n`;
+╭━━〘 ${fancytext(Config.ownername.split(' ')[0], 58)} 〙━━──⊷
+┃ ⛥╭──────────────
+┃ ⛥│ User: ${citel.pushName}
+┃ ⛥│ Theme: ${tlang().title}
+┃ ⛥│ Prefix: ${prefix}
+┃ ⛥│ Owner: ${Config.ownername}
+┃ ⛥│ Commands: ${commands.length}
+┃ ⛥│ Uptime: ${runtime(process.uptime())}
+┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃ ⛥│
+┃ ⛥╰───────────
+╰━━━━━━━━━━━──⊷\n`;
      str += `\n------------------------------`;
         for (let i = 0; i < commands.length; i++) {
             if (commands[i].pattern === undefined) continue;
