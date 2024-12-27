@@ -52,7 +52,7 @@ if (mime =="imageMessage" || mime =="stickerMessage")
 cmd({
          pattern: "vv",
          alias : ['viewonce','retrive'],
-         desc: "Flips given text.",
+         desc: "Downloader viewonce image/video.",
          category: "misc",
          use: '<query>',
          filename: __filename
