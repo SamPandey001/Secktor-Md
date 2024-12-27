@@ -135,7 +135,7 @@ async function IMGUR(imageBase64) {
 }
 
 cmd({
-    pattern: "ur",
+    pattern: "url",
     alias: ['createurl'],
     category: "misc",
     filename: __filename,
@@ -143,7 +143,7 @@ cmd({
 },
 async (Void, citel, text) => {
     if (!citel.quoted) {
-        return await citel.reply(*Reply To Any Image/Video To Get Url*);
+        return await citel.reply(`*Reply To Any Image/Video To Get Url*`);
     }
 
     let mime = citel.quoted.mtype;
