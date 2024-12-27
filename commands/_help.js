@@ -92,37 +92,36 @@ Secktor.cmd({
         }
     )
     //---------------------------------------------------------------------------
-Secktor.cmd({
-            pattern: "list",
-            desc: "list menu",
-            category: "general"
-        },
-        async(Void, citel) => {
-            const { commands } = require(__dirname + '/../lib')
-            let str = `
-╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
-            str += `
-┃ ⛥╭──────────────      
-┃ ⛥│ User: ${citel.pushName}
-┃ ⛥│ Theme: ${tlang().title}
-┃ ⛥│ Prefix: ${prefix}
-┃ ⛥│ Owner: ${Config.ownername}
-┃ ⛥│ Commands: ${commands.length}
-┃ ⛥│ Uptime: ${runtime(process.uptime())}
-┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ⛥│  
-┃ ⛥╰───────────
-╰━━━━━━━━━━━──⊷\n`
-for (let i = 0; i < commands.length; i++) 
-{
-     if(commands[i].pattern==undefined) continue
-     str +=       `╭ ${i+1} *${(commands[i].pattern)}*\n` 
-     if(commands[i].desc=undefined) commands[i].desc=""
-     str += `╰➛ ${(commands[i].desc)}\n`
-}
-            return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
+    cmd({
+        pattern: "list",
+        desc: "list menu",
+        category: "general"
+    },
+    async (Void, citel) => {
+        const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
+        let str = `
+    ╭━━〘 ${fancytext(Config.ownername.split(' ')[0], 58)} 〙━━──⊷
+    ┃ ⛥╭──────────────
+    ┃ ⛥│ User: ${citel.pushName}
+    ┃ ⛥│ Theme: ${tlang().title}
+    ┃ ⛥│ Prefix: ${prefix}
+    ┃ ⛥│ Owner: ${Config.ownername}
+    ┃ ⛥│ Commands: ${commands.length}
+    ┃ ⛥│ Uptime: ${runtime(process.uptime())}
+    ┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+    ┃ ⛥│
+    ┃ ⛥╰───────────
+    ╰━━━━━━━━━━━──⊷\n`;
+     str += \n------------------------------;
+        for (let i = 0; i < commands.length; i++) {
+            if (commands[i].pattern === undefined) continue;
+            str += \n╭ ${i + 1} *${commands[i].pattern}*\n;
+            if (commands[i].desc === undefined) commands[i].desc = "";
+            str += ╰➛ ${commands[i].desc}\n------------------------------;
         }
-    )
+    
+        return citel.reply(str); // citel.imgurl(THUMB_IMAGE,str)
+    });
     //---------------------------------------------------------------------------
 Secktor.cmd({
         pattern: "owner",
