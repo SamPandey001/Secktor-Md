@@ -58,6 +58,19 @@ cmd({
 },
 async (Void, citel, text) => {
     try {
+                if (citel.quoted && citel.quoted.mtype === 'conversation') {
+            if (!text) return await citel.reply(`Hello ${citel.pushName}, please provide a query`);
+  const apiUrl = `https://bk9.fun/ai/gemini?q=${encodeURIComponent('Previous conversation: '+citel.quoted.text + 'i want to know: '  text)}}`;
+            const response = await fetch(apiUrl);
+            const result = await response.json();
+
+            if (result.status && result.BK9) {
+                await citel.reply(result.BK9);
+            } else {
+                await citel.reply("err");
+            } 
+        }
+        
         if (citel.quoted && citel.quoted.mtype === 'imageMessage') {
             if (!text) return await citel.reply(`Hello ${citel.pushName}, please provide a query for the image analysis.`);
             try {
