@@ -95,12 +95,6 @@ cmd({
   }
 });
 
-
-const { cmd } = require('../lib');
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
-
 cmd({
     pattern: "tinstall",
     category: "owner",
