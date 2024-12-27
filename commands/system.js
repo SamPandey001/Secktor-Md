@@ -101,42 +101,67 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-    cmd({
-        pattern: "url",
-        alias : ['createurl'],
-        category: "misc",
-        filename: __filename,
-        desc: "image to url."
-    },
-    async(Void, citel, text) => {
-        if (!citel.quoted) return await citel.reply(`*Reply To Any Image/Video To Get Url*`)
-        let mime = citel.quoted.mtype
-        if(mime !='videoMessage' && mime !='imageMessage' ) return await citel.reply("Uhh Please, Reply To An Image/Video")
-        let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
-        let anu = await TelegraPh(media);
-        await citel.reply('*Here is URL of your media.\n'+util.format(anu));
-        return await fs.unlinkSync(media);
-    })
 
-    //---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
+async function BK9_Url(Void, citel) {
+    try {
+        let mediaPath = await Void.downloadAndSaveMediaMessage(citel.quoted);
+        let imageData = fs.readFileSync(mediaPath, { encoding: 'base64' });
+        let imgurUrl = await IMGUR(imageData);
+        await fs.unlink(mediaPath, (err) => {
+            if (err) console.error("Error deleting file: ", err);
+        });
+        return imgurUrl;
+    } catch (error) {
+        console.error("Error in BK9_Url: ", error.message);
+        throw error;
+    }
+}
+
+async function IMGUR(imageBase64) {
+    try {
+        const { data } = await axios.post("https://api.imgur.com/3/image", {
+            image: imageBase64,
+            type: "base64"
+        }, {
+            headers: {
+                Authorization: "Client-ID fc9369e9aea767c"
+            }
+        });
+        return data.data ? data.data.link : null;
+    } catch (error) {
+        console.error("Error uploading image to Imgur:", error);
+        return null;
+    }
+}
+
 cmd({
-    pattern: "trt",
-    alias :['translate'],
+    pattern: "ur",
+    alias: ['createurl'],
     category: "misc",
     filename: __filename,
-    desc: "Translate\'s given text in desird language."
+    desc: "image to url."
 },
-async(Void, citel, text) => {
-    if(!text && !citel.quoted) return await citel.reply(`*Please Give Me Text. Example: _${prefix}trt en Who are you_*`);
-    const translatte = require("translatte");
-    let lang = text ? text.split(" ")[0].toLowerCase() : 'en';
-    if (!citel.quoted)  { text = text.replace( lang , "");  }
-    else { text = citel.quoted.text; }
-    var whole = await translatte(text, { from:"auto",  to: lang , });
-    if ("text" in whole) { return await citel.reply('*Translated text:*\n'+whole.text); }
-}
-)
+async (Void, citel, text) => {
+    if (!citel.quoted) {
+        return await citel.reply(*Reply To Any Image/Video To Get Url*);
+    }
+
+    let mime = citel.quoted.mtype;
+    if (mime !== 'videoMessage' && mime !== 'imageMessage') {
+        return await citel.reply("Uhh Please, Reply To An Image/Video");
+    }
+
+    try {
+        let imageUrl = await BK9_Url(Void, citel);
+        if (imageUrl) {
+            await citel.reply('*Here is URL of your media.\n' + util.format(imageUrl));
+        } else {
+            await citel.reply("Failed to upload the media to Imgur.");
+        }
+    } catch (error) {
+        await citel.reply("An error occurred while processing your request. Please try again.");
+    }
+});
     //---------------------------------------------------------------------------
 cmd({
             pattern: "shell",

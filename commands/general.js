@@ -116,13 +116,14 @@
    filename: __filename
  }, async (Void, citel) => {
    const uptime = process.uptime();
-   const latensie = speed() - speed();
+   var inital = new Date().getTime();
+        var final = new Date().getTime();
    let ter = `
    🔰 *${tlang().title}* 🔰
    *🌟Description:* A WhatsApp bot with rich features, built in NodeJs.
-   *⚡Speed:* ${latensie.toFixed(4)} ms
+   *⚡Speed:* ${final - inital} ms
    *🚦Uptime:* ${runtime(process.uptime())}
-   *🕸Version:* 0.0.7
+   *🕸Version:* 0.0.8
    *👤Owner:* ${Config.ownername}
    *Powered by ${tlang().title}*`;
    let buttonMessage = {
