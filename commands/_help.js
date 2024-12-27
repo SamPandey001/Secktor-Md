@@ -28,7 +28,7 @@ Secktor.cmd({
         },
         async(Void, citel, text) => {
             const { commands } = require(__dirname + '/../lib')
-            const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
+            const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE } = require(__dirname + '/../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
                 const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
@@ -98,7 +98,7 @@ Secktor.cmd({
         category: "general"
     },
     async (Void, citel) => {
-        const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
+        const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE } = require(__dirname + '/../lib');
         let str = `
     ╭━━〘 ${fancytext(Config.ownername.split(' ')[0], 58)} 〙━━──⊷
     ┃ ⛥╭──────────────
@@ -131,7 +131,6 @@ Secktor.cmd({
         filename: __filename
     },
     async(Void, citel) => {
-        const Config = require('../config')
         const { fancytext, tlang, runtime, formatp, prefix, THUMB_IMAGE, Config } = require(__dirname + '/../lib');
         const vcard = 'BEGIN:VCARD\n' +
             'VERSION:3.0\n' +
