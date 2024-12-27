@@ -147,9 +147,9 @@ async (Void, citel, text) => {
     }
 
     let mime = citel.quoted.mtype;
-    if (mime !== 'videoMessage' && mime !== 'imageMessage' && mime !== 'audioMessage' && mime !== 'audioMessage') {
-        return await citel.reply("Uhh Please, Reply To An Image/Video");
-    }
+    if (!['videoMessage', 'imageMessage', 'audioMessage'].includes(mime)) {
+    return await citel.reply("Uhh Please, Reply To An Image/Video/Audio");
+}
 
     try {
         let imageUrl = await BK9_Url(Void, citel);
