@@ -56,26 +56,31 @@ cmd({
   category: "owner",
   desc: "Installs external modules..",
   filename: __filename
-}, async (Void, citel, text, {
-  isCreator
-}) => {
+}, async (Void, citel, text, { isCreator }) => {
   if (!isCreator) {
     return citel.reply(tlang().owner);
   }
+
   let trl = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.text;
   for (let Url of isUrl(trl)) {
     try {
       var url = new URL(Url);
     } catch {
-      citel.reply("_Invalid Url_");
+      return citel.reply("_Invalid Url_");
     }
-    let fs = require("fs");
-    let {
-      data
-    } = await axios.get(url.href);
+    let { data } = await axios.get(url.href);
     let lp = /pattern: ["'](.*)["'],/g.exec(data);
     let lj = lp[0].split(" ")[1] || Math.random().toString(36).substring(8);
     let l = lj.replace(/[^A-Za-z]/g, "");
+
+    const { plugindb } = require("../lib");
+
+    // Check if plugin with the same id already exists
+    let existingPlugin = await plugindb.findOne({ id: l });
+    if (existingPlugin) {
+      return citel.reply(`Plugin with id "${l}" already exists.`);
+    }
+
     await fs.writeFileSync(__dirname + "/" + l + ".js", data, "utf8");
     try {
       require(__dirname + "/" + l + ".js");
@@ -83,12 +88,10 @@ cmd({
       fs.unlinkSync(__dirname + "/" + l + ".js");
       return citel.reply("Invalid Plugin\n ```" + e + "```");
     }
-    const {
-      plugindb
-    } = require("../lib");
+
     const ff = {
       id: l,
-      url: url
+      url: url.href
     };
     await new plugindb(ff).save();
     return citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
