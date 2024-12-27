@@ -1,4 +1,4 @@
-//These cmds were created by @BK9dev using his API website : https://bk9.fun/
+// These cmds were created by @BK9dev using his API website : https://bk9.fun/
 
 const { cmd, tlang } = require('../lib');
 const fetch = require('node-fetch');
@@ -17,7 +17,7 @@ async function BK9_Url(Void, citel) {
         });
         return imgurUrl;
     } catch (error) {
-        console.error("Error in Create_Url: ", error.message);
+        console.error("Error in BK9_Url: ", error.message);
         throw error;
     }
 }
@@ -47,7 +47,8 @@ async function analyzeImage(imageUrl, query) {
         const response = await axios.get(apiUrl);
         return response.data.BK9;
     } catch (error) {
-        console.error('err', error);
+        console.error('Error in analyzeImage:', error);
+        return null;
     }
 }
 
@@ -55,23 +56,20 @@ cmd({
     pattern: "gemini",
     category: "ai",
     filename: __filename,
-},
-async (Void, citel, text) => {
+}, async (Void, citel, text) => {
     try {
-                if (citel.quoted && citel.quoted.mtype === 'conversation') {
+        if (citel.quoted && citel.quoted.mtype === 'conversation') {
             if (!text) return await citel.reply(`Hello ${citel.pushName}, please provide a query`);
-  const apiUrl = `https://bk9.fun/ai/gemini?q=${encodeURIComponent('Previous conversation: '+citel.quoted.text + 'i want to know: '  text)}}`;
+            const apiUrl = `https://bk9.fun/ai/gemini?q=${encodeURIComponent('Previous conversation: ' + citel.quoted.text + ' i want to know: ' + text)}`;
             const response = await fetch(apiUrl);
             const result = await response.json();
 
             if (result.status && result.BK9) {
                 await citel.reply(result.BK9);
             } else {
-                await citel.reply("err");
-            } 
-        }
-        
-        if (citel.quoted && citel.quoted.mtype === 'imageMessage') {
+                await citel.reply("Error: Unable to get a response from the API");
+            }
+        } else if (citel.quoted && citel.quoted.mtype === 'imageMessage') {
             if (!text) return await citel.reply(`Hello ${citel.pushName}, please provide a query for the image analysis.`);
             try {
                 let imageUrl = await BK9_Url(Void, citel);
@@ -83,20 +81,20 @@ async (Void, citel, text) => {
         } else {
             if (!text) return await citel.reply(`Hello ${citel.pushName}, how can I assist you? (Start your message with .gemini to get a reply)`);
 
-            let users = citel.sender ? citel.sender.split('@')[0] : citel.quoted ? citel.quoted.sender.split('@')[0] : text.replace('@')[0];
-            const apiUrl = `https://bk9.fun/ai/gemini?q=${encodeURIComponent(text)}}`;
+            let users = citel.sender ? citel.sender.split('@')[0] : citel.quoted ? citel.quoted.sender.split('@')[0] : text.replace('@', '');
+            const apiUrl = `https://bk9.fun/ai/gemini?q=${encodeURIComponent(text)}`;
             const response = await fetch(apiUrl);
             const result = await response.json();
 
             if (result.status && result.BK9) {
                 await citel.reply(result.BK9);
             } else {
-                await citel.reply("err");
+                await citel.reply("Error: Unable to get a response from the API");
             }
         }
     } catch (error) {
         console.error("An error occurred:", error);
-        await citel.reply("🤖 : don' spam ...");
+        await citel.reply("🤖 : An error occurred while processing your request. Please try again.");
     }
 });
 
@@ -106,17 +104,21 @@ cmd({
     pattern: "dallee",
     category: "ai",
     filename: __filename,
-},
-async (Void, citel, text) => {
+}, async (Void, citel, text) => {
     if (!text) return await citel.reply(`Hello ${citel.pushName}, please provide a prompt for the magic studio. Example: .magicstudio cat`);
 
-    const apiUrl = `https://bk9.fun/ai/magicstudio?prompt=${encodeURIComponent(text)}`;
-    const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
+    try {
+        const apiUrl = `https://bk9.fun/ai/magicstudio?prompt=${encodeURIComponent(text)}`;
+        const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
 
-    const imageBuffer = Buffer.from(response.data, 'binary');
+        const imageBuffer = Buffer.from(response.data, 'binary');
 
-    await Void.sendMessage(citel.chat, {
-        image: imageBuffer,
-        caption: `Here is your generated image for the prompt: *${text}*`
-    });
+        await Void.sendMessage(citel.chat, {
+            image: imageBuffer,
+            caption: `Here is your generated image for the prompt: *${text}*`
+        });
+    } catch (error) {
+        console.error("An error occurred while generating the image:", error);
+        await citel.reply("🤖 : An error occurred while generating the image. Please try again.");
+    }
 });
