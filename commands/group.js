@@ -615,7 +615,7 @@
       });
       let namew = fetchlb[i].userID;
       let ttms = fetchlb[i].xp / 8;
-      leadtext += `*${i + 1}●Name*: ${data.namew}\n*●Level*: ${fetchlb[i].level}\n*●Points*: ${fetchlb[i].xp}\n*●Role*: ${role}\n*●Total messages*: ${ttms}\n\n`;
+      leadtext += `*${i + 1}●Name*: ${data.name}\n*●Level*: ${fetchlb[i].level}\n*●Points*: ${fetchlb[i].xp}\n*●Role*: ${role}\n*●Total messages*: ${ttms}\n\n`;
     }
     return citel.reply(leadtext);
   });
