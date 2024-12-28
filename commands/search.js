@@ -160,7 +160,7 @@
        headerType: 4
      };
  
-     return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
    }
  });
  
