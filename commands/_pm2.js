@@ -22,6 +22,6 @@ cmd({
             const { exec } = require("child_process")
             citel.reply('Restarting')
             await sleep(2000)
-            exec('pm2 restart all')
+            process.exit();
     }
 );
