@@ -11,7 +11,7 @@
 	},
 	"author": "SamPandey001",
 	"dependencies": {
-		"@whiskeysockets/baileys": "github:sampandey001/baileys01",
+		"@whiskeysockets/baileys": "github:balxz/balxzzy",
 		"awesome-phonenumber": "^3.3.0",
 		"anime-character-random": "latest",
 		"axios": "^0.24.0",
