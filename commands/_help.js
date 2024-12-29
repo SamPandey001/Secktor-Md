@@ -4,10 +4,10 @@
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
  * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
+ * @author : @BK9dev <https://bk9.fun/>
  * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
  **/
+
 
 const os = require('os')
 const moment = require("moment-timezone")

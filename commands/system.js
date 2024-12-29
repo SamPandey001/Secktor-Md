@@ -4,11 +4,9 @@
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
  * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
+ * @author : @SamPandey001 <https://github.com/SamPandey001>
  * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
  **/
-
 const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config ,sleep} = require('../lib')
 const { TelegraPh } = require('../lib/scraper')   
 const util = require('util')

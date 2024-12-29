@@ -4,10 +4,8 @@
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
  * @project_name : Secktor-Md
- * @author : @jayjay-ops <https://github.com/jayjay-ops>
- * @modified by : @SamPandey001 <https://github.com/SamPandey001>
+ * @author : @SamPandey001 <https://github.com/SamPandey001>
  * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
  **/
 
  const { sck,sck1,cmd, getBuffer, tlang, prefix } = require('../lib')

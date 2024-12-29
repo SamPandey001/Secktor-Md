@@ -1,4 +1,13 @@
-// These cmds were created by @BK9dev using his API website : https://bk9.fun/
+/**
+ Copyright (C) 2022.
+ Licensed under the  GPL-3.0 License;
+ You may not use this file except in compliance with the License.
+ It is supplied in the hope that it may be useful.
+ * @project_name : Secktor-Md
+ * @author : @BK9dev <https://bk9.fun/>
+ * @description : Secktor,A Multi-functional whatsapp bot.
+ **/
+
 
 const { cmd, tlang } = require('../lib');
 const fetch = require('node-fetch');
