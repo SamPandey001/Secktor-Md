@@ -963,7 +963,7 @@
     
       let leaderboardText = `
     *-------------------------------*
-    *----● Group Leaderboard ●-----*
+           Group Leaderboard 
     *-------------------------------*\n\n`;
     
       let totalGroupMessages = 0;
@@ -973,12 +973,11 @@
         totalGroupMessages += user.groupMessages;
     
         leaderboardText += `*${i + 1}. Name*: ${user.name}
-    *● Messages in Group*: ${user.groupMessages}
-    *● Total Messages*: ${user.totalMessages}\n\n`;
+    * Messages in this Group*: ${user.groupMessages}
+    * Messages in all Groups*: ${user.totalMessages}\n\n`;
       }
     
-      leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;
-    
+      leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;  
       return citel.reply(leaderboardText); 
     } else {
       const globalUsers = users
@@ -992,13 +991,13 @@
     
       let leaderboardText = `
     *-------------------------------*
-    *----● Global Leaderboard ●-----*
+            Global Leaderboard 
     *-------------------------------*\n\n`;
     
       for (let i = 0; i < globalUsers.length; i++) {
         const user = globalUsers[i];
         leaderboardText += `*${i + 1}. Name*: ${user.name}
-    *● Total Messages*: ${user.totalMessages}\n\n`;
+    * Total Messages*: ${user.totalMessages}\n\n`;
       }
     
       return citel.reply(leaderboardText);
