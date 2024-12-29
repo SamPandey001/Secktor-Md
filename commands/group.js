@@ -898,55 +898,59 @@
   cmd({
     pattern: "del",
     alias: ["delete"],
-    desc: "Deletes message of any user",
+    desc: "Deletes messages based on user permissions.",
     category: "group",
     filename: __filename,
     use: "<quote/reply message.>"
   }, async (Void, citel, text) => {
-    if (citel.quoted.isBaileys) {
-      const key = {
-        remoteJid: citel.chat,
-        fromMe: false,
-        id: citel.quoted.id,
-        participant: citel.quoted.sender
-      };
-      await Void.sendMessage(citel.chat, {
-        delete: key
-      });
+    const groupAdmins = citel.isGroup ? await getAdmin(Void, citel) : [];
+    const botNumber = Void.decodeJid(Void.user.id);
+    const isBotAdmin = citel.isGroup ? groupAdmins.includes(botNumber) : false;
+    const isAdmin = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+    const isCreator = citel.sender === citel.chat.split("@")[0] + "@s.whatsapp.net"; // Replace with your creator ID logic
+    
+
+    if (!citel.quoted) {
+      return citel.reply(`Please reply to a message to delete. ${tlang().greet}`);
     }
-    if (!citel.quoted.isBot) {
-      if (!citel.isGroup) {
-        return citel.reply(tlang().group);
-      }
-      const groupAdmins = await getAdmin(Void, citel);
-      const botNumber = await Void.decodeJid(Void.user.id);
-      const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-      const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-      if (!isAdmins) {
-        return citel.reply("Only Admins are allowed to delete other persons message.");
-      }
-      if (!isBotAdmins) {
-        return citel.reply("I can't delete anyones message without getting Admin Role.");
-      }
-      if (!citel.quoted) {
-        return citel.reply(`Please reply to any message. ${tlang().greet}`);
-      }
-      let {
-        chat,
-        fromMe,
-        id
-      } = citel.quoted;
+  
+    if (isCreator) {
       const key = {
         remoteJid: citel.chat,
         fromMe: false,
         id: citel.quoted.id,
         participant: citel.quoted.sender
       };
-      await Void.sendMessage(citel.chat, {
-        delete: key
-      });
+      await Void.sendMessage(citel.chat, { delete: key });
+    } else if (citel.isGroup) {
+      if (citel.quoted.isBot) {
+        const key = {
+          remoteJid: citel.chat,
+          fromMe: true,
+          id: citel.quoted.id,
+          participant: citel.quoted.sender
+        };
+        await Void.sendMessage(citel.chat, { delete: key });
+      } else {
+        if (!isAdmin && !isCreator) {
+          return citel.reply("Only group admins can delete messages sent by others.");
+        }
+        if (!isBotAdmin) {
+          return citel.reply("I can't delete messages without being a group admin.");
+        }
+        const key = {
+          remoteJid: citel.chat,
+          fromMe: false,
+          id: citel.quoted.id,
+          participant: citel.quoted.sender
+        };
+        await Void.sendMessage(citel.chat, { delete: key });
+      }
+    } else {
+      return citel.reply("You don't have permission to delete this message.");
     }
   });
+  
   //---------------------------------------------------------------------------
   cmd({
     pattern: "checkwarn",
