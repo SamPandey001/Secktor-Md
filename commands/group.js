@@ -1085,29 +1085,7 @@
   
 
   //---------------------------------------------------------------------------
-    cmd({
-      on: "body"
-    }, async (Void, citel) => {
-      
-      async function incrementMessageCount(userId, userName) {
-        const xpIncrement = Math.floor(Math.random() * 10) + 15; 
-      
-        const user = await sck1.findOneAndUpdate(
-          { id: userId },
-          { 
-            $set: { name: userName },
-            $inc: { messages: 1, xp: xpIncrement } 
-          },
-          { new: true, upsert: true }
-        );
-      
-        const nextLevelXp = 5 * Math.pow(user.level + 1, 2) + 50 * (user.level + 1) + 100;
-        if (user.xp >= nextLevelXp) {
-          user.level++; 
-          await user.save();
-        }
-      }
-    });
+
   
 
 
