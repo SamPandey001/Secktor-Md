@@ -471,81 +471,6 @@
   
   //---------------------------------------------------------------------------
   cmd({
-    pattern: "leaderboard",
-    alias: ["deck"],
-    desc: "To check leaderboard",
-    category: "general",
-    filename: __filename
-  }, async (Void, citel) => {
-    const fetchlb = await Levels.fetchLeaderboard("RandomXP", 5);
-    let leadtext = `
-  *-------------------------------*
-  *----● LeaderBoard ● -----*
-  *-------------------------------*
-  \n\n`;
-    for (let i = 0; i < fetchlb.length; i++) {
-      const lvpoints = fetchlb[i].level;
-      var role = "GOD✨";
-      if (lvpoints <= 2) {
-        var role = "🏳Citizen";
-      } else if (lvpoints <= 4) {
-        var role = "👼Baby Wizard";
-      } else if (lvpoints <= 6) {
-        var role = "🧙‍♀️Wizard";
-      } else if (lvpoints <= 8) {
-        var role = "🧙‍♂️Wizard Lord";
-      } else if (lvpoints <= 10) {
-        var role = "🧚🏻Baby Mage";
-      } else if (lvpoints <= 12) {
-        var role = "🧜Mage";
-      } else if (lvpoints <= 14) {
-        var role = "🧜‍♂️Master of Mage";
-      } else if (lvpoints <= 16) {
-        var role = "🌬Child of Nobel";
-      } else if (lvpoints <= 18) {
-        var role = "❄Nobel";
-      } else if (lvpoints <= 20) {
-        var role = "⚡Speed of Elite";
-      } else if (lvpoints <= 22) {
-        var role = "🎭Elite";
-      } else if (lvpoints <= 24) {
-        var role = "🥇Ace I";
-      } else if (lvpoints <= 26) {
-        var role = "🥈Ace II";
-      } else if (lvpoints <= 28) {
-        var role = "🥉Ace Master";
-      } else if (lvpoints <= 30) {
-        var role = "🎖Ace Dominator";
-      } else if (lvpoints <= 32) {
-        var role = "🏅Ace Elite";
-      } else if (lvpoints <= 34) {
-        var role = "🏆Ace Supreme";
-      } else if (lvpoints <= 36) {
-        var role = "💍Supreme I";
-      } else if (lvpoints <= 38) {
-        var role = "💎Supreme Ii";
-      } else if (lvpoints <= 40) {
-        var role = "🔮Supreme Master";
-      } else if (lvpoints <= 42) {
-        var role = "🛡Legend III";
-      } else if (lvpoints <= 44) {
-        var role = "🏹Legend II";
-      } else if (lvpoints <= 46) {
-        var role = "⚔Legend";
-      } else if (lvpoints <= 55) {
-        var role = "🐉Immortal";
-      }
-      let data = await sck1.findOne({
-        id: fetchlb[i].userID
-      });
-      let namew = fetchlb[i].userID;
-      let ttms = fetchlb[i].xp / 8;
-      leadtext += `*${i + 1}●Name*: ${data.name}\n*●Level*: ${fetchlb[i].level}\n*●Points*: ${fetchlb[i].xp}\n*●Role*: ${role}\n*●Total messages*: ${ttms}\n\n`;
-    }
-    return citel.reply(leadtext);
-  });
-  //---------------------------------------------------------------------------
-  cmd({
     pattern: "promote",
     desc: "Provides admin role to replied/quoted user",
     category: "group",
@@ -962,8 +887,8 @@
     category: "group",
     filename: __filename
   }, async (Void, citel, text) => {
-    let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : citel.sender;
-    const user = await sck1.findOne({ id: users });
+
+    const user = await sck1.findOne({ id: citel.sender });
   
     if (!user) {
       return citel.reply("This was your first message.");
@@ -995,7 +920,7 @@
       user.level <= 46 ? "⚔Legend" : "🐉Immortal";
   
     const rankText = `
-  *👤 Name: ${user.name}  
+  *👤Name: ${user.name}  
   *🌟Role*: ${role}
   *🟢XP*: ${user.xp}
   *🏡Level*: ${user.level}
@@ -1008,76 +933,74 @@
   cmd({
     pattern: "leaderboard",
     alias: ["deck"],
-    desc: "Displays the leaderboard (global or group-specific).",
+    desc: "Displays the leaderboard.",
     category: "group",
     filename: __filename
   }, async (Void, citel, text) => {
     const groupId = citel.chat; 
     const groupSpecific = text.toLowerCase().includes("this"); 
     const users = await sck1.find({});
-  
+    
     if (users.length === 0) {
       return citel.reply("No data available in the leaderboard.");
     }
-  
+    
     if (groupSpecific) {
       const groupUsers = users
-        .filter((user) => user.times > 0) // Only users with messages recorded
+        .filter((user) => user.times > 0)
         .map((user) => ({
           id: user.id,
           name: user.name || "Unknown",
           groupMessages: user.times,
           totalMessages: user.messages
         }))
-        .sort((a, b) => b.groupMessages - a.groupMessages) // Sort by group-specific message count
-        .slice(0, 7); // Top 7 users in the group
-  
+        .sort((a, b) => b.groupMessages - a.groupMessages) 
+        .slice(0, Math.min(users.length, 7)); 
+    
       if (groupUsers.length === 0) {
         return citel.reply("No active members found in this group.");
       }
-  
+    
       let leaderboardText = `
-  *-------------------------------*
-  *----● Group Leaderboard ●-----*
-  *-------------------------------*\n\n`;
-  
+    *-------------------------------*
+    *----● Group Leaderboard ●-----*
+    *-------------------------------*\n\n`;
+    
       let totalGroupMessages = 0;
-  
+    
       for (let i = 0; i < groupUsers.length; i++) {
         const user = groupUsers[i];
         totalGroupMessages += user.groupMessages;
-  
+    
         leaderboardText += `*${i + 1}. Name*: ${user.name}
-  *● Messages in Group*: ${user.groupMessages}
-  *● Total Messages*: ${user.totalMessages}\n\n`;
+    *● Messages in Group*: ${user.groupMessages}
+    *● Total Messages*: ${user.totalMessages}\n\n`;
       }
-  
-      leaderboardText += `*Total Messages (Top 7 in Group)*: ${totalGroupMessages}`;
-  
+    
+      leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;
+    
       return citel.reply(leaderboardText); 
     } else {
-
       const globalUsers = users
         .map((user) => ({
           id: user.id,
           name: user.name || "Unknown",
           totalMessages: user.messages
         }))
-        .sort((a, b) => b.totalMessages - a.totalMessages) // Sort by total messages
-        .slice(0, 7); 
-  
-
+        .sort((a, b) => b.totalMessages - a.totalMessages) 
+        .slice(0, Math.min(users.length, 7)); 
+    
       let leaderboardText = `
-  *-------------------------------*
-  *----● Global Leaderboard ●-----*
-  *-------------------------------*\n\n`;
-  
+    *-------------------------------*
+    *----● Global Leaderboard ●-----*
+    *-------------------------------*\n\n`;
+    
       for (let i = 0; i < globalUsers.length; i++) {
         const user = globalUsers[i];
         leaderboardText += `*${i + 1}. Name*: ${user.name}
-  *● Total Messages*: ${user.totalMessages}\n\n`;
+    *● Total Messages*: ${user.totalMessages}\n\n`;
       }
-  
+    
       return citel.reply(leaderboardText);
     }
   });
