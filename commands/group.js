@@ -920,7 +920,7 @@
       user.level <= 46 ? "⚔Legend" : "🐉Immortal";
   
     const rankText = `
-  *👤Name: ${user.name}  
+  *👤Name: ${user.name}*  
   *🌟Role*: ${role}
   *🟢XP*: ${user.xp}
   *🏡Level*: ${user.level}
