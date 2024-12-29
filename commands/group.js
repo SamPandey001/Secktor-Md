@@ -25,7 +25,6 @@
   } = require("../lib");
   const moment = require("moment-timezone");
   const fs = require("fs-extra");
-  const Levels = require("discord-xp");
   const {
     Sticker,
     createSticker,
@@ -469,81 +468,7 @@
     });
   });
   //---------------------------------------------------------------------------
-  cmd({
-    pattern: "rank",
-    desc: "Sends rank card of user.",
-    category: "group",
-    filename: __filename
-  }, async (Void, citel, text) => {
-    const userq = await Levels.fetch(citel.sender, "RandomXP");
-    const lvpoints = userq.level;
-    var role = "GOD✨";
-    if (lvpoints <= 2) {
-      var role = "🏳Citizen";
-    } else if (lvpoints <= 4) {
-      var role = "👼Baby Wizard";
-    } else if (lvpoints <= 6) {
-      var role = "🧙‍♀️Wizard";
-    } else if (lvpoints <= 8) {
-      var role = "🧙‍♂️Wizard Lord";
-    } else if (lvpoints <= 10) {
-      var role = "🧚🏻Baby Mage";
-    } else if (lvpoints <= 12) {
-      var role = "🧜Mage";
-    } else if (lvpoints <= 14) {
-      var role = "🧜‍♂️Master of Mage";
-    } else if (lvpoints <= 16) {
-      var role = "🌬Child of Nobel";
-    } else if (lvpoints <= 18) {
-      var role = "❄Nobel";
-    } else if (lvpoints <= 20) {
-      var role = "⚡Speed of Elite";
-    } else if (lvpoints <= 22) {
-      var role = "🎭Elite";
-    } else if (lvpoints <= 24) {
-      var role = "🥇Ace I";
-    } else if (lvpoints <= 26) {
-      var role = "🥈Ace II";
-    } else if (lvpoints <= 28) {
-      var role = "🥉Ace Master";
-    } else if (lvpoints <= 30) {
-      var role = "🎖Ace Dominator";
-    } else if (lvpoints <= 32) {
-      var role = "🏅Ace Elite";
-    } else if (lvpoints <= 34) {
-      var role = "🏆Ace Supreme";
-    } else if (lvpoints <= 36) {
-      var role = "💍Supreme I";
-    } else if (lvpoints <= 38) {
-      var role = "💎Supreme Ii";
-    } else if (lvpoints <= 40) {
-      var role = "🔮Supreme Master";
-    } else if (lvpoints <= 42) {
-      var role = "🛡Legend III";
-    } else if (lvpoints <= 44) {
-      var role = "🏹Legend II";
-    } else if (lvpoints <= 46) {
-      var role = "⚔Legend";
-    } else if (lvpoints <= 55) {
-      var role = "🐉Immortal";
-    }
-    let disc = citel.sender.substring(3, 7);
-    let textr = "";
-    textr += `*Hii ${tlang().greet} ,🌟 ${citel.pushName}∆${disc}'s* Exp\n\n`;
-    let ttms = `${userq.xp}` / 8;
-    textr += `*🌟Role*: ${role}\n*🟢Exp*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*🏡Level*: ${userq.level}\n*Total Messages:*- ${ttms}`;
-    try {
-      ppuser = await Void.profilePictureUrl(citel.sender, "image");
-    } catch {
-      ppuser = THUMB_IMAGE;
-    }
-    Void.sendMessage(citel.chat, {
-      image: await getBuffer(ppuser),
-      caption: textr
-    }, {
-      quoted: citel
-    });
-  });
+  
   //---------------------------------------------------------------------------
   cmd({
     pattern: "leaderboard",
@@ -810,7 +735,6 @@
   cmd({
     pattern: "add",
     desc: "Add that person in group",
-    fromMe: true,
     category: "group",
     filename: __filename,
     use: "<number>"
@@ -1021,20 +945,7 @@
         image: log0,
         caption: txt,
         footer: citel.pushName,
-        headerType: 1,
-        contextInfo: {
-          forwardingScore: 999,
-          isForwarded: false,
-          externalAdReply: {
-            title: "Broadcast by " + citel.pushName,
-            body: tlang().title,
-            thumbnail: log0,
-            mediaUrl: "",
-            mediaType: 2,
-            sourceUrl: gurl,
-            showAdAttribution: true
-          }
-        }
+        headerType: 1
       };
       await Void.sendMessage(i, buttonMessaged, {
         quoted: citel
@@ -1043,89 +954,162 @@
     citel.reply(`*Successful Sending Broadcast To ${anu.length} Group(s)*`);
   });
   
+
+
+  cmd({
+    pattern: "rank",
+    desc: "Displays the user's rank and stats.",
+    category: "group",
+    filename: __filename
+  }, async (Void, citel, text) => {
+    let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : citel.sender;
+    const user = await sck1.findOne({ id: users });
+  
+    if (!user) {
+      return citel.reply("This was your first message.");
+    }
+  
+    const role =
+      user.level <= 2 ? "🏳Citizen" :
+      user.level <= 4 ? "👼Baby Wizard" :
+      user.level <= 6 ? "🧙‍♀️Wizard" :
+      user.level <= 8 ? "🧙‍♂️Wizard Lord" :
+      user.level <= 10 ? "🧚🏻Baby Mage" :
+      user.level <= 12 ? "🧜Mage" :
+      user.level <= 14 ? "🧜‍♂️Master of Mage" :
+      user.level <= 16 ? "🌬Child of Nobel" :
+      user.level <= 18 ? "❄Nobel" :
+      user.level <= 20 ? "⚡Speed of Elite" :
+      user.level <= 22 ? "🎭Elite" :
+      user.level <= 24 ? "🥇Ace I" :
+      user.level <= 26 ? "🥈Ace II" :
+      user.level <= 28 ? "🥉Ace Master" :
+      user.level <= 30 ? "🎖Ace Dominator" :
+      user.level <= 32 ? "🏅Ace Elite" :
+      user.level <= 34 ? "🏆Ace Supreme" :
+      user.level <= 36 ? "💍Supreme I" :
+      user.level <= 38 ? "💎Supreme II" :
+      user.level <= 40 ? "🔮Supreme Master" :
+      user.level <= 42 ? "🛡Legend III" :
+      user.level <= 44 ? "🏹Legend II" :
+      user.level <= 46 ? "⚔Legend" : "🐉Immortal";
+  
+    const rankText = `
+  *👤 Name: ${user.name}  
+  *🌟Role*: ${role}
+  *🟢XP*: ${user.xp}
+  *🏡Level*: ${user.level}
+  *📬Messages Sent*: ${user.messages}
+  `;
+  
+    Void.sendMessage(citel.chat, { text: rankText }, { quoted: citel });
+  });
+  //--------------------------------------------
+  cmd({
+    pattern: "leaderboard",
+    alias: ["deck"],
+    desc: "Displays the leaderboard (global or group-specific).",
+    category: "group",
+    filename: __filename
+  }, async (Void, citel, text) => {
+    const groupId = citel.chat; 
+    const groupSpecific = text.toLowerCase().includes("this"); 
+    const users = await sck1.find({});
+  
+    if (users.length === 0) {
+      return citel.reply("No data available in the leaderboard.");
+    }
+  
+    if (groupSpecific) {
+      const groupUsers = users
+        .filter((user) => user.times > 0) // Only users with messages recorded
+        .map((user) => ({
+          id: user.id,
+          name: user.name || "Unknown",
+          groupMessages: user.times,
+          totalMessages: user.messages
+        }))
+        .sort((a, b) => b.groupMessages - a.groupMessages) // Sort by group-specific message count
+        .slice(0, 7); // Top 7 users in the group
+  
+      if (groupUsers.length === 0) {
+        return citel.reply("No active members found in this group.");
+      }
+  
+      let leaderboardText = `
+  *-------------------------------*
+  *----● Group Leaderboard ●-----*
+  *-------------------------------*\n\n`;
+  
+      let totalGroupMessages = 0;
+  
+      for (let i = 0; i < groupUsers.length; i++) {
+        const user = groupUsers[i];
+        totalGroupMessages += user.groupMessages;
+  
+        leaderboardText += `*${i + 1}. Name*: ${user.name}
+  *● Messages in Group*: ${user.groupMessages}
+  *● Total Messages*: ${user.totalMessages}\n\n`;
+      }
+  
+      leaderboardText += `*Total Messages (Top 7 in Group)*: ${totalGroupMessages}`;
+  
+      return citel.reply(leaderboardText); 
+    } else {
+
+      const globalUsers = users
+        .map((user) => ({
+          id: user.id,
+          name: user.name || "Unknown",
+          totalMessages: user.messages
+        }))
+        .sort((a, b) => b.totalMessages - a.totalMessages) // Sort by total messages
+        .slice(0, 7); 
+  
+
+      let leaderboardText = `
+  *-------------------------------*
+  *----● Global Leaderboard ●-----*
+  *-------------------------------*\n\n`;
+  
+      for (let i = 0; i < globalUsers.length; i++) {
+        const user = globalUsers[i];
+        leaderboardText += `*${i + 1}. Name*: ${user.name}
+  *● Total Messages*: ${user.totalMessages}\n\n`;
+      }
+  
+      return citel.reply(leaderboardText);
+    }
+  });
+  
+  
+
   //---------------------------------------------------------------------------
-  if (Config.WORKTYPE !== "private") {
     cmd({
-      on: "text"
+      on: "body"
     }, async (Void, citel) => {
-      const randomXp = 8;
-      let usrname = citel.pushName;
-      const hasLeveledUp = await Levels.appendXp(citel.sender, "RandomXP", randomXp);
-      if (hasLeveledUp) {
-        const sck1 = await Levels.fetch(citel.sender, "RandomXP");
-        const lvpoints = sck1.level;
-        var role = "GOD";
-        if (lvpoints <= 2) {
-          var role = "🏳Citizen";
-        } else if (lvpoints <= 4) {
-          var role = "👼Baby Wizard";
-        } else if (lvpoints <= 6) {
-          var role = "🧙‍♀️Wizard";
-        } else if (lvpoints <= 8) {
-          var role = "🧙‍♂️Wizard Lord";
-        } else if (lvpoints <= 10) {
-          var role = "🧚🏻Baby Mage";
-        } else if (lvpoints <= 12) {
-          var role = "🧜Mage";
-        } else if (lvpoints <= 14) {
-          var role = "🧜‍♂️Master of Mage";
-        } else if (lvpoints <= 16) {
-          var role = "🌬Child of Nobel";
-        } else if (lvpoints <= 18) {
-          var role = "❄Nobel";
-        } else if (lvpoints <= 20) {
-          var role = "⚡Speed of Elite";
-        } else if (lvpoints <= 22) {
-          var role = "🎭Elite";
-        } else if (lvpoints <= 24) {
-          var role = "🥇Ace I";
-        } else if (lvpoints <= 26) {
-          var role = "🥈Ace II";
-        } else if (lvpoints <= 28) {
-          var role = "🥉Ace Master";
-        } else if (lvpoints <= 30) {
-          var role = "🎖Ace Dominator";
-        } else if (lvpoints <= 32) {
-          var role = "🏅Ace Elite";
-        } else if (lvpoints <= 34) {
-          var role = "🏆Ace Supreme";
-        } else if (lvpoints <= 36) {
-          var role = "💍Supreme I";
-        } else if (lvpoints <= 38) {
-          var role = "💎Supreme Ii";
-        } else if (lvpoints <= 40) {
-          var role = "🔮Supreme Master";
-        } else if (lvpoints <= 42) {
-          var role = "🛡Legend III";
-        } else if (lvpoints <= 44) {
-          var role = "🏹Legend II";
-        } else if (lvpoints <= 46) {
-          var role = "⚔Legend";
-        } else if (lvpoints <= 55) {
-          var role = "🐉Immortal";
-        } else {
-          var role = "Kiddo";
-        }
-        if (Config.levelupmessage !== false) {
-          await Void.sendMessage(citel.chat, {
-            image: {
-              url: await botpic()
-            },
-            caption: `
-  ╔════◇
-  ║ *Wow,Someone just*
-  ║ *leveled Up huh⭐*
-  ║ *👤Name*: ${citel.pushName}
-  ║ *🎐Level*: ${sck1.level}🍭
-  ║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-  ║ *📍Role*: *${role}*
-  ║ *Enjoy🥳*
-  ╚════════════╝
-  `
-          }, {
-            quoted: citel
-          });
+      
+      async function incrementMessageCount(userId, userName) {
+        const xpIncrement = Math.floor(Math.random() * 10) + 15; 
+      
+        const user = await sck1.findOneAndUpdate(
+          { id: userId },
+          { 
+            $set: { name: userName },
+            $inc: { messages: 1, xp: xpIncrement } 
+          },
+          { new: true, upsert: true }
+        );
+      
+        const nextLevelXp = 5 * Math.pow(user.level + 1, 2) + 50 * (user.level + 1) + 100;
+        if (user.xp >= nextLevelXp) {
+          user.level++; 
+          await user.save();
         }
       }
     });
-  }
+  
+
+
+
+  
