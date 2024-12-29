@@ -95,7 +95,10 @@ cmd({
         try {
             let { data } = await axios.get(url.href);
             let lp = /pattern: ["'](.*)["'],/g.exec(data);
-            let lj = lp[0].split(" ")[1] || Math.random().toString(36).substring(8);
+            if (!lp) {
+                return citel.reply("Invalid plugin format.");
+            }
+            let lj = lp[1] || Math.random().toString(36).substring(8);
             let l = lj.replace(/[^A-Za-z]/g, "");
 
             let existingPlugin = await plugindb.findOne({ id: l });
@@ -103,7 +106,7 @@ cmd({
                 return citel.reply(`Plugin with id "${l}" already exists.`);
             }
 
-            const pluginPath = path.join(__dirname, '/../commands/', l + '.js');
+            const pluginPath = path.join(__dirname, '/../commands/', `${l}.js`);
             await fs.writeFileSync(pluginPath, data, "utf8");
             try {
                 require(pluginPath);
@@ -117,13 +120,14 @@ cmd({
                 url: url.href
             };
             await new plugindb(ff).save();
-            return citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
+            return citel.reply(`_Plugin_ *${l}* _installed in Secktor._`);
         } catch (error) {
             console.error(`Failed to install plugin from URL ${Url}:`, error);
             return citel.reply(`Failed to install plugin from URL ${Url}. Please check the URL and try again.`);
         }
     }
 });
+
 cmd({
     pattern: "tinstall",
     category: "owner",
