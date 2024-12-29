@@ -30,45 +30,27 @@ cmd({
  
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "qr",
-            category: "owner",
-            filename: __filename,
-            desc: "Sends CitelsVoid Qr code to scan and get your session id."
-        },
-        async(Void, citel, text) => {
-            if (text) {
-                let h = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${text}`)
-                await Void.sendMessage(citel.chat, { image: h })
-                return
-            }
-            let buttonMessaged = {
-                image: { url: 'https://citel-x.herokuapp.com/session' },
-                caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
-                footer: ` Session`,
-                headerType: 4,
-                contextInfo: {
-                    externalAdReply: {
-                        title: 'Secktor Session',
-                        body: 'Get you Session ID',
-                        thumbnail: log0,
-                        mediaType: 2,
-                        mediaUrl: ``,
-                        sourceUrl: ``,
-                    },
+    pattern: "paircode",
+    category: "tool",
+    filename: __filename,
+    desc: "Sends paircode for secktor session id."
+},
+async (Void, citel, text) => {
+    if (!text) return citel.reply('_Give me number please._');
+    const num = citel.text.match(/\d+/g);
+    if (!numbers || numbers.length === 0) { return citel.reply('_No numbers found in the text._');   }
+    try {
+        let response = await axios.get(`https://sector-6a1436042932.herokuapp.com/pair?code=${num}`);
+        citel.reply(`Hi,${response.data.code} is your login code.`)
+        
+     await sleep(20 * 1000);
+        return citel.reply(`Your session is over now. Response: ${response.data}`);
+    } catch (error) {
+        console.error(error);
+        return citel.reply('_Failed to send the number or fetch the response._');
+    }
+});
 
-                },
-
-            };
-            await Void.sendMessage(citel.chat, buttonMessaged, {
-                quoted: citel,
-
-            });
-            await sleep(20 * 1000)
-            return citel.reply('Your session is over now.')
-
-
-        }
-    )
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unban",
