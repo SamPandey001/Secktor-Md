@@ -30,74 +30,100 @@ cmd({
 )
 
 //---------------------------------------------------------------------------
-cmd({
-        pattern: "remove",
-        alias :['uninstall'],
-        category: "owner",
-        desc: "removes external plugins.",
-        filename: __filename
-    },
-    async(Void, citel, text,{ isCreator}) => {
-        if (!isCreator) return citel.reply(tlang().owner)
-        if(text==='all') {
-         await plugindb.collection.drop()
-         return citel.reply('Deleted all plugins from Secktor.')
-        }
-        let kill = await remove(text.split(" ")[0])
-        delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
-        fs.unlinkSync(__dirname + "/" + text+ ".js");
-        return citel.reply(kill)
-    }
-)
 
-//---------------------------------------------------------------------------
 cmd({
-  pattern: "install",
-  category: "owner",
-  desc: "Installs external modules..",
-  filename: __filename
+    pattern: "remove",
+    alias: ['uninstall'],
+    category: "owner",
+    desc: "Removes external plugins.",
+    filename: __filename
 }, async (Void, citel, text, { isCreator }) => {
-  if (!isCreator) {
-    return citel.reply(tlang().owner);
-  }
+    if (!isCreator) return citel.reply(tlang().owner);
 
-  let trl = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.text;
-  for (let Url of isUrl(trl)) {
+    if (text === 'all') {
+        await plugindb.collection.drop();
+        return citel.reply('Deleted all plugins from Secktor.');
+    }
+
+    const pluginId = text.split(" ")[0];
+
     try {
-      var url = new URL(Url);
-    } catch {
-      return citel.reply("_Invalid Url_");
+        const existingPlugin = await plugindb.findOne({ id: pluginId });
+
+        if (!existingPlugin) {
+            return citel.reply(`Plugin with id "${pluginId}" does not exist.`);
+        }
+        await plugindb.deleteOne({ id: pluginId });
+        const pluginPath = path.join(__dirname, '/../commands/', pluginId + '.js');
+        if (fs.existsSync(pluginPath)) {
+            delete require.cache[require.resolve(pluginPath)];
+            fs.unlinkSync(pluginPath);
+        }
+
+        return citel.reply(`Plugin with id "${pluginId}" has been removed successfully.`);
+    } catch (error) {
+        console.error(`Failed to remove plugin ${pluginId}:`, error);
+        return citel.reply(`Failed to remove plugin with id "${pluginId}". Please try again later.`);
     }
-    let { data } = await axios.get(url.href);
-    let lp = /pattern: ["'](.*)["'],/g.exec(data);
-    let lj = lp[0].split(" ")[1] || Math.random().toString(36).substring(8);
-    let l = lj.replace(/[^A-Za-z]/g, "");
-
-    const { plugindb } = require("../lib");
-
-    // Check if plugin with the same id already exists
-    let existingPlugin = await plugindb.findOne({ id: l });
-    if (existingPlugin) {
-      return citel.reply(`Plugin with id "${l}" already exists.`);
-    }
-
-    await fs.writeFileSync(__dirname + "/" + l + ".js", data, "utf8");
-    try {
-      require(__dirname + "/" + l + ".js");
-    } catch (e) {
-      fs.unlinkSync(__dirname + "/" + l + ".js");
-      return citel.reply("Invalid Plugin\n ```" + e + "```");
-    }
-
-    const ff = {
-      id: l,
-      url: url.href
-    };
-    await new plugindb(ff).save();
-    return citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
-  }
 });
 
+//---------------------------------------------------------------------------
+
+cmd({
+    pattern: "install",
+    category: "owner",
+    desc: "Installs external modules.",
+    filename: __filename
+}, async (Void, citel, text, { isCreator }) => {
+    if (!isCreator) {
+        return citel.reply(tlang().owner);
+    }
+
+    let trl = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.text;
+
+    for (let Url of isUrl(trl)) {
+        try {
+            var url = new URL(Url);
+        } catch {
+            return citel.reply("_Invalid Url_");
+        }
+
+        if (url.hostname.includes('gist') && !url.pathname.includes('raw')) {
+            return citel.reply("Please provide the raw plugin URL.");
+        }
+
+        try {
+            let { data } = await axios.get(url.href);
+            let lp = /pattern: ["'](.*)["'],/g.exec(data);
+            let lj = lp[0].split(" ")[1] || Math.random().toString(36).substring(8);
+            let l = lj.replace(/[^A-Za-z]/g, "");
+
+            let existingPlugin = await plugindb.findOne({ id: l });
+            if (existingPlugin) {
+                return citel.reply(`Plugin with id "${l}" already exists.`);
+            }
+
+            const pluginPath = path.join(__dirname, '/../commands/', l + '.js');
+            await fs.writeFileSync(pluginPath, data, "utf8");
+            try {
+                require(pluginPath);
+            } catch (e) {
+                fs.unlinkSync(pluginPath);
+                return citel.reply("Invalid Plugin\n ```" + e + "```");
+            }
+
+            const ff = {
+                id: l,
+                url: url.href
+            };
+            await new plugindb(ff).save();
+            return citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
+        } catch (error) {
+            console.error(`Failed to install plugin from URL ${Url}:`, error);
+            return citel.reply(`Failed to install plugin from URL ${Url}. Please check the URL and try again.`);
+        }
+    }
+});
 cmd({
     pattern: "tinstall",
     category: "owner",
