@@ -52,6 +52,7 @@ cmd({
 )
 
 //---------------------------------------------------------------------------
+
 cmd({
   pattern: "install",
   category: "owner",
@@ -63,7 +64,12 @@ cmd({
   }
 
   let trl = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.text;
-  for (let Url of isUrl(trl)) {
+  let urls = isUrl(trl); 
+
+  if (urls.length === 0) {
+    return citel.reply("_No valid URLs found._");
+  }
+  await Promise.all(urls.map(async (Url) => {
     try {
       var url = new URL(Url);
     } catch {
@@ -96,8 +102,9 @@ cmd({
     };
     await new plugindb(ff).save();
     return citel.reply("_Plugin_ *" + l + "* _installed in Secktor._");
-  }
+  }));
 });
+
 
 cmd({
     pattern: "tinstall",
