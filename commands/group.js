@@ -810,114 +810,93 @@
     Void.sendMessage(citel.chat, { text: rankText }, { quoted: citel });
   });
 
-  cmd({
-    pattern: "leaderboard",
-    alias: ["deck"],
-    desc: "Displays the leaderboard.",
-    category: "group",
-    filename: __filename
-  }, async (Void, citel, text) => {
-    const groupId = citel.chat;
-    
-    console.log("Command received in group:", groupId);
-  
-    if (!citel.isGroup) {
-      console.log("Command is not used in a group.");
-      return citel.reply("This command can only be used in groups.");
-    }
-  
-    const groupMetadata = await Void.groupMetadata(groupId).catch(e => {
-      console.error("Error fetching group metadata:", e);
-      return null;
-    });
-  
-    const participants = groupMetadata ? groupMetadata.participants : [];
-    console.log("Participants:", participants);
-  
-    if (!participants || participants.length === 0) {
-      console.log("No participants found.");
-      return citel.reply("Could not fetch group participants.");
-    }
-  
-    const participantIds = participants.map(p => p.id);
-    console.log("Participant IDs:", participantIds);
-  
-    const users = await sck1.find({ id: { $in: participantIds } });
-    console.log("Fetched Users from DB:", users);
-  
-    if (users.length === 0) {
-      console.log("No data available in the leaderboard.");
-      return citel.reply("No data available in the leaderboard.");
-    }
-  
-    const groupSpecific = text.toLowerCase().includes("this");
-    console.log("Group-specific leaderboard:", groupSpecific);
-  
-    if (groupSpecific) {
-      const groupUsers = users
-        .map((user) => ({
-          id: user.id,
-          name: user.name || "Unknown",
-          groupMessages: user.groups ? user.groups[groupId] || 0 : 0,
-          totalMessages: user.messages
-        }))
-        .filter((user) => user.groupMessages > 0)
-        .sort((a, b) => b.groupMessages - a.groupMessages)
-        .slice(0, 10);
-  
-      console.log("Group Users (Top 10):", groupUsers);
-  
-      if (groupUsers.length === 0) {
-        console.log("No active members found in this group.");
-        return citel.reply("No active members found in this group.");
-      }
-  
-      let leaderboardText = `
-  *-------------------------------*
-         Group Leaderboard
-  *-------------------------------*\n\n`;
-  
-      let totalGroupMessages = 0;
-  
-      for (let i = 0; i < groupUsers.length; i++) {
-        const user = groupUsers[i];
-        totalGroupMessages += user.groupMessages;
-  
-        leaderboardText += `*${i + 1}. Name*: ${user.name}
-    * Messages in this Group*: ${user.groupMessages}
-    * Messages in all Groups*: ${user.totalMessages}\n\n`;
-      }
-  
-      leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;
-      console.log("Leaderboard Text (Group):", leaderboardText);
-  
-      return citel.reply(leaderboardText);
-    } else {
-      const globalUsers = users
-        .map((user) => ({
-          id: user.id,
-          name: user.name || "Unknown",
-          totalMessages: user.messages
-        }))
-        .sort((a, b) => b.totalMessages - a.totalMessages)
-        .slice(0, 10);
-  
-      console.log("Global Users (Top 10):", globalUsers);
-  
-      let leaderboardText = `
-  *-------------------------------*
-          Global Leaderboard
-  *-------------------------------*\n\n`;
-  
-      for (let i = 0; i < globalUsers.length; i++) {
-        const user = globalUsers[i];
-        leaderboardText += `*${i + 1}. Name*: ${user.name}
-    * Total Messages*: ${user.totalMessages}\n\n`;
-      }
-  
-      console.log("Leaderboard Text (Global):", leaderboardText);
-  
-      return citel.reply(leaderboardText);
-    }
-  });
-  
+ cmd({
+   pattern: "leaderboard",
+   alias: ["deck","count"],
+   desc: "Displays the leaderboard.",
+   category: "group",
+   filename: __filename
+ }, async (Void, citel, text) => {
+   const groupId = citel.chat;
+   
+   if (!citel.isGroup) {
+     return citel.reply("This command can only be used in groups.");
+   }
+ 
+   const groupMetadata = await Void.groupMetadata(groupId).catch(e => {
+     return null;
+   });
+ 
+   const participants = groupMetadata ? groupMetadata.participants : [];
+ 
+   if (!participants || participants.length === 0) {
+     return citel.reply("Could not fetch group participants.");
+   }
+ 
+   const participantIds = participants.map(p => p.id);
+ 
+   const users = await sck1.find({ id: { $in: participantIds } });
+ 
+   if (users.length === 0) {
+     return citel.reply("No data available in the leaderboard.");
+   }
+ 
+   if (text.toLowerCase() === "this") {
+     const groupUsers = users
+       .map((user) => ({
+         id: user.id,
+         name: user.name || "Unknown",
+         groupMessages: user.groups ? user.groups[groupId] || 0 : 0,
+         totalMessages: user.messages
+       }))
+       .filter((user) => user.groupMessages > 0)
+       .sort((a, b) => b.groupMessages - a.groupMessages)
+       .slice(0, 10);
+ 
+     if (groupUsers.length === 0) {
+       return citel.reply("No active members found in this group.");
+     }
+ 
+     let leaderboardText = `
+ *-------------------------------*
+        Group Leaderboard
+ *-------------------------------*\n\n`;
+ 
+     let totalGroupMessages = 0;
+ 
+     for (let i = 0; i < groupUsers.length; i++) {
+       const user = groupUsers[i];
+       totalGroupMessages += user.groupMessages;
+ 
+       leaderboardText += `*${i + 1}. Name:* ${user.name}
+   *Messages in this Group:* ${user.groupMessages}
+   *Messages in all Groups:* ${user.totalMessages}\n\n`;
+     }
+ 
+     leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;
+ 
+     return citel.reply(leaderboardText);
+ 
+   } else {
+     const globalUsers = await sck1.find({})
+       .sort({ messages: -1 })
+       .limit(10);
+ 
+     if (globalUsers.length === 0) {
+       return citel.reply("No data available in the leaderboard.");
+     }
+ 
+     let leaderboardText = `
+ *-------------------------------*
+         Global Leaderboard
+ *-------------------------------*\n\n`;
+ 
+     for (let i = 0; i < globalUsers.length; i++) {
+       const user = globalUsers[i];
+       leaderboardText += `*${i + 1}. Name:* ${user.name || "Unknown"}
+   *Total Messages:* ${user.messages}\n\n`;
+     }
+ 
+     return citel.reply(leaderboardText);
+   }
+ });
