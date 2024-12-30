@@ -810,7 +810,7 @@
     Void.sendMessage(citel.chat, { text: rankText }, { quoted: citel });
   });
 
-  
+
   cmd({
     pattern: "leaderboard",
     alias: ["deck"],
@@ -818,34 +818,54 @@
     category: "group",
     filename: __filename
   }, async (Void, citel, text) => {
-    const groupId = citel.chat; 
-    const groupSpecific = text.toLowerCase().includes("this"); 
-    const users = await sck1.find({});
+    const groupId = citel.chat;
+    
+    if (!citel.isGroup) {
+      return citel.reply("This command can only be used in groups.");
+    }
+  
+
+    const groupMetadata = await Void.groupMetadata(groupId).catch(e => {});
+    const participants = groupMetadata ? groupMetadata.participants : [];
+  
+    if (!participants || participants.length === 0) {
+      return citel.reply("Could not fetch group participants.");
+    }
+  
+
+    const participantIds = participants.map(p => p.id);
+  
+   
+    const users = await sck1.find({ id: { $in: participantIds } });
   
     if (users.length === 0) {
       return citel.reply("No data available in the leaderboard.");
     }
   
+    const groupSpecific = text.toLowerCase().includes("this");
+  
     if (groupSpecific) {
+
       const groupUsers = users
         .map((user) => ({
           id: user.id,
           name: user.name || "Unknown",
-          groupMessages: user.groupMessages.get(groupId) || 0,
+          groupMessages: user.groups?.get(groupId) || 0,
           totalMessages: user.messages
         }))
-        .filter((user) => user.groupMessages > 0)
-        .sort((a, b) => b.groupMessages - a.groupMessages) 
-        .slice(0, Math.min(users.length, 7));
+        .filter((user) => user.groupMessages > 0) 
+        .sort((a, b) => b.groupMessages - a.groupMessages)
+        .slice(0, 7);
   
       if (groupUsers.length === 0) {
         return citel.reply("No active members found in this group.");
       }
   
-      let leaderboardText = `
-    *-------------------------------*
-           Group Leaderboard 
-    *-------------------------------*\n\n`;
+
+      let leaderboardText =
+  `*-------------------------------*
+         Group Leaderboard
+  *-------------------------------*\n\n`;
   
       let totalGroupMessages = 0;
   
@@ -854,13 +874,15 @@
         totalGroupMessages += user.groupMessages;
   
         leaderboardText += `*${i + 1}. Name*: ${user.name}
-    * Messages in this Group*: ${user.groupMessages}
-    * Messages in all Groups*: ${user.totalMessages}\n\n`;
+  * Messages in this Group*: ${user.groupMessages}
+  * Messages in all Groups*: ${user.totalMessages}\n\n`;
       }
   
       leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;  
-      return citel.reply(leaderboardText); 
+      return citel.reply(leaderboardText);
+  
     } else {
+
       const globalUsers = users
         .map((user) => ({
           id: user.id,
@@ -868,24 +890,22 @@
           totalMessages: user.messages
         }))
         .sort((a, b) => b.totalMessages - a.totalMessages) 
-        .slice(0, Math.min(users.length, 7)); 
-  
-      let leaderboardText = `
-    *-------------------------------*
-            Global Leaderboard 
-    *-------------------------------*\n\n`;
+        .slice(0, 7); 
+      let leaderboardText =
+  `*-------------------------------*
+          Global Leaderboard
+  *-------------------------------*\n\n`;
   
       for (let i = 0; i < globalUsers.length; i++) {
         const user = globalUsers[i];
         leaderboardText += `*${i + 1}. Name*: ${user.name}
-    * Total Messages*: ${user.totalMessages}\n\n`;
+  * Total Messages*: ${user.totalMessages}\n\n`;
       }
   
       return citel.reply(leaderboardText);
     }
   });
   
-
   //---------------------------------------------------------------------------
 
   
