@@ -809,7 +809,8 @@
   
     Void.sendMessage(citel.chat, { text: rankText }, { quoted: citel });
   });
-  //--------------------------------------------
+
+  
   cmd({
     pattern: "leaderboard",
     alias: ["deck"],
@@ -820,43 +821,43 @@
     const groupId = citel.chat; 
     const groupSpecific = text.toLowerCase().includes("this"); 
     const users = await sck1.find({});
-    
+  
     if (users.length === 0) {
       return citel.reply("No data available in the leaderboard.");
     }
-    
+  
     if (groupSpecific) {
       const groupUsers = users
-        .filter((user) => user.times > 0)
         .map((user) => ({
           id: user.id,
           name: user.name || "Unknown",
-          groupMessages: user.times,
+          groupMessages: user.groupMessages.get(groupId) || 0,
           totalMessages: user.messages
         }))
+        .filter((user) => user.groupMessages > 0)
         .sort((a, b) => b.groupMessages - a.groupMessages) 
-        .slice(0, Math.min(users.length, 7)); 
-    
+        .slice(0, Math.min(users.length, 7));
+  
       if (groupUsers.length === 0) {
         return citel.reply("No active members found in this group.");
       }
-    
+  
       let leaderboardText = `
     *-------------------------------*
            Group Leaderboard 
     *-------------------------------*\n\n`;
-    
+  
       let totalGroupMessages = 0;
-    
+  
       for (let i = 0; i < groupUsers.length; i++) {
         const user = groupUsers[i];
         totalGroupMessages += user.groupMessages;
-    
+  
         leaderboardText += `*${i + 1}. Name*: ${user.name}
     * Messages in this Group*: ${user.groupMessages}
     * Messages in all Groups*: ${user.totalMessages}\n\n`;
       }
-    
+  
       leaderboardText += `*Total Messages (Top ${groupUsers.length} in Group)*: ${totalGroupMessages}`;  
       return citel.reply(leaderboardText); 
     } else {
@@ -868,22 +869,21 @@
         }))
         .sort((a, b) => b.totalMessages - a.totalMessages) 
         .slice(0, Math.min(users.length, 7)); 
-    
+  
       let leaderboardText = `
     *-------------------------------*
             Global Leaderboard 
     *-------------------------------*\n\n`;
-    
+  
       for (let i = 0; i < globalUsers.length; i++) {
         const user = globalUsers[i];
         leaderboardText += `*${i + 1}. Name*: ${user.name}
     * Total Messages*: ${user.totalMessages}\n\n`;
       }
-    
+  
       return citel.reply(leaderboardText);
     }
   });
-  
   
 
   //---------------------------------------------------------------------------
