@@ -45,6 +45,7 @@
 		"simple-git": "^3.16.1",
 		"@shineiichijo/marika": "^2.0.3",
 		"translatte": "^3.0.1",
+		"rss-parser":"^3.13.0",
 		"secktor-pack": "latest",
 		"ytdl-secktor": "latest",
 		"wa-sticker-formatter": "^4.3.2"
