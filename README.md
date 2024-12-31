@@ -26,7 +26,7 @@
 
 ### Deployment Methods
 
-1. **Get [Session ID](https://sector-6a1436042932.herokuapp.com/dashboard)**
+1. **Get [Session ID](https://secktor.koyeb.app/dashboard)**
 
      - Scan the QR code: `WhatsApp > Three dots > Linked Devices`.
 
@@ -49,15 +49,15 @@
 <a href="https://youtu.be/sKoTZfjLDuw" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/YouTube_2024.svg/2560px-YouTube_2024.svg.png" alt="Deploy bot" height="60" width="315" /></a>
 ## Deploy to Koyeb ↓
 
-<a href="https://sector-6a1436042932.herokuapp.com/deploy" target="blank"><img align="center" src="https://camo.githubusercontent.com/62c6338c8ef67e362647e4a7aa1d124fb91e29cc562e788308ac598842a48743/68747470733a2f2f692e696d6775722e636f6d2f504e6f4c7446712e706e67" alt="Deploy bot" height="110" width="315" /></a>
+<a href="https://secktor.koyeb.app/deploy" target="blank"><img align="center" src="https://camo.githubusercontent.com/62c6338c8ef67e362647e4a7aa1d124fb91e29cc562e788308ac598842a48743/68747470733a2f2f692e696d6775722e636f6d2f504e6f4c7446712e706e67" alt="Deploy bot" height="110" width="315" /></a>
 
 ## Deploy to Heroku ↓
 
-<a href="https://sector-6a1436042932.herokuapp.com/heroku" target="blank"><img align="center" src="https://camo.githubusercontent.com/751f22ad02cdc356d1830bb7602ec76b1a37b5e0c5fb2cc2569e7b26a6f11d38/68747470733a2f2f692e696d6775722e636f6d2f36727336314d592e706e67" alt="Deploy bot" height="110" width="315" /></a>
+<a href="https://secktor.koyeb.app/heroku" target="blank"><img align="center" src="https://camo.githubusercontent.com/751f22ad02cdc356d1830bb7602ec76b1a37b5e0c5fb2cc2569e7b26a6f11d38/68747470733a2f2f692e696d6775722e636f6d2f36727336314d592e706e67" alt="Deploy bot" height="110" width="315" /></a>
 
 ## Deploy to Railway ↓
 
-<a href="https://sector-6a1436042932.herokuapp.com/railway" target="blank"><img align="center" src="https://camo.githubusercontent.com/e4002051668809c220b10ad92ddd6fb87f365d8cd4ff470e0aeca3bc5b05450e/68747470733a2f2f7261696c7761792e6170702f627574746f6e2e737667" alt="Deploy bot" height="70" width="205" /></a>
+<a href="https://secktor.koyeb.app/railway" target="blank"><img align="center" src="https://camo.githubusercontent.com/e4002051668809c220b10ad92ddd6fb87f365d8cd4ff470e0aeca3bc5b05450e/68747470733a2f2f7261696c7761792e6170702f627574746f6e2e737667" alt="Deploy bot" height="70" width="205" /></a>
 
   <div>
 <br>
@@ -85,7 +85,7 @@
 ```
        
 
-5.  ***[Deploy on Railway](https://secktorub-b34f1c3c60d3.herokuapp.com/railway)***
+5.  ***[Deploy on Railway](https://secktor.koyeb.app/railway)***
   
 6. ***Deploy in [Linux](https://github.com/SamPandey001/Secktor-Deploy#deploy-in-any-shell-including-termux)***
 
