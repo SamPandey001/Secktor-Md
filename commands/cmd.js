@@ -1,4 +1,4 @@
-const { cmd,sck,commands } = require(__dirname+'/../lib')
+const { cmd, sck, commands } = require(__dirname + '/../lib');
 
 cmd({
     pattern: "cmd",
@@ -8,7 +8,7 @@ cmd({
 async (Void, citel, text, { isCreator }) => {
     if (!isCreator) return citel.reply("Only the owner can manage commands.");
 
-    const [action, commandName, ...responseParts] = text.split(" ");
+    const [action, commandName] = text.split(" ");
     let group = await sck.findOne({ id: citel.chat });
 
     if (!group) {
@@ -18,18 +18,17 @@ async (Void, citel, text, { isCreator }) => {
     if (!action) {
         return citel.reply(
             "Usage: \n" +
-            "1. cmd add <commandName> <response> - To add a custom command\n" +
+            "1. cmd add <commandName> - To add a custom command\n" +
             "2. cmd remove <commandName> - To remove a custom command\n" +
             "3. cmd list - To view all custom commands for this group"
         );
     }
 
     if (action.toLowerCase() === "add") {
-        const response = responseParts.join(" ");
-        if (!commandName || !response) return citel.reply("Please provide both a command name and response.");
+        if (!commandName) return citel.reply("Please provide a command name.");
         
         group.publicCommands = group.publicCommands || new Map();
-        group.publicCommands.set(commandName, response);
+        group.publicCommands.set(commandName, "This is a custom command.");
         await group.save();
         return citel.reply(`Command '${commandName}' added successfully.`);
     } else if (action.toLowerCase() === "remove") {
@@ -47,8 +46,8 @@ async (Void, citel, text, { isCreator }) => {
         }
 
         let commandList = "Custom Commands for this group:\n";
-        commands.forEach(([cmdName, response], index) => {
-            commandList += `${index + 1}. ${cmdName} - ${response}\n`;
+        commands.forEach(([cmdName], index) => {
+            commandList += `${index + 1}. ${cmdName}\n`;
         });
 
         return citel.reply(commandList.trim());
