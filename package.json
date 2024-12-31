@@ -49,7 +49,7 @@
 		"secktor-pack": "latest",
 		"ytdl-secktor": "latest",
 		"wa-sticker-formatter": "^4.3.2",
-		"google/generative-ai": "^0.21.0"
+		"@google/generative-ai": "^0.21.0"
 	},
 	"directories": {
 		"lib": "lib",
