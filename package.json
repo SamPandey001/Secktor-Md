@@ -17,6 +17,7 @@
 		"axios": "^0.24.0",
 		"cheerio": "^1.0.0-rc.10",
 		"crypto-js": "latest",
+		"cheerio":"^1.0.0",
 		"mumaker": "^2.0.0",
 		"chalk": "^4.1.2",
 		"@hapi/boom": "^9.1.4",
