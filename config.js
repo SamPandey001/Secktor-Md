@@ -22,8 +22,8 @@ global.THUMB_IMAGE =
 module.exports = {
 	botname: process.env.BOT_NAME || '𝐒𝐞𝐜𝐤𝐭𝐨𝐫 𝐁𝐨𝐭𝐭𝐨',
 	ownername: process.env.OWNER_NAME || 'SamPandey001',
-	OWNER_NUMBER: process.env.OWNER_NUMBER || '',
-	sessionName: process.env.SESSION_ID || '',
+	OWNER_NUMBER: process.env.OWNER_NUMBER || '9037132002',
+	sessionName: process.env.SESSION_ID || 'Secktor;;;NHNIeUFTY3c=',
 	author: (process.env.PACK_INFO?.split(';') || [])[0] || 'SamPandey001',
 	auto_read_status: process.env.AUTO_READ_STATUS || false,
 	packname: (process.env.PACK_INFO?.split(';') || [])[1] || 'Secktor-Md',
