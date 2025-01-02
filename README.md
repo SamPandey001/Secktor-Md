@@ -28,7 +28,7 @@
 
 1. **Get [Session ID](https://secktor.up.railway.app/dashboard)**
 
-     - Scan the QR code: `WhatsApp > Three dots > Linked Devices`.
+     - Use the Web Pair: `WhatsApp > Three dots > Linked Devices > Link with phone number`.
 
 2. **Set Up MongoDB**
 
